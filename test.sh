@@ -17,6 +17,8 @@
 module load cuda12.1/toolkit
 module load cuDNN/cuda12.1
 
+#print the GPU driver version
+nvidia-smi --query-gpu=driver_version --format=csv,noheader
 
 ## Enable the following line for DAS6
 # module load cuda11.3/toolkit/11.3.1
@@ -28,9 +30,12 @@ module load cuDNN/cuda12.1
 source $HOME/.bashrc
 conda activate
 
+#print the python version
+python --version
+
 # Base directory for the experiment
 #mkdir $HOME/experiments
-#cd $HOME/experiments
+cd $HOME/experiments
 
 # Simple trick to create a unique directory for each run of the script
 echo $$
@@ -38,8 +43,8 @@ mkdir o`echo $$`
 cd o`echo $$`
 
 # Run the actual experiment. 
-#python /home/username/git/project/experiment.py --parameter
-python test.py
+#python $HOME/username/git/project/experiment.py --parameter
+python ../../Probing-GNN-representations/test.py
 python <<EOF
 import torch
 print(torch.cuda.is_available())
