@@ -14,8 +14,9 @@
 # Load GPU drivers
 
 ## Enable the following two lines for DAS5
-module load cuda12.3/toolkit
-module load cuDNN/cuda12.3
+module load cuda12.1/toolkit
+module load cuDNN/cuda12.1
+
 
 ## Enable the following line for DAS6
 # module load cuda11.3/toolkit/11.3.1
@@ -38,6 +39,7 @@ cd o`echo $$`
 
 # Run the actual experiment. 
 #python /home/username/git/project/experiment.py --parameter
+python /home/tpe212/Probing-GNN-representation
 python <<EOF
 import torch
 print(torch.cuda.is_available())
