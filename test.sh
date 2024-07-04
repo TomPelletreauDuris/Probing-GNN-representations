@@ -29,8 +29,8 @@ source $HOME/.bashrc
 conda activate
 
 # Base directory for the experiment
-mkdir $HOME/experiments
-cd $HOME/experiments
+#mkdir $HOME/experiments
+#cd $HOME/experiments
 
 # Simple trick to create a unique directory for each run of the script
 echo $$
@@ -39,7 +39,7 @@ cd o`echo $$`
 
 # Run the actual experiment. 
 #python /home/username/git/project/experiment.py --parameter
-python /home/tpe212/Probing-GNN-representation/test.py
+python test.py
 python <<EOF
 import torch
 print(torch.cuda.is_available())
