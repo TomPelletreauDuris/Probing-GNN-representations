@@ -39,7 +39,7 @@ cd o`echo $$`
 
 # Run the actual experiment. 
 #python /home/username/git/project/experiment.py --parameter
-python /home/tpe212/Probing-GNN-representation
+python /home/tpe212/Probing-GNN-representation/test.py
 python <<EOF
 import torch
 print(torch.cuda.is_available())
