@@ -14,8 +14,8 @@
 # Load GPU drivers
 
 ## Enable the following two lines for DAS5
-module load cuda12.3/toolkit
-module load cuDNN/cuda12.3
+module load cuda11.8/toolkit
+module load cuDNN/cuda11.8
 
 ## Enable the following line for DAS6
 # module load cuda11.3/toolkit/11.3.1
