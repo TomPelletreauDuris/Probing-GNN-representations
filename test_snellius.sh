@@ -1,26 +1,22 @@
 #!/bin/bash
-# SBATCH --job-name=test
-# SBATCH --time=1:00:00
-# SBATCH -N 1
-# SBATCH --ntasks-per-node=1
-# SBATCH -p gpu
-# SBATCH --gres=gpu:1
 
-## in the list above, the partition name depends on where you are running your job. 
-## On DAS5 the default would be `defq` on Lisa the default would be `gpu` or `gpu_shared`
-## Typing `sinfo` on the server command line gives a column called PARTITION.  There, one can find the name of a specific node, the state (down, alloc, idle etc), the availability and how long is the time limit . Ask your supervisor before running jobs on queues you do not know.
+#SBATCH --partition=gpu
+#SBATCH --gpus=1
+#SBATCH --job-name=TestJob
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=01:00:00
+#SBATCH --output=slurm_output_%A.out
 
-# Load GPU drivers
 
-## Enable the following two lines for DAS5
-# module load cuda12.1/toolkit
-# module load cuDNN/cuda12.1
+module purge
+module load 2023
+module load  Anaconda3/2023.07-2
+
 
 #print the GPU driver version
 nvidia-smi --query-gpu=driver_version --format=csv,noheader
 
-## Enable the following line for DAS6
-# module load cuda11.3/toolkit/11.3.1
 
 ## For Lisa and Snellius, modules are usually not needed
 ## https://userinfo.surfsara.nl/systems/shared/modules 
