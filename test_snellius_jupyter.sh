@@ -1,9 +1,9 @@
-
 #!/bin/bash
 
 #SBATCH -t 1:00:00
 #SBATCH -N 1
-#SBATCH -p thin
+#SBATCH -p gpu
+#SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-job.out
 
 module purge
