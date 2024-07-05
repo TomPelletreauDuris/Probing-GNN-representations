@@ -4,7 +4,8 @@
 #SBATCH --gpus=1
 #SBATCH --job-name=TestJob
 #SBATCH --ntasks=1
-#SBATCH --time=01:00:00
+#SBATCH --cpus-per-task=18
+#SBATCH --time=00:05:00
 #SBATCH --output=slurm_output_%A.out
 
 module purge
@@ -16,6 +17,8 @@ module load Anaconda3/2023.07-2
 # conda activate
 
 source activate GNN_gpu
+
+srun python -uc "import torch; print('GPU available?', torch.cuda.is_available())"
 
 #print the GPU driver version
 nvidia-smi --query-gpu=driver_version --format=csv,noheader
