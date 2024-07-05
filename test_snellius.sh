@@ -3,8 +3,7 @@
 # SBATCH --time=1:00:00
 # SBATCH -N 1
 # SBATCH --ntasks-per-node=1
-# SBATCH --partition=defq
-# SBATCH -C <resource name, see below> # this line is usually not needed
+# SBATCH -p gpu
 # SBATCH --gres=gpu:1
 
 ## in the list above, the partition name depends on where you are running your job. 
@@ -14,8 +13,8 @@
 # Load GPU drivers
 
 ## Enable the following two lines for DAS5
-module load cuda12.1/toolkit
-module load cuDNN/cuda12.1
+# module load cuda12.1/toolkit
+# module load cuDNN/cuda12.1
 
 #print the GPU driver version
 nvidia-smi --query-gpu=driver_version --format=csv,noheader
@@ -33,18 +32,8 @@ conda activate
 #print the python version
 python --version
 
-# Base directory for the experiment
-#mkdir $HOME/experiments
-cd $HOME/experiments
-
-# Simple trick to create a unique directory for each run of the script
-echo $$
-mkdir o`echo $$`
-cd o`echo $$`
-
 # Run the actual experiment. 
-#python $HOME/username/git/project/experiment.py --parameter
-python ../../Probing-GNN-representations/test.py
+python test.py
 python <<EOF
 import torch
 print(torch.cuda.is_available())
