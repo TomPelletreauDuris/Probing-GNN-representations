@@ -1,0 +1,61 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+To connect to the notebook type the following command into your local terminal:
+ssh -N -J tpelletreaudur@int6-pub.snellius.surf.nl tpelletreaudur@gcn44.local.snellius.surf.nl -L 5974:localhost:5974
+
+After connection is established in your local browser go to the address:
+http://localhost:5974
+[I 18:17:47.247 NotebookApp] Writing notebook server cookie secret to /gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/notebook_cookie_secret
+[W 18:17:50.359 NotebookApp] Loading JupyterLab as a classic notebook (v6) extension.
+[W 2024-07-05 18:17:50.361 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-05 18:17:50.361 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-05 18:17:50.361 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-07-05 18:17:50.364 LabApp] JupyterLab extension loaded from /sw/arch/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/lib/python3.11/site-packages/jupyterlab
+[I 2024-07-05 18:17:50.364 LabApp] JupyterLab application directory is /gpfs/admin/_hpc/sw/arch/INTEL-AVX512/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/share/jupyter/lab
+[I 18:17:53.436 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 18:17:53.436 NotebookApp] Jupyter Notebook 6.5.4 is running at:
+[I 18:17:53.436 NotebookApp] http://localhost:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
+[I 18:17:53.436 NotebookApp]  or http://127.0.0.1:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
+[I 18:17:53.436 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 18:17:53.441 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-3203426-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
+     or http://127.0.0.1:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
+[I 18:19:58.237 NotebookApp] 302 GET / (::1) 0.430000ms
+[I 18:19:58.245 NotebookApp] 302 GET /tree? (::1) 0.600000ms
+[W 18:20:05.414 NotebookApp] 401 POST /login?next=%2Ftree%3F (::1) 1.030000ms referer=http://localhost:5974/login?next=%2Ftree%3F
+[W 18:21:11.489 NotebookApp] Not allowing login redirect to '/tree?'
+[I 18:21:11.489 NotebookApp] 302 POST /login?next=%2Ftree%3F (::1) 0.960000ms
+[I 18:21:11.498 NotebookApp] 302 GET / (::1) 0.250000ms
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[I 18:21:47.254 NotebookApp] Writing notebook-signing key to /gpfs/home3/tpelletreaudur/.local/share/jupyter/notebook_secret
+[W 18:21:47.258 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 18:21:48.729 NotebookApp] Kernel started: 641ddd53-7c40-4322-8997-95f7937569bc, name: python3
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[I 18:23:49.030 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 18:23:49.030 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 18:24:56.766 NotebookApp] Starting buffering for 641ddd53-7c40-4322-8997-95f7937569bc:262d39fb85ac4364beec22811136f7d2
+[W 18:24:57.136 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 18:25:16.005 NotebookApp] Starting buffering for 641ddd53-7c40-4322-8997-95f7937569bc:22c391ffc98f422daff70cc8b9fbaf9b
