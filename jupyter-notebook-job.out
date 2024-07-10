@@ -14,48 +14,145 @@ already available
 on the system, please use 'module avail' or 'module spider' to search for it.
 ============================================================================================== 
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int6-pub.snellius.surf.nl tpelletreaudur@gcn44.local.snellius.surf.nl -L 5974:localhost:5974
+ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn65.local.snellius.surf.nl -L 5378:localhost:5378
 
 After connection is established in your local browser go to the address:
-http://localhost:5974
-[I 18:17:47.247 NotebookApp] Writing notebook server cookie secret to /gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/notebook_cookie_secret
-[W 18:17:50.359 NotebookApp] Loading JupyterLab as a classic notebook (v6) extension.
-[W 2024-07-05 18:17:50.361 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
-[W 2024-07-05 18:17:50.361 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
-[W 2024-07-05 18:17:50.361 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
-[I 2024-07-05 18:17:50.364 LabApp] JupyterLab extension loaded from /sw/arch/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/lib/python3.11/site-packages/jupyterlab
-[I 2024-07-05 18:17:50.364 LabApp] JupyterLab application directory is /gpfs/admin/_hpc/sw/arch/INTEL-AVX512/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/share/jupyter/lab
-[I 18:17:53.436 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 18:17:53.436 NotebookApp] Jupyter Notebook 6.5.4 is running at:
-[I 18:17:53.436 NotebookApp] http://localhost:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
-[I 18:17:53.436 NotebookApp]  or http://127.0.0.1:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
-[I 18:17:53.436 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 18:17:53.441 NotebookApp] 
+http://localhost:5378
+[W 13:40:12.666 NotebookApp] Loading JupyterLab as a classic notebook (v6) extension.
+[W 2024-07-06 13:40:12.668 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-06 13:40:12.668 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-06 13:40:12.668 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-07-06 13:40:12.672 LabApp] JupyterLab extension loaded from /sw/arch/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/lib/python3.11/site-packages/jupyterlab
+[I 2024-07-06 13:40:12.672 LabApp] JupyterLab application directory is /gpfs/admin/_hpc/sw/arch/INTEL-AVX512/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/share/jupyter/lab
+[I 13:40:15.454 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 13:40:15.454 NotebookApp] Jupyter Notebook 6.5.4 is running at:
+[I 13:40:15.454 NotebookApp] http://localhost:5378/?token=7ef960b56bc79db3530fc8f79da8f4ae5f032c25341b5038
+[I 13:40:15.454 NotebookApp]  or http://127.0.0.1:5378/?token=7ef960b56bc79db3530fc8f79da8f4ae5f032c25341b5038
+[I 13:40:15.455 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 13:40:15.472 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-3203426-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-1683231-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
-     or http://127.0.0.1:5974/?token=9567a2a271d9b7baf5b2781a5365102870ef4fb0cdd02ff9
-[I 18:19:58.237 NotebookApp] 302 GET / (::1) 0.430000ms
-[I 18:19:58.245 NotebookApp] 302 GET /tree? (::1) 0.600000ms
-[W 18:20:05.414 NotebookApp] 401 POST /login?next=%2Ftree%3F (::1) 1.030000ms referer=http://localhost:5974/login?next=%2Ftree%3F
-[W 18:21:11.489 NotebookApp] Not allowing login redirect to '/tree?'
-[I 18:21:11.489 NotebookApp] 302 POST /login?next=%2Ftree%3F (::1) 0.960000ms
-[I 18:21:11.498 NotebookApp] 302 GET / (::1) 0.250000ms
+        http://localhost:5378/?token=7ef960b56bc79db3530fc8f79da8f4ae5f032c25341b5038
+     or http://127.0.0.1:5378/?token=7ef960b56bc79db3530fc8f79da8f4ae5f032c25341b5038
+[I 13:41:47.266 NotebookApp] 302 GET /?token=7ef960b56bc79db3530fc8f79da8f4ae5f032c25341b5038 (::1) 0.440000ms
 0.00s - Debugger warning: It seems that frozen modules are being used, which may
 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
 0.00s - to python to disable frozen modules.
 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-[I 18:21:47.254 NotebookApp] Writing notebook-signing key to /gpfs/home3/tpelletreaudur/.local/share/jupyter/notebook_secret
-[W 18:21:47.258 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
-[I 18:21:48.729 NotebookApp] Kernel started: 641ddd53-7c40-4322-8997-95f7937569bc, name: python3
+[I 13:41:58.493 NotebookApp] Kernel started: a9222401-82bc-4794-91ce-b43ba949f756, name: python3
 0.00s - Debugger warning: It seems that frozen modules are being used, which may
 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
 0.00s - to python to disable frozen modules.
 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-[I 18:23:49.030 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[W 18:23:49.030 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
-[I 18:24:56.766 NotebookApp] Starting buffering for 641ddd53-7c40-4322-8997-95f7937569bc:262d39fb85ac4364beec22811136f7d2
-[W 18:24:57.136 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
-[I 18:25:16.005 NotebookApp] Starting buffering for 641ddd53-7c40-4322-8997-95f7937569bc:22c391ffc98f422daff70cc8b9fbaf9b
+[I 13:46:01.617 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 13:47:59.362 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 13:49:59.399 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 13:52:10.426 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 13:54:10.448 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 13:56:10.481 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 13:58:10.550 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:00:10.526 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:02:10.532 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:04:12.940 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:06:10.622 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:08:10.716 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:10:10.657 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:12:10.664 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:14:10.673 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:16:10.735 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:18:10.835 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:20:10.744 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:22:10.808 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:24:10.789 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:26:10.831 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:28:10.843 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:30:10.876 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:32:10.885 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:34:10.949 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:36:11.009 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:38:10.946 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:40:11.529 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:42:11.024 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:44:11.005 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:46:11.029 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:48:11.050 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:50:11.179 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:52:11.208 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:54:11.139 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:56:11.159 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 14:58:11.210 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:00:11.190 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:02:11.215 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:04:11.272 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:06:11.276 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:08:11.318 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:10:11.317 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:12:11.321 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:14:11.372 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:16:11.431 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:18:11.446 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:20:11.449 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:22:11.465 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:24:11.482 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:26:11.513 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:28:11.549 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:30:11.547 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:32:11.634 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:34:11.590 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:36:11.617 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:38:11.664 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:40:11.698 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:42:11.704 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:44:11.711 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:46:11.736 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:48:11.734 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:50:11.785 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:52:11.809 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:54:11.956 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:56:11.898 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 15:58:11.910 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:00:11.921 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:02:11.916 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:04:12.532 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:06:11.962 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:08:11.996 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:10:12.006 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:12:12.022 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:14:12.100 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:16:12.087 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:18:12.105 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:20:12.274 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:22:12.122 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:24:12.159 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:26:12.316 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:28:12.279 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:30:12.716 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:32:12.276 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:34:12.322 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:36:12.346 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:38:12.357 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:40:12.353 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:42:12.733 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:44:12.432 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:46:12.425 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:48:12.938 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:50:12.452 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 16:52:12.517 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+slurmstepd: error: *** JOB 6898037 ON gcn65 CANCELLED AT 2024-07-06T23:40:10 DUE TO TIME LIMIT ***
+[I 23:40:10.019 NotebookApp] Starting buffering for a9222401-82bc-4794-91ce-b43ba949f756:d33fe1205efc4e228bc214af0036a8b0
+
+JOB STATISTICS
+==============
+Job ID: 6898037
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 7-12:03:00 core-walltime
+Job Wall-clock time: 10:00:10
+Memory Utilized: 2.00 GB
+Memory Efficiency: 1.67% of 120.00 GB
