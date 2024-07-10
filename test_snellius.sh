@@ -1,12 +1,11 @@
 #!/bin/bash
 
-#SBATCH --partition=gpu
-#SBATCH --gpus=1
-#SBATCH --job-name=TestJob
-#SBATCH --ntasks=1
+#SBATCH -t 10:00:00
+#SBATCH -N 1
+#SBATCH -p gpu
+#SBATCH --gpus-per-node=1
+#SBATCH -o jupyter-notebook-job.out
 #SBATCH --cpus-per-task=18
-#SBATCH --time=00:05:00
-#SBATCH --output=slurm_output_%A.out
 
 module purge
 module load 2023
@@ -28,7 +27,7 @@ python --version
 
 # Run the actual experiment. 
 python FC_probing_GCN.py
-python <<EOF
-import torch
-print(torch.cuda.is_available())
-EOF
+# python <<EOF
+# import torch
+# print(torch.cuda.is_available())
+# EOF
