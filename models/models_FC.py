@@ -183,7 +183,7 @@ class GCN_framework_2:
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001)
 
         idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=True)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)
@@ -323,7 +323,7 @@ class GraphSAGE_framework:
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=True)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)
@@ -570,7 +570,7 @@ class GIN_framework:
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=[data.y for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256)
@@ -702,7 +702,7 @@ class RGCN_framework:
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=True)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)
@@ -853,7 +853,7 @@ class GAT_framework:
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=True)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)

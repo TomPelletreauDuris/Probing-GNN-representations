@@ -41,7 +41,7 @@ DATASET = "FC"
 
 from models.models_FC import GIN_framework as framework # import the model
 
-gnn = framework(dataset,device="cpu")
+gnn = framework(dataset)
 
 print(gnn.model)
 print(gnn.train_idx)
@@ -169,7 +169,7 @@ train_x4 = np.array([feat[3] for feat in train_features])
 test_x4 = np.array([feat[3] for feat in test_features])
 
 train_x5 = np.array([feat[4] for feat in train_features])
-test_x5 = np.array([feat[5] for feat in test_features])
+test_x5 = np.array([feat[4] for feat in test_features])
 
 train_x5 = np.array([feat[5] for feat in train_features])
 test_x5 = np.array([feat[5] for feat in test_features])
