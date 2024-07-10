@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH -p gpu
 #SBATCH --gpus-per-node=1
-#SBATCH -o jupyter-notebook-job.out
+#SBATCH -o jupyter-notebook-py-GIN.out
 #SBATCH --cpus-per-task=18
 
 module purge
