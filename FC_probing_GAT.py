@@ -41,7 +41,7 @@ DATASET = "FC"
 
 from models.models_FC import GAT_framework as framework # import the model
 
-gnn = framework(dataset,device="cpu")
+gnn = framework(dataset)
 
 print(gnn.model)
 print(gnn.train_idx)
