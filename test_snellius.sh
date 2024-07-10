@@ -27,7 +27,7 @@ nvidia-smi --query-gpu=driver_version --format=csv,noheader
 python --version
 
 # Run the actual experiment. 
-python test.py
+python FC_probing_GCN.py
 python <<EOF
 import torch
 print(torch.cuda.is_available())
