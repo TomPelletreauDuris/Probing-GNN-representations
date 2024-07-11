@@ -2,6 +2,16 @@
 # Here we'll first be loading the FC matrices and explore their structure
 
 # %%
+#test if I have access to a GPU with torch
+import torch
+print(torch.cuda.is_available())
+print(torch.cuda.current_device())
+print(torch.cuda.device(0))
+print(torch.cuda.device_count())
+print(torch.cuda.get_device_name(0))
+
+
+# %%
 #using read_dataset from Datasets/FC/create_dataset.py to read the dataset
 from Datasets.FC.create_dataset import read_dataset
 
@@ -46,8 +56,16 @@ gnn = framework(dataset)
 print(gnn.model)
 print(gnn.train_idx)
 
+
+MODEL2 = "GIN2"
+from models.models_FC import GIN_framework2 as framework2 # import the model
+gnn2 = framework2(dataset)
+
 # %%
 gnn.iterate()
+
+# %%
+gnn2.iterate()
 
 # %%
 #gnn.train()
@@ -56,12 +74,19 @@ gnn.iterate()
 #save the model 
 gnn.save_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
 
+gnn2.save_model(path="models/"+DATASET+"_"+MODEL2+"server.pt")
+
 # %%
 #load the model
 gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
 
+gnn2.load_model(path="models/"+DATASET+"_"+MODEL2+"server.pt")
+
 # %%
 gnn.evaluate()
+
+# %%
+gnn2.evaluate()
 
 # %%
 train_features, test_features = gnn.evaluate_with_features2()
@@ -533,7 +558,7 @@ ii = 0
 for train_embedding, test_embedding in embeddings:
     input_size = train_embedding.shape[1]
 
-    for i, property_name in enumerate(property_names):
+    for i, property_name in enumerate(property_names_long):
         model = LinearModel(input_size, output_size)
         criterion = nn.MSELoss()
         optimizer = optim.Adam(model.parameters(), lr=0.001)

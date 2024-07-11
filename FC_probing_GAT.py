@@ -302,6 +302,9 @@ plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
+#save
+plt.savefig("results/"+DATASET+"_"+MODEL+"test_R2.png")
+
 
 # %%
 import matplotlib.pyplot as plt
@@ -335,7 +338,7 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/FC_matrice_GCN_train_R2_plot.png', dpi=300, bbox_inches='tight')
+plt.savefig('results/'+DATASET+'_'+MODEL+'train_R2.png')
 
 
 # %% [markdown]
@@ -522,7 +525,7 @@ ii = 0
 for train_embedding, test_embedding in embeddings:
     input_size = train_embedding.shape[1]
 
-    for i, property_name in enumerate(property_names):
+    for i, property_name in enumerate(property_names_long):
         model = LinearModel(input_size, output_size)
         criterion = nn.MSELoss()
         optimizer = optim.Adam(model.parameters(), lr=0.001)
