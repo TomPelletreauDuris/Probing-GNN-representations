@@ -516,7 +516,8 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
 
 # %%
 property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient']
-
+train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
 #create a dictionary where we will store the results for each embeddings, each property
 results = {}
 
@@ -542,7 +543,7 @@ for train_embedding, test_embedding in embeddings:
             optimizer.zero_grad()
 
             outputs = model(train_embedding).squeeze()
-            target = train_y[:, i].squeeze()
+            target = train_y_long[:, i].squeeze()
 
             loss = criterion(outputs, target)
             loss.backward()
@@ -569,8 +570,8 @@ for train_embedding, test_embedding in embeddings:
             train_pred = model(train_embedding).squeeze().cpu().numpy()
             test_pred = model(test_embedding).squeeze().cpu().numpy()
 
-            train_target = train_y[:, i].cpu().numpy()
-            test_target = test_y[:, i].cpu().numpy()
+            train_target = train_y_long[:, i].cpu().numpy()
+            test_target = test_y_long[:, i].cpu().numpy()
 
             train_mse = mean_squared_error(train_target, train_pred)
             test_mse = mean_squared_error(test_target, test_pred)
