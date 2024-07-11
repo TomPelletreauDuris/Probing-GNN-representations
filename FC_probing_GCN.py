@@ -635,7 +635,7 @@ def compute_graph_properties(data):
         print(f"Average Clustering Coefficient: {avg_clustering}")
         print(f"Transitivity: {transitivity}")
         
-        properties.append({
+        properties.append((
             num_nodes,
             num_edges,
             density,
@@ -655,7 +655,7 @@ def compute_graph_properties(data):
             algebraic_connectivity,
             graph_energy,
             small_world_coefficient
-        })
+        ))
     return properties
 
 train_idx_list = gnn.train_idx.tolist()
