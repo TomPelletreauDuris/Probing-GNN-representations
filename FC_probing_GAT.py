@@ -516,8 +516,8 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
 
 # %%
 property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient']
-train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
-test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
+train_y_long = torch.tensor([[prop[name] for name in property_names_long] for prop in train_properties_long], dtype=torch.float32)
+test_y_long = torch.tensor([[prop[name] for name in property_names_long] for prop in test_properties_long], dtype=torch.float32)
 #create a dictionary where we will store the results for each embeddings, each property
 results = {}
 

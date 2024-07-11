@@ -270,84 +270,84 @@ embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
 # with open("results/"+DATASET+"_"+MODEL+"_results.pkl", "wb") as f:
 #     pkl.dump(results, f)
 
-# %%
-# check train_features shape, ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (40,) + inhomogeneous part.
-# check train_features[0] shape, (40,) -> it should be (40,1)
-# check train_features[0][0] shape, (1,) -> it should be (1,1)
+# # %%
+# # check train_features shape, ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (40,) + inhomogeneous part.
+# # check train_features[0] shape, (40,) -> it should be (40,1)
+# # check train_features[0][0] shape, (1,) -> it should be (1,1)
 
-#print(train_features[0].shape)
+# #print(train_features[0].shape)
 
-#load results 
-with open("results/"+DATASET+"_"+MODEL+"_results.pkl", "rb") as f:
-    results = pkl.load(f)
+# #load results 
+# with open("results/"+DATASET+"_"+MODEL+"_results.pkl", "rb") as f:
+#     results = pkl.load(f)
 
-# %%
-import matplotlib.pyplot as plt
+# # %%
+# import matplotlib.pyplot as plt
 
-# Assuming results, embeddings, and other necessary variables are defined as in your context
-property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component']
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
-colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w']
+# # Assuming results, embeddings, and other necessary variables are defined as in your context
+# property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component']
+# embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
+# colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w']
 
-plt.figure(figsize=(12, 8))
+# plt.figure(figsize=(12, 8))
 
-for i, property_name in enumerate(property_names):
-    x_points = []
-    y_points = []
-    for j, embedding in enumerate(embeddings):
-        name_of_embedding = embeddings_names[j]
-        test_r2 = results[(name_of_embedding, property_name)][3]
-        if test_r2 < -0.05:  # Handle negative R² values
-            test_r2 = -0.05
-        x_points.append(j)
-        y_points.append(test_r2)
+# for i, property_name in enumerate(property_names):
+#     x_points = []
+#     y_points = []
+#     for j, embedding in enumerate(embeddings):
+#         name_of_embedding = embeddings_names[j]
+#         test_r2 = results[(name_of_embedding, property_name)][3]
+#         if test_r2 < -0.05:  # Handle negative R² values
+#             test_r2 = -0.05
+#         x_points.append(j)
+#         y_points.append(test_r2)
     
-    # Plotting the line for the current property
-    plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
+#     # Plotting the line for the current property
+#     plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
 
-plt.xticks(range(len(embeddings)), embeddings_names)
-plt.xlabel('Embedding')
-plt.ylabel('R²')
-plt.legend()
-plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.xticks(range(len(embeddings)), embeddings_names)
+# plt.xlabel('Embedding')
+# plt.ylabel('R²')
+# plt.legend()
+# plt.title('FC matrice - GCN - R² for different embeddings and properties')
+# plt.show()
 
-#save the plot
-plt.savefig('results/'+DATASET+'_'+MODEL+'_test_R2_plot.png', dpi=300, bbox_inches='tight')
+# #save the plot
+# plt.savefig('results/'+DATASET+'_'+MODEL+'_test_R2_plot.png', dpi=300, bbox_inches='tight')
 
-# %%
-import matplotlib.pyplot as plt
+# # %%
+# import matplotlib.pyplot as plt
 
-# Assuming results, embeddings, and other necessary variables are defined as in your context
-property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component']
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
-colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w']
+# # Assuming results, embeddings, and other necessary variables are defined as in your context
+# property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component']
+# embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
+# colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w']
 
-plt.figure(figsize=(12, 8))
+# plt.figure(figsize=(12, 8))
 
-for i, property_name in enumerate(property_names):
-    x_points = []
-    y_points = []
-    for j, embedding in enumerate(embeddings):
-        name_of_embedding = embeddings_names[j]
-        train_r2 = results[(name_of_embedding, property_name)][2]
-        if train_r2 < -0.05:  # Handle negative R² values
-            train_r2 = -0.05
-        x_points.append(j)
-        y_points.append(train_r2)
+# for i, property_name in enumerate(property_names):
+#     x_points = []
+#     y_points = []
+#     for j, embedding in enumerate(embeddings):
+#         name_of_embedding = embeddings_names[j]
+#         train_r2 = results[(name_of_embedding, property_name)][2]
+#         if train_r2 < -0.05:  # Handle negative R² values
+#             train_r2 = -0.05
+#         x_points.append(j)
+#         y_points.append(train_r2)
     
-    # Plotting the line for the current property
-    plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
+#     # Plotting the line for the current property
+#     plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
 
-plt.xticks(range(len(embeddings)), embeddings_names)
-plt.xlabel('Embedding')
-plt.ylabel('R²')
-plt.legend()
-plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.xticks(range(len(embeddings)), embeddings_names)
+# plt.xlabel('Embedding')
+# plt.ylabel('R²')
+# plt.legend()
+# plt.title('FC matrice - GCN - R² for different embeddings and properties')
+# plt.show()
 
-#save the plot
-plt.savefig('results/FC_matrice_GCN_train_R2_plot.png', dpi=300, bbox_inches='tight')
+# #save the plot
+# plt.savefig('results/'+DATASET+'_'+MODEL+'_train_R2_plot.png', dpi=300, bbox_inches='tight')
 
 
 # %% [markdown]
@@ -472,7 +472,7 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/'+DATASET+'_'+MODEL+'_test_R2_plot_limited_cv.png', dpi=300, bbox_inches='tight')
+plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv.png', dpi=300, bbox_inches='tight')
 
 # %%
 # Assuming results, embeddings, and other necessary variables are defined as in your context
@@ -504,173 +504,173 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/'+DATASET+'_'+MODEL+'_train_R2_plot_limited_cv.png', dpi=300, bbox_inches='tight')
+plt.savefig('results/'+DATASET+"_"+MODEL+'_train_R2_plot_limited_cv.png', dpi=300, bbox_inches='tight')
 
 # %% [markdown]
 # #### Test with more properties
 
-# # %%
-# import networkx as nx
-# import numpy as np
+# %%
+import networkx as nx
+import numpy as np
 
-# def calculate_avg_path_length(G):
-#     if nx.is_connected(G):
-#         return nx.average_shortest_path_length(G)
-#     else:
-#         # Use the average path length of the largest connected component for disconnected graphs
-#         components = [G.subgraph(c).copy() for c in nx.connected_components(G)]
-#         largest_component = max(components, key=len)
-#         return nx.average_shortest_path_length(largest_component)
+def calculate_avg_path_length(G):
+    if nx.is_connected(G):
+        return nx.average_shortest_path_length(G)
+    else:
+        # Use the average path length of the largest connected component for disconnected graphs
+        components = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+        largest_component = max(components, key=len)
+        return nx.average_shortest_path_length(largest_component)
     
-# def betweenness_centralization(G):
-#     n = len(G)
-#     betweenness = nx.betweenness_centrality(G)
-#     max_betweenness = max(betweenness.values())
-#     centralization = sum(max_betweenness - bet for bet in betweenness.values())
-#     if n > 2:
-#         centralization /= (n - 1) * (n - 2) / 2
-#     return centralization
+def betweenness_centralization(G):
+    n = len(G)
+    betweenness = nx.betweenness_centrality(G)
+    max_betweenness = max(betweenness.values())
+    centralization = sum(max_betweenness - bet for bet in betweenness.values())
+    if n > 2:
+        centralization /= (n - 1) * (n - 2) / 2
+    return centralization
 
-# def pagerank_centralization(G, alpha=0.85):
-#     n = len(G)
-#     pagerank = nx.pagerank(G, alpha=alpha)
-#     max_pagerank = max(pagerank.values())
-#     centralization = sum(max_pagerank - pr for pr in pagerank.values())
-#     if n > 1:
-#         centralization /= (n - 1)
-#     return centralization
+def pagerank_centralization(G, alpha=0.85):
+    n = len(G)
+    pagerank = nx.pagerank(G, alpha=alpha)
+    max_pagerank = max(pagerank.values())
+    centralization = sum(max_pagerank - pr for pr in pagerank.values())
+    if n > 1:
+        centralization /= (n - 1)
+    return centralization
 
-# def clustering_properties(G):
-#     average_clustering = nx.average_clustering(G)
-#     transitivity = nx.transitivity(G)
-#     return average_clustering, transitivity
+def clustering_properties(G):
+    average_clustering = nx.average_clustering(G)
+    transitivity = nx.transitivity(G)
+    return average_clustering, transitivity
 
-# def compute_graph_properties(data):
-#     properties = []
-#     for graph_data in data:
-#         G = nx.from_edgelist(graph_data.edge_index.t().tolist())
+def compute_graph_properties(data):
+    properties = []
+    for graph_data in data:
+        G = nx.from_edgelist(graph_data.edge_index.t().tolist())
         
-#         # Number of nodes
-#         num_nodes = G.number_of_nodes()
+        # Number of nodes
+        num_nodes = G.number_of_nodes()
         
-#         # Number of edges
-#         num_edges = G.number_of_edges()
+        # Number of edges
+        num_edges = G.number_of_edges()
         
-#         # Density
-#         density = nx.density(G)
+        # Density
+        density = nx.density(G)
         
-#         # Average Path Length
-#         avg_path_len = calculate_avg_path_length(G)
+        # Average Path Length
+        avg_path_len = calculate_avg_path_length(G)
         
-#         # Diameter
-#         if nx.is_connected(G):
-#             diameter = nx.diameter(G)
-#         else:
-#             # Use the diameter of the largest connected component for disconnected graphs
-#             components = [G.subgraph(c).copy() for c in nx.connected_components(G)]
-#             largest_component = max(components, key=len)
-#             diameter = nx.diameter(largest_component)
+        # Diameter
+        if nx.is_connected(G):
+            diameter = nx.diameter(G)
+        else:
+            # Use the diameter of the largest connected component for disconnected graphs
+            components = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+            largest_component = max(components, key=len)
+            diameter = nx.diameter(largest_component)
         
-#         # Radius
-#         if nx.is_connected(G):
-#             radius = nx.radius(G)
-#         else:
-#             radius = nx.radius(largest_component)
+        # Radius
+        if nx.is_connected(G):
+            radius = nx.radius(G)
+        else:
+            radius = nx.radius(largest_component)
         
-#         # Clustering Coefficient
-#         clustering_coeff = nx.average_clustering(G)
+        # Clustering Coefficient
+        clustering_coeff = nx.average_clustering(G)
         
-#         # Transitivity
-#         transitivity = nx.transitivity(G)
+        # Transitivity
+        transitivity = nx.transitivity(G)
         
-#         # Assortativity
-#         assortativity = nx.degree_assortativity_coefficient(G)
+        # Assortativity
+        assortativity = nx.degree_assortativity_coefficient(G)
         
-#         # Number of Cliques
-#         num_cliques = len(list(nx.find_cliques(G)))
+        # Number of Cliques
+        num_cliques = len(list(nx.find_cliques(G)))
         
-#         # Number of Triangles
-#         num_triangles = sum(nx.triangles(G).values()) / 3
+        # Number of Triangles
+        num_triangles = sum(nx.triangles(G).values()) / 3
         
-#         # Number of Squares (4-cycles)
-#         num_squares = sum(nx.square_clustering(G).values()) / 4
+        # Number of Squares (4-cycles)
+        num_squares = sum(nx.square_clustering(G).values()) / 4
         
-#         # Size of the Largest Connected Component
-#         largest_component_size = len(max(nx.connected_components(G), key=len))
+        # Size of the Largest Connected Component
+        largest_component_size = len(max(nx.connected_components(G), key=len))
         
-#         # Average Degree
-#         degrees = [d for n, d in G.degree()]
-#         avg_degree = np.mean(degrees)
+        # Average Degree
+        degrees = [d for n, d in G.degree()]
+        avg_degree = np.mean(degrees)
         
-#         # Betweenness Centrality
-#         betweenness_centrality = nx.betweenness_centrality(G)
-#         avg_betweenness_centrality = np.mean(list(betweenness_centrality.values()))
+        # Betweenness Centrality
+        betweenness_centrality = nx.betweenness_centrality(G)
+        avg_betweenness_centrality = np.mean(list(betweenness_centrality.values()))
         
-#         # Eigenvalues of the Adjacency Matrix (for spectral properties)
-#         eigenvalues = np.linalg.eigvals(nx.adjacency_matrix(G).todense())
-#         spectral_radius = max(eigenvalues)
-#         algebraic_connectivity = sorted(eigenvalues)[1]  # second smallest eigenvalue
+        # Eigenvalues of the Adjacency Matrix (for spectral properties)
+        eigenvalues = np.linalg.eigvals(nx.adjacency_matrix(G).todense())
+        spectral_radius = max(eigenvalues)
+        algebraic_connectivity = sorted(eigenvalues)[1]  # second smallest eigenvalue
         
-#         # Graph Laplacian Eigenvalues
-#         laplacian_eigenvalues = np.linalg.eigvals(nx.laplacian_matrix(G).todense())
-#         graph_energy = sum(abs(laplacian_eigenvalues))
+        # Graph Laplacian Eigenvalues
+        laplacian_eigenvalues = np.linalg.eigvals(nx.laplacian_matrix(G).todense())
+        graph_energy = sum(abs(laplacian_eigenvalues))
         
-#         # Small-World-ness
-#         # Compare clustering coefficient and average path length with those of a random graph
-#         random_graph = nx.gnm_random_graph(num_nodes, num_edges)
-#         random_clustering_coeff = nx.average_clustering(random_graph)
-#         random_avg_path_len = calculate_avg_path_length(random_graph)
-#         small_world_coefficient = (clustering_coeff / random_clustering_coeff) / (avg_path_len / random_avg_path_len)
+        # Small-World-ness
+        # Compare clustering coefficient and average path length with those of a random graph
+        random_graph = nx.gnm_random_graph(num_nodes, num_edges)
+        random_clustering_coeff = nx.average_clustering(random_graph)
+        random_avg_path_len = calculate_avg_path_length(random_graph)
+        small_world_coefficient = (clustering_coeff / random_clustering_coeff) / (avg_path_len / random_avg_path_len)
 
-#         # Calculate Betweenness Centralization
-#         betweenness_cent = betweenness_centralization(G)
-#         print(f"Betweenness Centralization: {betweenness_cent}")
+        # Calculate Betweenness Centralization
+        betweenness_cent = betweenness_centralization(G)
+        print(f"Betweenness Centralization: {betweenness_cent}")
 
-#         # Calculate PageRank Centralization
-#         pagerank_cent = pagerank_centralization(G)
-#         print(f"PageRank Centralization: {pagerank_cent}")
+        # Calculate PageRank Centralization
+        pagerank_cent = pagerank_centralization(G)
+        print(f"PageRank Centralization: {pagerank_cent}")
 
-#         # Calculate Clustering properties
-#         avg_clustering, transitivity = clustering_properties(G)
-#         print(f"Average Clustering Coefficient: {avg_clustering}")
-#         print(f"Transitivity: {transitivity}")
+        # Calculate Clustering properties
+        avg_clustering, transitivity = clustering_properties(G)
+        print(f"Average Clustering Coefficient: {avg_clustering}")
+        print(f"Transitivity: {transitivity}")
         
-#         properties.append({
-#             "num_nodes": num_nodes,
-#             "num_edges": num_edges,
-#             "density": density,
-#             "avg_path_len": avg_path_len,
-#             "diameter": diameter,
-#             "radius": radius,
-#             "clustering_coeff": clustering_coeff,
-#             "transitivity": transitivity,
-#             "assortativity": assortativity,
-#             "num_cliques": num_cliques,
-#             "num_triangles": num_triangles,
-#             "num_squares": num_squares,
-#             "largest_component_size": largest_component_size,
-#             "avg_degree": avg_degree,
-#             "avg_betweenness_centrality": avg_betweenness_centrality,
-#             "spectral_radius": spectral_radius,
-#             "algebraic_connectivity": algebraic_connectivity,
-#             "graph_energy": graph_energy,
-#             "small_world_coefficient": small_world_coefficient
-#         })
-#     return properties
+        properties.append({
+            "num_nodes": num_nodes,
+            "num_edges": num_edges,
+            "density": density,
+            "avg_path_len": avg_path_len,
+            "diameter": diameter,
+            "radius": radius,
+            "clustering_coeff": clustering_coeff,
+            "transitivity": transitivity,
+            "assortativity": assortativity,
+            "num_cliques": num_cliques,
+            "num_triangles": num_triangles,
+            "num_squares": num_squares,
+            "largest_component_size": largest_component_size,
+            "avg_degree": avg_degree,
+            "avg_betweenness_centrality": avg_betweenness_centrality,
+            "spectral_radius": spectral_radius,
+            "algebraic_connectivity": algebraic_connectivity,
+            "graph_energy": graph_energy,
+            "small_world_coefficient": small_world_coefficient
+        })
+    return properties
 
-# train_idx_list = gnn.train_idx.tolist()
-# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-# train_properties_long = compute_graph_properties(selected_dataset)
-# test_idx_list = gnn.test_idx.tolist()
-# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-# test_properties_long = compute_graph_properties(selected_dataset)
+train_idx_list = gnn.train_idx.tolist()
+selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+train_properties_long = compute_graph_properties(selected_dataset)
+test_idx_list = gnn.test_idx.tolist()
+selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+test_properties_long = compute_graph_properties(selected_dataset)
 
-# #save the properties in a file
-# with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
-#     pkl.dump(train_properties_long, f)
+#save the properties in a file
+with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
+    pkl.dump(train_properties_long, f)
 
-# with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
-#     pkl.dump(test_properties_long, f)
+with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
+    pkl.dump(test_properties_long, f)
 
 
 
@@ -684,15 +684,19 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
 
 # %%
 #print the names of the properties
-print(train_properties_long[0].keys())
+# print(train_properties_long[0].keys())
 
 #print the first element of the properties
+# print(train_properties_long[0])
+
+#copare train_properties and train_properties_long
+print(train_properties[0])
 print(train_properties_long[0])
 
 # %%
 property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient']
-train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
-test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
+train_y_long = torch.tensor([[prop[name] for name in property_names_long] for prop in train_properties_long], dtype=torch.float32)
+test_y_long = torch.tensor([[prop[name] for name in property_names_long] for prop in test_properties_long], dtype=torch.float32)
 #create a dictionary where we will store the results for each embeddings, each property
 results = {}
 
@@ -802,7 +806,7 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/FC_matrice_GCN_test_R2_plot_limited_cv_long.png', dpi=300, bbox_inches='tight')
+plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv_long.png', dpi=300, bbox_inches='tight')
 
 # %%
 plt.figure(figsize=(12, 8))
@@ -829,7 +833,7 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/FC_matrice_GCN_train_R2_plot_limited_cv_long.png', dpi=300, bbox_inches='tight')
+plt.savefig('results/'+DATASET+"_"+MODEL+'_train_R2_plot_limited_cv_long.png', dpi=300, bbox_inches='tight')
     
 
 
