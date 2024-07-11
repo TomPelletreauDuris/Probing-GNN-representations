@@ -1,15 +1,6 @@
 # %% [markdown]
 # Here we'll first be loading the FC matrices and explore their structure
 
-# %%
-#test if I have access to a GPU with torch
-import torch
-print(torch.cuda.is_available())
-print(torch.cuda.current_device())
-print(torch.cuda.device(0))
-print(torch.cuda.device_count())
-print(torch.cuda.get_device_name(0))
-
 
 # %%
 #using read_dataset from Datasets/FC/create_dataset.py to read the dataset
