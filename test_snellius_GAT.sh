@@ -10,6 +10,7 @@
 module purge
 module load 2023
 module load Anaconda3/2023.07-2
+module load CUDA/12.1.1
 
 # This loads the anaconda virtual environment with our packages
 # source $HOME/.bashrc

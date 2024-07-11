@@ -952,15 +952,15 @@ class GAT_framework:
             def __init__(self, num_features, num_classes):
                 super().__init__()
                 self.conv_layers = torch.nn.ModuleList([
-                    GATConv(num_features if i == 0 else 256, 256, heads=8)  # Add heads parameter
+                    GATConv(num_features if i == 0 else 128*4, 128, heads=4, concat=True)  # Add heads parameter
                     for i in range(5)
                 ])
                 self.batch_norms = torch.nn.ModuleList([
-                    BatchNorm(256) for _ in range(4)
+                    BatchNorm(128*4) for _ in range(5)
                 ])
-                self.lin1 = Linear(256, 256)
-                self.lin2 = Linear(256, num_classes)
-                self.bn1 = BatchNorm(256)
+                self.lin1 = Linear(128*4, 128)
+                self.lin2 = Linear(128, num_classes)
+                self.bn1 = BatchNorm(128)
                 self.bn2 = BatchNorm(num_classes)
 
             def forward(self, x, edge_index, batch=None, return_intermediate=False):
