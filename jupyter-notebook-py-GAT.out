@@ -18,3 +18,83 @@ GPU available? False
 Python 3.11.4
 /home/tpelletreaudur/.local/lib/python3.11/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GAT.py:158: FutureWarning: The input object of type 'Tensor' is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type 'Tensor', or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  train_x = np.array([feat[0] for feat in train_features])
+Data(x=[116, 116], edge_index=[2, 1016], edge_attr=[1016, 1], y=[1])
+['x', 'y', 'edge_index', 'edge_attr']
+ValuesView({'x': tensor([[ 0.0000,  0.4543,  0.2477,  ...,  0.1753,  0.2247, -0.1751],
+        [ 0.4543,  0.0000, -0.2204,  ..., -0.1947, -0.2258, -0.1434],
+        [ 0.2477, -0.2204,  0.0000,  ..., -0.0521, -0.0804, -0.2025],
+        ...,
+        [ 0.1753, -0.1947, -0.0521,  ...,  0.0000,  0.6875, -0.1364],
+        [ 0.2247, -0.2258, -0.0804,  ...,  0.6875,  0.0000,  0.0929],
+        [-0.1751, -0.1434, -0.2025,  ..., -0.1364,  0.0929,  0.0000]]), 'edge_index': tensor([[  0,   0,   0,  ..., 114, 115, 115],
+        [  1,  10,  12,  ..., 113,  94, 109]]), 'edge_attr': tensor([[0.4543],
+        [0.5913],
+        [0.4224],
+        ...,
+        [0.6875],
+        [0.4846],
+        [0.5437]]), 'y': tensor([0])})
+Net(
+  (conv_layers): ModuleList(
+    (0): GATConv(116, 128, heads=4)
+    (1-4): 4 x GATConv(512, 128, heads=4)
+  )
+  (batch_norms): ModuleList(
+    (0-4): 5 x BatchNorm(512)
+  )
+  (lin1): Linear(512, 128, bias=True)
+  (lin2): Linear(128, 2, bias=True)
+  (bn1): BatchNorm(128)
+  (bn2): BatchNorm(2)
+)
+tensor([217, 137, 426,  ..., 643, 205, 434])
+Epoch: 020, Loss: 0.125, Test Loss: 0.754, Train Acc: 0.999 Test Acc: 0.582
+Epoch: 040, Loss: 0.100, Test Loss: 0.747, Train Acc: 1.000 Test Acc: 0.582
+Epoch: 060, Loss: 0.089, Test Loss: 0.750, Train Acc: 0.998 Test Acc: 0.564
+Epoch: 080, Loss: 0.075, Test Loss: 0.797, Train Acc: 1.000 Test Acc: 0.527
+Epoch: 100, Loss: 0.064, Test Loss: 0.798, Train Acc: 1.000 Test Acc: 0.600
+Epoch: 120, Loss: 0.116, Test Loss: 0.817, Train Acc: 0.995 Test Acc: 0.527
+Epoch: 140, Loss: 0.050, Test Loss: 0.803, Train Acc: 1.000 Test Acc: 0.618
+Epoch: 160, Loss: 0.042, Test Loss: 0.842, Train Acc: 1.000 Test Acc: 0.600
+Epoch: 180, Loss: 0.038, Test Loss: 0.843, Train Acc: 1.000 Test Acc: 0.527
+Epoch: 200, Loss: 0.052, Test Loss: 1.109, Train Acc: 0.999 Test Acc: 0.545
+Epoch: 220, Loss: 0.163, Test Loss: 1.391, Train Acc: 0.886 Test Acc: 0.545
+Epoch: 240, Loss: 0.036, Test Loss: 1.029, Train Acc: 1.000 Test Acc: 0.545
+Epoch: 260, Loss: 0.026, Test Loss: 0.964, Train Acc: 1.000 Test Acc: 0.600
+Epoch: 280, Loss: 0.028, Test Loss: 1.046, Train Acc: 1.000 Test Acc: 0.564
+Epoch: 300, Loss: 0.028, Test Loss: 1.246, Train Acc: 1.000 Test Acc: 0.509
+Epoch: 320, Loss: 0.033, Test Loss: 1.282, Train Acc: 1.000 Test Acc: 0.491
+Epoch: 340, Loss: 0.027, Test Loss: 1.215, Train Acc: 1.000 Test Acc: 0.545
+Epoch: 360, Loss: 0.084, Test Loss: 1.538, Train Acc: 0.960 Test Acc: 0.527
+Epoch: 380, Loss: 0.023, Test Loss: 1.284, Train Acc: 1.000 Test Acc: 0.600
+Epoch: 400, Loss: 0.015, Test Loss: 1.196, Train Acc: 1.000 Test Acc: 0.618
+Epoch: 420, Loss: 0.016, Test Loss: 1.230, Train Acc: 1.000 Test Acc: 0.655
+Epoch: 440, Loss: 0.039, Test Loss: 1.509, Train Acc: 0.999 Test Acc: 0.564
+Epoch: 460, Loss: 0.013, Test Loss: 1.426, Train Acc: 1.000 Test Acc: 0.564
+Epoch: 480, Loss: 0.014, Test Loss: 1.472, Train Acc: 0.999 Test Acc: 0.564
+Epoch: 500, Loss: 0.016, Test Loss: 1.427, Train Acc: 0.999 Test Acc: 0.545
+Model saved in: models/FC_GATserver.pt
+Test Loss: 1.427, Train Acc: 0.999 Test Acc: 0.545
+29696
+1044
+Traceback (most recent call last):
+  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GAT.py", line 158, in <module>
+    train_x = np.array([feat[0] for feat in train_features])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (40,) + inhomogeneous part.
+
+JOB STATISTICS
+==============
+Job ID: 6951685
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 20:27:57
+CPU Efficiency: 98.20% of 20:50:24 core-walltime
+Job Wall-clock time: 01:09:28
+Memory Utilized: 5.49 GB
+Memory Efficiency: 4.58% of 120.00 GB
