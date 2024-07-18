@@ -8,10 +8,10 @@
 
 module purge
 module load 2023
-module load Anaconda3/2023.07-2
+# module load Anaconda3/2023.07-2
 module load JupyterHub/4.0.2-GCCcore-12.3.0
 
-source activate GNN_gpu
+# source activate GNN_gpu
 
 # Choose random port and print instructions to connect
 PORT=`shuf -i 5000-5999 -n 1`
