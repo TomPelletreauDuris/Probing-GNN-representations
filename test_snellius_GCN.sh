@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=18
 
 module purge
-module load 2023
+module load 2022
 # module load Anaconda3/2023.07-2
 # module load CUDA/12.1.1
 # module load cuDNN/8.9.2.26-CUDA-12.1.1
@@ -30,7 +30,7 @@ nvidia-smi --query-gpu=driver_version --format=csv,noheader
 python --version
 
 # Run the actual experiment. 
-python FC_probing_GCN.py
+# python FC_probing_GCN.py
 # python <<EOF
 # import torch
 # print(torch.cuda.is_available())
