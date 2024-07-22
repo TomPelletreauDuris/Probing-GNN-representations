@@ -2,7 +2,7 @@
 
 #SBATCH -t 10:00:00
 #SBATCH -N 1
-#SBATCH -p gpu_a100
+#SBATCH -p gpu
 #SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-job.out
 
