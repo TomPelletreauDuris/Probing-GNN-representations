@@ -8,9 +8,9 @@
 
 module purge
 module load 2023
-# module load Anaconda3/2023.07-2
-module load JupyterHub/4.0.2-GCCcore-12.3.0
+#module load Anaconda3/2023.07-2
 module load IPython/8.14.0-GCCcore-12.3.0
+module load JupyterHub/4.0.2-GCCcore-12.3.0
 
 # source activate GNN_gpu
 
