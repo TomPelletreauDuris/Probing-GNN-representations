@@ -196,3 +196,47 @@ http://localhost:5205
 [W 16:37:07.252 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
 [I 16:39:07.252 NotebookApp] Saving file at /FC_probing_GAT.ipynb
 [W 16:39:07.254 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 16:41:07.262 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 16:41:07.268 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 16:54:07.541 NotebookApp] Starting buffering for 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c:d474b6fa32e2407682738d45e6b74b68
+[I 16:54:07.543 NotebookApp] Starting buffering for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:42bbd132e8a842ec864eb222415117ce
+[I 16:54:07.543 NotebookApp] Starting buffering for bf2e0f77-aaec-44b7-b84b-ead0bcf642e0:701cacf66a51432aa97024416a6d36fe
+[W 17:44:33.620 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:44:35.960 NotebookApp] Discarding 45 buffered messages for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:42bbd132e8a842ec864eb222415117ce
+[W 17:44:51.055 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:46:39.468 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:46:39.469 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 20:46:28.006 NotebookApp] Starting buffering for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:fc92939f765c475286005d49f9e870dc
+[I 20:46:28.006 NotebookApp] Starting buffering for bf2e0f77-aaec-44b7-b84b-ead0bcf642e0:1140da87df7043268f0d924138e3af69
+slurmstepd: error: *** JOB 7056166 ON gcn34 CANCELLED AT 2024-07-18T22:47:44 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7056166
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 7-12:00:36 core-walltime
+Job Wall-clock time: 10:00:02
+Memory Utilized: 7.13 GB
+Memory Efficiency: 5.94% of 120.00 GB
+slurmstepd: error: *** JOB 7057512 ON gcn38 CANCELLED AT 2024-07-18T23:52:20 DUE TO TIME LIMIT ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7057512/.ns: Invalid argument
+slurmstepd: error: container_g_join(7057512): Invalid argument
+
+JOB STATISTICS
+==============
+Job ID: 7057512
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 7-12:01:30 core-walltime
+Job Wall-clock time: 10:00:05
+Memory Utilized: 184.58 MB
+Memory Efficiency: 0.15% of 120.00 GB
