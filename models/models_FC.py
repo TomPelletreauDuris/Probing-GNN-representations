@@ -843,7 +843,7 @@ class GIN_framework3:
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
-        self.num_epochs = 150
+        self.num_epochs = 250
         self.train_loader = None
         self.test_loader = None
 
