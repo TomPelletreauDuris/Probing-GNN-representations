@@ -14,229 +14,120 @@ already available
 on the system, please use 'module avail' or 'module spider' to search for it.
 ============================================================================================== 
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn38.local.snellius.surf.nl -L 5205:localhost:5205
+ssh -N -J tpelletreaudur@int5-pub.snellius.surf.nl tpelletreaudur@gcn28.local.snellius.surf.nl -L 5589:localhost:5589
 
 After connection is established in your local browser go to the address:
-http://localhost:5205
-[I 13:52:25.582 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 13:52:25.585 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[W 13:52:26.807 NotebookApp] Loading JupyterLab as a classic notebook (v6) extension.
-[W 2024-07-18 13:52:26.812 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
-[W 2024-07-18 13:52:26.812 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
-[W 2024-07-18 13:52:26.812 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
-[I 2024-07-18 13:52:26.816 LabApp] JupyterLab extension loaded from /sw/arch/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/lib/python3.11/site-packages/jupyterlab
-[I 2024-07-18 13:52:26.816 LabApp] JupyterLab application directory is /gpfs/admin/_hpc/sw/arch/INTEL-AVX512/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/share/jupyter/lab
-[I 13:52:29.773 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 13:52:29.773 NotebookApp] Jupyter Notebook 6.5.4 is running at:
-[I 13:52:29.773 NotebookApp] http://localhost:5205/?token=eea4784c1b35093fef22cad65e22f4b5985212735d647c41
-[I 13:52:29.773 NotebookApp]  or http://127.0.0.1:5205/?token=eea4784c1b35093fef22cad65e22f4b5985212735d647c41
-[I 13:52:29.773 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 13:52:29.857 NotebookApp] 
+http://localhost:5589
+[W 16:51:49.634 NotebookApp] Loading JupyterLab as a classic notebook (v6) extension.
+[W 2024-07-22 16:51:49.636 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-22 16:51:49.636 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-22 16:51:49.636 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-07-22 16:51:49.639 LabApp] JupyterLab extension loaded from /sw/arch/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/lib/python3.11/site-packages/jupyterlab
+[I 2024-07-22 16:51:49.639 LabApp] JupyterLab application directory is /gpfs/admin/_hpc/sw/arch/INTEL-AVX512/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/share/jupyter/lab
+[I 16:51:52.674 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 16:51:52.674 NotebookApp] Jupyter Notebook 6.5.4 is running at:
+[I 16:51:52.674 NotebookApp] http://localhost:5589/?token=f9c01a076461103b4e024f461b02b22de13309d87ebaf413
+[I 16:51:52.674 NotebookApp]  or http://127.0.0.1:5589/?token=f9c01a076461103b4e024f461b02b22de13309d87ebaf413
+[I 16:51:52.674 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:51:52.680 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-113404-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-3207898-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5205/?token=eea4784c1b35093fef22cad65e22f4b5985212735d647c41
-     or http://127.0.0.1:5205/?token=eea4784c1b35093fef22cad65e22f4b5985212735d647c41
-[W 13:52:40.903 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 13:52:41.660 NotebookApp] Discarding 8 buffered messages for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:efc73e1f73f2426ba32589205272dbcd
-[W 13:52:41.700 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 13:52:42.499 NotebookApp] Discarding 35 buffered messages for 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c:082e18d676df4542882752fd25405943
-[I 13:54:42.625 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 13:54:42.626 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 13:56:42.825 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 13:56:42.826 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 13:56:42.991 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 13:56:42.991 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 14:29:05.684 NotebookApp] Starting buffering for 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c:009c25681c654008ad9446079463c980
-[W 14:29:06.468 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:29:19.002 NotebookApp] Starting buffering for 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c:d474b6fa32e2407682738d45e6b74b68
-[I 14:29:21.655 NotebookApp] Kernel restarted: 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c
-[I 14:29:21.682 NotebookApp] Restoring connection for 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c:d474b6fa32e2407682738d45e6b74b68
+        http://localhost:5589/?token=f9c01a076461103b4e024f461b02b22de13309d87ebaf413
+     or http://127.0.0.1:5589/?token=f9c01a076461103b4e024f461b02b22de13309d87ebaf413
+[I 17:21:03.242 NotebookApp] 302 GET /?token=f9c01a076461103b4e024f461b02b22de13309d87ebaf413 (::1) 0.500000ms
+0.10s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[W 17:21:24.395 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:21:25.321 NotebookApp] Kernel started: 9264b135-e0e1-4012-b4dc-22cbec2e8614, name: python3
 0.00s - Debugger warning: It seems that frozen modules are being used, which may
 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
 0.00s - to python to disable frozen modules.
 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-[I 14:29:25.404 NotebookApp] Replaying 3 buffered messages
-[I 14:31:07.080 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:31:07.081 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:33:07.660 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:33:07.660 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:35:07.807 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:35:07.807 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:37:07.871 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:37:07.871 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:39:34.208 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:39:34.208 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:41:34.290 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:41:34.290 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:43:33.919 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:43:33.919 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:45:33.732 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:45:33.733 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:47:33.692 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:47:33.693 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:49:33.702 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:49:33.703 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:51:33.680 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:51:33.680 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:53:33.728 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:53:33.729 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:55:33.722 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:55:33.723 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:57:07.125 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:57:07.125 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 14:59:33.722 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 14:59:33.722 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:01:07.709 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:01:07.709 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:03:33.694 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:03:33.695 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:05:33.720 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:05:33.721 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:07:33.711 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:07:33.711 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:09:33.715 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:09:33.715 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:11:33.720 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:11:33.720 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:13:33.718 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:13:33.719 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:15:33.716 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:15:33.716 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:17:33.725 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:17:33.725 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:19:33.780 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:19:33.781 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:21:33.729 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:21:33.729 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:23:33.726 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:23:33.727 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:25:33.746 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:25:33.746 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:27:07.177 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:27:07.178 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:29:07.144 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:29:07.145 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:31:07.147 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:31:07.147 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:33:07.191 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:33:07.191 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:35:07.159 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:35:07.159 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:37:07.172 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:37:07.172 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:39:07.164 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:39:07.164 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:41:07.170 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:41:07.170 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:43:07.739 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:43:07.740 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:45:33.757 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:45:33.757 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:47:33.764 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:47:33.764 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:49:33.811 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:49:33.812 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:51:33.881 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:51:33.882 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:53:33.764 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:53:33.765 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:55:33.784 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:55:33.785 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:57:33.834 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:57:33.835 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 15:59:33.794 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 15:59:33.794 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:01:33.787 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:01:33.788 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:03:33.799 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:03:33.801 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:05:33.810 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:05:33.811 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:07:33.794 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:07:33.797 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:09:07.206 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:09:07.212 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:11:07.233 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:11:07.235 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:13:07.191 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:13:07.191 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:15:07.787 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:15:07.788 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[W 16:15:13.673 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
-[I 16:15:15.200 NotebookApp] Kernel started: bf2e0f77-aaec-44b7-b84b-ead0bcf642e0, name: python3
-0.02s - Debugger warning: It seems that frozen modules are being used, which may
+[I 17:23:25.280 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:23:25.286 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:25:25.277 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:25:25.277 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[W 17:26:06.392 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 17:26:06.879 NotebookApp] Kernel started: cfe5d82c-17e9-49ea-b790-d4b8840ddf01, name: python3
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
 0.00s - to python to disable frozen modules.
 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-[I 16:17:07.789 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:17:07.789 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:17:16.216 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[W 16:17:16.217 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
-[I 16:19:33.807 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:19:33.816 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:21:33.806 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:21:33.807 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:23:33.815 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:23:33.816 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:25:33.803 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:25:33.804 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:27:33.832 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:27:33.833 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:29:33.806 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:29:33.808 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:31:33.849 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:31:33.850 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:33:30.543 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:33:30.544 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:35:07.235 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:35:07.236 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:37:07.251 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:37:07.252 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:39:07.252 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:39:07.254 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:41:07.262 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 16:41:07.268 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
-[I 16:54:07.541 NotebookApp] Starting buffering for 92b3e0ca-7752-4cc5-a6d3-a35f8e6cd64c:d474b6fa32e2407682738d45e6b74b68
-[I 16:54:07.543 NotebookApp] Starting buffering for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:42bbd132e8a842ec864eb222415117ce
-[I 16:54:07.543 NotebookApp] Starting buffering for bf2e0f77-aaec-44b7-b84b-ead0bcf642e0:701cacf66a51432aa97024416a6d36fe
-[W 17:44:33.620 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 17:44:35.960 NotebookApp] Discarding 45 buffered messages for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:42bbd132e8a842ec864eb222415117ce
-[W 17:44:51.055 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
-[I 17:46:39.468 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 17:46:39.469 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 20:46:28.006 NotebookApp] Starting buffering for 3e07d3f4-45f4-44ff-b283-817c3a6215cb:fc92939f765c475286005d49f9e870dc
-[I 20:46:28.006 NotebookApp] Starting buffering for bf2e0f77-aaec-44b7-b84b-ead0bcf642e0:1140da87df7043268f0d924138e3af69
-slurmstepd: error: *** JOB 7056166 ON gcn34 CANCELLED AT 2024-07-18T22:47:44 DUE TO TIME LIMIT ***
+[I 17:27:25.266 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:27:25.267 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:28:06.992 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 17:28:06.993 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 17:29:15.080 NotebookApp] Kernel interrupted: cfe5d82c-17e9-49ea-b790-d4b8840ddf01
+[I 17:29:25.333 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:29:25.334 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:30:06.934 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 17:30:06.934 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 17:31:27.497 NotebookApp] Kernel interrupted: cfe5d82c-17e9-49ea-b790-d4b8840ddf01
+[I 17:31:57.407 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:31:57.408 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:32:06.938 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 17:32:06.939 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 17:33:57.386 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:33:57.387 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:34:06.937 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 17:34:06.937 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 17:35:57.428 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:35:57.428 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:36:06.958 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 17:36:06.958 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[W 17:36:41.311 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:36:42.657 NotebookApp] Kernel started: a1e4a3a3-a874-4364-b151-49d8d24f45c1, name: python3
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[I 17:37:57.405 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:37:57.405 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:38:06.931 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 17:38:06.931 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 17:38:43.696 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:38:43.697 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:39:57.409 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:39:57.409 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:55:25.368 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 17:55:25.369 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 17:56:04.503 NotebookApp] Kernel interrupted: 9264b135-e0e1-4012-b4dc-22cbec2e8614
+slurmstepd: error: *** JOB 7087886 ON gcn22 CANCELLED AT 2024-07-22T17:56:56 ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7087886/.ns: Invalid argument
+slurmstepd: error: container_g_join(7087886): Invalid argument
 
 JOB STATISTICS
 ==============
-Job ID: 7056166
+Job ID: 7087886
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
+State: CANCELLED (exit code 0)
 Nodes: 1
 Cores per node: 18
 CPU Utilized: 00:00:01
-CPU Efficiency: 0.00% of 7-12:00:36 core-walltime
-Job Wall-clock time: 10:00:02
-Memory Utilized: 7.13 GB
-Memory Efficiency: 5.94% of 120.00 GB
-slurmstepd: error: *** JOB 7057512 ON gcn38 CANCELLED AT 2024-07-18T23:52:20 DUE TO TIME LIMIT ***
-slurmstepd: error: container_p_join: setns failed for /slurm/7057512/.ns: Invalid argument
-slurmstepd: error: container_g_join(7057512): Invalid argument
+CPU Efficiency: 0.00% of 1-03:02:42 core-walltime
+Job Wall-clock time: 01:30:09
+Memory Utilized: 989.88 MB
+Memory Efficiency: 0.81% of 120.00 GB
+slurmstepd: error: *** JOB 7088451 ON gcn28 CANCELLED AT 2024-07-22T17:57:06 ***
+[I 17:57:06.487 NotebookApp] Starting buffering for a1e4a3a3-a874-4364-b151-49d8d24f45c1:ebda0f29860548188b06264e2e6d8059
+[I 17:57:06.544 NotebookApp] Starting buffering for cfe5d82c-17e9-49ea-b790-d4b8840ddf01:ce21b767294b4e628d47ad34380d597f
+[I 17:57:06.545 NotebookApp] Starting buffering for 9264b135-e0e1-4012-b4dc-22cbec2e8614:1e229b128f734f449b1691fb75e733af
 
 JOB STATISTICS
 ==============
-Job ID: 7057512
+Job ID: 7088451
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
+State: CANCELLED (exit code 0)
 Nodes: 1
 Cores per node: 18
 CPU Utilized: 00:00:01
-CPU Efficiency: 0.00% of 7-12:01:30 core-walltime
-Job Wall-clock time: 10:00:05
-Memory Utilized: 184.58 MB
-Memory Efficiency: 0.15% of 120.00 GB
+CPU Efficiency: 0.00% of 19:40:48 core-walltime
+Job Wall-clock time: 01:05:36
+Memory Utilized: 4.21 GB
+Memory Efficiency: 3.51% of 120.00 GB
