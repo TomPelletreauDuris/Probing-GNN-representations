@@ -784,7 +784,6 @@ class GIN_framework2:
 
 
         return train_features, test_features
-    
 class GIN_framework3:
     def __init__(self, dataset, device=None, num_classes=None):
         if device is None:
@@ -845,15 +844,17 @@ class GIN_framework3:
 
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
         self.num_epochs = 350
+        self.train_loader = None
+        self.test_loader = None
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
         return max_label + 1
 
-    def train(self, train_loader):
+    def train(self, loader):
         self.model.train()
         total_loss = 0
-        for data in train_loader:
+        for data in loader:
             data = data.to(self.device)
             output = self.model(data.x, data.edge_index, data.batch)
             loss = F.nll_loss(output, data.y.view(-1))
@@ -862,7 +863,7 @@ class GIN_framework3:
             self.optimizer.step()
             total_loss += float(loss) * data.num_graphs
         self.scheduler.step()
-        return total_loss / len(train_loader.dataset)
+        return total_loss / len(loader.dataset)
 
     @torch.no_grad()
     def test(self, loader):
@@ -882,19 +883,19 @@ class GIN_framework3:
         for fold, (train_idx, test_idx) in enumerate(self.kf.split(self.dataset)):
             train_data = [self.dataset[i] for i in train_idx]
             test_data = [self.dataset[i] for i in test_idx]
-            train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
-            test_loader = DataLoader(test_data, batch_size=32)
+            self.train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
+            self.test_loader = DataLoader(test_data, batch_size=32)
 
             self.model.apply(self._reset_parameters)  # Reset model parameters for each fold
 
             for epoch in range(1, self.num_epochs + 1):
-                train_loss = self.train(train_loader)
-                train_acc, train_loss = self.test(train_loader)
-                test_acc, test_loss = self.test(test_loader)
+                train_loss = self.train(self.train_loader)
+                train_acc, train_loss = self.test(self.train_loader)
+                test_acc, test_loss = self.test(self.test_loader)
                 if epoch % 50 == 0:
                     print(f'Fold: {fold + 1}, Epoch: {epoch}, Loss: {train_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
             
-            test_acc, test_loss = self.test(test_loader)
+            test_acc, test_loss = self.test(self.test_loader)
             results.append(test_acc)
             print(f'Fold {fold + 1}, Test Accuracy: {test_acc:.3f}')
 
@@ -905,6 +906,22 @@ class GIN_framework3:
         if isinstance(m, (torch.nn.Linear, torch.nn.BatchNorm1d)):
             m.reset_parameters()
 
+    def iterate(self):
+        idx = torch.arange(len(self.dataset))
+        train_idx, test_idx = train_test_split(idx, train_size=0.8, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+        
+        train_data = [self.dataset[i] for i in train_idx]
+        test_data = [self.dataset[i] for i in test_idx]
+        self.train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
+        self.test_loader = DataLoader(test_data, batch_size=32)
+
+        for epoch in range(1, self.num_epochs + 1):
+            train_loss = self.train(self.train_loader)
+            train_acc, train_loss = self.test(self.train_loader)
+            test_acc, test_loss = self.test(self.test_loader)
+            if epoch % 50 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
+
     def save_model(self, path):
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
@@ -913,29 +930,43 @@ class GIN_framework3:
         self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
-    def evaluate(self):
-        train_acc, train_loss = self.test(self.train_loader)
-        test_acc, test_loss = self.test(self.test_loader)
-        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+    def evaluate(self, loader=None):
+        if loader is None:
+            if self.test_loader is None:
+                raise ValueError("No test loader provided and no default test loader available.")
+            loader = self.test_loader
+        acc, loss = self.test(loader)
+        print(f'Accuracy: {acc:.3f}, Loss: {loss:.3f}')
 
     @torch.no_grad()
-    def evaluate_with_features2(self):
+    def evaluate_with_features2(self, loader=None):
+        if loader is None:
+            if self.test_loader is None:
+                raise ValueError("No test loader provided and no default test loader available.")
+            loader = self.test_loader
+
         self.model.eval()
-        train_features = []
-        test_features = []
+        features = []
 
-        for data in self.train_loader:
+        for data in loader:
             data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy(), f[9].cpu().numpy()) for f in zip(*features)])
+            out, features_batch = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy(), f[9].cpu().numpy()) for f in zip(*features_batch)])
 
-        for data in self.test_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy(), f[9].cpu().numpy()) for f in zip(*features)])
+        return features
 
+# Usage example
+# dataset = load_your_dataset_here()
+# gnn3 = GIN_framework3(dataset)
+# gnn3.cross_validate()
+# gnn3.iterate()
 
-        return train_features, test_features
+# Evaluate using the default test_loader from the last iteration or cross-validation
+# gnn3.evaluate()
+
+# Or evaluate with a specific loader
+# test_loader = DataLoader(test_dataset, batch_size=32)  # Define your test dataset loader
+# gnn3.evaluate(test_loader)
 
 
 import torch
