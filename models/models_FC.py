@@ -572,7 +572,7 @@ class GIN_framework:
         # self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256)
@@ -609,7 +609,275 @@ class GIN_framework:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 501):
+        for epoch in range(1, 151):
+            loss = self.train()
+            train_acc, train_loss = self.test(self.train_loader)
+            test_acc, test_loss = self.test(self.test_loader)
+            if epoch % 20 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                      f'Test Acc: {test_acc:.3f}')
+
+    def save_model(self, path):
+        torch.save(self.model.state_dict(), path)
+        print("Model saved in:", path)
+
+    def load_model(self, path):
+        self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+
+    def evaluate(self):
+        train_acc, train_loss = self.test(self.train_loader)
+        test_acc, test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    @torch.no_grad()
+    def evaluate_with_features2(self):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        for data in self.train_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+
+        for data in self.test_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+
+
+        return train_features, test_features
+    
+class GIN_framework_bis:
+    def __init__(self, dataset, device=None, num_classes=None):
+        if device is None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = device
+
+        self.dataset = dataset
+        if num_classes is None:
+            num_classes = self._infer_num_classes()
+
+        class Net(torch.nn.Module):
+            def __init__(self, num_features, num_classes):
+                super(Net, self).__init__()
+                self.gin_layers = torch.nn.ModuleList([
+                    GINConv(torch.nn.Sequential(
+                        torch.nn.Linear(num_features if i == 0 else 128, 128),  # Ensure this matches 'num_features'
+                        torch.nn.ReLU(),
+                        torch.nn.Linear(128, 128),
+                        BatchNorm(128)
+                    )) for i in range(5)
+                ])
+                self.lin1 = Linear(128, 128)
+                self.lin2 = Linear(128, num_classes)
+                self.bn1 = BatchNorm(128)
+            
+            def forward(self, x, edge_index, batch=None, return_intermediate=False):
+                intermediates = []
+                for gin_layer in self.gin_layers:
+                    x = gin_layer(x, edge_index)
+                    x = F.relu(x)
+                    if return_intermediate:
+                        intermediates.append(x)
+                x = global_max_pool(x, batch)
+                if return_intermediate:
+                    intermediates.append(x)
+                x = self.bn1(self.lin1(x))
+                if return_intermediate:
+                    intermediates.append(x)
+                x = F.relu(x)
+                if return_intermediate:
+                    intermediates.append(x)
+                x = self.lin2(x)
+                if return_intermediate:
+                    intermediates.append(x)
+                if return_intermediate:
+                    return F.log_softmax(x, dim=-1), intermediates
+                else:
+                    return F.log_softmax(x, dim=-1)
+
+
+        self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
+
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
+        # self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
+
+        idx = torch.arange(len(self.dataset))
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256)
+
+    def _infer_num_classes(self):
+        max_label = max(data.y.max().item() for data in self.dataset)
+        return max_label + 1
+
+    def train(self):
+        self.model.train()
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y.view(-1))
+            self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        # self.scheduler.step()
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self, loader):
+        self.model.eval()
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
+
+    def iterate(self):
+        for epoch in range(1, 151):
+            loss = self.train()
+            train_acc, train_loss = self.test(self.train_loader)
+            test_acc, test_loss = self.test(self.test_loader)
+            if epoch % 20 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                      f'Test Acc: {test_acc:.3f}')
+
+    def save_model(self, path):
+        torch.save(self.model.state_dict(), path)
+        print("Model saved in:", path)
+
+    def load_model(self, path):
+        self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+
+    def evaluate(self):
+        train_acc, train_loss = self.test(self.train_loader)
+        test_acc, test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    @torch.no_grad()
+    def evaluate_with_features2(self):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        for data in self.train_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+
+        for data in self.test_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+
+
+        return train_features, test_features
+    
+class GIN_framework_tri:
+    def __init__(self, dataset, device=None, num_classes=None):
+        if device is None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = device
+
+        self.dataset = dataset
+        if num_classes is None:
+            num_classes = self._infer_num_classes()
+
+        class Net(torch.nn.Module):
+            def __init__(self, num_features, num_classes):
+                super(Net, self).__init__()
+                self.gin_layers = torch.nn.ModuleList([
+                    GINConv(torch.nn.Sequential(
+                        torch.nn.Linear(num_features if i == 0 else 128, 128),  # Ensure this matches 'num_features'
+                        torch.nn.ReLU(),
+                        torch.nn.Linear(128, 128),
+                        BatchNorm(128)
+                    )) for i in range(5)
+                ])
+                self.lin1 = Linear(128, 128)
+                self.lin2 = Linear(128, num_classes)
+                self.bn1 = BatchNorm(128)
+            
+            def forward(self, x, edge_index, batch=None, return_intermediate=False):
+                intermediates = []
+                for gin_layer in self.gin_layers:
+                    x = gin_layer(x, edge_index)
+                    x = F.relu(x)
+                    if return_intermediate:
+                        intermediates.append(x)
+                x = global_max_pool(x, batch)
+                if return_intermediate:
+                    intermediates.append(x)
+                x = self.bn1(self.lin1(x))
+                if return_intermediate:
+                    intermediates.append(x)
+                x = F.relu(x)
+                if return_intermediate:
+                    intermediates.append(x)
+                x = self.lin2(x)
+                if return_intermediate:
+                    intermediates.append(x)
+                if return_intermediate:
+                    return F.log_softmax(x, dim=-1), intermediates
+                else:
+                    return F.log_softmax(x, dim=-1)
+
+
+        self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
+
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
+        self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
+
+        idx = torch.arange(len(self.dataset))
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256)
+
+    def _infer_num_classes(self):
+        max_label = max(data.y.max().item() for data in self.dataset)
+        return max_label + 1
+
+    def train(self):
+        self.model.train()
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y.view(-1))
+            self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        # self.scheduler.step()
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self, loader):
+        self.model.eval()
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
+
+    def iterate(self):
+        for epoch in range(1, 151):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
@@ -684,7 +952,7 @@ class GIN_framework2:
                     x = F.relu(x)
                     if return_intermediate:
                         intermediates.append(x)
-                x = global_max_pool(x, batch)  # Experimenting with max pooling
+                x = global_mean_pool(x, batch)  # Experimenting with max pooling
                 if return_intermediate:
                     intermediates.append(x)
                 x = self.bn1(self.lin1(x))
@@ -745,7 +1013,7 @@ class GIN_framework2:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 501):
+        for epoch in range(1, 151):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
@@ -843,7 +1111,7 @@ class GIN_framework3:
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
-        self.num_epochs = 250
+        self.num_epochs = 150
         self.train_loader = None
         self.test_loader = None
 
@@ -892,7 +1160,7 @@ class GIN_framework3:
                 train_loss = self.train(self.train_loader)
                 train_acc, train_loss = self.test(self.train_loader)
                 test_acc, test_loss = self.test(self.test_loader)
-                if epoch % 50 == 0:
+                if epoch % 20 == 0:
                     print(f'Fold: {fold + 1}, Epoch: {epoch}, Loss: {train_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
             
             test_acc, test_loss = self.test(self.test_loader)
@@ -908,7 +1176,7 @@ class GIN_framework3:
 
     def iterate(self):
         idx = torch.arange(len(self.dataset))
-        train_idx, test_idx = train_test_split(idx, train_size=0.8, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+        train_idx, test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
         
         train_data = [self.dataset[i] for i in train_idx]
         test_data = [self.dataset[i] for i in test_idx]
@@ -919,7 +1187,7 @@ class GIN_framework3:
             train_loss = self.train(self.train_loader)
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 50 == 0:
+            if epoch % 20 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
 
     def save_model(self, path):
@@ -1211,7 +1479,7 @@ class GAT_framework:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 421):
+        for epoch in range(1, 151):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
