@@ -675,10 +675,10 @@ class GIN_framework_bis:
                 self.lin2 = Linear(128, num_classes)
                 self.bn1 = BatchNorm(128)
             
-            def forward(self, x, edge_index, edge_attr, batch=None, return_intermediate=False):
+            def forward(self, x, edge_index, batch=None, return_intermediate=False):
                 intermediates = []
                 for i, gin_layer in enumerate(self.gin_layers):
-                    x = gin_layer(x, edge_index, edge_weight=edge_attr.squeeze())
+                    x = gin_layer(x, edge_index, )
                     x = F.relu(x)
                     x = self.batch_norms[i](x)
                     if return_intermediate:
@@ -720,7 +720,7 @@ class GIN_framework_bis:
         total_loss = 0
         for data in self.train_loader:
             data = data.to(self.device)
-            output = self.model(data.x, data.edge_index, data.edge_attr, data.batch)
+            output = self.model(data.x, data.edge_index,data.batch)
             loss = F.nll_loss(output, data.y.view(-1))
             self.optimizer.zero_grad()
             loss.backward()
@@ -736,7 +736,7 @@ class GIN_framework_bis:
         total_loss = 0
         for data in loader:
             data = data.to(self.device)
-            out = self.model(data.x, data.edge_index, data.edge_attr, data.batch)
+            out = self.model(data.x, data.edge_index, data.batch)
             total_correct += int((out.argmax(-1) == data.y).sum())
             loss = F.nll_loss(out, data.y)
             total_loss += float(loss) * data.num_graphs
