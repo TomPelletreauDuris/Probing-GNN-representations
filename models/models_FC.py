@@ -568,7 +568,7 @@ class GIN_framework:
 
         self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
 
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001, weight_decay=0.0001)
         # self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
@@ -702,7 +702,7 @@ class GIN_framework_bis:
 
         self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
 
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001, weight_decay=0.0001)
         # self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
@@ -816,7 +816,7 @@ class GIN_framework_tri:
                     x = F.relu(x)
                     if return_intermediate:
                         intermediates.append(x)
-                x = global_max_pool(x, batch)
+                x = global_mean_pool(x, batch)
                 if return_intermediate:
                     intermediates.append(x)
                 x = self.bn1(self.lin1(x))
@@ -836,7 +836,7 @@ class GIN_framework_tri:
 
         self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
 
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001, weight_decay=0.0001)
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
