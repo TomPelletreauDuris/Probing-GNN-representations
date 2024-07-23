@@ -10,15 +10,17 @@
 module purge
 module load 2023
 
-# Activate the Conda environment
-source $HOME/.bashrc
-conda activate GNN_gpu
+module load Anaconda3/2023.07-2
+# # Activate the Conda environment
+# source $HOME/.bashrc
+source activate GNN_gpu
+# conda activate GNN_gpu
 
-# Ensure Conda environment includes matching CUDA and cuDNN
-conda install -c conda-forge cudatoolkit=11.7 cudnn=8.2
-conda install pytorch torchvision torchaudio cudatoolkit=11.7 -c pytorch
+# # Ensure Conda environment includes matching CUDA and cuDNN
+# conda install -c conda-forge cudatoolkit=11.7 cudnn=8.2
+# conda install pytorch torchvision torchaudio cudatoolkit=11.7 -c pytorch
 
-# Run the Python script to check CUDA availability
+# # Run the Python script to check CUDA availability
 srun python -uc "import torch; print('CUDA version:', torch.version.cuda); print('cuDNN version:', torch.backends.cudnn.version()); print('GPU available?', torch.cuda.is_available())"
 
 # Print the GPU driver version

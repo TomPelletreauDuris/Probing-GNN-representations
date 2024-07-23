@@ -675,14 +675,15 @@ class GIN_framework_bis:
                 self.lin2 = Linear(128, num_classes)
                 self.bn1 = BatchNorm(128)
             
-            def forward(self, x, edge_index, batch=None, return_intermediate=False):
+            def forward(self, x, edge_index, edge_attr, batch=None, return_intermediate=False):
                 intermediates = []
-                for gin_layer in self.gin_layers:
-                    x = gin_layer(x, edge_index)
+                for i, gin_layer in enumerate(self.gin_layers):
+                    x = gin_layer(x, edge_index, edge_weight=edge_attr.squeeze())
                     x = F.relu(x)
+                    x = self.batch_norms[i](x)
                     if return_intermediate:
                         intermediates.append(x)
-                x = global_max_pool(x, batch)
+                x = global_mean_pool(x, batch)
                 if return_intermediate:
                     intermediates.append(x)
                 x = self.bn1(self.lin1(x))
@@ -701,9 +702,8 @@ class GIN_framework_bis:
 
 
         self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
-
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001, weight_decay=0.0001)
-        # self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=0.0001)
+        self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
@@ -720,7 +720,7 @@ class GIN_framework_bis:
         total_loss = 0
         for data in self.train_loader:
             data = data.to(self.device)
-            output = self.model(data.x, data.edge_index, data.batch)
+            output = self.model(data.x, data.edge_index, data.edge_attr, data.batch)
             loss = F.nll_loss(output, data.y.view(-1))
             self.optimizer.zero_grad()
             loss.backward()
@@ -736,7 +736,7 @@ class GIN_framework_bis:
         total_loss = 0
         for data in loader:
             data = data.to(self.device)
-            out = self.model(data.x, data.edge_index, data.batch)
+            out = self.model(data.x, data.edge_index, data.edge_attr, data.batch)
             total_correct += int((out.argmax(-1) == data.y).sum())
             loss = F.nll_loss(out, data.y)
             total_loss += float(loss) * data.num_graphs
@@ -805,15 +805,17 @@ class GIN_framework_tri:
                         BatchNorm(128)
                     )) for i in range(5)
                 ])
+                self.dropouts = torch.nn.ModuleList([torch.nn.Dropout(0.5) for _ in range(5)])
                 self.lin1 = Linear(128, 128)
                 self.lin2 = Linear(128, num_classes)
                 self.bn1 = BatchNorm(128)
             
             def forward(self, x, edge_index, batch=None, return_intermediate=False):
                 intermediates = []
-                for gin_layer in self.gin_layers:
+                for i, gin_layer in enumerate(self.gin_layers):
                     x = gin_layer(x, edge_index)
                     x = F.relu(x)
+                    x = self.dropouts[i](x)
                     if return_intermediate:
                         intermediates.append(x)
                 x = global_mean_pool(x, batch)
