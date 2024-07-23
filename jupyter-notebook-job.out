@@ -149,3 +149,26 @@ http://localhost:5678
 [W 12:28:02.756 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
 [I 12:29:25.268 NotebookApp] Kernel interrupted: 4bee9a11-fc8d-4c6e-ad48-14d5d65fc5db
 [I 12:29:34.743 NotebookApp] Kernel interrupted: 57d57c7a-3bf8-45cd-a731-0aca21a18dc8
+[I 12:30:02.664 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 12:30:02.665 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 12:30:02.766 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 12:30:02.766 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 12:30:27.819 NotebookApp] Starting buffering for 4bee9a11-fc8d-4c6e-ad48-14d5d65fc5db:c3fcb1fa7eb446039ed0be64a2f7bf22
+[I 12:30:27.820 NotebookApp] Starting buffering for 57d57c7a-3bf8-45cd-a731-0aca21a18dc8:87baebfcbb964e068f300ff37aceb5e7
+slurmstepd: error: *** JOB 7093062 ON gcn62 CANCELLED AT 2024-07-23T12:36:02 ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7093062/.ns: Invalid argument
+slurmstepd: error: container_g_join(7093062): Invalid argument
+
+JOB STATISTICS
+==============
+Job ID: 7093062
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 17:05:42 core-walltime
+Job Wall-clock time: 00:56:59
+Memory Utilized: 9.16 GB
+Memory Efficiency: 7.63% of 120.00 GB
