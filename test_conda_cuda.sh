@@ -2,13 +2,15 @@
 
 #SBATCH -t 10:00:00
 #SBATCH -N 1
-#SBATCH -p gpu
+#SBATCH -p gpu_a100
 #SBATCH --gpus-per-node=1
 #SBATCH -o Output_conda_cuda.out
 #SBATCH --cpus-per-task=18
 
 module purge
 module load 2023
+module load CUDA/11.7.0
+module load PyTorch/1.12.0-foss-2022a-CUDA-11.7.0
 
 module load Anaconda3/2023.07-2
 # # Activate the Conda environment
