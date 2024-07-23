@@ -8,14 +8,14 @@
 #SBATCH --cpus-per-task=18
 
 module purge
-module load 2023
+module load 2022
 module load CUDA/11.7.0
 module load PyTorch/1.12.0-foss-2022a-CUDA-11.7.0
 
-module load Anaconda3/2023.07-2
+# module load Anaconda3/2023.07-2
 # # Activate the Conda environment
 # source $HOME/.bashrc
-source activate GNN_gpu
+# source activate GNN_gpu
 # conda activate GNN_gpu
 
 # # Ensure Conda environment includes matching CUDA and cuDNN
