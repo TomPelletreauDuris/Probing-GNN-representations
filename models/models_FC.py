@@ -609,7 +609,7 @@ class GIN_framework:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 151):
+        for epoch in range(1, 221):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
@@ -670,6 +670,9 @@ class GIN_framework_bis:
                         torch.nn.Linear(128, 128),
                         BatchNorm(128)
                     )) for i in range(5)
+                ])
+                self.batch_norms = torch.nn.ModuleList([
+                    BatchNorm(128) for _ in range(5)
                 ])
                 self.lin1 = Linear(128, 128)
                 self.lin2 = Linear(128, num_classes)
@@ -743,7 +746,7 @@ class GIN_framework_bis:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 151):
+        for epoch in range(1, 101):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
@@ -879,7 +882,7 @@ class GIN_framework_tri:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 201):
+        for epoch in range(1, 261):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
@@ -1113,7 +1116,7 @@ class GIN_framework3:
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
-        self.num_epochs = 150
+        self.num_epochs = 80
         self.train_loader = None
         self.test_loader = None
 

@@ -1,22 +1,18 @@
-/var/spool/slurm/slurmd/job7095876/slurm_script: line 15: conda: command not found
-/var/spool/slurm/slurmd/job7095876/slurm_script: line 18: conda: command not found
-/var/spool/slurm/slurmd/job7095876/slurm_script: line 19: conda: command not found
-slurmstepd: error: execve(): python: No such file or directory
-srun: error: gcn32: task 0: Exited with exit code 2
-srun: Terminating StepId=7095876.0
+CUDA version: 11.7
+cuDNN version: 8401
+GPU available? True
 545.23.08
 
 JOB STATISTICS
 ==============
-Job ID: 7095876
+Job ID: 7111034
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: RUNNING
+State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:00
-CPU Efficiency: 0.00% of 00:02:24 core-walltime
-Job Wall-clock time: 00:00:08
-Memory Utilized: 0.00 MB (estimated maximum)
-Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
-WARNING: Efficiency statistics may be misleading for RUNNING jobs.
+CPU Utilized: 00:00:03
+CPU Efficiency: 1.04% of 00:04:48 core-walltime
+Job Wall-clock time: 00:00:16
+Memory Utilized: 2.82 MB
+Memory Efficiency: 0.00% of 120.00 GB
