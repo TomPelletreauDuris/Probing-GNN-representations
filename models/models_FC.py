@@ -621,8 +621,8 @@ class GIN_framework:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        self.model.load_state_dict(torch.load(path, map_location=map_location))
         self.model.eval()
 
     def evaluate(self):
@@ -758,8 +758,8 @@ class GIN_framework_bis:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        self.model.load_state_dict(torch.load(path, map_location=map_location))
         self.model.eval()
 
     def evaluate(self):
@@ -894,8 +894,8 @@ class GIN_framework_tri:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        self.model.load_state_dict(torch.load(path, map_location=map_location))
         self.model.eval()
 
     def evaluate(self):
@@ -1030,8 +1030,8 @@ class GIN_framework2:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        self.model.load_state_dict(torch.load(path, map_location=map_location))
         self.model.eval()
 
     def evaluate(self):
@@ -1117,8 +1117,13 @@ class GIN_framework3:
 
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
         self.num_epochs = 80
-        self.train_loader = None
-        self.test_loader = None
+        idx = torch.arange(len(self.dataset))
+        train_idx, test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+        
+        train_data = [self.dataset[i] for i in train_idx]
+        test_data = [self.dataset[i] for i in test_idx]
+        self.train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
+        self.test_loader = DataLoader(test_data, batch_size=32)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1199,8 +1204,8 @@ class GIN_framework3:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        self.model.load_state_dict(torch.load(path, map_location=map_location))
         self.model.eval()
 
     def evaluate(self, loader=None):
@@ -1496,8 +1501,8 @@ class GAT_framework:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        self.model.load_state_dict(torch.load(path, map_location=map_location))
         self.model.eval()
 
     def evaluate(self):
