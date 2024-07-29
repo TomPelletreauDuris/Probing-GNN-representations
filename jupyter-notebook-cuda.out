@@ -1,425 +1,241 @@
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn28.local.snellius.surf.nl -L 5356:localhost:5356
+ssh -N -J tpelletreaudur@int5-pub.snellius.surf.nl tpelletreaudur@gcn58.local.snellius.surf.nl -L 5539:localhost:5539
 
 After connection is established in your local browser go to the address:
-http://localhost:5356
-[I 18:37:24.114 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 18:37:24.114 NotebookApp] Jupyter Notebook 6.4.0 is running at:
-[I 18:37:24.114 NotebookApp] http://localhost:5356/?token=b4468b146c660a07c131a2d6172b37f67d48a98863213145
-[I 18:37:24.114 NotebookApp]  or http://127.0.0.1:5356/?token=b4468b146c660a07c131a2d6172b37f67d48a98863213145
-[I 18:37:24.114 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 18:37:24.119 NotebookApp] 
+http://localhost:5539
+[I 11:53:56.108 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 11:53:56.108 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 11:53:56.108 NotebookApp] http://localhost:5539/?token=563d9e04a5ec9e41e6906c8db509c307c755c530fd8f6218
+[I 11:53:56.108 NotebookApp]  or http://127.0.0.1:5539/?token=563d9e04a5ec9e41e6906c8db509c307c755c530fd8f6218
+[I 11:53:56.108 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 11:53:56.113 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2290560-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-1039794-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5356/?token=b4468b146c660a07c131a2d6172b37f67d48a98863213145
-     or http://127.0.0.1:5356/?token=b4468b146c660a07c131a2d6172b37f67d48a98863213145
-[I 18:38:58.818 NotebookApp] 302 GET /?token=b4468b146c660a07c131a2d6172b37f67d48a98863213145 (::1) 0.460000ms
+        http://localhost:5539/?token=563d9e04a5ec9e41e6906c8db509c307c755c530fd8f6218
+     or http://127.0.0.1:5539/?token=563d9e04a5ec9e41e6906c8db509c307c755c530fd8f6218
+[I 11:54:48.260 NotebookApp] 302 GET /?token=563d9e04a5ec9e41e6906c8db509c307c755c530fd8f6218 (::1) 0.450000ms
 /sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
   return _iterencode(o, 0)
+[W 11:54:54.523 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
 Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
 handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-8' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
 Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
 handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-7' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
-[I 18:39:08.289 NotebookApp] Kernel started: 1b46e8e1-4bb4-4207-b4dd-cd7923bbd21b, name: python3
+RuntimeError: Cannot enter into task <Task pending name='Task-6' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+[I 11:54:55.351 NotebookApp] Kernel started: 1d62edce-0573-4e14-95c4-436f9edcddba, name: python3
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: 74e66a0a-2c6b-4fe6-9b95-f0ddcef70509
-[I 18:41:09.886 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:43:09.551 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[W 18:43:25.214 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:43:26.294 NotebookApp] Kernel started: c2a386ea-74d5-4e1f-802a-7091f4c34939, name: python3
+[IPKernelApp] WARNING | No such comm: 38fec58e-a6f9-43f2-bfcf-0a2ef8cea784
+[I 11:56:55.517 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 11:58:55.535 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:00:54.631 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:01:02.751 NotebookApp] Kernel interrupted: 1d62edce-0573-4e14-95c4-436f9edcddba
+[I 12:01:53.541 NotebookApp] Kernel interrupted: 1d62edce-0573-4e14-95c4-436f9edcddba
+[I 12:02:55.774 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:04:11.274 NotebookApp] Starting buffering for 1d62edce-0573-4e14-95c4-436f9edcddba:11c2f37bdf574ab1a1097103c5663c91
+[I 12:04:12.210 NotebookApp] Kernel restarted: 1d62edce-0573-4e14-95c4-436f9edcddba
+[I 12:04:12.224 NotebookApp] Restoring connection for 1d62edce-0573-4e14-95c4-436f9edcddba:11c2f37bdf574ab1a1097103c5663c91
+[I 12:04:13.108 NotebookApp] Replaying 3 buffered messages
+[I 12:04:55.587 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:06:55.671 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 12:08:25.380 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 12:08:25.969 NotebookApp] Kernel started: c92249ff-e8c5-4a05-9c8b-5b223d6604e5, name: python3
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: 762f78c2-13d1-48c7-936f-7286ed49ef2c
-[I 18:43:43.435 NotebookApp] Kernel started: 246cf8de-23e0-4ebc-9962-1708cb17441b, name: python3
+[IPKernelApp] WARNING | No such comm: ae402cc8-987e-4efb-8750-55861f9b42d0
+[I 12:08:55.654 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:10:26.010 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 12:10:26.011 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 12:11:00.805 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:12:26.467 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 12:12:26.467 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 12:12:55.760 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:14:26.462 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:15:00.698 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:16:26.454 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:17:00.698 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:19:00.495 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:19:00.750 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:21:00.528 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:21:00.715 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:23:00.533 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:23:00.782 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:25:00.544 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:25:00.785 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:27:00.535 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:27:00.744 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:29:00.544 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:29:00.738 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:31:00.535 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:31:00.726 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:33:00.562 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:33:00.757 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:35:00.749 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:35:00.803 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:37:00.663 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:37:00.802 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:39:00.735 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:39:00.789 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:41:00.590 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:41:00.790 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:43:00.583 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:43:00.787 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:45:00.568 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:45:00.776 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:47:00.575 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:47:00.943 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:49:00.615 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:49:00.887 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:51:00.591 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:51:00.808 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:53:00.612 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:53:00.827 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:54:36.576 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:55:00.804 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:57:00.630 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 12:57:00.855 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 12:59:00.789 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 13:01:00.828 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 13:03:00.791 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 13:05:00.807 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 13:06:57.107 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 13:09:00.993 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 13:09:01.031 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 13:10:39.159 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 13:11:07.940 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[W 13:14:12.224 NotebookApp] WebSocket ping timeout after 119948 ms.
+[W 13:14:12.263 NotebookApp] zmq message arrived on closed channel
+[W 13:14:12.801 NotebookApp] zmq message arrived on closed channel
+[W 13:14:13.349 NotebookApp] zmq message arrived on closed channel
+[W 13:14:13.896 NotebookApp] zmq message arrived on closed channel
+[W 13:14:14.444 NotebookApp] zmq message arrived on closed channel
+[W 13:14:14.991 NotebookApp] zmq message arrived on closed channel
+[W 13:14:15.538 NotebookApp] zmq message arrived on closed channel
+[W 13:14:16.085 NotebookApp] zmq message arrived on closed channel
+[W 13:14:16.413 NotebookApp] zmq message arrived on closed channel
+[W 13:14:16.962 NotebookApp] zmq message arrived on closed channel
+[I 13:14:17.226 NotebookApp] Starting buffering for 1d62edce-0573-4e14-95c4-436f9edcddba:11c2f37bdf574ab1a1097103c5663c91
+[W 13:14:26.893 NotebookApp] WebSocket ping timeout after 119992 ms.
+[I 13:14:31.894 NotebookApp] Starting buffering for c92249ff-e8c5-4a05-9c8b-5b223d6604e5:08391333a9f44d1eb75680fb9985d694
+[I 14:55:00.955 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 15:08:09.292 NotebookApp] Discarding 14203 buffered messages for 1d62edce-0573-4e14-95c4-436f9edcddba:11c2f37bdf574ab1a1097103c5663c91
+[I 15:09:03.824 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:10:09.995 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 15:11:03.782 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:13:03.829 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:15:03.842 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:18:00.834 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:19:01.007 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 15:20:00.839 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:22:00.847 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:24:00.860 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:26:00.856 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:28:00.895 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:30:00.920 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:32:00.998 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:35:03.471 NotebookApp] WebSocket ping timeout after 119996 ms.
+[W 15:35:03.518 NotebookApp] zmq message arrived on closed channel
+[W 15:35:03.911 NotebookApp] zmq message arrived on closed channel
+[W 15:35:04.305 NotebookApp] zmq message arrived on closed channel
+[W 15:35:04.699 NotebookApp] zmq message arrived on closed channel
+[W 15:35:05.092 NotebookApp] zmq message arrived on closed channel
+[W 15:35:05.485 NotebookApp] zmq message arrived on closed channel
+[W 15:35:05.879 NotebookApp] zmq message arrived on closed channel
+[W 15:35:06.273 NotebookApp] zmq message arrived on closed channel
+[W 15:35:06.667 NotebookApp] zmq message arrived on closed channel
+[W 15:35:07.060 NotebookApp] zmq message arrived on closed channel
+[W 15:35:07.453 NotebookApp] zmq message arrived on closed channel
+[W 15:35:07.846 NotebookApp] zmq message arrived on closed channel
+[W 15:35:08.239 NotebookApp] zmq message arrived on closed channel
+[I 15:35:08.472 NotebookApp] Starting buffering for c92249ff-e8c5-4a05-9c8b-5b223d6604e5:147647bdf1854a5a9d8a2b588437f041
+[W 15:35:09.293 NotebookApp] WebSocket ping timeout after 119960 ms.
+[I 15:35:14.293 NotebookApp] Starting buffering for 1d62edce-0573-4e14-95c4-436f9edcddba:38f93abc154e4aa48ba886856eeffdde
+[I 15:52:32.659 NotebookApp] Kernel interrupted: 1d62edce-0573-4e14-95c4-436f9edcddba
+[I 15:54:00.934 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 15:54:09.002 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 15:55:28.409 NotebookApp] Restoring connection for c92249ff-e8c5-4a05-9c8b-5b223d6604e5:147647bdf1854a5a9d8a2b588437f041
+[I 15:55:28.410 NotebookApp] Replaying 3125 buffered messages
+[W 15:55:29.340 NotebookApp] IOPub message rate exceeded.
+    The notebook server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--NotebookApp.iopub_msg_rate_limit`.
+    
+    Current values:
+    NotebookApp.iopub_msg_rate_limit=1000.0 (msgs/sec)
+    NotebookApp.rate_limit_window=3.0 (secs)
+    
+[W 15:55:31.715 NotebookApp] iopub messages resumed
+[I 15:57:04.313 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:00:00.965 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:01:59.545 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:02:44.323 NotebookApp] Kernel started: d79595f9-7143-4bd6-86e7-f15ff94e9d24, name: python3
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: 9878b5a2-a6bd-449d-929c-7f3a8a68579f
-[I 18:45:09.185 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:45:27.840 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:45:27.841 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:45:44.186 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:47:09.191 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:47:42.457 NotebookApp] Saving file at /models/models_FC.py
-[I 18:47:44.230 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:47:53.428 NotebookApp] Starting buffering for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 18:47:54.506 NotebookApp] Kernel restarted: c2a386ea-74d5-4e1f-802a-7091f4c34939
-[I 18:47:54.559 NotebookApp] Restoring connection for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 18:47:56.080 NotebookApp] Replaying 3 buffered messages
-[I 18:48:07.469 NotebookApp] Kernel interrupted: c2a386ea-74d5-4e1f-802a-7091f4c34939
-[I 18:48:11.624 NotebookApp] Starting buffering for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 18:48:12.677 NotebookApp] Kernel restarted: c2a386ea-74d5-4e1f-802a-7091f4c34939
-[I 18:48:12.721 NotebookApp] Restoring connection for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 18:48:13.693 NotebookApp] Replaying 3 buffered messages
-[I 18:49:27.715 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:49:27.715 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:49:43.543 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:49:59.233 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:51:27.710 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:51:27.710 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:51:44.204 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:52:28.369 NotebookApp] Saving file at /models/models_FC.py
-[I 18:52:33.108 NotebookApp] Starting buffering for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 18:52:33.960 NotebookApp] Kernel restarted: c2a386ea-74d5-4e1f-802a-7091f4c34939
-[I 18:52:33.997 NotebookApp] Restoring connection for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 18:52:34.969 NotebookApp] Replaying 3 buffered messages
-[I 18:53:08.384 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:53:27.699 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:53:27.700 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:53:44.249 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[W 18:53:46.884 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 18:53:47.823 NotebookApp] Kernel started: 0f683fff-c002-4d75-8198-fd4a81fbce1c, name: python3
-[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: b44952d0-916f-4bee-9e08-daaa18ba340c
-[I 18:55:09.602 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[W 18:55:10.084 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
-[I 18:55:11.168 NotebookApp] Kernel started: 560b9197-35fa-4756-9df1-a30a49374a5a, name: python3
-[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: 72ab513d-4ce0-4328-8344-dbc6d26bc136
-[I 18:55:48.183 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 18:55:59.287 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:55:59.839 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:55:59.840 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:57:09.197 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:57:12.183 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 18:57:27.689 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:57:27.690 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 18:57:48.181 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 18:57:59.308 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:59:12.176 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 18:59:48.175 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 18:59:59.336 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:59:59.403 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 18:59:59.976 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 18:59:59.976 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:01:12.239 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 19:01:48.242 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:01:59.308 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:01:59.843 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:03:59.342 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:03:59.438 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:03:59.512 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:05:59.301 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:05:59.364 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:05:59.507 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:06:33.453 NotebookApp] Saving file at /models/models_FC.py
-[I 19:07:06.643 NotebookApp] Starting buffering for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 19:07:07.487 NotebookApp] Kernel restarted: c2a386ea-74d5-4e1f-802a-7091f4c34939
-[I 19:07:07.525 NotebookApp] Restoring connection for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 19:07:08.379 NotebookApp] Replaying 3 buffered messages
-[I 19:07:09.292 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:07:12.207 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 19:07:26.903 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 19:07:26.904 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:07:44.316 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:07:48.253 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:08:12.195 NotebookApp] Starting buffering for 560b9197-35fa-4756-9df1-a30a49374a5a:be14e841137246eea0f6b9d0cb32f934
-[I 19:08:13.137 NotebookApp] Kernel restarted: 560b9197-35fa-4756-9df1-a30a49374a5a
-[I 19:08:13.184 NotebookApp] Restoring connection for 560b9197-35fa-4756-9df1-a30a49374a5a:be14e841137246eea0f6b9d0cb32f934
-[I 19:08:14.036 NotebookApp] Replaying 3 buffered messages
-[I 19:09:09.309 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:09:12.194 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 19:09:27.682 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 19:09:27.682 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:09:59.728 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:09:59.937 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:11:27.476 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 19:11:27.477 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:11:59.351 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:11:59.552 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:11:59.568 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 19:12:00.487 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:13:12.207 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 19:13:26.912 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 19:13:26.913 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:13:59.340 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:13:59.737 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:13:59.781 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:15:26.886 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 19:15:26.887 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:15:45.200 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 19:15:59.386 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:15:59.682 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:15:59.704 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:17:26.911 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 19:17:26.912 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 19:17:59.653 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:18:05.027 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:18:07.205 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:19:59.437 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:19:59.746 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:20:00.008 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:21:59.559 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:21:59.683 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:21:59.811 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:23:59.568 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:23:59.774 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:24:00.021 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:25:59.590 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:25:59.695 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:25:59.910 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:27:59.586 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:27:59.766 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:27:59.922 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:29:59.611 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:29:59.880 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:30:00.134 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:31:59.613 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:31:59.685 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:32:00.114 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:33:59.662 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:33:59.865 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:34:00.037 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:35:59.661 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:35:59.907 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:36:00.217 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:37:59.599 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:37:59.821 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:38:00.181 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:39:59.872 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:40:00.001 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:40:00.830 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:41:59.695 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:42:00.018 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:42:00.197 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:43:59.679 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:44:00.019 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:44:00.243 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:45:59.725 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:46:00.008 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:46:00.238 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:47:59.687 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:48:00.102 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:48:00.386 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:49:59.749 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:49:59.928 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:50:00.487 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:51:59.810 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:52:00.229 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:52:00.425 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:53:59.868 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:54:00.105 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:54:00.481 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:55:59.976 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:56:00.150 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:56:00.463 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:57:59.909 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 19:58:00.000 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 19:58:00.466 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 19:59:59.880 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:00:00.285 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:00:00.578 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:01:59.874 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:02:00.131 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:02:00.619 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:03:59.981 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:04:00.102 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:04:02.083 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:06:00.060 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:06:00.136 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:06:00.648 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:07:59.958 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:08:00.209 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:08:00.751 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:09:59.840 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:10:00.724 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:10:00.749 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:11:59.930 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:12:00.291 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:12:00.844 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:14:05.738 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:14:10.349 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:14:11.695 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:15:59.892 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:16:00.287 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:16:23.234 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:18:00.092 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:18:00.538 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:18:32.861 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:20:00.684 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:20:00.721 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:20:42.890 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:22:00.178 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:22:00.339 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:22:52.935 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:24:00.200 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:24:00.545 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:25:59.983 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:26:00.750 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:26:01.207 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:28:00.127 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:28:00.794 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:28:01.224 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:30:00.054 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:30:00.723 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:30:01.182 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:32:00.010 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:32:00.441 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:32:01.131 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:34:00.057 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:34:00.760 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:34:01.243 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:36:00.157 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:36:00.867 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:36:01.363 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:38:00.109 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:38:00.583 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:39:00.218 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:40:00.169 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:40:00.634 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:41:00.122 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:42:00.144 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:42:00.600 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:43:00.245 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:44:00.302 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:44:00.740 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:45:00.189 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:46:01.859 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:46:02.546 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:47:00.239 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:48:00.240 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:48:00.748 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:49:00.467 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:50:00.243 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:50:00.928 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:52:00.741 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:52:00.851 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:52:01.633 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:54:00.439 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:54:00.998 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:54:01.903 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:56:00.245 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:56:01.182 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 20:56:01.728 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 20:58:00.459 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 20:58:01.065 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:00:00.312 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:00:00.875 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:01:34.197 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:02:00.130 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:04:00.351 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:04:01.201 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:04:19.148 NotebookApp] Saving file at /models/models_FC.py
-[I 21:04:23.484 NotebookApp] Starting buffering for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 21:04:24.117 NotebookApp] Kernel restarted: c2a386ea-74d5-4e1f-802a-7091f4c34939
-[I 21:04:24.151 NotebookApp] Restoring connection for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
-[I 21:04:24.996 NotebookApp] Replaying 3 buffered messages
-[I 21:05:10.304 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:05:27.089 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 21:05:27.090 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 21:06:00.170 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:07:09.561 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:07:59.983 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[W 21:07:59.984 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
-[I 21:08:00.606 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:09:09.512 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:10:01.056 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:11:09.608 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:12:00.162 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:13:09.488 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:14:00.012 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:15:09.938 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:16:00.054 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:17:10.851 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:18:00.087 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:19:10.195 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:20:00.114 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:21:09.574 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:22:00.118 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:23:09.601 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:24:00.090 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:25:09.634 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:26:00.090 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:27:09.604 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:28:00.106 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:29:09.624 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:30:00.239 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:31:10.036 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:32:00.177 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:33:09.707 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:34:00.233 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:35:09.827 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:36:00.306 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:37:09.669 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:38:00.213 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:39:09.892 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:40:00.211 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:41:09.722 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:42:00.416 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:43:09.739 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:44:00.284 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:45:09.760 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:46:00.259 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:47:09.804 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:48:00.330 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:49:09.823 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:50:00.320 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:51:09.821 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:52:00.308 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[I 21:53:09.823 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:55:09.823 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:57:09.847 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 21:59:09.858 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:01:10.260 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:03:09.894 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:05:09.903 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:07:09.950 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:09:09.939 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:11:09.963 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:13:10.024 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:15:10.013 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:17:10.089 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:19:10.336 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:21:10.860 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:23:10.880 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:25:12.334 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:27:11.180 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:29:10.910 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:31:11.005 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:33:10.245 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:35:10.257 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:37:10.497 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:39:10.430 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:41:10.398 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:43:10.339 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:45:10.268 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:47:10.290 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:49:10.716 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:51:10.380 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:53:10.427 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:55:16.336 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:57:10.461 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 22:59:10.560 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 23:01:11.286 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 23:03:10.459 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 23:05:10.560 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 23:07:10.500 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 23:09:10.599 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-[I 23:11:10.559 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
-slurmstepd: error: *** JOB 7111038 ON gcn28 CANCELLED AT 2024-07-24T04:37:31 DUE TO TIME LIMIT ***
-[I 04:37:31.133 NotebookApp] Starting buffering for 0f683fff-c002-4d75-8198-fd4a81fbce1c:b66ec68a87334fd18f7d8fb209cce784
-[I 04:37:31.134 NotebookApp] Starting buffering for 246cf8de-23e0-4ebc-9962-1708cb17441b:47aff70b3f554975802a404a2abc2f14
-[I 04:37:31.134 NotebookApp] Starting buffering for 1b46e8e1-4bb4-4207-b4dd-cd7923bbd21b:d71a24aee10047508811ed99b240a2ca
-[I 04:37:31.135 NotebookApp] Starting buffering for 560b9197-35fa-4756-9df1-a30a49374a5a:be14e841137246eea0f6b9d0cb32f934
-[I 04:37:31.135 NotebookApp] Starting buffering for c2a386ea-74d5-4e1f-802a-7091f4c34939:df29b2e579f44d39aba363cb1c614679
+[IPKernelApp] WARNING | No such comm: 0e1ea835-d638-4fe6-8ba8-eda948d0ebdb
+[I 16:03:03.989 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:04:44.361 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:06:01.017 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:06:44.393 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:08:01.107 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:08:44.330 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:10:01.064 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:10:44.724 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:12:01.017 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:13:00.774 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:14:01.093 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:15:00.815 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:16:01.084 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:17:00.788 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:18:01.081 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:19:00.816 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:20:01.045 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:21:00.824 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:22:01.032 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:23:00.821 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:24:01.045 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:25:00.800 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:26:01.045 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:27:00.842 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:28:01.123 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:29:00.826 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:30:01.069 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:31:00.833 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:32:01.080 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:33:00.889 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:34:01.121 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:35:00.822 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:36:01.181 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:37:00.863 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:38:01.087 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:39:00.893 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:40:01.207 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:40:46.266 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:41:11.555 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:43:00.848 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:43:54.316 NotebookApp] Starting buffering for d79595f9-7143-4bd6-86e7-f15ff94e9d24:43e57050cb2543288964882201643d25
+[I 16:43:54.316 NotebookApp] Starting buffering for 1d62edce-0573-4e14-95c4-436f9edcddba:585d8a7fcfb04623828a30fb8b54eee6
+[I 16:43:54.317 NotebookApp] Starting buffering for c92249ff-e8c5-4a05-9c8b-5b223d6604e5:147647bdf1854a5a9d8a2b588437f041
+slurmstepd: error: *** JOB 7137294 ON gcn58 CANCELLED AT 2024-07-24T21:54:01 DUE TO TIME LIMIT ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7137294/.ns: Invalid argument
+slurmstepd: error: container_g_join(7137294): Invalid argument
 
 JOB STATISTICS
 ==============
-Job ID: 7111038
+Job ID: 7137294
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
 State: TIMEOUT (exit code 0)
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:06
-CPU Efficiency: 0.00% of 7-12:07:30 core-walltime
-Job Wall-clock time: 10:00:25
-Memory Utilized: 12.22 GB
-Memory Efficiency: 10.18% of 120.00 GB
+CPU Utilized: 00:00:03
+CPU Efficiency: 0.00% of 7-12:04:48 core-walltime
+Job Wall-clock time: 10:00:16
+Memory Utilized: 8.59 GB
+Memory Efficiency: 7.16% of 120.00 GB
