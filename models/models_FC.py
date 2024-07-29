@@ -568,7 +568,7 @@ class GIN_framework:
 
         self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
 
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=0.0001)
         # self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
@@ -609,11 +609,11 @@ class GIN_framework:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 221):
+        for epoch in range(1, 201):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
+            if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
 
@@ -705,7 +705,7 @@ class GIN_framework_bis:
 
 
         self.model = Net(num_features=116, num_classes=num_classes).to(self.device).double()
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
@@ -746,11 +746,11 @@ class GIN_framework_bis:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 101):
+        for epoch in range(1, 1501):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
+            if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
 
@@ -882,11 +882,11 @@ class GIN_framework_tri:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 261):
+        for epoch in range(1, 206):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
+            if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
 
@@ -1018,11 +1018,11 @@ class GIN_framework2:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 151):
+        for epoch in range(1, 121):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
+            if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
 
@@ -1112,11 +1112,11 @@ class GIN_framework3:
 
         num_features = dataset[0].x.shape[1]
         self.model = Net(num_features=num_features, num_classes=num_classes).to(self.device).double()
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.00001, weight_decay=0.0001)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
-        self.num_epochs = 80
+        self.num_epochs = 1200
         idx = torch.arange(len(self.dataset))
         train_idx, test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
         
@@ -1170,7 +1170,7 @@ class GIN_framework3:
                 train_loss = self.train(self.train_loader)
                 train_acc, train_loss = self.test(self.train_loader)
                 test_acc, test_loss = self.test(self.test_loader)
-                if epoch % 20 == 0:
+                if epoch % 5 == 0:
                     print(f'Fold: {fold + 1}, Epoch: {epoch}, Loss: {train_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
             
             test_acc, test_loss = self.test(self.test_loader)
@@ -1197,7 +1197,7 @@ class GIN_framework3:
             train_loss = self.train(self.train_loader)
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
+            if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
 
     def save_model(self, path):
