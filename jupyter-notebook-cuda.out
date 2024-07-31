@@ -193,3 +193,122 @@ RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1Serv
 [I 16:29:34.827 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
 [I 16:30:31.241 NotebookApp] Saving file at /FC_probing_GIN.ipynb
 [I 16:30:36.961 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:30:51.866 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:31:24.842 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:33:35.107 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:33:35.345 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:35:32.902 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:35:34.880 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:37:34.987 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:37:35.139 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:38:51.070 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:39:34.875 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:40:51.877 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:41:24.449 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:42:51.896 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:43:34.877 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:44:51.897 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:45:35.114 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:46:51.888 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:47:34.901 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:49:34.909 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:49:58.084 NotebookApp] Starting buffering for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 16:49:58.715 NotebookApp] Kernel restarted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 16:49:58.728 NotebookApp] Restoring connection for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 16:49:59.657 NotebookApp] Replaying 3 buffered messages
+[I 16:50:07.366 NotebookApp] Kernel interrupted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 16:50:11.072 NotebookApp] Starting buffering for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 16:50:11.804 NotebookApp] Kernel restarted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 16:50:11.817 NotebookApp] Restoring connection for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 16:50:12.821 NotebookApp] Replaying 3 buffered messages
+[W 16:50:44.570 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 16:50:46.392 NotebookApp] Kernel started: 7a370563-962b-4b56-844c-b400bd6d5414, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 79d18d5c-66be-439c-b817-f53a07b23922
+[I 16:50:51.900 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:51:34.924 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:52:46.531 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 16:52:46.531 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 16:53:10.800 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:53:34.924 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:54:46.687 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 16:54:46.687 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 16:54:51.923 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:55:24.893 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:56:46.629 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 16:56:46.630 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 16:56:51.088 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:57:34.927 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 16:58:47.290 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 16:58:47.290 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 16:58:52.005 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 16:59:35.196 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:00:50.546 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:00:50.547 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:00:52.893 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 17:01:35.075 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:03:19.266 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:03:19.266 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:03:35.271 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 17:03:35.438 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:05:03.124 NotebookApp] Saving file at /models/models_FC.py
+[I 17:05:15.139 NotebookApp] Starting buffering for 7a370563-962b-4b56-844c-b400bd6d5414:21527890d6f64aa6bf2b5351bd64ef8e
+[I 17:05:15.673 NotebookApp] Kernel restarted: 7a370563-962b-4b56-844c-b400bd6d5414
+[I 17:05:15.691 NotebookApp] Restoring connection for 7a370563-962b-4b56-844c-b400bd6d5414:21527890d6f64aa6bf2b5351bd64ef8e
+[I 17:05:16.695 NotebookApp] Replaying 3 buffered messages
+[I 17:05:35.069 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:06:46.688 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:06:46.688 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:06:52.029 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 17:07:17.155 NotebookApp] Saving file at /models/models_FC.py
+[I 17:07:24.052 NotebookApp] Starting buffering for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:07:25.105 NotebookApp] Kernel restarted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 17:07:25.148 NotebookApp] Restoring connection for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:07:26.654 NotebookApp] Replaying 3 buffered messages
+[I 17:07:35.171 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:08:52.008 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 17:09:34.837 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:09:34.838 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:09:35.136 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:11:34.776 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:11:34.776 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:11:35.104 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:12:49.132 NotebookApp] Saving file at /models/models_FC.py
+[I 17:12:55.021 NotebookApp] Starting buffering for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:12:55.995 NotebookApp] Kernel restarted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 17:12:56.026 NotebookApp] Restoring connection for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:12:57.031 NotebookApp] Replaying 3 buffered messages
+[I 17:13:34.814 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:13:34.814 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:13:35.201 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:13:35.329 NotebookApp] Saving file at /models/models_FC.py
+[I 17:13:38.827 NotebookApp] Starting buffering for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:13:39.887 NotebookApp] Kernel restarted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 17:13:39.965 NotebookApp] Restoring connection for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:13:40.878 NotebookApp] Replaying 3 buffered messages
+[I 17:14:23.642 NotebookApp] Kernel interrupted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 17:14:51.112 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 17:15:13.549 NotebookApp] Kernel interrupted: c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79
+[I 17:15:34.717 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 17:15:34.718 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 17:15:35.102 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 17:15:54.563 NotebookApp] Starting buffering for c2e60cfa-22f7-4ecb-a2e7-d41ef2d96f79:d6108142b7584e6485fa6a409b402bd7
+[I 17:15:54.564 NotebookApp] Starting buffering for 7a370563-962b-4b56-844c-b400bd6d5414:21527890d6f64aa6bf2b5351bd64ef8e
+[I 17:15:54.564 NotebookApp] Starting buffering for 584fa3e3-74ac-4325-923d-3bbd65b37fae:ad49adb265114e50addb8167752587ad
+slurmstepd: error: *** JOB 7216685 ON gcn17 CANCELLED AT 2024-07-29T22:54:23 DUE TO TIME LIMIT ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7216685/.ns: Invalid argument
+slurmstepd: error: container_g_join(7216685): Invalid argument
+
+JOB STATISTICS
+==============
+Job ID: 7216685
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:04
+CPU Efficiency: 0.00% of 7-12:05:42 core-walltime
+Job Wall-clock time: 10:00:19
+Memory Utilized: 6.78 GB
+Memory Efficiency: 5.65% of 120.00 GB

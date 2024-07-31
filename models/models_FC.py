@@ -133,13 +133,13 @@ class GCN_framework:
         # Extract features for training data
         for data in self.train_loader:
             data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.edge_attr, data.batch, return_intermediate=True)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
             train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
 
         # Extract features for test data
         for data in self.test_loader:
             data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.edge_attr, data.batch, return_intermediate=True)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
             test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
@@ -196,7 +196,7 @@ class GCN_framework_wo_edge_weight:
                     return F.log_softmax(x, dim=-1)
 
         self.model = Net(116, num_classes).to(self.device).float()
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005, weight_decay=0.0001)
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
         idx = torch.arange(len(self.dataset))
@@ -237,7 +237,7 @@ class GCN_framework_wo_edge_weight:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 141):
+        for epoch in range(1, 451):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
@@ -1380,14 +1380,20 @@ class GIN_framework3:
             loader = self.test_loader
 
         self.model.eval()
-        features = []
+        train_features = []
+        test_features = []
 
-        for data in loader:
+        for data in self.train_loader:
             data = data.to(self.device)
-            out, features_batch = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy(), f[9].cpu().numpy()) for f in zip(*features_batch)])
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
 
-        return features
+        for data in self.test_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+
+        return train_features, test_features
 
 # Usage example
 # dataset = load_your_dataset_here()
