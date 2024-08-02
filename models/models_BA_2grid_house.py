@@ -32,20 +32,17 @@ class GCN_framework:
 
             def forward(self,x,edge_index,batch,edge_mask=None, return_intermediate=False):
 
-                # x = F.relu(self.conv1(x, edge_index,edge_mask))
-                # x = F.relu(self.conv2(x, edge_index,edge_mask))
-                # x = F.relu(self.conv3(x, edge_index,edge_mask))
-                # x = F.relu(self.conv4(x, edge_index,edge_mask))
-                # #x = F.relu(self.conv3(x, edge_index,edge_mask))
-                # #x = self.conv4(x, edge_index,edge_mask)
-
-                # x = global_max_pool(x,batch)
-
                 x1 = F.relu(self.conv1(x, edge_index,edge_mask))
                 x2 = F.relu(self.conv2(x1, edge_index,edge_mask))
                 x3 = F.relu(self.conv3(x2, edge_index,edge_mask))
                 x4 = F.relu(self.conv4(x3, edge_index,edge_mask))
                 x_global = global_max_pool(x4,batch)
+
+                if return_intermediate:
+                    print("x1 shape:", x1.shape)
+                    print("x2 shape:", x2.shape)
+                    print("x3 shape:", x3.shape)
+                    print("x4 shape:", x4.shape)
                 
                 x5 = F.relu(self.lin1(x_global))
                 x6 = F.relu(self.lin2(x5))
@@ -65,8 +62,8 @@ class GCN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=256)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=256)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
@@ -146,6 +143,39 @@ class GCN_framework:
 
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset), features_collected
     
+    @torch.no_grad()
+    def evaluate_with_features(self):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        # Extract features for training data
+        for data in self.train_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            node_embeddings = features[:-1]  # All layers before the global pooling layer
+
+            unique_batches = data.batch.unique().tolist()
+            for i in unique_batches:
+                mask = (data.batch == i)
+                graph_node_features = [feat[mask].cpu().numpy() for feat in node_embeddings]
+                train_features.append(graph_node_features)
+
+        # Extract features for test data
+        for data in self.test_loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            node_embeddings = features[:-1]  # All layers before the global pooling layer
+
+            unique_batches = data.batch.unique().tolist()
+            for i in unique_batches:
+                mask = (data.batch == i)
+                graph_node_features = [feat[mask].cpu().numpy() for feat in node_embeddings]
+                test_features.append(graph_node_features)
+
+        return train_features, test_features
+
+
     @torch.no_grad()
     def evaluate_with_features2(self):
         self.model.eval()
