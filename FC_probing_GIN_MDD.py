@@ -3,10 +3,10 @@
 
 # %%
 #using read_dataset from Datasets/FC/create_dataset.py to read the dataset
-from Datasets.FC.create_dataset import read_dataset
+from Datasets.FC.create_dataset import read_dataset_MDD
 
 # %%
-dataset = read_dataset()
+dataset = read_dataset_MDD()
 
 # %%
 #ok, let's explore the data a bit more
@@ -36,7 +36,7 @@ len(dataset)
 import torch
 torch.manual_seed(37)
 
-DATASET = "FC"
+DATASET = "FC_MDD"
 
 MODEL = "GIN"
 from models.models_FC import GIN_framework as framework # import the model
@@ -80,12 +80,11 @@ gnn3 = framework3(dataset)
 #gnn.train()
 
 # %%
+# gnntri.save_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
+
+# %%
 #save the model 
 # gnn.save_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
-
-# gnnbis.save_model(path="models/"+DATASET+"_"+MODELbis+"server.pt")
-
-# gnntri.save_model(path="models/"+DATASET+"_"+MODELtri+"server.pt")
 
 # gnn2.save_model(path="models/"+DATASET+"_"+MODEL2+"server.pt")
 
@@ -93,34 +92,24 @@ gnn3 = framework3(dataset)
 
 # %%
 #load the model
-gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt", map_location=torch.device('cpu'))
+gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
 
-gnn2.load_model(path="models/"+DATASET+"_"+MODEL2+"server.pt", map_location=torch.device('cpu'))
+# gnn2.load_model(path="models/"+DATASET+"_"+MODEL2+"server.pt")
 
-gnn3.load_model(path="models/"+DATASET+"_"+MODEL3+"server.pt", map_location=torch.device('cpu'))
+# gnn3.load_model(path="models/"+DATASET+"_"+MODEL3+"server.pt")
 
-gnnbis.load_model(path="models/"+DATASET+"_"+MODELbis+"server.pt", map_location=torch.device('cpu'))
-
-gnntri.load_model(path="models/"+DATASET+"_"+MODELtri+"server.pt", map_location=torch.device('cpu'))
+# gnntri.load_model(path="models/"+DATASET+"_"+MODELtri+"server.pt")
+#gnn3.save_model(path="models/"+DATASET+"_"+MODEL3+"server_iterate.pt")
+#gnn3.load_model(path="models/"+DATASET+"_"+MODEL3+"server_iterate.pt")
 
 # %%
 gnn.evaluate()
 
 # %%
-gnnbis.evaluate()
+# gnntri.evaluate()
 
 # %%
-gnntri.evaluate()
-
-# %%
-gnn2.evaluate()
-
-# %%
-gnn3.evaluate()
-
-# %%
-MODEL = MODEL3
-MODEL
+# gnn3.evaluate()
 
 # %%
 # from torch_geometric.data import DataLoader
@@ -129,15 +118,15 @@ MODEL
 # gnn3.evaluate2(test_loader)
 
 # %%
-train_features, test_features = gnn3.evaluate_with_features2()
+train_features, test_features = gnn.evaluate_with_features2()
 
 # %%
 print(len(train_features[0]))
 len(train_features), len(test_features)
 
 # %%
-import pickle as pkl
 import networkx as nx
+import pickle as pkl
 def calculate_avg_path_length(G):
     if nx.is_connected(G):
         return nx.average_shortest_path_length(G)
@@ -184,7 +173,7 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties.pkl", "wb") as f:
 # train_properties[0:5]
 
 # %%
-
+import pickle as pkl
 #save the properties in a file
 # with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "wb") as f:
 #     pkl.dump(train_properties, f)
@@ -288,7 +277,7 @@ embeddings = [(train_x, test_x), (train_x2, test_x2), (train_x3, test_x3), (trai
 embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global',  'x6', 'x7', 'x8']
 
 # %%
-#create a dictionary where we will sotre the results for each embeddings, each property
+#create a dictionary where we will store the results for each embeddings, each property
 results = {}
 
 ii = 0
@@ -300,8 +289,14 @@ for train_embedding, test_embedding in embeddings:
         model = LinearModel(input_size, output_size)
         criterion = nn.MSELoss()
         optimizer = optim.Adam(model.parameters(), lr=0.001)
-        num_epochs = 100000  # Adjust this as needed
+        num_epochs = 800000  # Maximum number of epochs
+        min_epochs = 1000  # Minimum number of epochs
+        patience = 3000  # Number of epochs to wait for improvement
+        tolerance = 1e-6  # Tolerance for considering the loss as stable
 
+        best_loss = float('inf')
+        no_improve_count = 0
+        
         for epoch in range(num_epochs):
             model.train()
             optimizer.zero_grad()
@@ -313,8 +308,20 @@ for train_embedding, test_embedding in embeddings:
             loss.backward()
             optimizer.step()
 
-            if (epoch+1) % 1000 == 0:  # Adjust this for more frequent/lower print frequency
+            if (epoch+1) % 1000 == 0:  # Print every 1000 epochs
                 print(f'Epoch [{epoch+1}/{num_epochs}], Property: {property_name}, Loss: {loss.item():.4f}')
+
+            # Check for early stopping, but only after minimum epochs
+            if epoch >= min_epochs:
+                if loss.item() < best_loss - tolerance:
+                    best_loss = loss.item()
+                    no_improve_count = 0
+                else:
+                    no_improve_count += 1
+
+                if no_improve_count >= patience:
+                    print(f'Early stopping at epoch {epoch+1}')
+                    break
 
         # Evaluate the model
         model.eval()
@@ -337,8 +344,8 @@ for train_embedding, test_embedding in embeddings:
             print(f'  Train R²: {train_r2:.4f}, Test R²: {test_r2:.4f}')
 
             #add the results to the dictionary
-            name_of_embdedding = embeddings_names[ii]
-            results[(name_of_embdedding, property_name)] = (train_mse, test_mse, train_r2, test_r2)
+            name_of_embedding = embeddings_names[ii]
+            results[(name_of_embedding, property_name)] = (train_mse, test_mse, train_r2, test_r2)
 
     ii += 1
 
@@ -347,17 +354,17 @@ with open("results/"+DATASET+"_"+MODEL+"_results.pkl", "wb") as f:
     pkl.dump(results, f)
 
 # %%
-#load the properties
+#load results
 with open("results/"+DATASET+"_"+MODEL+"_results.pkl", "rb") as f:
-    results = pkl.load(f)    
+    results = pkl.load(f)
 
 # %%
 import matplotlib.pyplot as plt
 
 # Assuming results, embeddings, and other necessary variables are defined as in your context
-# property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'small_world']
-# embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
-colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w', 'orange', 'purple']
+property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'small_world']
+embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
+colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w', 'orange', 'red']
 
 plt.figure(figsize=(12, 8))
 
@@ -390,7 +397,7 @@ plt.savefig("results/"+DATASET+"_"+MODEL+"test_R2_plot.png")
 import matplotlib.pyplot as plt
 
 # Assuming results, embeddings, and other necessary variables are defined as in your context
-property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component']
+property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'small_world']
 embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w', 'orange', 'red']
 
@@ -419,9 +426,6 @@ plt.show()
 
 #save the plot
 plt.savefig("results/"+DATASET+"_"+MODEL+"train_R2_plot.png")
-
-# %%
-# results
 
 # %% [markdown]
 # #### Test with more properties
@@ -685,7 +689,8 @@ with open("results/"+DATASET+"_"+MODEL+"_results_limited_cv_long.pkl", "rb") as 
     results = pkl.load(f)
 
 # %%
-import matplotlib.pyplot as plt
+property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient']
+
 colors_long = [
     (0.0, 0.45, 0.70),  # Blue
     (0.85, 0.37, 0.01),  # Orange
@@ -707,9 +712,6 @@ colors_long = [
     (0.6, 0.6, 0.3),     # Mustard
     (0.3, 0.55, 0.55)    # Teal
 ]
-
-property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient']
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
 
 plt.figure(figsize=(12, 8))
 
@@ -736,9 +738,6 @@ plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long.png')
-
-# %%
-# range(len(embeddings))
 
 # %%
 plt.figure(figsize=(12, 8))

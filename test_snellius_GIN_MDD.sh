@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH -p gpu_a100
 #SBATCH --gpus-per-node=1
-#SBATCH -o notebook_ASD.out
+#SBATCH -o notebook_MDD.out
 
 module purge
 module load 2022
@@ -21,7 +21,7 @@ nvidia-smi --query-gpu=driver_version --format=csv,noheader
 python --version
 
 # Run the actual experiment. 
-python FC_probing_GIN.py
+python FC_probing_GIN_MDD.py
 # python <<EOF
 # import torch
 # print(torch.cuda.is_available())
