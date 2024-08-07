@@ -150,7 +150,12 @@ def compute_graph_properties(data):
         num_triangles = sum(nx.triangles(G).values()) / 3
         num_squares = sum(nx.square_clustering(G).values()) / 4
         number_of_node_in_the_largest_fully_connected_component = len(max(nx.connected_components(G), key=len))
-        small_world = nx.algorithms.smallworld.sigma(G)
+        if nx.is_connected(G):
+            small_world = nx.algorithms.smallworld.sigma(G)
+        else:
+            components = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+            largest_component = max(components, key=len)
+            small_world = nx.algorithms.smallworld.sigma(largest_component)
 
         properties.append((num_nodes, num_edges, density, avg_path_len, num_cliques, num_triangles, num_squares, number_of_node_in_the_largest_fully_connected_component, small_world))
     return properties
