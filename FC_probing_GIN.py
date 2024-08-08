@@ -135,6 +135,17 @@ train_features, test_features = gnn3.evaluate_with_features2()
 print(len(train_features[0]))
 len(train_features), len(test_features)
 
+#load the properties
+with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "rb") as f:
+    train_properties = pkl.load(f)
+
+with open("results/"+DATASET+"_"+MODEL+"_test_properties.pkl", "rb") as f:
+    test_properties = pkl.load(f)
+
+#print the first 5 properties
+print(len(train_properties))
+print(train_properties[0:5])
+
 # %%
 import pickle as pkl
 import networkx as nx
@@ -178,10 +189,10 @@ test_idx_list = gnn.test_idx.tolist()
 selected_dataset = [gnn.dataset[i] for i in test_idx_list]
 test_properties = compute_graph_properties(selected_dataset)
 
-with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "wb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
     pkl.dump(train_properties, f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties.pkl", "wb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
     pkl.dump(test_properties, f)
 
 # %%

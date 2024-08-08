@@ -167,10 +167,10 @@ test_idx_list = gnn.test_idx.tolist()
 selected_dataset = [gnn.dataset[i] for i in test_idx_list]
 test_properties = compute_graph_properties(selected_dataset)
 
-with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "wb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
     pkl.dump(train_properties, f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties.pkl", "wb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
     pkl.dump(test_properties, f)
 
 # %%
