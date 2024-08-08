@@ -135,6 +135,8 @@ train_features, test_features = gnn3.evaluate_with_features2()
 print(len(train_features[0]))
 len(train_features), len(test_features)
 
+import pickle as pkl
+import networkx as nx
 #load the properties
 with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "rb") as f:
     train_properties = pkl.load(f)
@@ -147,8 +149,7 @@ print(len(train_properties))
 print(train_properties[0:5])
 
 # %%
-import pickle as pkl
-import networkx as nx
+
 def calculate_avg_path_length(G):
     if nx.is_connected(G):
         return nx.average_shortest_path_length(G)
