@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH -p gpu_a100
 #SBATCH --gpus-per-node=1
-#SBATCH -o notebook_ASD.out
+#SBATCH -o notebook_ASD2.out
 
 module purge
 module load 2022
