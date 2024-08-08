@@ -14,17 +14,9 @@ MODEL = "GIN"
 from models.models_FC import GIN_framework as framework # import the model
 gnn = framework(dataset)
 
-MODELbis = "GINbis"
-from models.models_FC import GIN_framework_bis as framework # import the model
-gnnbis = framework(dataset)
-
 MODELtri = "GINtri"
 from models.models_FC import GIN_framework_tri as framework # import the model
 gnntri = framework(dataset)
-
-MODEL2 = "GIN2"
-from models.models_FC import GIN_framework2 as framework2 # import the model
-gnn2 = framework2(dataset)
 
 MODEL3 = "GIN3"
 from models.models_FC import GIN_framework3 as framework3 # import the model
@@ -32,33 +24,11 @@ gnn3 = framework3(dataset)
 
 gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
 
-gnn2.load_model(path="models/"+DATASET+"_"+MODEL2+"server.pt")
-
 gnn3.load_model(path="models/"+DATASET+"_"+MODEL3+"server.pt")
-
-gnnbis.load_model(path="models/"+DATASET+"_"+MODELbis+"server.pt")
-
-gnntri.load_model(path="models/"+DATASET+"_"+MODELtri+"server.pt")
-
-
-gnn.evaluate()
-
-
-gnnbis.evaluate()
-
-
-gnntri.evaluate()
-
-gnn2.evaluate()
-
-gnn3.evaluate()
 
 MODEL = MODEL3
 
-train_features, test_features = gnn3.evaluate_with_features2()
-
-print(len(train_features[0]))
-len(train_features), len(test_features)
+print('we are using model: ', MODEL)
 
 import pickle as pkl
 import networkx as nx
