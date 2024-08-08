@@ -3,7 +3,7 @@ from Datasets.FC.create_dataset import read_dataset
 
 dataset = read_dataset()
 
-len(dataset)
+print(len(dataset))
 
 import torch
 torch.manual_seed(37)
@@ -13,10 +13,6 @@ DATASET = "FC"
 MODEL = "GIN"
 from models.models_FC import GIN_framework as framework # import the model
 gnn = framework(dataset)
-
-MODELtri = "GINtri"
-from models.models_FC import GIN_framework_tri as framework # import the model
-gnntri = framework(dataset)
 
 MODEL3 = "GIN3"
 from models.models_FC import GIN_framework3 as framework3 # import the model
@@ -80,10 +76,10 @@ def compute_graph_properties(data):
 
 train_idx_list = gnn.train_idx.tolist()
 selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-train_properties = compute_graph_properties(selected_dataset)
+train_properties = compute_graph_properties(selected_dataset[0:5])
 test_idx_list = gnn.test_idx.tolist()
 selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-test_properties = compute_graph_properties(selected_dataset)
+test_properties = compute_graph_properties(selected_dataset[0:5])
 
 with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
     pkl.dump(train_properties, f)
