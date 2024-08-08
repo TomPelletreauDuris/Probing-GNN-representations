@@ -11,56 +11,18 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
-Data(x=[116, 116], edge_index=[2, 1016], edge_attr=[1016, 1], y=[1])
-['edge_index', 'y', 'edge_attr', 'x']
-ValuesView({'x': tensor([[ 0.0000,  0.4543,  0.2477,  ...,  0.1753,  0.2247, -0.1751],
-        [ 0.4543,  0.0000, -0.2204,  ..., -0.1947, -0.2258, -0.1434],
-        [ 0.2477, -0.2204,  0.0000,  ..., -0.0521, -0.0804, -0.2025],
-        ...,
-        [ 0.1753, -0.1947, -0.0521,  ...,  0.0000,  0.6875, -0.1364],
-        [ 0.2247, -0.2258, -0.0804,  ...,  0.6875,  0.0000,  0.0929],
-        [-0.1751, -0.1434, -0.2025,  ..., -0.1364,  0.0929,  0.0000]]), 'edge_index': tensor([[  0,   0,   0,  ..., 114, 115, 115],
-        [  1,  10,  12,  ..., 113,  94, 109]]), 'edge_attr': tensor([[0.4543],
-        [0.5913],
-        [0.4224],
-        ...,
-        [0.6875],
-        [0.4846],
-        [0.5437]]), 'y': tensor([0])})
-Test Loss: 2.040, Train Acc: 0.999 Test Acc: 0.636
-Test Loss: 1.525, Train Acc: 0.998 Test Acc: 0.655
-Test Loss: 2.643, Train Acc: 1.000 Test Acc: 0.509
-Test Loss: 2.830, Train Acc: 1.000 Test Acc: 0.586
-Accuracy: 0.691, Loss: 1.036
-9
-Traceback (most recent call last):
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN.py", line 171, in <module>
-    train_properties = compute_graph_properties(selected_dataset)
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN.py", line 164, in compute_graph_properties
-    small_world = nx.algorithms.smallworld.sigma(G)
-  File "<class 'networkx.utils.decorators.argmap'> compilation 51", line 6, in argmap_sigma_45
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/utils/backends.py", line 633, in __call__
-    return self.orig_func(*args, **kwargs)
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/smallworld.py", line 305, in sigma
-    L = nx.average_shortest_path_length(G)
-  File "<class 'networkx.utils.decorators.argmap'> compilation 21", line 3, in argmap_average_shortest_path_length_18
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/utils/backends.py", line 633, in __call__
-    return self.orig_func(*args, **kwargs)
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/shortest_paths/generic.py", line 428, in average_shortest_path_length
-    raise nx.NetworkXError("Graph is not connected.")
-networkx.exception.NetworkXError: Graph is not connected.
+slurmstepd: error: *** JOB 7365062 ON gcn31 CANCELLED AT 2024-08-08T08:10:53 DUE TO TIME LIMIT ***
 
 JOB STATISTICS
 ==============
-Job ID: 7341183
+Job ID: 7365062
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: RUNNING
+State: TIMEOUT (exit code 0)
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:01
-CPU Efficiency: 0.00% of 5-21:51:00 core-walltime
-Job Wall-clock time: 07:52:50
-Memory Utilized: 2.76 MB
-Memory Efficiency: 0.00% of 120.00 GB
-WARNING: Efficiency statistics may be misleading for RUNNING jobs.
+CPU Utilized: 00:00:04
+CPU Efficiency: 0.00% of 12-00:01:48 core-walltime
+Job Wall-clock time: 16:00:06
+Memory Utilized: 2.84 GB
+Memory Efficiency: 2.36% of 120.00 GB

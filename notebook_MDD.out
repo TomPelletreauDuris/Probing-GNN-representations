@@ -11,52 +11,18 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
-Data(x=[116, 116], edge_index=[2, 1294], edge_attr=[1294, 1], y=[1])
-['y', 'edge_attr', 'x', 'edge_index']
-ValuesView({'x': tensor([[ 0.0000,  0.2857,  0.0804,  ...,  0.2032,  0.1674,  0.0906],
-        [ 0.2857,  0.0000, -0.3860,  ...,  0.1637, -0.0359,  0.1674],
-        [ 0.0804, -0.3860,  0.0000,  ..., -0.0175, -0.0309,  0.0296],
-        ...,
-        [ 0.2032,  0.1637, -0.0175,  ...,  0.0000,  0.2329, -0.1452],
-        [ 0.1674, -0.0359, -0.0309,  ...,  0.2329,  0.0000,  0.0183],
-        [ 0.0906,  0.1674,  0.0296,  ..., -0.1452,  0.0183,  0.0000]]), 'edge_index': tensor([[  0,   0,   0,  ..., 113, 113, 114],
-        [ 10,  12,  14,  ..., 111, 112, 108]]), 'edge_attr': tensor([[0.7785],
-        [0.6966],
-        [0.5463],
-        ...,
-        [0.6415],
-        [0.4745],
-        [0.5401]]), 'y': tensor([0])})
-Test Loss: 1.728, Train Acc: 0.970 Test Acc: 0.642
-9
-Traceback (most recent call last):
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN_MDD.py", line 160, in <module>
-    train_properties = compute_graph_properties(selected_dataset)
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN_MDD.py", line 153, in compute_graph_properties
-    small_world = nx.algorithms.smallworld.sigma(G)
-  File "<class 'networkx.utils.decorators.argmap'> compilation 51", line 6, in argmap_sigma_45
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/utils/backends.py", line 633, in __call__
-    return self.orig_func(*args, **kwargs)
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/smallworld.py", line 305, in sigma
-    L = nx.average_shortest_path_length(G)
-  File "<class 'networkx.utils.decorators.argmap'> compilation 21", line 3, in argmap_average_shortest_path_length_18
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/utils/backends.py", line 633, in __call__
-    return self.orig_func(*args, **kwargs)
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/shortest_paths/generic.py", line 428, in average_shortest_path_length
-    raise nx.NetworkXError("Graph is not connected.")
-networkx.exception.NetworkXError: Graph is not connected.
+slurmstepd: error: *** JOB 7365066 ON gcn24 CANCELLED AT 2024-08-08T08:10:53 DUE TO TIME LIMIT ***
 
 JOB STATISTICS
 ==============
-Job ID: 7341186
+Job ID: 7365066
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: RUNNING
+State: TIMEOUT (exit code 0)
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:01
-CPU Efficiency: 0.00% of 4-20:39:36 core-walltime
-Job Wall-clock time: 06:28:52
-Memory Utilized: 2.72 MB
-Memory Efficiency: 0.00% of 120.00 GB
-WARNING: Efficiency statistics may be misleading for RUNNING jobs.
+CPU Utilized: 00:00:03
+CPU Efficiency: 0.00% of 12-00:01:48 core-walltime
+Job Wall-clock time: 16:00:06
+Memory Utilized: 2.93 GB
+Memory Efficiency: 2.44% of 120.00 GB
