@@ -18,9 +18,9 @@ MODEL3 = "GIN3"
 from models.models_FC import GIN_framework3 as framework3 # import the model
 gnn3 = framework3(dataset)
 
-gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt")
+gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt", map_location=torch.device('cpu'))
 
-gnn3.load_model(path="models/"+DATASET+"_"+MODEL3+"server.pt")
+gnn3.load_model(path="models/"+DATASET+"_"+MODEL3+"server.pt", map_location=torch.device('cpu'))
 
 MODEL = MODEL3
 
@@ -74,12 +74,13 @@ def compute_graph_properties(data):
         properties.append((num_nodes, num_edges, density, avg_path_len, num_cliques, num_triangles, num_squares, number_of_node_in_the_largest_fully_connected_component, small_world))
     return properties
 
+#compute the properties on the GPU
 train_idx_list = gnn.train_idx.tolist()
 selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-train_properties = compute_graph_properties(selected_dataset[0:5])
+train_properties = compute_graph_properties(selected_dataset[0:1])
 test_idx_list = gnn.test_idx.tolist()
 selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-test_properties = compute_graph_properties(selected_dataset[0:5])
+test_properties = compute_graph_properties(selected_dataset[0:1])
 
 with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
     pkl.dump(train_properties, f)
