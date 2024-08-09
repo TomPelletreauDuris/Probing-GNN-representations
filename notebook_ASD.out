@@ -5,24 +5,37 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
-  warnings.warn(out)
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
-  warnings.warn(out)
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
-  warnings.warn(out)
-slurmstepd: error: *** JOB 7365062 ON gcn31 CANCELLED AT 2024-08-08T08:10:53 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 7376937 ON gcn14 CANCELLED AT 2024-08-08T14:21:22 ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7376937/.ns: Invalid argument
+slurmstepd: error: container_g_join(7376937): Invalid argument
 
 JOB STATISTICS
 ==============
-Job ID: 7365062
+Job ID: 7376937
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
+State: CANCELLED (exit code 0)
 Nodes: 1
 Cores per node: 18
 CPU Utilized: 00:00:04
-CPU Efficiency: 0.00% of 12-00:01:48 core-walltime
-Job Wall-clock time: 16:00:06
-Memory Utilized: 2.84 GB
-Memory Efficiency: 2.36% of 120.00 GB
+CPU Efficiency: 0.00% of 1-05:10:12 core-walltime
+Job Wall-clock time: 01:37:14
+Memory Utilized: 1.41 GB
+Memory Efficiency: 1.18% of 120.00 GB
+slurmstepd: error: *** JOB 7376629 ON gcn29 CANCELLED AT 2024-08-08T14:21:30 ***
+slurmstepd: error: container_p_join: setns failed for /slurm/7376629/.ns: Invalid argument
+slurmstepd: error: container_g_join(7376629): Invalid argument
+
+JOB STATISTICS
+==============
+Job ID: 7376629
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:03
+CPU Efficiency: 0.00% of 1-06:52:30 core-walltime
+Job Wall-clock time: 01:42:55
+Memory Utilized: 1.17 GB
+Memory Efficiency: 0.97% of 120.00 GB
