@@ -63,8 +63,8 @@ class GCN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=256)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=256)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
