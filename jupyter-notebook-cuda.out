@@ -1,84 +1,134 @@
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn17.local.snellius.surf.nl -L 5634:localhost:5634
+ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn17.local.snellius.surf.nl -L 5206:localhost:5206
 
 After connection is established in your local browser go to the address:
-http://localhost:5634
-[I 16:53:58.026 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 16:53:58.026 NotebookApp] Jupyter Notebook 6.4.0 is running at:
-[I 16:53:58.026 NotebookApp] http://localhost:5634/?token=28b05fda4203f8653e286039dd656aaf574832694f8db0a0
-[I 16:53:58.026 NotebookApp]  or http://127.0.0.1:5634/?token=28b05fda4203f8653e286039dd656aaf574832694f8db0a0
-[I 16:53:58.026 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 16:53:58.035 NotebookApp] 
+http://localhost:5206
+[I 17:46:22.461 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 17:46:22.461 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 17:46:22.461 NotebookApp] http://localhost:5206/?token=9fd61ba4e51feb664d9b732c33fed9042870ac8089974615
+[I 17:46:22.461 NotebookApp]  or http://127.0.0.1:5206/?token=9fd61ba4e51feb664d9b732c33fed9042870ac8089974615
+[I 17:46:22.461 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 17:46:22.465 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2137716-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2223057-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5634/?token=28b05fda4203f8653e286039dd656aaf574832694f8db0a0
-     or http://127.0.0.1:5634/?token=28b05fda4203f8653e286039dd656aaf574832694f8db0a0
-[I 16:57:09.110 NotebookApp] 302 GET /?token=28b05fda4203f8653e286039dd656aaf574832694f8db0a0 (::1) 0.450000ms
+        http://localhost:5206/?token=9fd61ba4e51feb664d9b732c33fed9042870ac8089974615
+     or http://127.0.0.1:5206/?token=9fd61ba4e51feb664d9b732c33fed9042870ac8089974615
+[I 17:47:04.973 NotebookApp] 302 GET /?token=9fd61ba4e51feb664d9b732c33fed9042870ac8089974615 (::1) 0.440000ms
 /sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
   return _iterencode(o, 0)
-[W 16:57:34.392 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[W 17:49:30.887 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
 Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
 handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-6' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+RuntimeError: Cannot enter into task <Task pending name='Task-13' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
 Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
 handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-13' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
-[I 16:57:35.533 NotebookApp] Kernel started: 5789987f-0806-4abb-8db5-e63f5adfe162, name: python3
+RuntimeError: Cannot enter into task <Task pending name='Task-8' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1' coro=<MultiKernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/multikernelmanager.py:212>> is being executed.
+[I 17:49:32.522 NotebookApp] Kernel started: c00e87ef-9c90-4549-afab-892d64bca37d, name: python3
+[W 17:49:34.051 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: 37ea0fd6-f771-4823-8dce-1674dd09690a
-[I 16:59:35.743 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 16:59:35.745 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:01:50.808 NotebookApp] Kernel interrupted: 5789987f-0806-4abb-8db5-e63f5adfe162
-[I 17:03:35.733 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:03:35.734 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:03:48.774 NotebookApp] Kernel interrupted: 5789987f-0806-4abb-8db5-e63f5adfe162
-[I 17:04:14.889 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 17:04:19.499 NotebookApp] Starting buffering for 5789987f-0806-4abb-8db5-e63f5adfe162:14defb1b9240433383d33de21185da49
-[I 17:04:20.433 NotebookApp] Kernel restarted: 5789987f-0806-4abb-8db5-e63f5adfe162
-[I 17:04:20.450 NotebookApp] Restoring connection for 5789987f-0806-4abb-8db5-e63f5adfe162:14defb1b9240433383d33de21185da49
-[I 17:04:21.337 NotebookApp] Replaying 3 buffered messages
-[I 17:05:35.750 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:05:35.751 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:07:35.915 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:07:35.915 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:07:40.046 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 17:07:45.873 NotebookApp] Kernel interrupted: 5789987f-0806-4abb-8db5-e63f5adfe162
-[I 17:07:48.481 NotebookApp] Starting buffering for 5789987f-0806-4abb-8db5-e63f5adfe162:14defb1b9240433383d33de21185da49
-[I 17:07:49.413 NotebookApp] Kernel restarted: 5789987f-0806-4abb-8db5-e63f5adfe162
-[I 17:07:49.431 NotebookApp] Restoring connection for 5789987f-0806-4abb-8db5-e63f5adfe162:14defb1b9240433383d33de21185da49
-[I 17:07:50.436 NotebookApp] Replaying 3 buffered messages
-[I 17:09:35.798 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:09:35.799 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:11:35.804 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:11:35.805 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:13:35.784 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:13:35.785 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:15:35.760 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:15:35.761 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:17:35.821 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:17:35.822 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:19:35.798 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:19:35.799 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:22:21.999 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:22:22.000 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:24:21.948 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:24:21.949 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:25:35.944 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:25:35.945 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:28:21.970 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:28:21.971 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:29:35.919 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:29:35.920 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:32:19.921 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:32:19.922 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:33:35.813 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 17:33:35.814 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 17:34:26.594 NotebookApp] Starting buffering for 5789987f-0806-4abb-8db5-e63f5adfe162:14defb1b9240433383d33de21185da49
+[IPKernelApp] WARNING | No such comm: df1f9380-45c6-49eb-bf8f-4119b61a1b59
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-44' coro=<MultiKernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/multikernelmanager.py:212>> is being executed.
+[I 17:49:35.290 NotebookApp] Kernel started: cabdb2d1-c78a-417f-801e-596fb63aa6fe, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: d69c7323-6b13-4070-a20d-7069da3c0f9c
+[W 17:49:39.329 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-5' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-89' coro=<MultiKernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/multikernelmanager.py:212>> is being executed.
+[I 17:49:40.503 NotebookApp] Kernel started: bcb0b7dd-2c6f-4fe2-8f5e-4ad9e2d1fb84, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 51866c81-cb19-49a8-812b-fcea10d8ce38
+[I 17:50:00.608 NotebookApp] Saving file at /models/models_BA_2grid_house.py
+[I 17:50:10.337 NotebookApp] Starting buffering for c00e87ef-9c90-4549-afab-892d64bca37d:f8e8a93f662c47688ac3e954dd4bf9e9
+[I 17:50:10.569 NotebookApp] Kernel restarted: c00e87ef-9c90-4549-afab-892d64bca37d
+[I 17:50:10.583 NotebookApp] Restoring connection for c00e87ef-9c90-4549-afab-892d64bca37d:f8e8a93f662c47688ac3e954dd4bf9e9
+[I 17:50:11.501 NotebookApp] Replaying 3 buffered messages
+[I 17:51:32.784 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 17:51:32.785 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 17:51:35.831 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 17:51:35.831 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 17:53:32.794 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 17:53:32.796 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 17:55:32.939 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 17:55:32.940 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 17:55:35.410 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 17:55:35.411 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 17:55:44.623 NotebookApp] Saving file at /models/models_BA_2grid_house.py
+[I 17:55:53.382 NotebookApp] Starting buffering for c00e87ef-9c90-4549-afab-892d64bca37d:f8e8a93f662c47688ac3e954dd4bf9e9
+[I 17:55:55.418 NotebookApp] Kernel restarted: c00e87ef-9c90-4549-afab-892d64bca37d
+[I 17:55:55.432 NotebookApp] Restoring connection for c00e87ef-9c90-4549-afab-892d64bca37d:f8e8a93f662c47688ac3e954dd4bf9e9
+[I 17:55:56.379 NotebookApp] Replaying 25 buffered messages
+[I 17:57:32.955 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 17:57:32.956 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 17:57:43.407 NotebookApp] Saving file at /models/models_BA_2grid_house.py
+[I 17:57:49.469 NotebookApp] Starting buffering for cabdb2d1-c78a-417f-801e-596fb63aa6fe:a02a0f03abab4e18965d0dd00f2bbe2a
+[I 17:57:51.911 NotebookApp] Kernel restarted: cabdb2d1-c78a-417f-801e-596fb63aa6fe
+[I 17:57:51.928 NotebookApp] Restoring connection for cabdb2d1-c78a-417f-801e-596fb63aa6fe:a02a0f03abab4e18965d0dd00f2bbe2a
+[I 17:57:52.802 NotebookApp] Replaying 28 buffered messages
+[I 17:59:32.967 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 17:59:32.968 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 17:59:35.409 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 17:59:35.410 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:01:33.005 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 18:01:33.006 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 18:01:35.818 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 18:01:35.819 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:03:40.684 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:03:40.685 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:03:58.220 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 18:03:58.221 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:03:59.147 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 18:03:59.147 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 18:05:35.431 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 18:05:35.432 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:05:40.898 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:05:40.899 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:05:50.205 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 18:05:50.206 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 18:07:40.701 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:07:40.701 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:09:59.352 NotebookApp] Saving file at /models/models_BA_2grid_house.py
+[I 18:10:02.973 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:10:02.974 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:10:03.989 NotebookApp] Saving file at /models/models_BA_2grid_house.py
+[I 18:10:13.314 NotebookApp] Starting buffering for cabdb2d1-c78a-417f-801e-596fb63aa6fe:a02a0f03abab4e18965d0dd00f2bbe2a
+[I 18:10:14.146 NotebookApp] Kernel restarted: cabdb2d1-c78a-417f-801e-596fb63aa6fe
+[I 18:10:14.168 NotebookApp] Restoring connection for cabdb2d1-c78a-417f-801e-596fb63aa6fe:a02a0f03abab4e18965d0dd00f2bbe2a
+[I 18:10:15.091 NotebookApp] Replaying 3 buffered messages
+[I 18:11:35.436 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 18:11:35.437 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:11:40.939 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:11:40.939 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:13:35.429 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 18:13:35.430 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:13:57.166 NotebookApp] Saving file at /models/models_BA_2grid_house.py
+[I 18:14:01.320 NotebookApp] Starting buffering for bcb0b7dd-2c6f-4fe2-8f5e-4ad9e2d1fb84:b54877e05a7740f28cb6822f0558ea65
+[I 18:14:02.054 NotebookApp] Kernel restarted: bcb0b7dd-2c6f-4fe2-8f5e-4ad9e2d1fb84
+[I 18:14:02.068 NotebookApp] Restoring connection for bcb0b7dd-2c6f-4fe2-8f5e-4ad9e2d1fb84:b54877e05a7740f28cb6822f0558ea65
+[I 18:14:03.072 NotebookApp] Replaying 3 buffered messages
+[I 18:15:40.690 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:15:40.691 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:15:52.979 NotebookApp] Saving file at /Probing_GIN.ipynb
+[W 18:15:52.980 NotebookApp] Notebook Probing_GIN.ipynb is not trusted
+[I 18:17:48.754 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:17:48.755 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:45:40.694 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:45:40.695 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 18:47:40.886 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 18:47:40.887 NotebookApp] Notebook Probing_GAT.ipynb is not trusted

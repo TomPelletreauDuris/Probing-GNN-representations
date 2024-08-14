@@ -63,8 +63,8 @@ class GCN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=256)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=256)
             
     def train(self):   
         self.model.train()
@@ -99,7 +99,7 @@ class GCN_framework:
 
     def iterate(self):
 
-        for epoch in range(1, 101):
+        for epoch in range(1, 1001):
             loss = self.train()
             train_acc,train_loss = self.test(self.train_loader)
             test_acc,test_loss = self.test(self.test_loader)
@@ -779,8 +779,8 @@ class GAT_Framework_5:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=256)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=256)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
 
     def train(self):
         self.model.train()
@@ -1115,8 +1115,8 @@ class GIN_framework3:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=256)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=256)
             
     def train(self):   
         self.model.train()
@@ -1172,7 +1172,7 @@ class GIN_framework3:
 
     def iterate(self):
 
-        for epoch in range(1, 1001):
+        for epoch in range(1, 201):
             loss = self.train()
             train_acc,train_loss = self.test(self.train_loader)
             test_acc,test_loss = self.test(self.test_loader)
