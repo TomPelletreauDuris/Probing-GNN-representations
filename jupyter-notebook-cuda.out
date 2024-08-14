@@ -1,34 +1,64 @@
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn21.local.snellius.surf.nl -L 5589:localhost:5589
+ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn30.local.snellius.surf.nl -L 5420:localhost:5420
 
 After connection is established in your local browser go to the address:
-http://localhost:5589
-[I 11:55:33.443 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 11:55:33.443 NotebookApp] Jupyter Notebook 6.4.0 is running at:
-[I 11:55:33.443 NotebookApp] http://localhost:5589/?token=2d1ed508b5e04216c00eece1c508362102b9fdeb4c94dd4c
-[I 11:55:33.443 NotebookApp]  or http://127.0.0.1:5589/?token=2d1ed508b5e04216c00eece1c508362102b9fdeb4c94dd4c
-[I 11:55:33.443 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 11:55:33.449 NotebookApp] 
+http://localhost:5420
+[I 15:57:58.703 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 15:57:58.703 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 15:57:58.703 NotebookApp] http://localhost:5420/?token=bab52428ca63cb9a807ce11d10a9d899921a5d7187e2dfd5
+[I 15:57:58.703 NotebookApp]  or http://127.0.0.1:5420/?token=bab52428ca63cb9a807ce11d10a9d899921a5d7187e2dfd5
+[I 15:57:58.703 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 15:57:58.708 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2656054-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-1211170-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5589/?token=2d1ed508b5e04216c00eece1c508362102b9fdeb4c94dd4c
-     or http://127.0.0.1:5589/?token=2d1ed508b5e04216c00eece1c508362102b9fdeb4c94dd4c
-slurmstepd: error: *** JOB 7374295 ON gcn21 CANCELLED AT 2024-08-08T11:58:52 ***
-slurmstepd: error: container_p_join: setns failed for /slurm/7374295/.ns: Invalid argument
-slurmstepd: error: container_g_join(7374295): Invalid argument
-
-JOB STATISTICS
-==============
-Job ID: 7374295
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: CANCELLED (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:03
-CPU Efficiency: 0.08% of 01:03:18 core-walltime
-Job Wall-clock time: 00:03:31
-Memory Utilized: 60.09 MB
-Memory Efficiency: 0.05% of 120.00 GB
+        http://localhost:5420/?token=bab52428ca63cb9a807ce11d10a9d899921a5d7187e2dfd5
+     or http://127.0.0.1:5420/?token=bab52428ca63cb9a807ce11d10a9d899921a5d7187e2dfd5
+[I 16:11:09.897 NotebookApp] 302 GET /?token=bab52428ca63cb9a807ce11d10a9d899921a5d7187e2dfd5 (::1) 0.440000ms
+/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 16:11:21.877 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-8' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+[I 16:11:22.855 NotebookApp] Kernel started: a148b879-95f9-4904-879f-60bb0a8c7a92, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 64072ed6-945c-4f3f-8320-1624648e846d
+[I 16:13:23.023 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:13:23.024 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:15:23.761 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:15:23.761 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:17:23.799 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:17:23.799 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:23:23.030 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:23:23.030 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:25:23.025 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:25:23.026 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:27:23.042 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:27:23.042 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:29:23.012 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:29:23.013 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:31:23.015 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:31:23.016 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-6' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1723' coro=<PeriodicCallback._run() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:694]> is being executed.
+[I 16:35:23.029 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:35:23.029 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:37:23.037 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:37:23.038 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 16:39:06.401 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 16:39:06.401 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
