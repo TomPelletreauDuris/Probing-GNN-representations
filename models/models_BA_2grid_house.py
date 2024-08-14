@@ -99,11 +99,11 @@ class GCN_framework:
 
     def iterate(self):
 
-        for epoch in range(1, 7001):
+        for epoch in range(1, 101):
             loss = self.train()
             train_acc,train_loss = self.test(self.train_loader)
             test_acc,test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
+            if epoch % 1 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                 f'Test Acc: {test_acc:.3f}')
 
