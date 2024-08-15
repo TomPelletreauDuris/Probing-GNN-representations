@@ -171,7 +171,7 @@ class GCN_framework_wo_edge_weight:
                 self.bn1 = BatchNorm(128)
                 self.bn2 = BatchNorm(num_classes)
 
-            def forward(self, x, edge_index, batch=None, return_intermediate=False):
+            def forward(self, x, edge_index, batch=None, return_intermediate=False, return_node_embeddings=False):
                 """
                 Embeddings : 5 layers of GCN, a global max pooling, 2 linear layers. Total 8 layers.
                 """
@@ -181,6 +181,11 @@ class GCN_framework_wo_edge_weight:
                     x = self.batch_norms[i](x)
                     if return_intermediate:
                         intermediates.append(x)
+
+                if return_node_embeddings:
+                    return intermediates
+                
+
                 x_global = global_max_pool(x, batch)
                 if return_intermediate:
                     intermediates.append(x_global)
@@ -202,8 +207,8 @@ class GCN_framework_wo_edge_weight:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=True)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -259,22 +264,42 @@ class GCN_framework_wo_edge_weight:
         print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
 
     @torch.no_grad()
-    def evaluate_with_features2(self):
+    def evaluate_with_features2(self, return_node_embeddings=False):
         self.model.eval()
         train_features = []
         test_features = []
 
-        # Extract features for training data
-        for data in self.train_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                for i, feature in enumerate(features):
+                    print(f"features[{i}].shape: ", feature.shape)
 
-        # Extract features for test data
-        for data in self.test_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+
+            # Extract features for training data
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+
+            # Extract features for test data
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
 
@@ -1239,7 +1264,7 @@ class GIN_framework3:
                 self.lin2 = Linear(128, num_classes)
                 self.dropout = torch.nn.Dropout(0.5)
             
-            def forward(self, x, edge_index, batch=None, return_intermediate=False):
+            def forward(self, x, edge_index, batch=None, return_intermediate=False, return_node_embeddings=False):
                 """
                 Embeddings : 5 layers of GIN, a global mean pooling, 2 linear layers. Total 8 layers."""
                 intermediates = []
@@ -1248,6 +1273,10 @@ class GIN_framework3:
                     x = F.relu(x)
                     if return_intermediate:
                         intermediates.append(x)
+
+                if return_node_embeddings:
+                    return intermediates
+                
                 x = global_max_pool(x, batch)
                 if return_intermediate:
                     intermediates.append(x)
@@ -1373,7 +1402,7 @@ class GIN_framework3:
         print(f'Accuracy: {acc:.3f}, Loss: {loss:.3f}')
 
     @torch.no_grad()
-    def evaluate_with_features2(self, loader=None):
+    def evaluate_with_features2(self, loader=None, return_node_embeddings=False):
         if loader is None:
             if self.test_loader is None:
                 raise ValueError("No test loader provided and no default test loader available.")
@@ -1383,15 +1412,37 @@ class GIN_framework3:
         train_features = []
         test_features = []
 
-        for data in self.train_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                print("features[0].shape: ",features[0].shape)
+                print("features[1].shape: ",features[1].shape)
+                print("features[2].shape: ",features[2].shape)
+                print("features[3].shape: ",features[3].shape)
 
-        for data in self.test_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy(), f[8].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
 
@@ -1588,13 +1639,17 @@ class GAT_framework:
                 self.bn1 = BatchNorm(128)
                 self.bn2 = BatchNorm(num_classes)
 
-            def forward(self, x, edge_index, batch=None, return_intermediate=False):
+            def forward(self, x, edge_index, batch=None, return_intermediate=False, return_node_embeddings=False):
                 intermediates = []
                 for i, conv in enumerate(self.conv_layers):
                     x = F.relu(conv(x, edge_index))
                     x = self.batch_norms[i](x)
                     if return_intermediate:
                         intermediates.append(x)
+
+                if return_node_embeddings:
+                    return intermediates
+
                 x_global = global_max_pool(x, batch)
                 if return_intermediate:
                     intermediates.append(x_global)                
@@ -1673,21 +1728,43 @@ class GAT_framework:
         print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
 
     @torch.no_grad()
-    def evaluate_with_features2(self):
+    def evaluate_with_features2(self, return_node_embeddings=False):
         self.model.eval()
         train_features = []
         test_features = []
 
-        # Extract features for training data
-        for data in self.train_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                print("features[0].shape: ",features[0].shape)
+                print("features[1].shape: ",features[1].shape)
+                print("features[2].shape: ",features[2].shape)
+                print("features[3].shape: ",features[3].shape)
 
-        # Extract features for test data
-        for data in self.test_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-            test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+
+            # Extract features for training data
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+
+            # Extract features for test data
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
