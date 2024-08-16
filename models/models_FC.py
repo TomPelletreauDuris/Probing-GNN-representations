@@ -1303,10 +1303,10 @@ class GIN_framework3:
         self.kf = KFold(n_splits=10, shuffle=True, random_state=42)
         self.num_epochs = 900
         idx = torch.arange(len(self.dataset))
-        train_idx, test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
         
-        train_data = [self.dataset[i] for i in train_idx]
-        test_data = [self.dataset[i] for i in test_idx]
+        train_data = [self.dataset[i] for i in self.train_idx]
+        test_data = [self.dataset[i] for i in self.test_idx]
         self.train_loader = DataLoader(train_data, batch_size=32)
         self.test_loader = DataLoader(test_data, batch_size=32)
 
@@ -1371,12 +1371,6 @@ class GIN_framework3:
 
     def iterate(self):
         idx = torch.arange(len(self.dataset))
-        train_idx, test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
-        
-        train_data = [self.dataset[i] for i in train_idx]
-        test_data = [self.dataset[i] for i in test_idx]
-        self.train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
-        self.test_loader = DataLoader(test_data, batch_size=32)
 
         for epoch in range(1, self.num_epochs + 1):
             train_loss = self.train(self.train_loader)
