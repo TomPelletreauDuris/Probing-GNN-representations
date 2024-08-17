@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH -t 40:00:00
+#SBATCH -t 30:00:00
 #SBATCH -N 1
 #SBATCH -p gpu_a100
-#SBATCH --cpus-per-task=18
 #SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-py-GCN.out
+#SBATCH --cpus-per-task=18
 
 module purge
 module load 2022
