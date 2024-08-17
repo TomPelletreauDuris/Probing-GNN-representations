@@ -3,7 +3,7 @@
 #SBATCH -t 40:00:00
 #SBATCH -N 1
 #SBATCH -p gpu_a100
-#SBATCH --cpus-per-task=72
+#SBATCH --cpus-per-task=18
 #SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-py-GAT.out
 
