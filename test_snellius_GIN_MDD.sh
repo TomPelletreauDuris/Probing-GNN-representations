@@ -3,7 +3,6 @@
 #SBATCH -t 40:00:00
 #SBATCH -N 1
 #SBATCH -p gpu_a100
-#SBATCH --cpus-per-task=18
 #SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-py-GIN_MDD.out
 
@@ -12,7 +11,7 @@ module load 2022
 module load CUDA/11.7.0
 module load PyTorch/1.12.0-foss-2022a-CUDA-11.7.0
 
-source activate GNN_gpu
+# source activate GNN_gpu
 
 srun python -uc "import torch; print('GPU available?', torch.cuda.is_available())"
 
