@@ -23,4 +23,4 @@ nvidia-smi --query-gpu=driver_version --format=csv,noheader
 python --version
 
 # Run the actual experiment
-python FC_probing_GCN.py
+python FC_probing_GIN.py
