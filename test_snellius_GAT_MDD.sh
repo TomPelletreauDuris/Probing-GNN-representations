@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH -t 48:00:00
+#SBATCH -t 50:00:00
 #SBATCH -N 1
-#SBATCH -p fat_genoa
+#SBATCH -p thin
 #SBATCH --cpus-per-task=192
-#SBATCH --mem=1440G
+#SBATCH --mem=336G
 #SBATCH -o jupyter-notebook-py-GAT_MDD.out
 
 module purge
