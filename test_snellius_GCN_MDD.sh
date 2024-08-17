@@ -1,11 +1,12 @@
 #!/bin/bash
 
-#SBATCH -t 48:00:00
+
+#SBATCH -t 50:00:00
 #SBATCH -N 1
-#SBATCH -p fat_genoa
+#SBATCH -p genoa
 #SBATCH --cpus-per-task=192
-#SBATCH --mem=1440G
-#SBATCH -o jupyter-notebook-py-GCN.out
+#SBATCH --mem=336G
+#SBATCH -o jupyter-notebook-py-GCN_MDD.out
 
 module purge
 module load 2022

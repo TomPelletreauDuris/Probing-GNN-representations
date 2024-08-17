@@ -5,7 +5,7 @@
 #SBATCH -p fat_genoa
 #SBATCH --cpus-per-task=192
 #SBATCH --mem=1440G
-#SBATCH -o jupyter-notebook-py-GCN.out
+#SBATCH -o jupyter-notebook-py-GAT_MDD.out
 
 module purge
 module load 2022
