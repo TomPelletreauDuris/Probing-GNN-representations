@@ -1307,8 +1307,8 @@ class GIN_framework3:
         
         train_data = [self.dataset[i] for i in self.train_idx]
         test_data = [self.dataset[i] for i in self.test_idx]
-        self.train_loader = DataLoader(train_data, batch_size=32)
-        self.test_loader = DataLoader(test_data, batch_size=32)
+        self.train_loader = DataLoader(train_data, batch_size=1)
+        self.test_loader = DataLoader(test_data, batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1665,8 +1665,8 @@ class GAT_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=False)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1, shuffle=False)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1, shuffle=False)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
