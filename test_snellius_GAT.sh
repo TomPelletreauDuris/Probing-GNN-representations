@@ -2,7 +2,7 @@
 
 #SBATCH -t 50:00:00
 #SBATCH -N 1
-#SBATCH -p genoa
+#SBATCH -p thin
 #SBATCH --cpus-per-task=192
 #SBATCH --mem=336G
 #SBATCH -o jupyter-notebook-py-GAT.out
