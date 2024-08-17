@@ -1,10 +1,10 @@
 #!/bin/bash
 
-
 #SBATCH -t 50:00:00
 #SBATCH -N 1
 #SBATCH -p gpu_a100
 #SBATCH --cpus-per-task=72
+#SBATCH --gpus-per-node=1
 #SBATCH --mem=336G
 #SBATCH -o jupyter-notebook-py-GCN_MDD.out
 
