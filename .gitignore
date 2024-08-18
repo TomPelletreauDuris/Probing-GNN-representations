@@ -1,3 +1,7 @@
 Datasets/FC/ASD.mat
-Datasets/FC/MDD.matDatasets/FC/*.pkl
-results/FC_suffled_*.pkl
+Datasets/FC/MDD.mat
+Datasets/FC/FC_MDD_suffled_GAT.pkl
+Datasets/FC/FC_MDD_suffled_GCN_w_edge_weight.pkl
+Datasets/FC/FC_MDD_suffled_GIN3.pkl
+results/FC_suffled_GAT_X_train_layers.pkl
+results/FC_suffled_GIN3_X_train_layers.pkl
