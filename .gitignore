@@ -1,2 +1,3 @@
 Datasets/FC/ASD.mat
-Datasets/FC/MDD.mat
+Datasets/FC/MDD.matDatasets/FC/*.pkl
+results/FC_suffled_*.pkl
