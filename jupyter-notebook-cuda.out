@@ -1,114 +1,105 @@
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn47.local.snellius.surf.nl -L 5222:localhost:5222
+ssh -N -J tpelletreaudur@int6-pub.snellius.surf.nl tpelletreaudur@gcn21.local.snellius.surf.nl -L 5341:localhost:5341
 
 After connection is established in your local browser go to the address:
-http://localhost:5222
-[I 15:32:14.328 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 15:32:14.328 NotebookApp] Jupyter Notebook 6.4.0 is running at:
-[I 15:32:14.328 NotebookApp] http://localhost:5222/?token=68e79db198a2debcab94aba2ff58d26c4f46c90e3adcc94a
-[I 15:32:14.328 NotebookApp]  or http://127.0.0.1:5222/?token=68e79db198a2debcab94aba2ff58d26c4f46c90e3adcc94a
-[I 15:32:14.328 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 15:32:14.332 NotebookApp] 
+http://localhost:5341
+[I 19:18:21.094 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 19:18:21.096 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 19:18:21.096 NotebookApp] http://localhost:5341/?token=6e0475384c315b6ebc270866041e5f4e6c5edb5975a5536e
+[I 19:18:21.096 NotebookApp]  or http://127.0.0.1:5341/?token=6e0475384c315b6ebc270866041e5f4e6c5edb5975a5536e
+[I 19:18:21.096 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 19:18:21.102 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-549631-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2015205-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5222/?token=68e79db198a2debcab94aba2ff58d26c4f46c90e3adcc94a
-     or http://127.0.0.1:5222/?token=68e79db198a2debcab94aba2ff58d26c4f46c90e3adcc94a
-slurmstepd: error: *** JOB 7507460 ON gcn47 CANCELLED AT 2024-08-16T15:34:59 ***
-slurmstepd: error: container_p_join: setns failed for /slurm/7507460/.ns: Invalid argument
-slurmstepd: error: container_g_join(7507460): Invalid argument
-
-JOB STATISTICS
-==============
-Job ID: 7507460
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: CANCELLED (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:03
-CPU Efficiency: 0.09% of 00:54:00 core-walltime
-Job Wall-clock time: 00:03:00
-Memory Utilized: 62.77 MB
-Memory Efficiency: 0.05% of 120.00 GB
-[I 15:36:17.214 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 15:36:17.809 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 15:39:49.431 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 15:44:49.013 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 15:57:48.790 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 16:01:49.240 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 16:11:48.749 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 16:13:48.961 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 16:21:49.196 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 16:25:48.785 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 16:26:04.539 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:26:14.444 NotebookApp] Starting buffering for 4b3d2cd5-9fca-4b2e-bf25-90bd36cb9f58:c8ad116b136342178149f515449483a5
-[I 16:28:11.280 NotebookApp] Kernel interrupted: 4b3d2cd5-9fca-4b2e-bf25-90bd36cb9f58
-[I 16:28:18.933 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:29:47.222 NotebookApp] Starting buffering for 844e81d4-0635-4b33-8914-5ad32625f1a5:1d6a1080cf7045c398ac1d192c7b2b46
-[I 16:30:19.202 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:32:19.198 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:34:19.153 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:36:49.392 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:38:23.287 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:38:48.894 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 16:40:49.252 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:42:49.228 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:43:49.246 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 16:44:49.247 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:46:49.305 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:48:49.581 NotebookApp] Saving file at /FC_probing_GIN.ipynb
-[I 16:52:48.862 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 17:01:19.051 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 17:06:48.925 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 17:17:53.003 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 17:19:48.952 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 17:19:49.610 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 17:33:49.638 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 17:49:49.390 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 18:05:49.401 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 18:14:49.043 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 18:21:50.033 NotebookApp] Saving file at /FC_probing_GAT.ipynb
-[I 18:21:50.278 NotebookApp] Saving file at /FC_probing_GCN.ipynb
-[I 18:23:42.472 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
-[I 18:23:45.290 NotebookApp] Starting buffering for 3f37103a-13d0-466c-b8ba-453cf5386e09:7545f6dbe1c94438813d0f42bf1dd031
-[I 18:24:13.732 NotebookApp] Starting buffering for 4b3d2cd5-9fca-4b2e-bf25-90bd36cb9f58:13772f3aed544c8188bc894f60e11402
-[W 18:36:24.401 NotebookApp] WebSocket ping timeout after 119981 ms.
-[I 18:36:29.403 NotebookApp] Starting buffering for 607e5808-acee-435f-94bc-4b5b96e5c7a7:27595f4630c24c6fb27b73a70f5c6caa
-[W 18:36:37.025 NotebookApp] WebSocket ping timeout after 119989 ms.
-[I 18:36:42.027 NotebookApp] Starting buffering for fca8094c-b5d9-4b9d-a4cc-039eddbd84a2:197a7d0a43a344fba9d24d74ddc67990
-slurmstepd: error: *** JOB 7500490 ON gcn23 CANCELLED AT 2024-08-17T02:23:17 DUE TO TIME LIMIT ***
-slurmstepd: error: container_p_join: setns failed for /slurm/7500490/.ns: Invalid argument
-slurmstepd: error: container_g_join(7500490): Invalid argument
-
-JOB STATISTICS
-==============
-Job ID: 7500490
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:05
-CPU Efficiency: 0.00% of 12-00:02:06 core-walltime
-Job Wall-clock time: 16:00:07
-Memory Utilized: 11.30 GB
-Memory Efficiency: 9.42% of 120.00 GB
-slurmstepd: error: *** JOB 7505592 ON gcn21 CANCELLED AT 2024-08-17T06:59:17 DUE TO TIME LIMIT ***
-slurmstepd: error: container_p_join: setns failed for /slurm/7505592/.ns: Invalid argument
-slurmstepd: error: container_g_join(7505592): Invalid argument
-
-JOB STATISTICS
-==============
-Job ID: 7505592
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:04
-CPU Efficiency: 0.00% of 12-00:01:30 core-walltime
-Job Wall-clock time: 16:00:05
-Memory Utilized: 10.93 GB
-Memory Efficiency: 9.11% of 120.00 GB
+        http://localhost:5341/?token=6e0475384c315b6ebc270866041e5f4e6c5edb5975a5536e
+     or http://127.0.0.1:5341/?token=6e0475384c315b6ebc270866041e5f4e6c5edb5975a5536e
+[I 19:19:59.082 NotebookApp] 302 GET /?token=6e0475384c315b6ebc270866041e5f4e6c5edb5975a5536e (::1) 0.450000ms
+/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 19:20:09.282 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 19:20:09.866 NotebookApp] Notebook FC_probing_GCN_MDD.ipynb is not trusted
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-12' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+[I 19:20:12.643 NotebookApp] Kernel started: c4317af2-6fcb-401e-bc87-2f846bf548b5, name: python3
+Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
+handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-11' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
+[I 19:20:13.341 NotebookApp] Kernel started: 45a55d88-254d-47fb-a67d-5b9390d17637, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 2cf4fe98-0c18-4203-95af-f0b24064e65b
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 8eaa6728-48aa-4182-96a4-5ed5434d9e40
+[I 19:22:15.182 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
+[W 19:22:15.183 NotebookApp] Notebook FC_probing_GCN_MDD.ipynb is not trusted
+[I 19:22:15.300 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 19:22:15.302 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 19:39:11.781 NotebookApp] Starting buffering for c4317af2-6fcb-401e-bc87-2f846bf548b5:58386b6132de4080b6db9e55c15d9050
+[I 19:39:18.275 NotebookApp] Starting buffering for 45a55d88-254d-47fb-a67d-5b9390d17637:f2df2fe2509646c78e1827a45588ec1b
+[W 19:44:38.579 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[I 19:44:40.543 NotebookApp] Kernel started: f20a6d9a-e279-43b0-9c07-824291b1ed88, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 8f656fe0-4833-41da-9182-daf44e317b7f
+[W 19:44:42.765 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[W 19:44:43.117 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 19:44:44.423 NotebookApp] Kernel started: 1c7a854e-7acc-45eb-9d28-1dd7441673f3, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 3d08e807-1700-46fa-bb9f-b686bd051910
+[W 19:44:45.870 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 19:44:46.890 NotebookApp] Kernel started: d14c0d9c-a163-46cb-8130-78508f0068a6, name: python3
+[I 19:44:48.178 NotebookApp] Kernel started: c6c02992-4db4-4c0f-b8e0-6ee86a0d33af, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 6984a774-a080-454d-a6fb-c989168e1a4f
+[W 19:44:48.760 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 19:44:50.578 NotebookApp] Kernel started: 2061294d-43fd-4059-aed6-256668a19676, name: python3
+[W 19:44:51.489 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: f878d41a-2117-4d05-a31a-3405a339ee60
+[W 19:44:52.892 NotebookApp] Notebook FC_probing_GCN_MDD.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: bd80594d-ba08-4e37-be3a-cd3d3464f36c
+[W 19:44:59.841 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: bef903e5-7d22-4120-b0e8-036aca7a7b34
+[I 19:45:03.214 NotebookApp] Kernel started: 63947c33-0d1d-4eca-aea1-7b146a2aa087, name: python3
+[W 19:45:03.462 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[I 19:45:10.989 NotebookApp] Kernel started: 92ce3f77-b787-44a8-9790-29cd860e91fc, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 58083c1d-aec3-4af2-8c1a-dd0363ecc541
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 798cc7f8-f07b-4dff-8a8b-d14646675fe3
+[I 19:46:40.687 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[I 19:46:44.706 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[I 19:46:47.606 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 19:46:47.607 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 19:46:48.229 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 19:47:04.511 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 19:47:04.513 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 19:47:12.178 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[W 19:47:12.180 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[I 19:48:40.745 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[I 19:48:44.682 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[I 19:48:46.527 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[I 19:48:48.676 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 19:48:50.689 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[I 19:48:56.675 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
+[I 19:48:57.688 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[I 19:49:03.670 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[I 19:49:11.691 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[I 19:50:36.450 NotebookApp] Starting buffering for 63947c33-0d1d-4eca-aea1-7b146a2aa087:d655dfa005e649f782130cfe9d3970b9
+[I 19:50:36.450 NotebookApp] Starting buffering for 92ce3f77-b787-44a8-9790-29cd860e91fc:108f16443aeb4479b2698475ecb983da
+[I 19:50:36.450 NotebookApp] Starting buffering for f20a6d9a-e279-43b0-9c07-824291b1ed88:b89fd729db824fae9b72c431d6c3bccf
+[I 19:50:36.450 NotebookApp] Starting buffering for 1c7a854e-7acc-45eb-9d28-1dd7441673f3:42ed9509dfe8495c8a803e7af9d0a84e
+[I 19:50:36.451 NotebookApp] Starting buffering for d14c0d9c-a163-46cb-8130-78508f0068a6:3c1da43178f24df28956100b9e6958f5
+[I 19:50:36.451 NotebookApp] Starting buffering for c6c02992-4db4-4c0f-b8e0-6ee86a0d33af:01d57ad26d7f4af488dc1cc1665df522
+[I 19:50:36.451 NotebookApp] Starting buffering for 2061294d-43fd-4059-aed6-256668a19676:1b064ba1379e4604831e8d65265cbbea
+[I 19:50:36.451 NotebookApp] Starting buffering for 45a55d88-254d-47fb-a67d-5b9390d17637:818f01ae282a4edb8d5d95c8c978bf72
+[I 19:50:36.451 NotebookApp] Starting buffering for c4317af2-6fcb-401e-bc87-2f846bf548b5:bec9601878c54528b8677a33d58132fb
