@@ -115,8 +115,11 @@ class GCN_framework:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
         
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
@@ -255,7 +258,7 @@ class GCN_framework_wo_edge_weight:
         print("Model saved in:", path)
         
     def load_model(self, path, map_location=None):
-        if map_location is 'cpu':
+        if map_location == 'cpu':
             self.model.load_state_dict(torch.load(path, map_location='cpu'))
         else:
             self.model.load_state_dict(torch.load(path))
@@ -401,8 +404,11 @@ class GCN_framework_2:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
         
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
@@ -544,8 +550,11 @@ class GraphSAGE_framework:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
@@ -669,9 +678,11 @@ class GraphSAGE_framework_2:
         torch.save(self.model.state_dict(), path)
         print("model saved in: ",path)
         
-    def load_model(self,path):
-        
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
         
     def evaluate(self):
@@ -797,7 +808,10 @@ class GIN_framework:
         print("Model saved in:", path)
 
     def load_model(self, path, map_location=None):
-        self.model.load_state_dict(torch.load(path, map_location=map_location))
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
@@ -936,9 +950,11 @@ class GIN_framework_bis:
         print("Model saved in:", path)
 
     def load_model(self, path, map_location=None):
-        self.model.load_state_dict(torch.load(path, map_location=map_location))
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
-
     def evaluate(self):
         train_acc, train_loss = self.test(self.train_loader)
         test_acc, test_loss = self.test(self.test_loader)
@@ -1075,7 +1091,10 @@ class GIN_framework_tri:
         print("Model saved in:", path)
 
     def load_model(self, path, map_location=None):
-        self.model.load_state_dict(torch.load(path, map_location=map_location))
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
@@ -1213,7 +1232,10 @@ class GIN_framework2:
         print("Model saved in:", path)
 
     def load_model(self, path, map_location=None):
-        self.model.load_state_dict(torch.load(path, map_location=map_location))
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
@@ -1387,7 +1409,10 @@ class GIN_framework3:
         print("Model saved in:", path)
 
     def load_model(self, path, map_location=None):
-        self.model.load_state_dict(torch.load(path, map_location=map_location))
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self, loader=None):
@@ -1575,10 +1600,12 @@ class RGCN_framework:
         torch.save(self.model.state_dict(), path)
         logging.info("Model saved in: " + path)
 
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
-        logging.info("Model loaded from: " + path)
 
     def evaluate(self):
         train_acc, train_loss = self.test(self.train_loader)
@@ -1716,7 +1743,10 @@ class GAT_framework:
         print("Model saved in:", path)
 
     def load_model(self, path, map_location=None):
-        self.model.load_state_dict(torch.load(path, map_location=map_location))
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
 
     def evaluate(self):
