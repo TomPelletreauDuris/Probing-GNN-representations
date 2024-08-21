@@ -88,7 +88,7 @@ class GCN_framework:
             if test_acc > best_test_acc:
                 best_test_acc = test_acc
                 self.save_model('best_model.pth')
-            if epoch % 20 == 0:
+            if epoch % 10 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
 
     def save_model(self, path):
