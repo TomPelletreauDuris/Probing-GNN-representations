@@ -187,8 +187,7 @@ class GCN_framework_wo_edge_weight:
 
                 if return_node_embeddings:
                     return intermediates
-                
-
+            
                 x_global = global_max_pool(x, batch)
                 if return_intermediate:
                     intermediates.append(x_global)
@@ -198,6 +197,7 @@ class GCN_framework_wo_edge_weight:
                 x = self.bn2(self.lin2(x))
                 if return_intermediate:
                     intermediates.append(x)
+                
                 if return_intermediate:
                     return F.log_softmax(x, dim=-1), intermediates
                 else:
@@ -210,8 +210,8 @@ class GCN_framework_wo_edge_weight:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=32)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=32)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -299,13 +299,27 @@ class GCN_framework_wo_edge_weight:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-
+                train_features.append([f.cpu().numpy() for f in features])
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                test_features.append([f.cpu().numpy() for f in features])
+
+        # This is the previous version which didn't allow for the whole process, we'll keep it in case we want to reach for the good old results.
+        # else:
+
+        #     # Extract features for training data
+        #     for data in self.train_loader:
+        #         data = data.to(self.device)
+        #         out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+        #         train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+
+        #     # Extract features for test data
+        #     for data in self.test_loader:
+        #         data = data.to(self.device)
+        #         out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+        #         test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
 
