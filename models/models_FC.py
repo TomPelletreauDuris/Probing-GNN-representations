@@ -68,7 +68,7 @@ class GCN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1, shuffle=True)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1, shuffle=False)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1, shuffle=False)
 
     def _infer_num_classes(self):
