@@ -103,3 +103,17 @@ RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1Serv
 [I 19:50:36.451 NotebookApp] Starting buffering for 2061294d-43fd-4059-aed6-256668a19676:1b064ba1379e4604831e8d65265cbbea
 [I 19:50:36.451 NotebookApp] Starting buffering for 45a55d88-254d-47fb-a67d-5b9390d17637:818f01ae282a4edb8d5d95c8c978bf72
 [I 19:50:36.451 NotebookApp] Starting buffering for c4317af2-6fcb-401e-bc87-2f846bf548b5:bec9601878c54528b8677a33d58132fb
+
+JOB STATISTICS
+==============
+Job ID: 7651293
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:21
+CPU Efficiency: 0.00% of 30-00:04:48 core-walltime
+Job Wall-clock time: 1-16:00:16
+Memory Utilized: 32.25 GB
+Memory Efficiency: 26.88% of 120.00 GB
