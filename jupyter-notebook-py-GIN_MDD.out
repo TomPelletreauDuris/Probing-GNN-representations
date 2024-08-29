@@ -1,5 +1,5 @@
 GPU available? True
-545.23.08
+555.42.06
 Python 3.10.4
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
@@ -11,20 +11,3 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
-slurmstepd: error: *** JOB 7664945 ON gcn56 CANCELLED AT 2024-08-27T06:04:39 DUE TO TIME LIMIT ***
-slurmstepd: error: container_p_join: setns failed for /slurm/7664945/.ns: Invalid argument
-slurmstepd: error: container_g_join(7664945): Invalid argument
-
-JOB STATISTICS
-==============
-Job ID: 7664945
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:03
-CPU Efficiency: 0.00% of 7-12:04:12 core-walltime
-Job Wall-clock time: 10:00:14
-Memory Utilized: 4.24 GB
-Memory Efficiency: 3.53% of 120.00 GB
