@@ -22,4 +22,4 @@ nvidia-smi --query-gpu=driver_version --format=csv,noheader
 python --version
 
 # Run the actual experiment
-python FC_probing_ClinTox_GCN.py
+python ClinTox_probing_GCN.py
