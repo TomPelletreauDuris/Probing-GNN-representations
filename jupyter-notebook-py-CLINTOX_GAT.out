@@ -1,18 +1,156 @@
 GPU available? True
-545.23.08
+555.42.06
 Python 3.10.4
-python: can't open file '/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_ClinTox_GAT.py': [Errno 2] No such file or directory
+/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
+  warnings.warn(out)
+/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
+  return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:329: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x = np.array([feat[0] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:333: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x2 = np.array([feat[1] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:336: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x3 = np.array([feat[2] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:339: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x4 = np.array([feat[3] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:342: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x5 = np.array([feat[4] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:345: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x_global = np.array([feat[5] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:348: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x6 = np.array([feat[6] for feat in train_features])
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:351: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  train_x7 = np.array([feat[7] for feat in train_features])
+Data(x=[24, 9], edge_index=[2, 46], edge_attr=[46, 3], y=[1])
+['edge_index', 'edge_attr', 'y', 'x']
+ValuesView({'x': tensor([[0., 0., 1., 5., 0., 0., 0., 0., 0.],
+        [6., 0., 3., 5., 0., 0., 3., 0., 0.],
+        [8., 0., 1., 5., 0., 0., 3., 0., 0.],
+        [6., 2., 4., 5., 1., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [7., 0., 3., 5., 1., 0., 3., 0., 0.],
+        [6., 0., 3., 5., 0., 0., 3., 0., 0.],
+        [8., 0., 1., 5., 0., 0., 3., 0., 0.],
+        [8., 0., 2., 5., 0., 0., 3., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [8., 0., 2., 5., 0., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 3., 0., 4., 0., 0.],
+        [7., 0., 3., 5., 1., 0., 3., 0., 0.],
+        [6., 0., 3., 5., 0., 0., 3., 0., 0.],
+        [8., 0., 1., 5., 0., 0., 3., 0., 0.],
+        [8., 0., 2., 5., 0., 0., 3., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 2., 0., 4., 0., 0.],
+        [8., 0., 2., 5., 0., 0., 4., 0., 0.],
+        [6., 0., 4., 5., 3., 0., 4., 0., 0.]]), 'edge_index': tensor([[ 0,  1,  1,  1,  2,  3,  3,  3,  4,  4,  5,  5,  6,  6,  7,  7,  8,  8,
+          9,  9,  9, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 16, 16, 17, 17, 17,
+         18, 19, 19, 20, 20, 21, 21, 22, 22, 23],
+        [ 1,  0,  2,  3,  1,  1,  4, 16,  3,  5,  4,  6,  5,  7,  6,  8,  7,  9,
+          8, 10, 11,  9,  9, 12, 11, 13, 12, 14, 13, 15, 14,  3, 17, 16, 18, 19,
+         17, 17, 20, 19, 21, 20, 22, 21, 23, 22]]), 'edge_attr': tensor([[1., 0., 0.],
+        [1., 0., 0.],
+        [2., 0., 0.],
+        [1., 0., 0.],
+        [2., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 1.],
+        [1., 0., 1.],
+        [2., 0., 1.],
+        [1., 0., 1.],
+        [2., 0., 1.],
+        [1., 0., 1.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 1.],
+        [1., 0., 1.],
+        [2., 0., 1.],
+        [1., 0., 1.],
+        [2., 0., 1.],
+        [1., 0., 1.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.],
+        [1., 0., 0.]]), 'y': tensor([1])})
+Net(
+  (conv_layers): ModuleList(
+    (0): GATConv(9, 128, heads=4)
+    (1): GATConv(512, 128, heads=4)
+    (2): GATConv(512, 128, heads=4)
+    (3): GATConv(512, 128, heads=4)
+    (4): GATConv(512, 128, heads=4)
+  )
+  (batch_norms): ModuleList(
+    (0): BatchNorm(512)
+    (1): BatchNorm(512)
+    (2): BatchNorm(512)
+    (3): BatchNorm(512)
+    (4): BatchNorm(512)
+  )
+  (lin1): Linear(512, 128, bias=True)
+  (lin2): Linear(128, 2, bias=True)
+  (bn1): BatchNorm(128)
+  (bn2): BatchNorm(2)
+)
+tensor([ 238,  659, 1047,  ...,  117,  162,  706])
+Test Loss: 0.471, Train Acc: 0.934 Test Acc: 0.907
+7
+302
+1219
+1220
+Number of nodes must be greater than 1
+Number of nodes must be greater than 1
+Number of nodes must be greater than 1
+Number of nodes must be greater than 1
+Number of nodes must be greater than 1
+157
+310
+431
+1016
+1059
+1200
+8
+Traceback (most recent call last):
+  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py", line 360, in <module>
+    train_x = torch.tensor(train_x, dtype=torch.float32)
+TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool.
 
 JOB STATISTICS
 ==============
-Job ID: 7664951
+Job ID: 7668199
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: FAILED (exit code 2)
+State: RUNNING
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:03
-CPU Efficiency: 1.19% of 00:04:12 core-walltime
-Job Wall-clock time: 00:00:14
-Memory Utilized: 2.80 MB
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.20% of 00:08:24 core-walltime
+Job Wall-clock time: 00:00:28
+Memory Utilized: 2.55 MB
 Memory Efficiency: 0.00% of 120.00 GB
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
