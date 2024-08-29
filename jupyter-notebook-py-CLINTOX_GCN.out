@@ -1,0 +1,19 @@
+GPU available? True
+545.23.08
+Python 3.10.4
+python: can't open file '/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_ClinTox_GCN.py': [Errno 2] No such file or directory
+
+JOB STATISTICS
+==============
+Job ID: 7664948
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:03
+CPU Efficiency: 1.11% of 00:04:30 core-walltime
+Job Wall-clock time: 00:00:15
+Memory Utilized: 2.80 MB
+Memory Efficiency: 0.00% of 120.00 GB
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
