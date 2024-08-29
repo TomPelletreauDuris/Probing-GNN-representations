@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -t 10:00:00
+#SBATCH -t 20:00:00
 #SBATCH -N 1
 #SBATCH -p gpu_a100
 #SBATCH --gpus-per-node=1
@@ -22,4 +22,4 @@ nvidia-smi --query-gpu=driver_version --format=csv,noheader
 python --version
 
 # Run the actual experiment
-python FC_probing_ClinTox_GIN.py
+python ClinTox_probing_GIN.py
