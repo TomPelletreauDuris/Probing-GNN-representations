@@ -299,6 +299,39 @@ train_features, test_features = gnn.evaluate_with_features2()
 print(len(train_features[0]))
 len(train_features), len(test_features)
 
+# Check the shape of each feature
+for i, feat in enumerate(train_features):
+    print(f"Train feature {i} shape: {[f.shape for f in feat]}")
+
+for i, feat in enumerate(test_features):
+    print(f"Test feature {i} shape: {[f.shape for f in feat]}")
+
+# Determine the maximum length for the first five elements
+max_length = max(max(f.shape[0] for f in feat[:5]) for feat in train_features + test_features)
+
+# Pad the features
+def pad_features(features, max_length):
+    padded_features = []
+    for feat in features:
+        padded_feat = []
+        for f in feat[:5]:
+            padded_f = np.pad(f, ((0, max_length - f.shape[0]), (0, 0)), mode='constant')
+            padded_feat.append(padded_f)
+        padded_feat.extend(feat[5:])  # Append the last three elements as they are
+        padded_features.append(padded_feat)
+    return padded_features
+
+# Pad train and test features
+train_features = pad_features(train_features, max_length)
+test_features = pad_features(test_features, max_length)
+
+# Check the shape of each feature
+for i, feat in enumerate(train_features):
+    print(f"Train feature {i} shape: {[f.shape for f in feat]}")
+
+for i, feat in enumerate(test_features):
+    print(f"Test feature {i} shape: {[f.shape for f in feat]}")
+
 # %%
 """
 The embeddings of GCN are like this:
