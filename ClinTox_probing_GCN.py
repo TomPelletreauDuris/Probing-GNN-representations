@@ -71,6 +71,18 @@ print(dataset[0].values())
                      y=y.long())"""
 
 #how much data do we have?
+print(len(dataset))
+
+#check for empty graphs in selected_dataset
+for i in range(len(dataset)):
+    if len(dataset[i].x) == 0:
+        print(i)
+
+        
+#remove empty graphs
+dataset = [dataset[i] for i in range(len(dataset)) if len(dataset[i].x) != 0]
+
+#how much data do we have now?
 len(dataset)
 
 
