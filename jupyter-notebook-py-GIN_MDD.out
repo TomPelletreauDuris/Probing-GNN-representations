@@ -11,3 +11,20 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN_MDD.py:706: ComplexWarning: Casting complex values to real discards the imaginary part
+  train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+slurmstepd: error: *** JOB 7668192 ON gcn36 CANCELLED AT 2024-08-30T11:50:21 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7668192
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:03
+CPU Efficiency: 0.00% of 15-00:00:36 core-walltime
+Job Wall-clock time: 20:00:02
+Memory Utilized: 3.00 GB
+Memory Efficiency: 2.50% of 120.00 GB
