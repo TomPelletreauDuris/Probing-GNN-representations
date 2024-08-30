@@ -75,6 +75,14 @@ print(len(train_features[0]))
 len(train_features), len(test_features)
 
 # %%
+# Check the shape of each feature
+for i, feat in enumerate(train_features):
+    print(f"Train feature {i} shape: {[f.shape for f in feat]}")
+
+for i, feat in enumerate(test_features):
+    print(f"Test feature {i} shape: {[f.shape for f in feat]}")
+
+# %%
 import pickle as pkl
 import networkx as nx
 
@@ -158,9 +166,9 @@ def compute_graph_properties(data):
 # with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
 #     pkl.dump(test_properties, f)
 
-# # %%
-# print(len(train_properties))
-# train_properties[0:5]
+# %%
+print(len(train_properties))
+train_properties[0:5]
 
 
 
@@ -262,7 +270,7 @@ property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliq
 embeddings = [(train_x, test_x), (train_x2, test_x2), (train_x3, test_x3), (train_x4, test_x4), (train_x5, test_x5), (train_x_global, test_x_global), (train_x6, test_x6), (train_x7, test_x7)]
 embeddings_names = ['x', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
 
-# %%
+# # %%
 # import torch
 # import torch.nn as nn
 # import torch.optim as optim
@@ -641,19 +649,19 @@ def compute_graph_properties(data):
     return properties
 
 
-train_idx_list = gnn.train_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-train_properties_long = compute_graph_properties(selected_dataset)
-test_idx_list = gnn.test_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-test_properties_long = compute_graph_properties(selected_dataset)
+# train_idx_list = gnn.train_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+# train_properties_long = compute_graph_properties(selected_dataset)
+# test_idx_list = gnn.test_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+# test_properties_long = compute_graph_properties(selected_dataset)
 
-#save the properties in a file
-with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
-    pkl.dump(train_properties_long, f)
+# #save the properties in a file
+# with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
+#     pkl.dump(train_properties_long, f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
-    pkl.dump(test_properties_long, f)
+# with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
+#     pkl.dump(test_properties_long, f)
 
 # %%
 #load the properties
@@ -663,91 +671,91 @@ with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "rb") as f:
 with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
     test_properties_long = pkl.load(f)
 
-# %%
-property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
-train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
-test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
-#create a dictionary where we will store the results for each embeddings, each property
-results = {}
+# # %%
+# property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
+# train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+# test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
+# #create a dictionary where we will store the results for each embeddings, each property
+# results = {}
 
-ii = 0
+# ii = 0
 
-for train_embedding, test_embedding in embeddings:
-    # Flatten the embeddings before determining the input size
-    train_embedding_flat = train_embedding.view(train_embedding.size(0), -1)
-    test_embedding_flat = test_embedding.view(test_embedding.size(0), -1)
-    #print the shapes
-    print(train_embedding_flat.shape)
-    print(test_embedding_flat.shape)
-    input_size = train_embedding_flat.shape[1]
+# for train_embedding, test_embedding in embeddings:
+#     # Flatten the embeddings before determining the input size
+#     train_embedding_flat = train_embedding.view(train_embedding.size(0), -1)
+#     test_embedding_flat = test_embedding.view(test_embedding.size(0), -1)
+#     #print the shapes
+#     print(train_embedding_flat.shape)
+#     print(test_embedding_flat.shape)
+#     input_size = train_embedding_flat.shape[1]
 
-    for i, property_name in enumerate(property_names_long):
-        model = LinearModel(input_size, output_size)
-        criterion = nn.MSELoss()
-        optimizer = optim.Adam(model.parameters(), lr=0.001)
-        num_epochs = 2000000  # Maximum number of epochs
-        min_epochs = 1000  # Minimum number of epochs
-        patience = 3000  # Number of epochs to wait for improvement
-        tolerance = 1e-6  # Tolerance for considering the loss as stable
+#     for i, property_name in enumerate(property_names_long):
+#         model = LinearModel(input_size, output_size)
+#         criterion = nn.MSELoss()
+#         optimizer = optim.Adam(model.parameters(), lr=0.001)
+#         num_epochs = 2000000  # Maximum number of epochs
+#         min_epochs = 1000  # Minimum number of epochs
+#         patience = 3000  # Number of epochs to wait for improvement
+#         tolerance = 1e-6  # Tolerance for considering the loss as stable
 
-        best_loss = float('inf')
-        no_improve_count = 0
+#         best_loss = float('inf')
+#         no_improve_count = 0
         
-        for epoch in range(num_epochs):
-            model.train()
-            optimizer.zero_grad()
+#         for epoch in range(num_epochs):
+#             model.train()
+#             optimizer.zero_grad()
 
-            outputs = model(train_embedding_flat).squeeze()
-            target = train_y_long[:, i].squeeze()
+#             outputs = model(train_embedding_flat).squeeze()
+#             target = train_y_long[:, i].squeeze()
 
-            loss = criterion(outputs, target)
-            loss.backward()
-            optimizer.step()
+#             loss = criterion(outputs, target)
+#             loss.backward()
+#             optimizer.step()
 
-            if (epoch+1) % 1000 == 0:  # Print every 1000 epochs
-                print(f'Epoch [{epoch+1}/{num_epochs}], Property: {property_name}, Loss: {loss.item():.4f}')
+#             if (epoch+1) % 1000 == 0:  # Print every 1000 epochs
+#                 print(f'Epoch [{epoch+1}/{num_epochs}], Property: {property_name}, Loss: {loss.item():.4f}')
 
-            # Check for early stopping, but only after minimum epochs
-            if epoch >= min_epochs:
-                if loss.item() < best_loss - tolerance:
-                    best_loss = loss.item()
-                    no_improve_count = 0
-                else:
-                    no_improve_count += 1
+#             # Check for early stopping, but only after minimum epochs
+#             if epoch >= min_epochs:
+#                 if loss.item() < best_loss - tolerance:
+#                     best_loss = loss.item()
+#                     no_improve_count = 0
+#                 else:
+#                     no_improve_count += 1
 
-                if no_improve_count >= patience:
-                    print(f'Early stopping at epoch {epoch+1}')
-                    break
+#                 if no_improve_count >= patience:
+#                     print(f'Early stopping at epoch {epoch+1}')
+#                     break
 
-        # Evaluate the model
-        model.eval()
-        with torch.no_grad():
-            train_pred = model(train_embedding_flat).squeeze().cpu().numpy()
-            test_pred = model(test_embedding_flat).squeeze().cpu().numpy()
+#         # Evaluate the model
+#         model.eval()
+#         with torch.no_grad():
+#             train_pred = model(train_embedding_flat).squeeze().cpu().numpy()
+#             test_pred = model(test_embedding_flat).squeeze().cpu().numpy()
 
-            train_target = train_y_long[:, i].cpu().numpy()
-            test_target = test_y_long[:, i].cpu().numpy()
+#             train_target = train_y_long[:, i].cpu().numpy()
+#             test_target = test_y_long[:, i].cpu().numpy()
 
-            train_mse = mean_squared_error(train_target, train_pred)
-            test_mse = mean_squared_error(test_target, test_pred)
+#             train_mse = mean_squared_error(train_target, train_pred)
+#             test_mse = mean_squared_error(test_target, test_pred)
 
-            train_r2 = r2_score(train_target, train_pred)
-            test_r2 = r2_score(test_target, test_pred)
+#             train_r2 = r2_score(train_target, train_pred)
+#             test_r2 = r2_score(test_target, test_pred)
 
-            print(f'Embedding: {train_embedding.shape}')
-            print(f'Property: {property_name}')
-            print(f'  Train MSE: {train_mse:.4f}, Test MSE: {test_mse:.4f}')
-            print(f'  Train R²: {train_r2:.4f}, Test R²: {test_r2:.4f}')
+#             print(f'Embedding: {train_embedding.shape}')
+#             print(f'Property: {property_name}')
+#             print(f'  Train MSE: {train_mse:.4f}, Test MSE: {test_mse:.4f}')
+#             print(f'  Train R²: {train_r2:.4f}, Test R²: {test_r2:.4f}')
 
-            #add the results to the dictionary
-            name_of_embedding = embeddings_names[ii]
-            results[(name_of_embedding, property_name)] = (train_mse, test_mse, train_r2, test_r2)
+#             #add the results to the dictionary
+#             name_of_embedding = embeddings_names[ii]
+#             results[(name_of_embedding, property_name)] = (train_mse, test_mse, train_r2, test_r2)
 
-    ii += 1
+#     ii += 1
 
-#save results
-with open("results/"+DATASET+"_"+MODEL+"_results_limited_cv_long_full_embedding.pkl", "wb") as f:
-    pkl.dump(results, f)
+# #save results
+# with open("results/"+DATASET+"_"+MODEL+"_results_limited_cv_long_full_embedding.pkl", "wb") as f:
+#     pkl.dump(results, f)
 
 # %%
 #load results
@@ -808,7 +816,7 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/"+DATASET+"_"+MODEL+"_test_R2_plot_long_full_embedding.png', dpi=300, bbox_inches='tight')
+plt.savefig("results/"+DATASET+"_"+MODEL+"_test_R2_plot_long_full_embedding.png", dpi=300, bbox_inches='tight')
 
 # %%
 #print the R2 values in order (bigger to smaller) for x_global
@@ -816,7 +824,7 @@ plt.savefig('results/"+DATASET+"_"+MODEL+"_test_R2_plot_long_full_embedding.png'
 # Assuming results, embeddings, and other necessary variables are defined as in your context
 property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
 
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
+embeddings_names = ['x', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
 
 #sort the R2 values for x_global
 r2_values = []
@@ -832,6 +840,7 @@ print(property_names_long_sorted)
 
 # %%
 #same for x6
+property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
 
 #sort the R2 values for x6
 r2_values = []
@@ -862,6 +871,8 @@ print(property_names_long_sorted)
 
 # %%
 plt.figure(figsize=(12, 8))
+property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
+
 
 for i, property_names_long in enumerate(property_names_long):
     x_points = []
@@ -885,7 +896,7 @@ plt.title('FC matrice - GCN - R² for different embeddings and properties')
 plt.show()
 
 #save the plot
-plt.savefig('results/"+DATASET+"_"+MODEL+"_train_R2_plot_long_full_embedding.png', dpi=300, bbox_inches='tight')
+plt.savefig("results/"+DATASET+"_"+MODEL+"_train_R2_plot_long_full_embedding.png", dpi=300, bbox_inches='tight')
 
 # %% [markdown]
 # ### comparison with a gnn train on random (the y are shuffled)
@@ -941,7 +952,7 @@ gnn = framework(dataset)
 
 # %%
 #load the model
-gnn.load_model(path="models/"+DATASET+"_"+MODEL+".pt")
+gnn.load_model(path="models/"+DATASET+"_"+MODEL+".pt", map_location='cpu')
 
 # %%
 gnn.evaluate()
