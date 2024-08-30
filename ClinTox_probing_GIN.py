@@ -722,8 +722,12 @@ def compute_graph_properties(data):
         random_graph = nx.gnm_random_graph(num_nodes, num_edges)
         random_clustering_coeff = nx.average_clustering(random_graph)
         random_avg_path_len = calculate_avg_path_length(random_graph)
-        small_world_coefficient = (clustering_coeff / random_clustering_coeff) / (avg_path_len / random_avg_path_len)
-
+        
+        if random_avg_path_len != 0:
+            small_world_coefficient = (clustering_coeff / random_clustering_coeff) / (avg_path_len / random_avg_path_len)
+        else:
+            small_world_coefficient = float('inf')  # or some other default value
+        
         small_world_index = compute_swi(G)
 
         # Calculate Betweenness Centralization
