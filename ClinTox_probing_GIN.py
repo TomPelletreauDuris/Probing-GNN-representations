@@ -723,7 +723,7 @@ def compute_graph_properties(data):
         random_clustering_coeff = nx.average_clustering(random_graph)
         random_avg_path_len = calculate_avg_path_length(random_graph)
         
-        if random_avg_path_len != 0:
+        if random_avg_path_len != 0 and random_clustering_coeff != 0:
             small_world_coefficient = (clustering_coeff / random_clustering_coeff) / (avg_path_len / random_avg_path_len)
         else:
             small_world_coefficient = float('inf')  # or some other default value
