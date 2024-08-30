@@ -163,9 +163,9 @@ def compute_graph_properties(data):
 # with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
 #     pkl.dump(test_properties, f)
 
-# # %%
-# print(len(train_properties))
-# train_properties[0:5]
+# %%
+print(len(train_properties))
+train_properties[0:5]
 
 
 
@@ -280,7 +280,7 @@ embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
 # %% [markdown]
 # ### Diagnostic classifier
 
-# %%
+# # %%
 # import torch
 # import torch.nn as nn
 # import torch.optim as optim
@@ -662,10 +662,10 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
 
 #copare train_properties and train_properties_long
 # print(train_properties[0])
-print(train_properties_long[0])
-print(len(train_properties_long))
+# print(train_properties_long[0])
+# print(len(train_properties_long))
 
-# %%
+# # %%
 # property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
 # train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
 # test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
@@ -959,19 +959,19 @@ gnn.evaluate()
 train_features, test_features = gnn.evaluate_with_features2()
 
 # %%
-# train_idx_list = gnn.train_idx.tolist()
-# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-# train_properties_long = compute_graph_properties(selected_dataset)
-# test_idx_list = gnn.test_idx.tolist()
-# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-# test_properties_long = compute_graph_properties(selected_dataset)
+train_idx_list = gnn.train_idx.tolist()
+selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+train_properties_long = compute_graph_properties(selected_dataset)
+test_idx_list = gnn.test_idx.tolist()
+selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+test_properties_long = compute_graph_properties(selected_dataset)
 
-# #save the properties in a file
-# with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
-#     pkl.dump(train_properties_long, f)
+#save the properties in a file
+with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
+    pkl.dump(train_properties_long, f)
 
-# with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
-#     pkl.dump(test_properties_long, f)
+with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
+    pkl.dump(test_properties_long, f)
 
 # %%
 import pickle as pkl
@@ -983,10 +983,10 @@ import pickle as pkl
 #     pkl.dump(test_properties, f)
 
 #load the properties
-with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "rb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "rb") as f:
     train_properties = pkl.load(f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_test_properties.pkl", "rb") as f:
     test_properties = pkl.load(f)
 
 # %%
@@ -1219,10 +1219,10 @@ plt.show()
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long_random_full_embedding.png')
 
-# %% [markdown]
-# # Node embedding probing
-# 
-# /!\ Try to not forget that we need to change the batch_size to 1 if we want to probe for node properties as we need the forward pass to be made 1 graph by 1 graph at a time. 
+# # %% [markdown]
+# # # Node embedding probing
+# # 
+# # /!\ Try to not forget that we need to change the batch_size to 1 if we want to probe for node properties as we need the forward pass to be made 1 graph by 1 graph at a time. 
 
 # # %%
 # dataset = read_dataset_MDD()
@@ -1718,7 +1718,7 @@ DATASET = "FC_MDD"
 from models.models_FC import GCN_framework_wo_edge_weight as framework # import the model
 gnn = framework(dataset)
 #load the model
-gnn.load_model(path="models/"+DATASET+"_"+MODEL+".pt")
+gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server_gpu.pt")
 gnn.evaluate()
 
 # %% [markdown]
