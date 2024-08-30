@@ -85,6 +85,7 @@ dataset = [dataset[i] for i in range(len(dataset)) if len(dataset[i].x) != 0]
 #how much data do we have now?
 len(dataset)
 
+
 # %%
 def _infer_num_classes(self):
     # Ensure labels are integers
@@ -254,10 +255,6 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as 
     pkl.dump(test_properties, f)
 
 # %%
-# print(len(train_properties))
-# train_properties[0:5]
-
-# %%
 import pickle as pkl
 #save the properties in a file
 # with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "wb") as f:
@@ -274,20 +271,13 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "rb") as 
     test_properties = pkl.load(f)
 
 # %%
-train_properties
-
-for i in range(len(train_properties)):
-    if len(train_properties[i]) == 9:
-        print(i)
-
-# %%
 #check for nan values in train properties
 for i in range(len(train_properties)):
     if any([True for x in train_properties[i] if x != x]):
         print(i)
 
 # %%
-train_properties[1059]
+train_properties[1132]
 
 # %%
 import numpy as np
@@ -311,6 +301,7 @@ train_features, test_features = gnn.evaluate_with_features2()
 print(len(train_features[0]))
 len(train_features), len(test_features)
 
+# %%
 # Check the shape of each feature
 for i, feat in enumerate(train_features):
     print(f"Train feature {i} shape: {[f.shape for f in feat]}")
