@@ -268,13 +268,6 @@ with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "rb") as 
     test_properties = pkl.load(f)
 
 # %%
-train_properties
-
-for i in range(len(train_properties)):
-    if len(train_properties[i]) == 10:
-        print(i)
-
-# %%
 train_properties[96]
 
 # %%
@@ -299,6 +292,10 @@ train_features, test_features = gnn.evaluate_with_features2()
 print(len(train_features[0]))
 len(train_features), len(test_features)
 
+# %%
+print(len(train_features[0][4]))
+
+# %%
 # Check the shape of each feature
 for i, feat in enumerate(train_features):
     print(f"Train feature {i} shape: {[f.shape for f in feat]}")
