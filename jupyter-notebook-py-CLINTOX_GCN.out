@@ -1,3 +1,11 @@
+Lmod Warning:
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded: OpenSSL/1.1
+(required by: libevent/2.1.12-GCCcore-11.3.0)
+-------------------------------------------------------------------------------
+
+
+
 /sw/arch/RHEL8/EB_production/2022/software/PyTorch/1.12.0-foss-2022a-CUDA-11.7.0/lib/python3.10/site-packages/torch/cuda/__init__.py:83: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at  /tmp/jenkins/build/PyTorch/1.12.0/foss-2022a-CUDA-11.7.0/pytorch/c10/cuda/CUDAFunctions.cpp:109.)
   return torch._C._cuda_getDeviceCount() > 0
 GPU available? False
@@ -9,18 +17,3 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
   return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
-slurmstepd: error: *** JOB 7668950 ON gcn67 CANCELLED AT 2024-08-30T04:02:46 DUE TO TIME LIMIT ***
-
-JOB STATISTICS
-==============
-Job ID: 7668950
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:02
-CPU Efficiency: 0.00% of 7-12:08:24 core-walltime
-Job Wall-clock time: 10:00:28
-Memory Utilized: 1.01 GB
-Memory Efficiency: 0.84% of 120.00 GB
