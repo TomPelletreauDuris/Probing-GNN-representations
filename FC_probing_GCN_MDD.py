@@ -164,8 +164,8 @@ def compute_graph_properties(data):
 #     pkl.dump(test_properties, f)
 
 # %%
-print(len(train_properties))
-train_properties[0:5]
+# print(len(train_properties))
+# train_properties[0:5]
 
 
 
