@@ -6,14 +6,42 @@ The following dependent module(s) are not currently loaded: OpenSSL/1.1
 
 
 
-/sw/arch/RHEL8/EB_production/2022/software/PyTorch/1.12.0-foss-2022a-CUDA-11.7.0/lib/python3.10/site-packages/torch/cuda/__init__.py:83: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at  /tmp/jenkins/build/PyTorch/1.12.0/foss-2022a-CUDA-11.7.0/pytorch/c10/cuda/CUDAFunctions.cpp:109.)
-  return torch._C._cuda_getDeviceCount() > 0
-GPU available? False
+
+The following have been reloaded with a version change:
+  1) OpenSSL/3 => OpenSSL/1.1
+
+GPU available? True
 555.42.06
 Python 3.10.4
-/sw/arch/RHEL8/EB_production/2022/software/PyTorch/1.12.0-foss-2022a-CUDA-11.7.0/lib/python3.10/site-packages/torch/cuda/__init__.py:83: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at  /tmp/jenkins/build/PyTorch/1.12.0/foss-2022a-CUDA-11.7.0/pytorch/c10/cuda/CUDAFunctions.cpp:109.)
-  return torch._C._cuda_getDeviceCount() > 0
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
-  warnings.warn(out)
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
-  return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
+slurmstepd: error: *** JOB 7673892 ON gcn67 CANCELLED AT 2024-08-31T01:14:34 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7673892
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:02
+CPU Efficiency: 0.00% of 7-12:05:42 core-walltime
+Job Wall-clock time: 10:00:19
+Memory Utilized: 1.03 GB
+Memory Efficiency: 0.86% of 120.00 GB
+slurmstepd: error: *** JOB 7675822 ON gcn18 CANCELLED AT 2024-08-31T04:19:42 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 7675822 STEPD TERMINATED ON gcn18 AT 2024-08-31T04:24:42 DUE TO JOB NOT ENDING WITH SIGNALS ***
+
+JOB STATISTICS
+==============
+Job ID: 7675822
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:03
+CPU Efficiency: 0.00% of 7-12:01:48 core-walltime
+Job Wall-clock time: 10:00:06
+Memory Utilized: 199.67 MB
+Memory Efficiency: 0.16% of 120.00 GB
+slurmstepd: error: Container 1223813 in cgroup plugin has 2 processes, giving up after 319 sec
