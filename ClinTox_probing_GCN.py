@@ -651,6 +651,9 @@ def compute_graph_properties(data):
     properties = []
     for graph_data in data:
         G = nx.from_edgelist(graph_data.edge_index.t().tolist())
+        if G.number_of_nodes() == 0:
+            properties.append((0, 0, 0, -1, -1, -1, 0, 0, -1, 0, 0, 0, 0, 0, 0, -1, -1, 0, -1, 0, 0, 0, -1))
+            continue
         
         # Number of nodes
         num_nodes = G.number_of_nodes()
@@ -770,6 +773,8 @@ def compute_graph_properties(data):
 
         ))
     return properties
+
+
 
 
 # %%
