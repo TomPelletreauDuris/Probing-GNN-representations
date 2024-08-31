@@ -2,443 +2,443 @@
 
 
 
-# %% [markdown]
-# # Node embedding probing
-# 
-# /!\ Try to not forget that we need to change the batch_size to 1 if we want to probe for node properties as we need the forward pass to be made 1 graph by 1 graph at a time. 
+# # %% [markdown]
+# # # Node embedding probing
+# # 
+# # /!\ Try to not forget that we need to change the batch_size to 1 if we want to probe for node properties as we need the forward pass to be made 1 graph by 1 graph at a time. 
 
-# %%
-from Datasets.FC.create_dataset import read_dataset
-dataset = read_dataset()
-import torch
-torch.manual_seed(37)
-MODEL = "GIN3"
-DATASET = "FC"
-from models.models_FC import GIN_framework3 as framework3 # import the model
-gnn = framework3(dataset)
-#load the model
-gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt") #, map_location='cpu')
-gnn.evaluate()
+# # %%
+# from Datasets.FC.create_dataset import read_dataset
+# dataset = read_dataset()
+# import torch
+# torch.manual_seed(37)
+# MODEL = "GIN3"
+# DATASET = "FC"
+# from models.models_FC import GIN_framework3 as framework3 # import the model
+# gnn = framework3(dataset)
+# #load the model
+# gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt") #, map_location='cpu')
+# gnn.evaluate()
 
-# %% [markdown]
-# Properties
+# # %% [markdown]
+# # Properties
 
-# %%
-import networkx as nx
-# Define function to compute node-level properties
-def compute_node_properties(data):
-    properties = []
-    for graph_data in data:
-        G = nx.from_edgelist(graph_data.edge_index.t().tolist())
-        node_degrees = list(dict(G.degree()).values())
-        clustering_coeffs = list(nx.clustering(G).values())
-        betweenness_centralities = list(nx.betweenness_centrality(G).values())
-        eigenvector_centralities = list(nx.eigenvector_centrality(G, max_iter=10000).values())
-        Local_clustering_coefficients = list(nx.clustering(G).values())
+# # %%
+# import networkx as nx
+# # Define function to compute node-level properties
+# def compute_node_properties(data):
+#     properties = []
+#     for graph_data in data:
+#         G = nx.from_edgelist(graph_data.edge_index.t().tolist())
+#         node_degrees = list(dict(G.degree()).values())
+#         clustering_coeffs = list(nx.clustering(G).values())
+#         betweenness_centralities = list(nx.betweenness_centrality(G).values())
+#         eigenvector_centralities = list(nx.eigenvector_centrality(G, max_iter=10000).values())
+#         Local_clustering_coefficients = list(nx.clustering(G).values())
 
-        properties.append((node_degrees, clustering_coeffs, betweenness_centralities, eigenvector_centralities, Local_clustering_coefficients))
-    return properties
+#         properties.append((node_degrees, clustering_coeffs, betweenness_centralities, eigenvector_centralities, Local_clustering_coefficients))
+#     return properties
 
-# Compute node-level properties for train and test sets
-# Ensure gnn.train_idx and gnn.test_idx are lists of integers
-train_idx = gnn.train_idx.tolist() if isinstance(gnn.train_idx, torch.Tensor) else gnn.train_idx
-test_idx = gnn.test_idx.tolist() if isinstance(gnn.test_idx, torch.Tensor) else gnn.test_idx
+# # Compute node-level properties for train and test sets
+# # Ensure gnn.train_idx and gnn.test_idx are lists of integers
+# train_idx = gnn.train_idx.tolist() if isinstance(gnn.train_idx, torch.Tensor) else gnn.train_idx
+# test_idx = gnn.test_idx.tolist() if isinstance(gnn.test_idx, torch.Tensor) else gnn.test_idx
 
-# Compute node-level properties for train and test sets
-train_node_properties = compute_node_properties([gnn.dataset[i] for i in train_idx])
-test_node_properties = compute_node_properties([gnn.dataset[i] for i in test_idx])
+# # Compute node-level properties for train and test sets
+# train_node_properties = compute_node_properties([gnn.dataset[i] for i in train_idx])
+# test_node_properties = compute_node_properties([gnn.dataset[i] for i in test_idx])
 
-#train_node_properties is a list of tuples, where each tuple contains 5 lists, each list contains the node-level property for each node in the graph
+# #train_node_properties is a list of tuples, where each tuple contains 5 lists, each list contains the node-level property for each node in the graph
 
-# %%
-len(train_node_properties), len(test_node_properties)
+# # %%
+# len(train_node_properties), len(test_node_properties)
 
-# %%
-# Check the length of the first three betweenness centralities of the three first graphs in the train set
-[len(train_node_properties[i][2]) for i in range(3)]
+# # %%
+# # Check the length of the first three betweenness centralities of the three first graphs in the train set
+# [len(train_node_properties[i][2]) for i in range(3)]
 
-# %% [markdown]
-# We see that for each graph, the length of the betweenness centralities, and in general the length of properties, are equal to the number of nodes in the graph and thus
-# is equal to the length of the x matrix in the features. 
+# # %% [markdown]
+# # We see that for each graph, the length of the betweenness centralities, and in general the length of properties, are equal to the number of nodes in the graph and thus
+# # is equal to the length of the x matrix in the features. 
 
-# %% [markdown]
-# ##### Node embeddings
+# # %% [markdown]
+# # ##### Node embeddings
 
-# %%
-train_features, test_features = gnn.evaluate_with_features2(return_node_embeddings=True)
+# # %%
+# train_features, test_features = gnn.evaluate_with_features2(return_node_embeddings=True)
 
-# %%
-len(train_features), len(test_features)
+# # %%
+# len(train_features), len(test_features)
 
-# %%
-# Check the shape of the first graph's features
-first_graph_features = train_features[1]
-for i, feature in enumerate(first_graph_features):
-    print(f"Feature {i+1} shape:", feature.shape)
+# # %%
+# # Check the shape of the first graph's features
+# first_graph_features = train_features[1]
+# for i, feature in enumerate(first_graph_features):
+#     print(f"Feature {i+1} shape:", feature.shape)
 
-# %%
-train_features[1][0][26]
+# # %%
+# train_features[1][0][26]
 
-# %% [markdown]
-# #### Embedding probing
+# # %% [markdown]
+# # #### Embedding probing
 
-# %% [markdown]
-# ##### Probing for the top 3 nodes on train_features only and averaging the results of the different diagnostif classifiers
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from sklearn.metrics import r2_score
-import matplotlib.pyplot as plt
-import numpy as np
+# # %% [markdown]
+# # ##### Probing for the top 3 nodes on train_features only and averaging the results of the different diagnostif classifiers
+# import torch
+# import torch.nn as nn
+# import torch.optim as optim
+# from sklearn.metrics import r2_score
+# import matplotlib.pyplot as plt
+# import numpy as np
 
-# %%
-class LinearModel(nn.Module):
-    def __init__(self, input_size, output_size):
-        super(LinearModel, self).__init__()
-        self.linear = nn.Linear(input_size, output_size)
+# # %%
+# class LinearModel(nn.Module):
+#     def __init__(self, input_size, output_size):
+#         super(LinearModel, self).__init__()
+#         self.linear = nn.Linear(input_size, output_size)
 
-    def forward(self, x):
-        return self.linear(x)
+#     def forward(self, x):
+#         return self.linear(x)
 
-# Function to get the top 3 nodes based on a specific property
-def get_top_nodes(property_list, top_n=37):
-    sorted_indices = sorted(range(len(property_list)), key=lambda k: property_list[k], reverse=True)
-    return sorted_indices[:top_n]
+# # Function to get the top 3 nodes based on a specific property
+# def get_top_nodes(property_list, top_n=37):
+#     sorted_indices = sorted(range(len(property_list)), key=lambda k: property_list[k], reverse=True)
+#     return sorted_indices[:top_n]
 
-# %%
-# Get the top 30 nodes for local clustering coefficient and eigenvector centrality
-top_nodes_degrees = [get_top_nodes(graph_props[0], 37) for graph_props in train_node_properties]  # Assuming 0th index is for node degrees
-top_nodes_clustering = [get_top_nodes(graph_props[1], 37) for graph_props in train_node_properties]  # Assuming 1st index is for clustering coefficient
-top_nodes_betweenness = [get_top_nodes(graph_props[2], 37) for graph_props in train_node_properties]  # Assuming 2nd index is for betweenness centrality
-top_nodes_local_clustering = [get_top_nodes(graph_props[3], 37) for graph_props in train_node_properties]  # Assuming 3rd index is for local clustering coefficient
-top_nodes_eigenvector = [get_top_nodes(graph_props[4], 37) for graph_props in train_node_properties]  # Assuming 4th index is for eigenvector centrality
+# # %%
+# # Get the top 30 nodes for local clustering coefficient and eigenvector centrality
+# top_nodes_degrees = [get_top_nodes(graph_props[0], 37) for graph_props in train_node_properties]  # Assuming 0th index is for node degrees
+# top_nodes_clustering = [get_top_nodes(graph_props[1], 37) for graph_props in train_node_properties]  # Assuming 1st index is for clustering coefficient
+# top_nodes_betweenness = [get_top_nodes(graph_props[2], 37) for graph_props in train_node_properties]  # Assuming 2nd index is for betweenness centrality
+# top_nodes_local_clustering = [get_top_nodes(graph_props[3], 37) for graph_props in train_node_properties]  # Assuming 3rd index is for local clustering coefficient
+# top_nodes_eigenvector = [get_top_nodes(graph_props[4], 37) for graph_props in train_node_properties]  # Assuming 4th index is for eigenvector centrality
 
-# %%
-# Prepare the data for linear regression model training
-def prepare_regression_data(features, properties, top_nodes_indices):
-    X = []
-    y = []
-    for i, graph_features in enumerate(features):
-        for layer in range(len(graph_features)):
-            for node_index in top_nodes_indices[i]:
-                X.append(graph_features[layer][node_index])
-                y.append(properties[i][node_index])
-    return torch.tensor(X), torch.tensor(y)
+# # %%
+# # Prepare the data for linear regression model training
+# def prepare_regression_data(features, properties, top_nodes_indices):
+#     X = []
+#     y = []
+#     for i, graph_features in enumerate(features):
+#         for layer in range(len(graph_features)):
+#             for node_index in top_nodes_indices[i]:
+#                 X.append(graph_features[layer][node_index])
+#                 y.append(properties[i][node_index])
+#     return torch.tensor(X), torch.tensor(y)
 
-# Training and evaluating linear regression models
-def train_and_evaluate_regression(X, y):
-    model = LinearModel(X.shape[1], 1)
-    criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.01)
+# # Training and evaluating linear regression models
+# def train_and_evaluate_regression(X, y):
+#     model = LinearModel(X.shape[1], 1)
+#     criterion = nn.MSELoss()
+#     optimizer = optim.Adam(model.parameters(), lr=0.01)
     
-    # Train the model
-    model.train()
-    for epoch in range(1000):
-        optimizer.zero_grad()
-        outputs = model(X.float())
-        loss = criterion(outputs, y.float().view(-1, 1))
-        loss.backward()
-        optimizer.step()
-        if epoch % 10 == 0:
-            print(f'Epoch {epoch}, Loss: {loss.item()}')
+#     # Train the model
+#     model.train()
+#     for epoch in range(1000):
+#         optimizer.zero_grad()
+#         outputs = model(X.float())
+#         loss = criterion(outputs, y.float().view(-1, 1))
+#         loss.backward()
+#         optimizer.step()
+#         if epoch % 10 == 0:
+#             print(f'Epoch {epoch}, Loss: {loss.item()}')
     
-    # Evaluate the model
-    model.eval()
-    with torch.no_grad():
-        predictions = model(X.float()).view(-1)
-        r2 = r2_score(y.float(), predictions)
-    return r2
+#     # Evaluate the model
+#     model.eval()
+#     with torch.no_grad():
+#         predictions = model(X.float()).view(-1)
+#         r2 = r2_score(y.float(), predictions)
+#     return r2
 
-# %%
-import torch.optim as optim
-import numpy as np
-from sklearn.metrics import mean_squared_error, r2_score
+# # %%
+# import torch.optim as optim
+# import numpy as np
+# from sklearn.metrics import mean_squared_error, r2_score
 
-# Prepare data for node degree regression
-X_node_degree, y_node_degree = prepare_regression_data(train_features, [props[0] for props in train_node_properties], top_nodes_degrees)
+# # Prepare data for node degree regression
+# X_node_degree, y_node_degree = prepare_regression_data(train_features, [props[0] for props in train_node_properties], top_nodes_degrees)
 
-# Train and evaluate model for node degree
-r2_node_degree = train_and_evaluate_regression(X_node_degree, y_node_degree)
-print(f'R² for node degree prediction: {r2_node_degree}')
+# # Train and evaluate model for node degree
+# r2_node_degree = train_and_evaluate_regression(X_node_degree, y_node_degree)
+# print(f'R² for node degree prediction: {r2_node_degree}')
 
-# Prepare data for betweenness centrality regression
-X_betweenness, y_betweenness = prepare_regression_data(train_features, [props[2] for props in train_node_properties], top_nodes_betweenness)
+# # Prepare data for betweenness centrality regression
+# X_betweenness, y_betweenness = prepare_regression_data(train_features, [props[2] for props in train_node_properties], top_nodes_betweenness)
 
-# Train and evaluate model for betweenness centrality
-r2_betweenness = train_and_evaluate_regression(X_betweenness, y_betweenness)
-print(f'R² for betweenness centrality prediction: {r2_betweenness}')
+# # Train and evaluate model for betweenness centrality
+# r2_betweenness = train_and_evaluate_regression(X_betweenness, y_betweenness)
+# print(f'R² for betweenness centrality prediction: {r2_betweenness}')
 
-# Prepare data for local clustering coefficient regression
-X_local_clustering, y_local_clustering = prepare_regression_data(train_features, [props[3] for props in train_node_properties], top_nodes_local_clustering)
+# # Prepare data for local clustering coefficient regression
+# X_local_clustering, y_local_clustering = prepare_regression_data(train_features, [props[3] for props in train_node_properties], top_nodes_local_clustering)
 
-# Train and evaluate model for local clustering coefficient
-r2_local_clustering = train_and_evaluate_regression(X_local_clustering, y_local_clustering)
-print(f'R² for local clustering coefficient prediction: {r2_local_clustering}')
+# # Train and evaluate model for local clustering coefficient
+# r2_local_clustering = train_and_evaluate_regression(X_local_clustering, y_local_clustering)
+# print(f'R² for local clustering coefficient prediction: {r2_local_clustering}')
 
-# Prepare data for eigenvector centrality regression
-X_eigenvector, y_eigenvector = prepare_regression_data(train_features, [props[4] for props in train_node_properties], top_nodes_eigenvector)
+# # Prepare data for eigenvector centrality regression
+# X_eigenvector, y_eigenvector = prepare_regression_data(train_features, [props[4] for props in train_node_properties], top_nodes_eigenvector)
 
-# Train and evaluate model for eigenvector centrality
-r2_eigenvector = train_and_evaluate_regression(X_eigenvector, y_eigenvector)
-print(f'R² for eigenvector centrality prediction: {r2_eigenvector}')
+# # Train and evaluate model for eigenvector centrality
+# r2_eigenvector = train_and_evaluate_regression(X_eigenvector, y_eigenvector)
+# print(f'R² for eigenvector centrality prediction: {r2_eigenvector}')
 
-# %% [markdown]
-# ##### Probing for the top 1 nodes with diagnostic classifier trained on the train set and test on the test set
+# # %% [markdown]
+# # ##### Probing for the top 1 nodes with diagnostic classifier trained on the train set and test on the test set
 
-# %%
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from sklearn.metrics import r2_score
-import matplotlib.pyplot as plt
-import numpy as np
+# # %%
+# import torch
+# import torch.nn as nn
+# import torch.optim as optim
+# from sklearn.metrics import r2_score
+# import matplotlib.pyplot as plt
+# import numpy as np
 
-# Define Linear Model for probing (diagnostic classifier)
-class LinearModel(nn.Module):
-    def __init__(self, input_size, output_size):
-        super(LinearModel, self).__init__()
-        self.linear = nn.Linear(input_size, output_size)
+# # Define Linear Model for probing (diagnostic classifier)
+# class LinearModel(nn.Module):
+#     def __init__(self, input_size, output_size):
+#         super(LinearModel, self).__init__()
+#         self.linear = nn.Linear(input_size, output_size)
 
-    def forward(self, x):
-        return self.linear(x)
+#     def forward(self, x):
+#         return self.linear(x)
 
-# Prepare the data for probing classifier
-def prepare_regression_data(features, properties, property_index, top_n_nodes=37):
-    X_layers = [[] for _ in range(len(features[0]))]
-    y_layers = [[] for _ in range(len(features[0]))]
+# # Prepare the data for probing classifier
+# def prepare_regression_data(features, properties, property_index, top_n_nodes=37):
+#     X_layers = [[] for _ in range(len(features[0]))]
+#     y_layers = [[] for _ in range(len(features[0]))]
 
-    for i, graph_features in enumerate(features):
-        top_nodes_indices = get_top_nodes(properties[i][property_index], top_n=top_n_nodes)
-        for layer in range(len(graph_features)):
-            for node_index in top_nodes_indices:
-                X_layers[layer].append(graph_features[layer][node_index])
-                y_layers[layer].append(properties[i][property_index][node_index])
+#     for i, graph_features in enumerate(features):
+#         top_nodes_indices = get_top_nodes(properties[i][property_index], top_n=top_n_nodes)
+#         for layer in range(len(graph_features)):
+#             for node_index in top_nodes_indices:
+#                 X_layers[layer].append(graph_features[layer][node_index])
+#                 y_layers[layer].append(properties[i][property_index][node_index])
 
-    X_layers = [torch.tensor(X) for X in X_layers]
-    y_layers = [torch.tensor(y) for y in y_layers]
+#     X_layers = [torch.tensor(X) for X in X_layers]
+#     y_layers = [torch.tensor(y) for y in y_layers]
     
-    return X_layers, y_layers
+#     return X_layers, y_layers
 
-# Train and evaluate the probing classifier for each layer
-def train_and_evaluate_regression(X_train_layers, y_train_layers, X_test_layers, y_test_layers):
-    r2_scores_train = []
-    r2_scores_test = []
+# # Train and evaluate the probing classifier for each layer
+# def train_and_evaluate_regression(X_train_layers, y_train_layers, X_test_layers, y_test_layers):
+#     r2_scores_train = []
+#     r2_scores_test = []
     
-    for layer in range(len(X_train_layers)):
-        X_train = X_train_layers[layer]
-        y_train = y_train_layers[layer]
-        X_test = X_test_layers[layer]
-        y_test = y_test_layers[layer]
+#     for layer in range(len(X_train_layers)):
+#         X_train = X_train_layers[layer]
+#         y_train = y_train_layers[layer]
+#         X_test = X_test_layers[layer]
+#         y_test = y_test_layers[layer]
         
-        model = LinearModel(X_train.shape[1], 1)
-        criterion = nn.MSELoss()
-        optimizer = optim.Adam(model.parameters(), lr=0.01)
+#         model = LinearModel(X_train.shape[1], 1)
+#         criterion = nn.MSELoss()
+#         optimizer = optim.Adam(model.parameters(), lr=0.01)
         
-        # Train the model
-        model.train()
-        for epoch in range(10000):
-            optimizer.zero_grad()
-            outputs = model(X_train.float())
-            loss = criterion(outputs, y_train.float().view(-1, 1))
-            loss.backward()
-            optimizer.step()
-            if epoch % 100 == 0:
-                print(f'Layer {layer+1}, Epoch {epoch}, Loss: {loss.item()}')
+#         # Train the model
+#         model.train()
+#         for epoch in range(10000):
+#             optimizer.zero_grad()
+#             outputs = model(X_train.float())
+#             loss = criterion(outputs, y_train.float().view(-1, 1))
+#             loss.backward()
+#             optimizer.step()
+#             if epoch % 100 == 0:
+#                 print(f'Layer {layer+1}, Epoch {epoch}, Loss: {loss.item()}')
         
-        # Evaluate the model
-        model.eval()
-        with torch.no_grad():
-            predictions_train = model(X_train.float()).view(-1)
-            predictions_test = model(X_test.float()).view(-1)
-            r2_train = r2_score(y_train.float(), predictions_train)
-            r2_test = r2_score(y_test.float(), predictions_test)
-        r2_scores_train.append(r2_train)
-        r2_scores_test.append(r2_test)
+#         # Evaluate the model
+#         model.eval()
+#         with torch.no_grad():
+#             predictions_train = model(X_train.float()).view(-1)
+#             predictions_test = model(X_test.float()).view(-1)
+#             r2_train = r2_score(y_train.float(), predictions_train)
+#             r2_test = r2_score(y_test.float(), predictions_test)
+#         r2_scores_train.append(r2_train)
+#         r2_scores_test.append(r2_test)
     
-    return r2_scores_train, r2_scores_test
+#     return r2_scores_train, r2_scores_test
 
-# Aggregate R² scores across all graphs
-def aggregate_r2_scores(features_train, properties_train, features_test, properties_test, property_index):
-    X_train_layers, y_train_layers = prepare_regression_data(features_train, properties_train, property_index)
-    X_test_layers, y_test_layers = prepare_regression_data(features_test, properties_test, property_index)
+# # Aggregate R² scores across all graphs
+# def aggregate_r2_scores(features_train, properties_train, features_test, properties_test, property_index):
+#     X_train_layers, y_train_layers = prepare_regression_data(features_train, properties_train, property_index)
+#     X_test_layers, y_test_layers = prepare_regression_data(features_test, properties_test, property_index)
 
-    #save the results in a file
-    with open("results/"+DATASET+"_"+MODEL+"_X_train_layers.pkl", "wb") as f:
-        pkl.dump(X_train_layers, f)
+#     #save the results in a file
+#     with open("results/"+DATASET+"_"+MODEL+"_X_train_layers.pkl", "wb") as f:
+#         pkl.dump(X_train_layers, f)
 
-    with open("results/"+DATASET+"_"+MODEL+"_y_train_layers.pkl", "wb") as f:
-        pkl.dump(y_train_layers, f)
+#     with open("results/"+DATASET+"_"+MODEL+"_y_train_layers.pkl", "wb") as f:
+#         pkl.dump(y_train_layers, f)
     
-    r2_scores_train, r2_scores_test = train_and_evaluate_regression(X_train_layers, y_train_layers, X_test_layers, y_test_layers)
+#     r2_scores_train, r2_scores_test = train_and_evaluate_regression(X_train_layers, y_train_layers, X_test_layers, y_test_layers)
     
-    return r2_scores_train, r2_scores_test
+#     return r2_scores_train, r2_scores_test
 
-# Properties indices: 0 - node_degrees, 1 - clustering_coeffs, 2 - betweenness_centralities, 3 - eigenvector_centralities, 4 - Local_clustering_coefficients
-properties_indices = [0, 1, 2, 3, 4]
-property_names = ['Node Degrees', 'Clustering Coefficients', 'Betweenness Centralities', 'Eigenvector Centralities', 'Local Clustering Coefficients']
+# # Properties indices: 0 - node_degrees, 1 - clustering_coeffs, 2 - betweenness_centralities, 3 - eigenvector_centralities, 4 - Local_clustering_coefficients
+# properties_indices = [0, 1, 2, 3, 4]
+# property_names = ['Node Degrees', 'Clustering Coefficients', 'Betweenness Centralities', 'Eigenvector Centralities', 'Local Clustering Coefficients']
 
-# Initialize dictionaries to store average R² scores across all layers
-avg_r2_train_dict = {name: [] for name in property_names}
-avg_r2_test_dict = {name: [] for name in property_names}
+# # Initialize dictionaries to store average R² scores across all layers
+# avg_r2_train_dict = {name: [] for name in property_names}
+# avg_r2_test_dict = {name: [] for name in property_names}
 
-# Train and evaluate the probing classifier for each property
-for prop_idx, prop_name in zip(properties_indices, property_names):
-    print(f"Processing property: {prop_name}")
-    avg_r2_train_dict[prop_name], avg_r2_test_dict[prop_name] = aggregate_r2_scores(train_features, train_node_properties, test_features, test_node_properties, prop_idx)
+# # Train and evaluate the probing classifier for each property
+# for prop_idx, prop_name in zip(properties_indices, property_names):
+#     print(f"Processing property: {prop_name}")
+#     avg_r2_train_dict[prop_name], avg_r2_test_dict[prop_name] = aggregate_r2_scores(train_features, train_node_properties, test_features, test_node_properties, prop_idx)
 
-# Plotting the average R² scores across layers for each property
-layers = np.arange(len(avg_r2_train_dict[property_names[0]]))
+# # Plotting the average R² scores across layers for each property
+# layers = np.arange(len(avg_r2_train_dict[property_names[0]]))
 
 
-# %%
+# # %%
 
-#save all the variables necessary for the plot
+# #save all the variables necessary for the plot
+# # import pickle as pkl
+# # with open("results/"+DATASET+"_"+MODEL+"_avg_r2_train_dict_long.pkl", "wb") as f:
+# #     pkl.dump(avg_r2_train_dict, f)
+
+# # with open("results/"+DATASET+"_"+MODEL+"_avg_r2_test_dict_long.pkl", "wb") as f:
+# #     pkl.dump(avg_r2_test_dict, f)
+
+# # with open("results/"+DATASET+"_"+MODEL+"_layers_long.pkl", "wb") as f:
+# #     pkl.dump(layers, f)
+
+# # with open("results/"+DATASET+"_"+MODEL+"_property_names_long.pkl", "wb") as f:
+# #     pkl.dump(property_names, f)
+
+# #load all the variables necessary for the plot
 # import pickle as pkl
-# with open("results/"+DATASET+"_"+MODEL+"_avg_r2_train_dict_long.pkl", "wb") as f:
-#     pkl.dump(avg_r2_train_dict, f)
+# with open("results/"+DATASET+"_"+MODEL+"_avg_r2_train_dict_long.pkl", "rb") as f:
+#     avg_r2_train_dict = pkl.load(f)
 
-# with open("results/"+DATASET+"_"+MODEL+"_avg_r2_test_dict_long.pkl", "wb") as f:
-#     pkl.dump(avg_r2_test_dict, f)
+# with open("results/"+DATASET+"_"+MODEL+"_avg_r2_test_dict_long.pkl", "rb") as f:
+#     avg_r2_test_dict = pkl.load(f)
 
-# with open("results/"+DATASET+"_"+MODEL+"_layers_long.pkl", "wb") as f:
-#     pkl.dump(layers, f)
+# with open("results/"+DATASET+"_"+MODEL+"_layers_long.pkl", "rb") as f:
+#     layers = pkl.load(f)
 
-# with open("results/"+DATASET+"_"+MODEL+"_property_names_long.pkl", "wb") as f:
-#     pkl.dump(property_names, f)
+# with open("results/"+DATASET+"_"+MODEL+"_property_names_long.pkl", "rb") as f:
+#     property_names = pkl.load(f)
 
-#load all the variables necessary for the plot
-import pickle as pkl
-with open("results/"+DATASET+"_"+MODEL+"_avg_r2_train_dict_long.pkl", "rb") as f:
-    avg_r2_train_dict = pkl.load(f)
+#     #load the layer results
+# with open("results/"+DATASET+"_"+MODEL+"_X_train_layers.pkl", "rb") as f:
+#     X_train_layers = pkl.load(f)
 
-with open("results/"+DATASET+"_"+MODEL+"_avg_r2_test_dict_long.pkl", "rb") as f:
-    avg_r2_test_dict = pkl.load(f)
+# with open("results/"+DATASET+"_"+MODEL+"_y_train_layers.pkl", "rb") as f:
+#     y_train_layers = pkl.load(f)
 
-with open("results/"+DATASET+"_"+MODEL+"_layers_long.pkl", "rb") as f:
-    layers = pkl.load(f)
+# # %%
+# import matplotlib.pyplot as plt
+# plt.figure(figsize=(12, 6))
 
-with open("results/"+DATASET+"_"+MODEL+"_property_names_long.pkl", "rb") as f:
-    property_names = pkl.load(f)
+# # Plot for average R² scores
+# for prop_name in property_names:
+#     plt.plot(layers, avg_r2_train_dict[prop_name], label=f'{prop_name} (Train)', marker='o')
+#     plt.plot(layers, avg_r2_test_dict[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
 
-    #load the layer results
-with open("results/"+DATASET+"_"+MODEL+"_X_train_layers.pkl", "rb") as f:
-    X_train_layers = pkl.load(f)
+# plt.xlabel('Layer')
+# plt.ylabel('Average R² Score')
+# plt.title('Average R² Score for Node Properties Prediction Across Layers')
+# plt.legend()
+# plt.grid(True)
 
-with open("results/"+DATASET+"_"+MODEL+"_y_train_layers.pkl", "rb") as f:
-    y_train_layers = pkl.load(f)
+# plt.tight_layout()
+# plt.show()
 
-# %%
-import matplotlib.pyplot as plt
-plt.figure(figsize=(12, 6))
+# # %%
+# #plot only test results
+# plt.figure(figsize=(12, 6))
 
-# Plot for average R² scores
-for prop_name in property_names:
-    plt.plot(layers, avg_r2_train_dict[prop_name], label=f'{prop_name} (Train)', marker='o')
-    plt.plot(layers, avg_r2_test_dict[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
+# # Plot for average R² scores
+# for prop_name in property_names:
+#     plt.plot(layers, avg_r2_test_dict[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
 
-plt.xlabel('Layer')
-plt.ylabel('Average R² Score')
-plt.title('Average R² Score for Node Properties Prediction Across Layers')
-plt.legend()
-plt.grid(True)
+# plt.xlabel('Layer')
+# plt.ylabel('Average R² Score')
+# plt.title('Average R² Score for Node Properties Prediction Across Layers')
+# plt.legend()
+# #x axis called layer 1, layer 2, etc
+# plt.xticks(range(len(layers)), [f'Layer {i+1}' for i in layers])           
+# plt.grid(True)
 
-plt.tight_layout()
-plt.show()
+# # %% [markdown]
+# # y=1 and y=0 as two different plots
 
-# %%
-#plot only test results
-plt.figure(figsize=(12, 6))
+# # %%
+# # Extract labels from the dataset using train_idx_list and test_idx_list
+# train_idx_list = gnn.train_idx.tolist()
+# test_idx_list = gnn.test_idx.tolist()
 
-# Plot for average R² scores
-for prop_name in property_names:
-    plt.plot(layers, avg_r2_test_dict[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
+# train_labels = [gnn.dataset[i].y.item() for i in train_idx_list]
+# test_labels = [gnn.dataset[i].y.item() for i in test_idx_list]
 
-plt.xlabel('Layer')
-plt.ylabel('Average R² Score')
-plt.title('Average R² Score for Node Properties Prediction Across Layers')
-plt.legend()
-#x axis called layer 1, layer 2, etc
-plt.xticks(range(len(layers)), [f'Layer {i+1}' for i in layers])           
-plt.grid(True)
-
-# %% [markdown]
-# y=1 and y=0 as two different plots
-
-# %%
-# Extract labels from the dataset using train_idx_list and test_idx_list
-train_idx_list = gnn.train_idx.tolist()
-test_idx_list = gnn.test_idx.tolist()
-
-train_labels = [gnn.dataset[i].y.item() for i in train_idx_list]
-test_labels = [gnn.dataset[i].y.item() for i in test_idx_list]
-
-# Split the dataset by label y=0 and y=1
-def split_by_label(features, properties, labels):
-    features_0, properties_0, features_1, properties_1 = [], [], [], []
+# # Split the dataset by label y=0 and y=1
+# def split_by_label(features, properties, labels):
+#     features_0, properties_0, features_1, properties_1 = [], [], [], []
     
-    for i, label in enumerate(labels):
-        if label == 0:
-            features_0.append(features[i])
-            properties_0.append(properties[i])
-        else:
-            features_1.append(features[i])
-            properties_1.append(properties[i])
+#     for i, label in enumerate(labels):
+#         if label == 0:
+#             features_0.append(features[i])
+#             properties_0.append(properties[i])
+#         else:
+#             features_1.append(features[i])
+#             properties_1.append(properties[i])
     
-    return features_0, properties_0, features_1, properties_1
+#     return features_0, properties_0, features_1, properties_1
 
-# Assuming you have train_features, train_node_properties, test_features, test_node_properties from your GNN
-train_features_0, train_node_properties_0, train_features_1, train_node_properties_1 = split_by_label(train_features, train_node_properties, train_labels)
-test_features_0, test_node_properties_0, test_features_1, test_node_properties_1 = split_by_label(test_features, test_node_properties, test_labels)
+# # Assuming you have train_features, train_node_properties, test_features, test_node_properties from your GNN
+# train_features_0, train_node_properties_0, train_features_1, train_node_properties_1 = split_by_label(train_features, train_node_properties, train_labels)
+# test_features_0, test_node_properties_0, test_features_1, test_node_properties_1 = split_by_label(test_features, test_node_properties, test_labels)
 
-# Properties indices: 0 - node_degrees, 1 - clustering_coeffs, 2 - betweenness_centralities, 3 - eigenvector_centralities, 4 - Local_clustering_coefficients
-properties_indices = [0, 1, 2, 3, 4]
-property_names = ['Node Degrees', 'Clustering Coefficients', 'Betweenness Centralities', 'Eigenvector Centralities', 'Local Clustering Coefficients']
+# # Properties indices: 0 - node_degrees, 1 - clustering_coeffs, 2 - betweenness_centralities, 3 - eigenvector_centralities, 4 - Local_clustering_coefficients
+# properties_indices = [0, 1, 2, 3, 4]
+# property_names = ['Node Degrees', 'Clustering Coefficients', 'Betweenness Centralities', 'Eigenvector Centralities', 'Local Clustering Coefficients']
 
-# Initialize dictionaries to store average R² scores across all layers for y=0 and y=1
-avg_r2_train_dict_0 = {name: [] for name in property_names}
-avg_r2_test_dict_0 = {name: [] for name in property_names}
-avg_r2_train_dict_1 = {name: [] for name in property_names}
-avg_r2_test_dict_1 = {name: [] for name in property_names}
+# # Initialize dictionaries to store average R² scores across all layers for y=0 and y=1
+# avg_r2_train_dict_0 = {name: [] for name in property_names}
+# avg_r2_test_dict_0 = {name: [] for name in property_names}
+# avg_r2_train_dict_1 = {name: [] for name in property_names}
+# avg_r2_test_dict_1 = {name: [] for name in property_names}
 
-# Train and evaluate the probing classifier for each property for y=0
-for prop_idx, prop_name in zip(properties_indices, property_names):
-    print(f"Processing property for y=0: {prop_name}")
-    avg_r2_train_dict_0[prop_name], avg_r2_test_dict_0[prop_name] = aggregate_r2_scores(train_features_0, train_node_properties_0, test_features_0, test_node_properties_0, prop_idx)
+# # Train and evaluate the probing classifier for each property for y=0
+# for prop_idx, prop_name in zip(properties_indices, property_names):
+#     print(f"Processing property for y=0: {prop_name}")
+#     avg_r2_train_dict_0[prop_name], avg_r2_test_dict_0[prop_name] = aggregate_r2_scores(train_features_0, train_node_properties_0, test_features_0, test_node_properties_0, prop_idx)
 
-# Train and evaluate the probing classifier for each property for y=1
-for prop_idx, prop_name in zip(properties_indices, property_names):
-    print(f"Processing property for y=1: {prop_name}")
-    avg_r2_train_dict_1[prop_name], avg_r2_test_dict_1[prop_name] = aggregate_r2_scores(train_features_1, train_node_properties_1, test_features_1, test_node_properties_1, prop_idx)
+# # Train and evaluate the probing classifier for each property for y=1
+# for prop_idx, prop_name in zip(properties_indices, property_names):
+#     print(f"Processing property for y=1: {prop_name}")
+#     avg_r2_train_dict_1[prop_name], avg_r2_test_dict_1[prop_name] = aggregate_r2_scores(train_features_1, train_node_properties_1, test_features_1, test_node_properties_1, prop_idx)
 
-# Plotting the average R² scores across layers for each property, separately for y=0 and y=1
-layers = np.arange(len(avg_r2_train_dict_0[property_names[0]]))
+# # Plotting the average R² scores across layers for each property, separately for y=0 and y=1
+# layers = np.arange(len(avg_r2_train_dict_0[property_names[0]]))
 
-plt.figure(figsize=(12, 12))
+# plt.figure(figsize=(12, 12))
 
-# Plot for y=0
-plt.subplot(2, 1, 1)
-for prop_name in property_names:
-    plt.plot(layers, avg_r2_train_dict_0[prop_name], label=f'{prop_name} (Train)', marker='o')
-    plt.plot(layers, avg_r2_test_dict_0[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
-plt.xlabel('Layer')
-plt.ylabel('Average R² Score')
-plt.title('Average R² Score for Node Properties Prediction Across Layers (y=0)')
-plt.legend()
-plt.grid(True)
+# # Plot for y=0
+# plt.subplot(2, 1, 1)
+# for prop_name in property_names:
+#     plt.plot(layers, avg_r2_train_dict_0[prop_name], label=f'{prop_name} (Train)', marker='o')
+#     plt.plot(layers, avg_r2_test_dict_0[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
+# plt.xlabel('Layer')
+# plt.ylabel('Average R² Score')
+# plt.title('Average R² Score for Node Properties Prediction Across Layers (y=0)')
+# plt.legend()
+# plt.grid(True)
 
-# Plot for y=1
-plt.subplot(2, 1, 2)
-for prop_name in property_names:
-    plt.plot(layers, avg_r2_train_dict_1[prop_name], label=f'{prop_name} (Train)', marker='o')
-    plt.plot(layers, avg_r2_test_dict_1[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
-plt.xlabel('Layer')
-plt.ylabel('Average R² Score')
-plt.title('Average R² Score for Node Properties Prediction Across Layers (y=1)')
-plt.legend()
-plt.grid(True)
+# # Plot for y=1
+# plt.subplot(2, 1, 2)
+# for prop_name in property_names:
+#     plt.plot(layers, avg_r2_train_dict_1[prop_name], label=f'{prop_name} (Train)', marker='o')
+#     plt.plot(layers, avg_r2_test_dict_1[prop_name], label=f'{prop_name} (Test)', linestyle='--', marker='x')
+# plt.xlabel('Layer')
+# plt.ylabel('Average R² Score')
+# plt.title('Average R² Score for Node Properties Prediction Across Layers (y=1)')
+# plt.legend()
+# plt.grid(True)
 
-plt.tight_layout()
-plt.show()
+# plt.tight_layout()
+# plt.show()
 
 
 # %% [markdown]
