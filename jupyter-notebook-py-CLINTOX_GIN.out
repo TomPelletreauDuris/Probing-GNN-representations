@@ -12,7 +12,7 @@ Python 3.10.4
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
 Data(x=[24, 9], edge_index=[2, 46], edge_attr=[46, 3], y=[1])
-['x', 'edge_attr', 'edge_index', 'y']
+['edge_attr', 'edge_index', 'y', 'x']
 ValuesView({'x': tensor([[0., 0., 1., 5., 0., 0., 0., 0., 0.],
         [6., 0., 3., 5., 0., 0., 3., 0., 0.],
         [8., 0., 1., 5., 0., 0., 3., 0., 0.],
@@ -3106,23 +3106,330 @@ Betweenness Centralization: 0.04312925170068027
 PageRank Centralization: 0.04751305893482061
 Average Clustering Coefficient: 0.0
 Transitivity: 0
+Betweenness Centralization: 0.04725346020761245
+PageRank Centralization: 0.028262737550790482
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.039129701467363824
+PageRank Centralization: 0.033440134327505706
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06359044995408632
+PageRank Centralization: 0.04180568785838989
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06243055555555556
+PageRank Centralization: 0.05247845735231409
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07209876543209878
+PageRank Centralization: 0.05444538045188892
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02360822060353798
+PageRank Centralization: 0.027162898870621996
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024867724867724865
+PageRank Centralization: 0.030021846534397625
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.012393530819530025
+PageRank Centralization: 0.017309184201489382
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.6666666666666666
+PageRank Centralization: 0.34459586097954487
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03193919344675489
+PageRank Centralization: 0.02350028357389848
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.053611111111111096
+PageRank Centralization: 0.032659281629479946
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05308390022675735
+PageRank Centralization: 0.018066745664215594
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027114134542705972
+PageRank Centralization: 0.03259754921948204
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0340527200168032
+PageRank Centralization: 0.02073557153331958
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.049252077562326864
+PageRank Centralization: 0.014689875215126574
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016168343161059077
+PageRank Centralization: 0.02188712526406955
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04816326530612246
+PageRank Centralization: 0.025885807775248425
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07265840220385676
+PageRank Centralization: 0.05014861347547996
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02007045602164267
+PageRank Centralization: 0.02576016822342892
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.061662049861495837
+PageRank Centralization: 0.034715626080631716
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05739210284664831
+PageRank Centralization: 0.08375458457721328
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02775510204081632
+PageRank Centralization: 0.03030424318300463
+Average Clustering Coefficient: 0.10606060606060605
+Transitivity: 0.10344827586206896
+Betweenness Centralization: 0.09481481481481481
+PageRank Centralization: 0.10708582700732527
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.033753975582230436
+PageRank Centralization: 0.02557336443197571
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024844490692565616
+PageRank Centralization: 0.021798493599590674
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028285374221102017
+PageRank Centralization: 0.021470832605668278
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 1.0
+PageRank Centralization: 0.30630743198181754
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03740559584715429
+PageRank Centralization: 0.027433320194984713
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024992484680309866
+PageRank Centralization: 0.013093702618517326
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02118630948803547
+PageRank Centralization: 0.012642173534501602
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04235302936601636
+PageRank Centralization: 0.028124483147642307
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.013178101532959986
+PageRank Centralization: 0.012274744370174812
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02081641984640221
+PageRank Centralization: 0.01697039516895306
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.011777386248315185
+PageRank Centralization: 0.01112420500250379
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028156203657933764
+PageRank Centralization: 0.02669395418891179
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022083477858711998
+PageRank Centralization: 0.02969874138784816
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03460893950275298
+PageRank Centralization: 0.05886417498027847
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010745003883906503
+PageRank Centralization: 0.015351469380557314
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01839983052044348
+PageRank Centralization: 0.009209800488583983
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02817416060574287
+PageRank Centralization: 0.019190278695367345
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03772906934962272
+PageRank Centralization: 0.02725897423174227
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01055254667157908
+PageRank Centralization: 0.017811881324593017
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03287777777777779
+PageRank Centralization: 0.03183768660889724
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025803262481463175
+PageRank Centralization: 0.01901110979512344
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02485185185185185
+PageRank Centralization: 0.029365084753809924
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05075089266960724
+PageRank Centralization: 0.029323941813718488
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02775510204081632
+PageRank Centralization: 0.03030424318300463
+Average Clustering Coefficient: 0.10606060606060605
+Transitivity: 0.10344827586206896
+Betweenness Centralization: 0.06013605442176871
+PageRank Centralization: 0.028132081907572493
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.035706784289014915
+PageRank Centralization: 0.018743080405582344
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05941043083900227
+PageRank Centralization: 0.02781461856846608
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.034444444444444444
+PageRank Centralization: 0.025157335161244625
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06514825074381861
+PageRank Centralization: 0.037919204500315405
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024025779011533993
+PageRank Centralization: 0.024613894829391327
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028449124341889415
+PageRank Centralization: 0.042886376423638475
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01870406802809574
+PageRank Centralization: 0.043067674036188885
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06023324362424709
+PageRank Centralization: 0.05809034785209252
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.10683760683760682
+PageRank Centralization: 0.08145047436224194
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08950617283950615
+PageRank Centralization: 0.12620118211316433
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.029122392758756395
+PageRank Centralization: 0.019766643859265912
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.014990215440665889
+PageRank Centralization: 0.023381071191993445
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022157095473465137
+PageRank Centralization: 0.012316267967816864
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03627241621975781
+PageRank Centralization: 0.02040173037130211
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06011080332409973
+PageRank Centralization: 0.03461249241949119
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.09333333333333335
+PageRank Centralization: 0.10227457507675428
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03746348169788624
+PageRank Centralization: 0.01536907390399396
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03079964768276457
+PageRank Centralization: 0.046213059462499734
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024738461538461536
+PageRank Centralization: 0.015052680605946334
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03199053254437869
+PageRank Centralization: 0.030390557739882324
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06600091827364554
+PageRank Centralization: 0.047466271724863535
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03520793950850661
+PageRank Centralization: 0.03282701952457152
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025075608152531223
+PageRank Centralization: 0.024722724003801107
+Average Clustering Coefficient: 0.05284552845528456
+Transitivity: 0.046153846153846156
+Betweenness Centralization: 0.03380952380952381
+PageRank Centralization: 0.04596328825900668
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03369614512471655
+PageRank Centralization: 0.025365547530274462
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03931834319526628
+PageRank Centralization: 0.023982147136566746
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028310249307479222
+PageRank Centralization: 0.0384034507447865
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.013522647251144307
+PageRank Centralization: 0.012327432303172785
+Average Clustering Coefficient: 0.0
+Transitivity: 0
 Traceback (most recent call last):
   File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 778, in <module>
     train_properties_long = compute_graph_properties(selected_dataset)
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 727, in compute_graph_properties
-    small_world_coefficient = (clustering_coeff / random_clustering_coeff) / (avg_path_len / random_avg_path_len)
+  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 731, in compute_graph_properties
+    small_world_index = compute_swi(G)
+  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 621, in compute_swi
+    swi = ((avg_path_len - lattice_avg_path_len) / (random_avg_path_len - lattice_avg_path_len)) * \
 ZeroDivisionError: float division by zero
 
 JOB STATISTICS
 ==============
-Job ID: 7674369
+Job ID: 7675825
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: FAILED (exit code 1)
+State: RUNNING
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:17
-CPU Efficiency: 3.05% of 00:09:18 core-walltime
-Job Wall-clock time: 00:00:31
-Memory Utilized: 2.62 MB
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.17% of 00:09:54 core-walltime
+Job Wall-clock time: 00:00:33
+Memory Utilized: 2.59 MB
 Memory Efficiency: 0.00% of 120.00 GB
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

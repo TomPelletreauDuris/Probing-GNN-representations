@@ -17,3 +17,18 @@ Python 3.10.4
   warnings.warn(out)
 /gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN_MDD.py:706: ComplexWarning: Casting complex values to real discards the imaginary part
   train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+slurmstepd: error: *** JOB 7674405 ON gcn19 CANCELLED AT 2024-08-31T12:00:40 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7674405
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:02
+CPU Efficiency: 0.00% of 15-00:00:54 core-walltime
+Job Wall-clock time: 20:00:03
+Memory Utilized: 2.61 GB
+Memory Efficiency: 2.17% of 120.00 GB
