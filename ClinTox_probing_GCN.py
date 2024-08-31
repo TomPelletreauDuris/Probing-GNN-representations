@@ -598,7 +598,13 @@ def compute_swi(graph):
     random_graph = nx.gnm_random_graph(num_nodes, num_edges)
     
     # Generate a lattice graph with the same number of nodes and edges
-    lattice_graph = nx.watts_strogatz_graph(num_nodes, k=4, p=0)  # Adjust k as needed
+    if num_nodes > 2:
+        k = min(4, num_nodes - 1)
+    else:
+        print("Number of nodes must be greater than 1")
+        return float('inf') 
+
+    lattice_graph = nx.watts_strogatz_graph(num_nodes, k=k, p=0)  # Adjust k as needed
     
     # Calculate clustering coefficient and average path length for the random graph
     random_clustering_coeff = nx.average_clustering(random_graph)
@@ -608,7 +614,10 @@ def compute_swi(graph):
     lattice_clustering_coeff = nx.average_clustering(lattice_graph)
     lattice_avg_path_len = calculate_avg_path_length(lattice_graph)
     
-    # Compute the Small-World Index (SWI)
+    # Check for zero denominator
+    if (random_avg_path_len - lattice_avg_path_len) == 0 or (lattice_clustering_coeff - random_clustering_coeff) == 0:
+        return float('inf')  # or some other value indicating an undefined SWI
+    
     swi = ((avg_path_len - lattice_avg_path_len) / (random_avg_path_len - lattice_avg_path_len)) * \
           ((clustering_coeff - random_clustering_coeff) / (lattice_clustering_coeff - random_clustering_coeff))
     

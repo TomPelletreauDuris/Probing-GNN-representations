@@ -983,10 +983,10 @@ import pickle as pkl
 #     pkl.dump(test_properties, f)
 
 #load the properties
-with open("results/"+DATASET+"_"+MODEL+"_train_properties.pkl", "rb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "rb") as f:
     train_properties = pkl.load(f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties.pkl", "rb") as f:
+with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
     test_properties = pkl.load(f)
 
 # %%
