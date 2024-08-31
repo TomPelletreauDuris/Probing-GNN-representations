@@ -84,6 +84,12 @@ train_features[1][0][26]
 
 # %% [markdown]
 # ##### Probing for the top 3 nodes on train_features only and averaging the results of the different diagnostif classifiers
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from sklearn.metrics import r2_score
+import matplotlib.pyplot as plt
+import numpy as np
 
 # %%
 class LinearModel(nn.Module):
