@@ -14,7 +14,7 @@ Python 3.10.4
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
   return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
 Data(x=[24, 9], edge_index=[2, 46], edge_attr=[46, 3], y=[1])
-['x', 'edge_attr', 'y', 'edge_index']
+['edge_attr', 'y', 'x', 'edge_index']
 ValuesView({'x': tensor([[0., 0., 1., 5., 0., 0., 0., 0., 0.],
         [6., 0., 3., 5., 0., 0., 3., 0., 0.],
         [8., 0., 1., 5., 0., 0., 3., 0., 0.],
@@ -7208,14 +7208,15 @@ networkx.exception.NetworkXPointlessConcept: Connectivity is undefined for the n
 
 JOB STATISTICS
 ==============
-Job ID: 7680579
+Job ID: 7681477
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
-State: FAILED (exit code 1)
+State: RUNNING
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:00:37
-CPU Efficiency: 3.95% of 00:15:36 core-walltime
-Job Wall-clock time: 00:00:52
-Memory Utilized: 3.20 GB
-Memory Efficiency: 2.67% of 120.00 GB
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.12% of 00:14:24 core-walltime
+Job Wall-clock time: 00:00:48
+Memory Utilized: 3.58 MB
+Memory Efficiency: 0.00% of 120.00 GB
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
