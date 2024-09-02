@@ -281,7 +281,7 @@ train_properties[1132]
 
 # %%
 import numpy as np
-print('Number of properties:', len(train_properties[0]))
+
 # Assuming train_properties is a list of lists or a similar structure
 train_properties = np.array(train_properties, dtype=np.float64)
 
@@ -291,7 +291,6 @@ train_properties[np.isnan(train_properties)] = -1
 # If you need to convert it back to a list of lists
 train_properties = train_properties.tolist()
 
-print('no nan values:', all([all([x == x for x in prop]) for prop in train_properties]))
 # %% [markdown]
 # ### Features
 
@@ -779,7 +778,6 @@ def compute_graph_properties(data):
 
         ))
     return properties
-
 
 
 # %%
