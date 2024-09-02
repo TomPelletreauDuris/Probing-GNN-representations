@@ -1710,6 +1710,7 @@
 # /!\ Try to not forget that we need to change the batch_size to 1 if we want to probe for node properties as we need the forward pass to be made 1 graph by 1 graph at a time. 
 
 # %%
+from Datasets.FC.create_dataset import read_dataset_MDD
 dataset = read_dataset_MDD()
 import torch
 torch.manual_seed(37)

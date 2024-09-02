@@ -16,7 +16,7 @@ DATASET = "FC"
 from models.models_FC import GIN_framework3 as framework3 # import the model
 gnn = framework3(dataset)
 #load the model
-gnn.load_model(path="models/"+DATASET+"_"+MODEL+".pt") #, map_location='cpu')
+gnn.load_model(path="models/"+DATASET+"_"+MODEL+"server.pt") #, map_location='cpu')
 gnn.evaluate()
 
 # %% [markdown]
