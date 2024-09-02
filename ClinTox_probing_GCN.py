@@ -233,19 +233,19 @@ def compute_graph_properties(data):
         properties.append((num_nodes, num_edges, density, avg_path_len, num_cliques, num_triangles, num_squares, number_of_node_in_the_largest_fully_connected_component, assortativity, small_world))
     return properties
 
-train_idx_list = gnn.train_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-train_properties = compute_graph_properties(selected_dataset)
-test_idx_list = gnn.test_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-test_properties = compute_graph_properties(selected_dataset)
+# train_idx_list = gnn.train_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+# train_properties = compute_graph_properties(selected_dataset)
+# test_idx_list = gnn.test_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+# test_properties = compute_graph_properties(selected_dataset)
 
-# Save the properties to files
-with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
-    pkl.dump(train_properties, f)
+# # Save the properties to files
+# with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
+#     pkl.dump(train_properties, f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
-    pkl.dump(test_properties, f)
+# with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
+#     pkl.dump(test_properties, f)
 
 # %%
 # print(len(train_properties))
@@ -775,23 +775,21 @@ def compute_graph_properties(data):
     return properties
 
 
-
-
 # %%
 
-# train_idx_list = gnn.train_idx.tolist()
-# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-# train_properties_long = compute_graph_properties(selected_dataset)
-# test_idx_list = gnn.test_idx.tolist()
-# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-# test_properties_long = compute_graph_properties(selected_dataset)
+train_idx_list = gnn.train_idx.tolist()
+selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+train_properties_long = compute_graph_properties(selected_dataset)
+test_idx_list = gnn.test_idx.tolist()
+selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+test_properties_long = compute_graph_properties(selected_dataset)
 
-# #save the properties in a file
-# with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
-#     pkl.dump(train_properties_long, f)
+#save the properties in a file
+with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
+    pkl.dump(train_properties_long, f)
 
-# with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
-#     pkl.dump(test_properties_long, f)
+with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
+    pkl.dump(test_properties_long, f)
 
 # %%
 #load the properties
