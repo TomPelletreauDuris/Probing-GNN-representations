@@ -417,76 +417,76 @@ embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global',  'x6', 'x7', 'x8']
 with open("results/"+DATASET+"_"+MODEL+"_results_full_embedding.pkl", "rb") as f:
     results = pkl.load(f)
 
-# %%
-import matplotlib.pyplot as plt
+# # %%
+# import matplotlib.pyplot as plt
 
-# Assuming results, embeddings, and other necessary variables are defined as in your context
-property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'assortativity', 'small_world']
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
-colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'grey', 'orange', 'purple']
+# # Assuming results, embeddings, and other necessary variables are defined as in your context
+# property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'assortativity', 'small_world']
+# embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
+# colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'grey', 'orange', 'purple']
 
 
-plt.figure(figsize=(12, 8))
+# plt.figure(figsize=(12, 8))
 
-for i, property_name in enumerate(property_names):
-    x_points = []
-    y_points = []
-    for j, embedding in enumerate(embeddings):
-        name_of_embedding = embeddings_names[j]
-        test_r2 = results[(name_of_embedding, property_name)][3]
-        if test_r2 < -0.05:  # Handle negative R² values
-            test_r2 = -0.05
-        x_points.append(j)
-        y_points.append(test_r2)
+# for i, property_name in enumerate(property_names):
+#     x_points = []
+#     y_points = []
+#     for j, embedding in enumerate(embeddings):
+#         name_of_embedding = embeddings_names[j]
+#         test_r2 = results[(name_of_embedding, property_name)][3]
+#         if test_r2 < -0.05:  # Handle negative R² values
+#             test_r2 = -0.05
+#         x_points.append(j)
+#         y_points.append(test_r2)
     
-    # Plotting the line for the current property
-    plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
+#     # Plotting the line for the current property
+#     plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
 
-plt.xticks(range(len(embeddings)), embeddings_names)
-plt.xlabel('Embedding')
-plt.ylabel('R²')
-plt.legend()
-plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.xticks(range(len(embeddings)), embeddings_names)
+# plt.xlabel('Embedding')
+# plt.ylabel('R²')
+# plt.legend()
+# plt.title('FC matrice - GCN - R² for different embeddings and properties')
+# plt.show()
 
-#save the plot
-plt.savefig("results/"+DATASET+"_"+MODEL+"test_R2_plot_full_embedding.png")
-
-
-# %%
-import matplotlib.pyplot as plt
-
-# Assuming results, embeddings, and other necessary variables are defined as in your context
-property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'assortativity', 'small_world']
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
-colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'grey', 'orange', 'purple']
+# #save the plot
+# plt.savefig("results/"+DATASET+"_"+MODEL+"test_R2_plot_full_embedding.png")
 
 
-plt.figure(figsize=(12, 8))
+# # %%
+# import matplotlib.pyplot as plt
 
-for i, property_name in enumerate(property_names):
-    x_points = []
-    y_points = []
-    for j, embedding in enumerate(embeddings):
-        name_of_embedding = embeddings_names[j]
-        train_r2 = results[(name_of_embedding, property_name)][2]
-        if train_r2 < -0.05:
-            train_r2 = -0.05
-        x_points.append(j)
-        y_points.append(train_r2)
+# # Assuming results, embeddings, and other necessary variables are defined as in your context
+# property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliques', 'num_triangles', 'num_squares', 'number_of_nodes_in_the_largest_fully_connected_component', 'assortativity', 'small_world']
+# embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
+# colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'grey', 'orange', 'purple']
 
-    # Plotting the line for the current property
-    plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
 
-plt.xticks(range(len(embeddings)), embeddings_names)
-plt.xlabel('Embedding')
-plt.ylabel('R²')
-plt.legend()
-plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.figure(figsize=(12, 8))
 
-#save the plot
-plt.savefig("results/"+DATASET+"_"+MODEL+"train_R2_plot_full_embedding.png")
+# for i, property_name in enumerate(property_names):
+#     x_points = []
+#     y_points = []
+#     for j, embedding in enumerate(embeddings):
+#         name_of_embedding = embeddings_names[j]
+#         train_r2 = results[(name_of_embedding, property_name)][2]
+#         if train_r2 < -0.05:
+#             train_r2 = -0.05
+#         x_points.append(j)
+#         y_points.append(train_r2)
+
+#     # Plotting the line for the current property
+#     plt.plot(x_points, y_points, label=property_name, color=colors[i], marker='x')
+
+# plt.xticks(range(len(embeddings)), embeddings_names)
+# plt.xlabel('Embedding')
+# plt.ylabel('R²')
+# plt.legend()
+# plt.title('FC matrice - GCN - R² for different embeddings and properties')
+# plt.show()
+
+# #save the plot
+# plt.savefig("results/"+DATASET+"_"+MODEL+"train_R2_plot_full_embedding.png")
 
 # %% [markdown]
 # # Test with more properties
@@ -701,230 +701,230 @@ with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "rb") as f:
 with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
     test_properties_long = pkl.load(f)
 
-# %%
-property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
-train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
-test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
-#create a dictionary where we will store the results for each embeddings, each property
-results = {}
+# # %%
+# property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
+# train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+# test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
+# #create a dictionary where we will store the results for each embeddings, each property
+# results = {}
 
-ii = 0
+# ii = 0
 
-for train_embedding, test_embedding in embeddings:
-    # Flatten the embeddings before determining the input size
-    train_embedding_flat = train_embedding.view(train_embedding.size(0), -1)
-    test_embedding_flat = test_embedding.view(test_embedding.size(0), -1)
-    #print the shapes
-    print(train_embedding_flat.shape)
-    print(test_embedding_flat.shape)
-    input_size = train_embedding_flat.shape[1]
+# for train_embedding, test_embedding in embeddings:
+#     # Flatten the embeddings before determining the input size
+#     train_embedding_flat = train_embedding.view(train_embedding.size(0), -1)
+#     test_embedding_flat = test_embedding.view(test_embedding.size(0), -1)
+#     #print the shapes
+#     print(train_embedding_flat.shape)
+#     print(test_embedding_flat.shape)
+#     input_size = train_embedding_flat.shape[1]
 
-    for i, property_name in enumerate(property_names_long):
-        model = LinearModel(input_size, output_size)
-        criterion = nn.MSELoss()
-        optimizer = optim.Adam(model.parameters(), lr=0.001)
-        num_epochs = 2000000  # Maximum number of epochs
-        min_epochs = 1000  # Minimum number of epochs
-        patience = 3000  # Number of epochs to wait for improvement
-        tolerance = 1e-6  # Tolerance for considering the loss as stable
+#     for i, property_name in enumerate(property_names_long):
+#         model = LinearModel(input_size, output_size)
+#         criterion = nn.MSELoss()
+#         optimizer = optim.Adam(model.parameters(), lr=0.001)
+#         num_epochs = 2000000  # Maximum number of epochs
+#         min_epochs = 1000  # Minimum number of epochs
+#         patience = 3000  # Number of epochs to wait for improvement
+#         tolerance = 1e-6  # Tolerance for considering the loss as stable
 
-        best_loss = float('inf')
-        no_improve_count = 0
+#         best_loss = float('inf')
+#         no_improve_count = 0
         
-        for epoch in range(num_epochs):
-            model.train()
-            optimizer.zero_grad()
+#         for epoch in range(num_epochs):
+#             model.train()
+#             optimizer.zero_grad()
 
-            outputs = model(train_embedding_flat).squeeze()
-            target = train_y_long[:, i].squeeze()
+#             outputs = model(train_embedding_flat).squeeze()
+#             target = train_y_long[:, i].squeeze()
 
-            loss = criterion(outputs, target)
-            loss.backward()
-            optimizer.step()
+#             loss = criterion(outputs, target)
+#             loss.backward()
+#             optimizer.step()
 
-            if (epoch+1) % 1000 == 0:  # Print every 1000 epochs
-                print(f'Epoch [{epoch+1}/{num_epochs}], Property: {property_name}, Loss: {loss.item():.4f}')
+#             if (epoch+1) % 1000 == 0:  # Print every 1000 epochs
+#                 print(f'Epoch [{epoch+1}/{num_epochs}], Property: {property_name}, Loss: {loss.item():.4f}')
 
-            # Check for early stopping, but only after minimum epochs
-            if epoch >= min_epochs:
-                if loss.item() < best_loss - tolerance:
-                    best_loss = loss.item()
-                    no_improve_count = 0
-                else:
-                    no_improve_count += 1
+#             # Check for early stopping, but only after minimum epochs
+#             if epoch >= min_epochs:
+#                 if loss.item() < best_loss - tolerance:
+#                     best_loss = loss.item()
+#                     no_improve_count = 0
+#                 else:
+#                     no_improve_count += 1
 
-                if no_improve_count >= patience:
-                    print(f'Early stopping at epoch {epoch+1}')
-                    break
+#                 if no_improve_count >= patience:
+#                     print(f'Early stopping at epoch {epoch+1}')
+#                     break
 
-        # Evaluate the model
-        model.eval()
-        with torch.no_grad():
-            train_pred = model(train_embedding_flat).squeeze().cpu().numpy()
-            test_pred = model(test_embedding_flat).squeeze().cpu().numpy()
+#         # Evaluate the model
+#         model.eval()
+#         with torch.no_grad():
+#             train_pred = model(train_embedding_flat).squeeze().cpu().numpy()
+#             test_pred = model(test_embedding_flat).squeeze().cpu().numpy()
 
-            train_target = train_y_long[:, i].cpu().numpy()
-            test_target = test_y_long[:, i].cpu().numpy()
+#             train_target = train_y_long[:, i].cpu().numpy()
+#             test_target = test_y_long[:, i].cpu().numpy()
 
-            train_mse = mean_squared_error(train_target, train_pred)
-            test_mse = mean_squared_error(test_target, test_pred)
+#             train_mse = mean_squared_error(train_target, train_pred)
+#             test_mse = mean_squared_error(test_target, test_pred)
 
-            train_r2 = r2_score(train_target, train_pred)
-            test_r2 = r2_score(test_target, test_pred)
+#             train_r2 = r2_score(train_target, train_pred)
+#             test_r2 = r2_score(test_target, test_pred)
 
-            print(f'Embedding: {train_embedding.shape}')
-            print(f'Property: {property_name}')
-            print(f'  Train MSE: {train_mse:.4f}, Test MSE: {test_mse:.4f}')
-            print(f'  Train R²: {train_r2:.4f}, Test R²: {test_r2:.4f}')
+#             print(f'Embedding: {train_embedding.shape}')
+#             print(f'Property: {property_name}')
+#             print(f'  Train MSE: {train_mse:.4f}, Test MSE: {test_mse:.4f}')
+#             print(f'  Train R²: {train_r2:.4f}, Test R²: {test_r2:.4f}')
 
-            #add the results to the dictionary
-            name_of_embedding = embeddings_names[ii]
-            results[(name_of_embedding, property_name)] = (train_mse, test_mse, train_r2, test_r2)
+#             #add the results to the dictionary
+#             name_of_embedding = embeddings_names[ii]
+#             results[(name_of_embedding, property_name)] = (train_mse, test_mse, train_r2, test_r2)
 
-    ii += 1
+#     ii += 1
 
-#save results
-with open("results/"+DATASET+"_"+MODEL+"_results_limited_cv_long_full_embedding.pkl", "wb") as f:
-    pkl.dump(results, f)
+# #save results
+# with open("results/"+DATASET+"_"+MODEL+"_results_limited_cv_long_full_embedding.pkl", "wb") as f:
+#     pkl.dump(results, f)
 
 # %%
 with open("results/"+DATASET+"_"+MODEL+"_results_limited_cv_long_full_embedding.pkl", "rb") as f:
     results = pkl.load(f)
 
-# %%
-import matplotlib.pyplot as plt
-property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
-#make a color list for the properties names but with different colors
-colors_long = [
-    (0.0, 0.45, 0.70),  # Blue
-    (0.85, 0.37, 0.01),  # Orange
-    (0.8, 0.47, 0.74),   # Magenta
-    (0.0, 0.62, 0.45),   # Green
-    (0.95, 0.90, 0.25),  # Yellow
-    (0.9, 0.6, 0.0),     # Brown
-    (0.35, 0.7, 0.9),    # Sky Blue
-    (0.8, 0.6, 0.7),     # Light Pink
-    (0.3, 0.3, 0.3),     # Dark Gray
-    (0.5, 0.5, 0.0),     # Olive
-    (0.0, 0.75, 0.75),   # Cyan
-    (0.6, 0.6, 0.6),     # Light Gray
-    (0.7, 0.3, 0.1),     # Dark Orange
-    (0.6, 0.2, 0.5),     # Purple
-    (0.9, 0.4, 0.3),     # Salmon
-    (0.4, 0.4, 0.8),     # Light Blue
-    (0.2, 0.8, 0.2),     # Light Green
-    (0.6, 0.6, 0.3),     # Mustard
-    (0.3, 0.55, 0.55),    # Teal
-    (0.8, 0.5, 0.2),     # Dark Salmon
-    (0.5, 0.5, 0.5),     # Gray
-    (0.2, 0.2, 0.2),      # Black-Gray
-    (0.0, 0.0, 0.0)      # Black
-]
+# # %%
+# import matplotlib.pyplot as plt
+# property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
+# #make a color list for the properties names but with different colors
+# colors_long = [
+#     (0.0, 0.45, 0.70),  # Blue
+#     (0.85, 0.37, 0.01),  # Orange
+#     (0.8, 0.47, 0.74),   # Magenta
+#     (0.0, 0.62, 0.45),   # Green
+#     (0.95, 0.90, 0.25),  # Yellow
+#     (0.9, 0.6, 0.0),     # Brown
+#     (0.35, 0.7, 0.9),    # Sky Blue
+#     (0.8, 0.6, 0.7),     # Light Pink
+#     (0.3, 0.3, 0.3),     # Dark Gray
+#     (0.5, 0.5, 0.0),     # Olive
+#     (0.0, 0.75, 0.75),   # Cyan
+#     (0.6, 0.6, 0.6),     # Light Gray
+#     (0.7, 0.3, 0.1),     # Dark Orange
+#     (0.6, 0.2, 0.5),     # Purple
+#     (0.9, 0.4, 0.3),     # Salmon
+#     (0.4, 0.4, 0.8),     # Light Blue
+#     (0.2, 0.8, 0.2),     # Light Green
+#     (0.6, 0.6, 0.3),     # Mustard
+#     (0.3, 0.55, 0.55),    # Teal
+#     (0.8, 0.5, 0.2),     # Dark Salmon
+#     (0.5, 0.5, 0.5),     # Gray
+#     (0.2, 0.2, 0.2),      # Black-Gray
+#     (0.0, 0.0, 0.0)      # Black
+# ]
 
-plt.figure(figsize=(12, 8))
+# plt.figure(figsize=(12, 8))
 
-for i, property_names_long in enumerate(property_names_long):
-    x_points = []
-    y_points = []
-    for j, embedding in enumerate(embeddings):
-        name_of_embedding = embeddings_names[j]
-        test_r2 = results[(name_of_embedding, property_names_long)][3]
-        if test_r2 < -0.05:  # Handle negative R² values
-            test_r2 = -0.05
-        x_points.append(j)
-        y_points.append(test_r2)
+# for i, property_names_long in enumerate(property_names_long):
+#     x_points = []
+#     y_points = []
+#     for j, embedding in enumerate(embeddings):
+#         name_of_embedding = embeddings_names[j]
+#         test_r2 = results[(name_of_embedding, property_names_long)][3]
+#         if test_r2 < -0.05:  # Handle negative R² values
+#             test_r2 = -0.05
+#         x_points.append(j)
+#         y_points.append(test_r2)
     
-    # Plotting the line for the current property
-    plt.plot(x_points, y_points, label=property_names_long, color=colors_long[i], marker='x')
+#     # Plotting the line for the current property
+#     plt.plot(x_points, y_points, label=property_names_long, color=colors_long[i], marker='x')
 
-plt.xticks(range(len(embeddings)), embeddings_names)
-plt.xlabel('Embedding')
-plt.ylabel('R²')
-plt.legend()
-plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.xticks(range(len(embeddings)), embeddings_names)
+# plt.xlabel('Embedding')
+# plt.ylabel('R²')
+# plt.legend()
+# plt.title('FC matrice - GCN - R² for different embeddings and properties')
+# plt.show()
 
-#save the plot
-plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long.png')
+# #save the plot
+# plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long.png')
 
-# %%
-#print the R2 values in order (bigger to smaller) for x_global
+# # %%
+# #print the R2 values in order (bigger to smaller) for x_global
 
-# Assuming results, embeddings, and other necessary variables are defined as in your context
-property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
+# # Assuming results, embeddings, and other necessary variables are defined as in your context
+# property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
 
-embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
+# embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7']
 
-#sort the R2 values for x_global
-r2_values = []
-for property_name in property_names_long:
-    r2_values.append(results[('x_global', property_name)][3])
+# #sort the R2 values for x_global
+# r2_values = []
+# for property_name in property_names_long:
+#     r2_values.append(results[('x_global', property_name)][3])
 
-r2_values_sorted = sorted(r2_values, reverse=True)
-print(r2_values_sorted)
+# r2_values_sorted = sorted(r2_values, reverse=True)
+# print(r2_values_sorted)
 
-#sort the property names
-property_names_long_sorted = [x for _, x in sorted(zip(r2_values, property_names_long), reverse=True)]
-print(property_names_long_sorted)
+# #sort the property names
+# property_names_long_sorted = [x for _, x in sorted(zip(r2_values, property_names_long), reverse=True)]
+# print(property_names_long_sorted)
 
-# %%
-#same for x6
+# # %%
+# #same for x6
 
-#sort the R2 values for x6
-r2_values = []
-for property_name in property_names_long:
-    r2_values.append(results[('x6', property_name)][3])
+# #sort the R2 values for x6
+# r2_values = []
+# for property_name in property_names_long:
+#     r2_values.append(results[('x6', property_name)][3])
 
-r2_values_sorted = sorted(r2_values, reverse=True)
-print(r2_values_sorted)
+# r2_values_sorted = sorted(r2_values, reverse=True)
+# print(r2_values_sorted)
 
-#sort the property names
-property_names_long_sorted = [x for _, x in sorted(zip(r2_values, property_names_long), reverse=True)]
-print(property_names_long_sorted)
+# #sort the property names
+# property_names_long_sorted = [x for _, x in sorted(zip(r2_values, property_names_long), reverse=True)]
+# print(property_names_long_sorted)
 
-# %%
-#same for x7
+# # %%
+# #same for x7
 
-#sort the R2 values for x7
-r2_values = []
-for property_name in property_names_long:
-    r2_values.append(results[('x7', property_name)][3])
+# #sort the R2 values for x7
+# r2_values = []
+# for property_name in property_names_long:
+#     r2_values.append(results[('x7', property_name)][3])
 
-r2_values_sorted = sorted(r2_values, reverse=True)
-print(r2_values_sorted)
+# r2_values_sorted = sorted(r2_values, reverse=True)
+# print(r2_values_sorted)
 
-#sort the property names
-property_names_long_sorted = [x for _, x in sorted(zip(r2_values, property_names_long), reverse=True)]
-print(property_names_long_sorted)
+# #sort the property names
+# property_names_long_sorted = [x for _, x in sorted(zip(r2_values, property_names_long), reverse=True)]
+# print(property_names_long_sorted)
 
-# %%
-plt.figure(figsize=(12, 8))
-property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
+# # %%
+# plt.figure(figsize=(12, 8))
+# property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
 
 
-for i, property_names_long in enumerate(property_names_long):
-    x_points = []
-    y_points = []
-    for j, embedding in enumerate(embeddings):
-        name_of_embedding = embeddings_names[j]
-        train_r2 = results[(name_of_embedding, property_names_long)][2]
-        if train_r2 < -0.05:  # Handle negative R² values
-            train_r2 = -0.05
-        x_points.append(j)
-        y_points.append(train_r2)
+# for i, property_names_long in enumerate(property_names_long):
+#     x_points = []
+#     y_points = []
+#     for j, embedding in enumerate(embeddings):
+#         name_of_embedding = embeddings_names[j]
+#         train_r2 = results[(name_of_embedding, property_names_long)][2]
+#         if train_r2 < -0.05:  # Handle negative R² values
+#             train_r2 = -0.05
+#         x_points.append(j)
+#         y_points.append(train_r2)
 
-    # Plotting the line for the current property
-    plt.plot(x_points, y_points, label=property_names_long, color=colors_long[i], marker='x')
+#     # Plotting the line for the current property
+#     plt.plot(x_points, y_points, label=property_names_long, color=colors_long[i], marker='x')
 
-plt.xticks(range(len(embeddings)), embeddings_names)
-plt.xlabel('Embedding')
-plt.ylabel('R²')
-plt.legend()
-plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.xticks(range(len(embeddings)), embeddings_names)
+# plt.xlabel('Embedding')
+# plt.ylabel('R²')
+# plt.legend()
+# plt.title('FC matrice - GCN - R² for different embeddings and properties')
+# plt.show()
 
-#save the plot
-plt.savefig('results/'+DATASET+'_'+MODEL+'train_R2_plot_long_full_embedding.png')
+# #save the plot
+# plt.savefig('results/'+DATASET+'_'+MODEL+'train_R2_plot_long_full_embedding.png')
     
 
 # %% [markdown]
