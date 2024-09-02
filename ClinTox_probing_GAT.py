@@ -240,19 +240,19 @@ def compute_graph_properties(data):
         properties.append((num_nodes, num_edges, density, avg_path_len, num_cliques, num_triangles, num_squares, number_of_node_in_the_largest_fully_connected_component, assortativity, small_world))
     return properties
 
-train_idx_list = gnn.train_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-train_properties = compute_graph_properties(selected_dataset)
-test_idx_list = gnn.test_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-test_properties = compute_graph_properties(selected_dataset)
+# train_idx_list = gnn.train_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+# train_properties = compute_graph_properties(selected_dataset)
+# test_idx_list = gnn.test_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+# test_properties = compute_graph_properties(selected_dataset)
 
-# Save the properties to files
-with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
-    pkl.dump(train_properties, f)
+# # Save the properties to files
+# with open("results/"+DATASET+"_"+MODEL+"_train_properties_with_sm.pkl", "wb") as f:
+#     pkl.dump(train_properties, f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
-    pkl.dump(test_properties, f)
+# with open("results/"+DATASET+"_"+MODEL+"_test_properties_with_sm.pkl", "wb") as f:
+#     pkl.dump(test_properties, f)
 
 # %%
 import pickle as pkl
@@ -281,7 +281,7 @@ train_properties[1132]
 
 # %%
 import numpy as np
-
+print('Number of properties:', len(train_properties[0]))
 # Assuming train_properties is a list of lists or a similar structure
 train_properties = np.array(train_properties, dtype=np.float64)
 
@@ -291,6 +291,7 @@ train_properties[np.isnan(train_properties)] = -1
 # If you need to convert it back to a list of lists
 train_properties = train_properties.tolist()
 
+print('no nan values:', all([all([x == x for x in prop]) for prop in train_properties]))
 # %% [markdown]
 # ### Features
 
