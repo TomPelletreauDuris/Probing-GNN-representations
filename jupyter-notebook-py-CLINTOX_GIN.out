@@ -13,8 +13,12 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
   return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py:825: ComplexWarning: Casting complex values to real discards the imaginary part
+  train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py:826: ComplexWarning: Casting complex values to real discards the imaginary part
+  test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
 Data(x=[24, 9], edge_index=[2, 46], edge_attr=[46, 3], y=[1])
-['edge_attr', 'y', 'x', 'edge_index']
+['y', 'edge_attr', 'x', 'edge_index']
 ValuesView({'x': tensor([[0., 0., 1., 5., 0., 0., 0., 0., 0.],
         [6., 0., 3., 5., 0., 0., 3., 0., 0.],
         [8., 0., 1., 5., 0., 0., 3., 0., 0.],
@@ -7192,31 +7196,2779 @@ Betweenness Centralization: 0.0987654320987654
 PageRank Centralization: 0.1263340190827142
 Average Clustering Coefficient: 0.0
 Transitivity: 0
+Betweenness Centralization: 0.0480157204493998
+PageRank Centralization: 0.023165091018855187
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05304709141274237
+PageRank Centralization: 0.030369389668443582
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030693125650364212
+PageRank Centralization: 0.016396620993237142
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02829469712586595
+PageRank Centralization: 0.023399814727794156
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03861678004535148
+PageRank Centralization: 0.05081696573324562
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01085252410346245
+PageRank Centralization: 0.007568971604308229
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030661235687690705
+PageRank Centralization: 0.028396124886919394
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.018080210387902695
+PageRank Centralization: 0.021153559814358798
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03435454389226515
+PageRank Centralization: 0.024052973569716377
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02808047337278107
+PageRank Centralization: 0.02698160057704552
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07593688362919132
+PageRank Centralization: 0.030036382453624107
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03423275537772306
+PageRank Centralization: 0.052059671415124034
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.015291004423755328
+PageRank Centralization: 0.022182195766044063
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0310878027681661
+PageRank Centralization: 0.030166201207178337
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.14222222222222222
+PageRank Centralization: 0.11447464513294299
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04595567867036012
+PageRank Centralization: 0.030994965455207794
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01305127594689884
+PageRank Centralization: 0.013445720934317576
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07966942148760331
+PageRank Centralization: 0.02924222789587494
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02739881656804734
+PageRank Centralization: 0.0164731424714553
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0338414201183432
+PageRank Centralization: 0.016551465050773245
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03311776553665462
+PageRank Centralization: 0.028016570252886324
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025828684414942443
+PageRank Centralization: 0.018947851477128085
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.009387256775759932
+PageRank Centralization: 0.00947253783078811
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07885674931129477
+PageRank Centralization: 0.08395923699336601
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020320033895911315
+PageRank Centralization: 0.021845027098474308
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.031202563670096137
+PageRank Centralization: 0.027913516850420265
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0899173553719008
+PageRank Centralization: 0.08800710465345267
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.048280709342560554
+PageRank Centralization: 0.03025729525885804
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.10148148148148148
+PageRank Centralization: 0.04958886080226928
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.6666666666666666
+PageRank Centralization: 0.34459586097954487
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04729836168872086
+PageRank Centralization: 0.029301819776580414
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02485185185185185
+PageRank Centralization: 0.029365084753809927
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030444276476022502
+PageRank Centralization: 0.03552139579100068
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026568956611570254
+PageRank Centralization: 0.021797820910283355
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026118518518518527
+PageRank Centralization: 0.025416478111223984
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02523819588969824
+PageRank Centralization: 0.02981313469481543
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02256585743801653
+PageRank Centralization: 0.021127254072801093
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08024691358024692
+PageRank Centralization: 0.0651429660760412
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0207820074968763
+PageRank Centralization: 0.02047788146395116
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01915820133149679
+PageRank Centralization: 0.016915811987580447
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.008835889401626025
+PageRank Centralization: 0.0055160005661604354
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.052892561983471066
+PageRank Centralization: 0.03986533206173323
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020710810053910244
+PageRank Centralization: 0.024200301889336747
+Average Clustering Coefficient: 0.09333333333333332
+Transitivity: 0.06
+Betweenness Centralization: 0.08585919574930564
+PageRank Centralization: 0.05762666569356541
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030601211072664357
+PageRank Centralization: 0.06597400698102585
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07334710743801653
+PageRank Centralization: 0.04859167539529657
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04221606648199446
+PageRank Centralization: 0.01917928626729559
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022824915246293494
+PageRank Centralization: 0.0258817602322309
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02777751479289942
+PageRank Centralization: 0.037022142556471335
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06333776113995894
+PageRank Centralization: 0.043820421224243435
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0627611926313225
+PageRank Centralization: 0.030754004388953305
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06214876033057849
+PageRank Centralization: 0.03146595286784812
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06170752324598479
+PageRank Centralization: 0.06949747103312162
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021365877712031557
+PageRank Centralization: 0.0241033740181883
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.10725308641975308
+PageRank Centralization: 0.06629698103272018
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.044459833795013864
+PageRank Centralization: 0.028182182480278796
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020486268581506675
+PageRank Centralization: 0.02532130613292235
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03720221606648199
+PageRank Centralization: 0.0432699373267957
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016149843912591045
+PageRank Centralization: 0.011352151795699227
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03278611720170161
+PageRank Centralization: 0.02617846602330628
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.037528994082840245
+PageRank Centralization: 0.024142093685803074
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023293100975911998
+PageRank Centralization: 0.027382891465889306
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03348823776517538
+PageRank Centralization: 0.033188095006862116
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045329237555135474
+PageRank Centralization: 0.017822503358589117
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05841734929636632
+PageRank Centralization: 0.023419991532033457
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.012475596734770271
+PageRank Centralization: 0.01856274297911033
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016555435235318623
+PageRank Centralization: 0.0178189172221552
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03783662225220665
+PageRank Centralization: 0.03752511728467107
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.040294784580498864
+PageRank Centralization: 0.03916738063512942
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03172991298098705
+PageRank Centralization: 0.03468023601461354
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.009895950004058116
+PageRank Centralization: 0.011634177015209312
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03500918273645547
+PageRank Centralization: 0.05692012721292392
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023408803948576678
+PageRank Centralization: 0.021093771730038603
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025055289605554157
+PageRank Centralization: 0.018320504491281638
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05028114186851212
+PageRank Centralization: 0.03174649872351448
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02695730938878387
+PageRank Centralization: 0.03196803788452205
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026099307005252283
+PageRank Centralization: 0.017469248345324796
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04062326869806093
+PageRank Centralization: 0.055553576940703585
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030659095594160527
+PageRank Centralization: 0.017013577610381254
+Average Clustering Coefficient: 0.10144927536231883
+Transitivity: 0.08108108108108109
+Betweenness Centralization: 0.05024943310657597
+PageRank Centralization: 0.06728646231746008
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.052013888888888894
+PageRank Centralization: 0.06896066091417068
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023417214686112256
+PageRank Centralization: 0.03262694616464672
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03396121883656509
+PageRank Centralization: 0.02921422732203242
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0260607672424251
+PageRank Centralization: 0.018422061244555085
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04506813618693665
+PageRank Centralization: 0.0273756446599595
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04647785039941903
+PageRank Centralization: 0.021211784842968064
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04265927977839335
+PageRank Centralization: 0.01875363218921977
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.017785997422143266
+PageRank Centralization: 0.01954914068637537
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.1288265306122449
+PageRank Centralization: 0.06894996594490277
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07390411786016181
+PageRank Centralization: 0.04838496511643222
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022003163405279823
+PageRank Centralization: 0.0229562444951239
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.031239606953892655
+PageRank Centralization: 0.02741326588514907
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024117769606848433
+PageRank Centralization: 0.024200341203706465
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010429803688280786
+PageRank Centralization: 0.009719188196411897
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.062552831783601
+PageRank Centralization: 0.028093641030186862
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05659262759924386
+PageRank Centralization: 0.028262502014129606
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07079081632653061
+PageRank Centralization: 0.05761987633226058
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.044036281179138326
+PageRank Centralization: 0.029515592481069195
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02270313119302418
+PageRank Centralization: 0.013969776330448663
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04833333333333333
+PageRank Centralization: 0.026022333263482966
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027686980609418276
+PageRank Centralization: 0.025260107806762706
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08617283950617285
+PageRank Centralization: 0.054642043196672874
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.057922437673130205
+PageRank Centralization: 0.04680492264878058
+Average Clustering Coefficient: 0.11111111111111109
+Transitivity: 0.08333333333333333
+Betweenness Centralization: 0.045577422145328714
+PageRank Centralization: 0.025029473195929207
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07535321821036109
+PageRank Centralization: 0.03378474242541857
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.11834710743801656
+PageRank Centralization: 0.09794818125989786
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026741481481481488
+PageRank Centralization: 0.01966147178416783
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0296814404432133
+PageRank Centralization: 0.028103646979767548
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016054264462172885
+PageRank Centralization: 0.023775341029043634
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0
+PageRank Centralization: 0.0
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06593406593406594
+PageRank Centralization: 0.04453706125638708
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020778193630393335
+PageRank Centralization: 0.023705049830572145
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021731992137819404
+PageRank Centralization: 0.018010182389315975
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.035456606885178314
+PageRank Centralization: 0.03620361326442185
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01592785293097467
+PageRank Centralization: 0.021778736422290522
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01389710054047597
+PageRank Centralization: 0.009149962194812223
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02986568018672655
+PageRank Centralization: 0.037038749248681
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.041347066988092616
+PageRank Centralization: 0.01944895142404033
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020071873675477272
+PageRank Centralization: 0.009560917026638322
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06331098615916954
+PageRank Centralization: 0.05220105815476388
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.040914127423822715
+PageRank Centralization: 0.026646377430768968
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.046553287981859426
+PageRank Centralization: 0.01953861507858549
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010749062899425668
+PageRank Centralization: 0.007393859471419118
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027610128338536252
+PageRank Centralization: 0.021184492882305665
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027988888888888893
+PageRank Centralization: 0.025325825776476206
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03134244095443388
+PageRank Centralization: 0.018075839188260827
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028031417074199465
+PageRank Centralization: 0.032054729105489184
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.018274836406900648
+PageRank Centralization: 0.00949825218104246
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.008639512718963974
+PageRank Centralization: 0.012046086036815678
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07415059687786961
+PageRank Centralization: 0.051185310111449306
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.052607709750566896
+PageRank Centralization: 0.02798149075175266
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026314665299671067
+PageRank Centralization: 0.06230164680522302
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.19260204081632648
+PageRank Centralization: 0.13222033516113202
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02502083186215662
+PageRank Centralization: 0.023281483931587937
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05423611111111112
+PageRank Centralization: 0.02451232512264488
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02552738267023981
+PageRank Centralization: 0.02616826155456433
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04073333333333334
+PageRank Centralization: 0.027784631757871867
+Average Clustering Coefficient: 0.0641025641025641
+Transitivity: 0.0625
+Betweenness Centralization: 0.057505668934240355
+PageRank Centralization: 0.03309381240442731
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045943867743175694
+PageRank Centralization: 0.023107398740779023
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05519647070893606
+PageRank Centralization: 0.0565520910096062
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05211937716262976
+PageRank Centralization: 0.0303930652046283
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010201366074082412
+PageRank Centralization: 0.007000893509386183
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05686980609418281
+PageRank Centralization: 0.036530681202574855
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02399961173530054
+PageRank Centralization: 0.03757615970377917
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.00983129955646066
+PageRank Centralization: 0.0066927116651608175
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03534416521429508
+PageRank Centralization: 0.016894164146174492
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.012139835539459291
+PageRank Centralization: 0.012132471519657328
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03952908587257618
+PageRank Centralization: 0.021267373691264805
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03475546305931322
+PageRank Centralization: 0.02024596077338756
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020676773923527163
+PageRank Centralization: 0.031353360862768034
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06771860618014464
+PageRank Centralization: 0.03862770466703881
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027324621919216516
+PageRank Centralization: 0.022101921188389637
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.033198456467059316
+PageRank Centralization: 0.021678923703462652
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.052437673130193915
+PageRank Centralization: 0.040698801223939034
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030612244897959193
+PageRank Centralization: 0.04464502672693247
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.009701235720074274
+PageRank Centralization: 0.016735207110802022
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0496492680716774
+PageRank Centralization: 0.026778935442214432
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.042222222222222223
+PageRank Centralization: 0.03892531533614431
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02155132025261896
+PageRank Centralization: 0.035347004422268825
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02718148148148149
+PageRank Centralization: 0.020127544029257902
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.043832199546485276
+PageRank Centralization: 0.019576828182611798
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02211708212696842
+PageRank Centralization: 0.018840927901879353
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02575151328613932
+PageRank Centralization: 0.01954058763207971
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06641709938413234
+PageRank Centralization: 0.03041978348599301
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06412269049631687
+PageRank Centralization: 0.019240626418539967
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03057382555578121
+PageRank Centralization: 0.016344924316593238
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.47222222222222215
+PageRank Centralization: 0.19694623406311998
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.14285714285714285
+PageRank Centralization: 0.0628872203827021
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.054861111111111104
+PageRank Centralization: 0.02066863565409415
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.049071224359074496
+PageRank Centralization: 0.02473465152007579
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04766600920447074
+PageRank Centralization: 0.03871524209827467
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026133747616693737
+PageRank Centralization: 0.01894612035184261
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.032644444444444455
+PageRank Centralization: 0.03186240712667118
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03841435185185185
+PageRank Centralization: 0.0380947052541618
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030714036412042126
+PageRank Centralization: 0.029459612512105812
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02566537609272652
+PageRank Centralization: 0.01941533247184344
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02194861415640636
+PageRank Centralization: 0.034899620191410165
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 2.0
+PageRank Centralization: 0.2297287364866315
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022746602016812764
+PageRank Centralization: 0.018359767021417634
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.041274238227146806
+PageRank Centralization: 0.03815543413882112
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0786776859504132
+PageRank Centralization: 0.0562499426256446
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0233686815986799
+PageRank Centralization: 0.03758494665770202
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02568291381417314
+PageRank Centralization: 0.027583196652576997
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02444247615812081
+PageRank Centralization: 0.014848063459617393
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03876343436782997
+PageRank Centralization: 0.03797566765290346
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.009922826953505971
+PageRank Centralization: 0.0077220686364379764
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07921748581089241
+PageRank Centralization: 0.04486836863275839
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03209672337744171
+PageRank Centralization: 0.019800468592698375
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0421276716932234
+PageRank Centralization: 0.02170490813368128
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03438090737240076
+PageRank Centralization: 0.025510868383090978
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04297492417446281
+PageRank Centralization: 0.06145349920955377
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0509839965397924
+PageRank Centralization: 0.048211815052954646
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04878465547439019
+PageRank Centralization: 0.028702179841258453
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02178887567710398
+PageRank Centralization: 0.01767005811098576
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05416012558869702
+PageRank Centralization: 0.07512720425943212
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05868480725623584
+PageRank Centralization: 0.026911021464545597
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04019447894091769
+PageRank Centralization: 0.02252717070928074
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024529021680018834
+PageRank Centralization: 0.016031153889643372
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07293468858131487
+PageRank Centralization: 0.040153451666265
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02485185185185185
+PageRank Centralization: 0.02936508475380993
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01627171384785331
+PageRank Centralization: 0.01599229189863215
+Average Clustering Coefficient: 0.035460992907801414
+Transitivity: 0.04225352112676056
+Betweenness Centralization: 0.02987818195054477
+PageRank Centralization: 0.016366405364163752
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030739427268040423
+PageRank Centralization: 0.029245668341216568
+Average Clustering Coefficient: 0.0625
+Transitivity: 0.0625
+Betweenness Centralization: 0.023688888888888895
+PageRank Centralization: 0.01890377183978633
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05022394632784242
+PageRank Centralization: 0.01389392341523505
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04531308778769536
+PageRank Centralization: 0.052408943753600924
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04904096714938697
+PageRank Centralization: 0.02636497741563483
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05409974640743872
+PageRank Centralization: 0.030138803308440328
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.044875346260387805
+PageRank Centralization: 0.016953043931114416
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024897473852799147
+PageRank Centralization: 0.023003532720623138
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.014289358228752165
+PageRank Centralization: 0.011124353426753645
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028956916099773244
+PageRank Centralization: 0.01977896823156065
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.6666666666666666
+PageRank Centralization: 0.34459586097954487
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.029113763152319755
+PageRank Centralization: 0.022729582665140437
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023293100975911998
+PageRank Centralization: 0.0273828914658893
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04606401384083045
+PageRank Centralization: 0.03736870209774107
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02155768106206078
+PageRank Centralization: 0.026452758195704678
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022272456870910173
+PageRank Centralization: 0.011573350651770715
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06738987508218276
+PageRank Centralization: 0.04839071436395408
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07133464825772516
+PageRank Centralization: 0.0749054642909989
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.009452845350281245
+PageRank Centralization: 0.007064232668083001
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.13333333333333336
+PageRank Centralization: 0.07680776485320023
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05406574394463668
+PageRank Centralization: 0.064881341902561
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.008167762917249454
+PageRank Centralization: 0.01202637378468291
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.042679798912485904
+PageRank Centralization: 0.027047652690629705
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.034013605442176874
+PageRank Centralization: 0.018005643692491257
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023746535651297557
+PageRank Centralization: 0.037896713500707786
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04177880302447777
+PageRank Centralization: 0.055842909149526415
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.14739229024943312
+PageRank Centralization: 0.05661845028079878
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05222750865051903
+PageRank Centralization: 0.023378441920438735
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02036452913631634
+PageRank Centralization: 0.012793024153013057
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02386865533587698
+PageRank Centralization: 0.026894715593254983
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.10567901234567903
+PageRank Centralization: 0.06418373452016578
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.041655328798185946
+PageRank Centralization: 0.025171439617655427
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.029779401472523157
+PageRank Centralization: 0.028405624726070444
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.034428158897328254
+PageRank Centralization: 0.02080412280587125
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.033609467455621295
+PageRank Centralization: 0.03568865476454029
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08335600907029479
+PageRank Centralization: 0.04862300714267451
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045454545454545456
+PageRank Centralization: 0.03345352722604626
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04343216716254574
+PageRank Centralization: 0.03077980369171841
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.031525677378701954
+PageRank Centralization: 0.019390287395011304
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045804988662131535
+PageRank Centralization: 0.04077105593451565
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04143705412448203
+PageRank Centralization: 0.026396530578270877
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026168047337278105
+PageRank Centralization: 0.03271551241948042
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05324263038548752
+PageRank Centralization: 0.028638015205376868
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.055363321799307946
+PageRank Centralization: 0.061218772482293016
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02205443786982248
+PageRank Centralization: 0.03752833961296696
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02092953303850156
+PageRank Centralization: 0.01956207497172541
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04292690611216131
+PageRank Centralization: 0.021177691543046908
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01478643110136616
+PageRank Centralization: 0.011326894419211945
+Average Clustering Coefficient: 0.03801169590643275
+Transitivity: 0.033707865168539325
+Betweenness Centralization: 0.038365650969529076
+PageRank Centralization: 0.021702143190306916
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.032237037037037036
+PageRank Centralization: 0.016717269678404825
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030390149128334387
+PageRank Centralization: 0.026850364719195687
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.28
+PageRank Centralization: 0.14468030953732075
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05034722222222224
+PageRank Centralization: 0.03215388743464865
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.037111426170972475
+PageRank Centralization: 0.025125534331790555
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024190382035167005
+PageRank Centralization: 0.018638134778009918
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021212438953867076
+PageRank Centralization: 0.029518124510439298
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08418367346938774
+PageRank Centralization: 0.08226380446022163
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.6666666666666666
+PageRank Centralization: 0.34459586097954487
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04617283950617284
+PageRank Centralization: 0.03975547609203953
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03422361591695502
+PageRank Centralization: 0.05826957315559361
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02715887046371377
+PageRank Centralization: 0.014940679120848302
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020975029726516055
+PageRank Centralization: 0.01984423373786026
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.037254437869822486
+PageRank Centralization: 0.01973132754431881
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.043384388113732845
+PageRank Centralization: 0.024670336308021193
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024397413286302176
+PageRank Centralization: 0.014783279682121866
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03395738460673526
+PageRank Centralization: 0.036236334898594694
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025211101143434857
+PageRank Centralization: 0.02847879469083262
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024951096176167396
+PageRank Centralization: 0.030469390071596346
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.015608847809068791
+PageRank Centralization: 0.02086144697036315
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.1288265306122449
+PageRank Centralization: 0.06894996594490277
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05350694444444447
+PageRank Centralization: 0.026289275154782122
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025303938460045132
+PageRank Centralization: 0.020895708964733695
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03462585034013606
+PageRank Centralization: 0.01769720409909596
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03155124653739612
+PageRank Centralization: 0.052185779687301516
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04342122523940705
+PageRank Centralization: 0.03308690162090406
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05659262759924386
+PageRank Centralization: 0.028262502014129606
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023295881967531372
+PageRank Centralization: 0.02411419124684138
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.2312925170068027
+PageRank Centralization: 0.16107526682175494
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06882569204152249
+PageRank Centralization: 0.03686096878829641
+Average Clustering Coefficient: 0.08333333333333333
+Transitivity: 0.1111111111111111
+Betweenness Centralization: 0.03631578947368422
+PageRank Centralization: 0.022862524516525817
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03448906680440771
+PageRank Centralization: 0.021641417810841963
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.11265432098765432
+PageRank Centralization: 0.03768271171400174
+Average Clustering Coefficient: 0.16666666666666666
+Transitivity: 0.2
+Betweenness Centralization: 0.037602368771199934
+PageRank Centralization: 0.028897679779610795
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08284023668639054
+PageRank Centralization: 0.06130862601431268
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07867768595041322
+PageRank Centralization: 0.04464206779808506
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04789115646258502
+PageRank Centralization: 0.0424659655083415
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0641025641025641
+PageRank Centralization: 0.048590199117248885
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03244856192097987
+PageRank Centralization: 0.023052044735366508
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01633103627405622
+PageRank Centralization: 0.021842617788198484
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0460996545945761
+PageRank Centralization: 0.02080430259529279
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06182828160850139
+PageRank Centralization: 0.02968089797304344
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.13734567901234568
+PageRank Centralization: 0.07102168282558369
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027824212220156536
+PageRank Centralization: 0.04538340325812408
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03408163265306123
+PageRank Centralization: 0.021072942323452998
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.013107770114218521
+PageRank Centralization: 0.021528345647941805
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07927437641723356
+PageRank Centralization: 0.05280394407074917
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03382271468144045
+PageRank Centralization: 0.030128549827227243
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.044792243767313014
+PageRank Centralization: 0.019387231640887466
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02737068764405625
+PageRank Centralization: 0.012900994022953133
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03205555555555556
+PageRank Centralization: 0.022827124526087463
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0365484429065744
+PageRank Centralization: 0.015336177536054226
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022165225026014566
+PageRank Centralization: 0.010832699048529595
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.047638888888888876
+PageRank Centralization: 0.03979254406634394
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03082379040447436
+PageRank Centralization: 0.025774541968304667
+Average Clustering Coefficient: 0.06944444444444443
+Transitivity: 0.06818181818181818
+Betweenness Centralization: 0.05115646258503401
+PageRank Centralization: 0.03165213105451164
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07402777777777778
+PageRank Centralization: 0.028458219465174444
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0365079365079365
+PageRank Centralization: 0.020309541478891472
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030193647018855106
+PageRank Centralization: 0.03375752310113176
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030611239796518176
+PageRank Centralization: 0.02371450082952959
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03716519287453543
+PageRank Centralization: 0.03192305719479865
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02190465258647076
+PageRank Centralization: 0.022402162798604318
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01733990795529257
+PageRank Centralization: 0.027134485489493217
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03498866213151927
+PageRank Centralization: 0.029079333720278336
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025731272294887038
+PageRank Centralization: 0.017692937395856367
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05786848072562359
+PageRank Centralization: 0.028029657948887194
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0616349480968858
+PageRank Centralization: 0.06364349065199448
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021421291465456578
+PageRank Centralization: 0.01414484564178593
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03556904855606154
+PageRank Centralization: 0.0457265775814878
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.23111111111111113
+PageRank Centralization: 0.11333109028904258
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021586041824137054
+PageRank Centralization: 0.0175191838134462
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Number of nodes must be greater than 1
+Betweenness Centralization: 0.0
+PageRank Centralization: 0.0
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.048649762935477216
+PageRank Centralization: 0.02886786996110269
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08149678604224057
+PageRank Centralization: 0.05151640746663134
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02947778397922784
+PageRank Centralization: 0.021736923132397078
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07570247933884297
+PageRank Centralization: 0.04489799750271327
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.050493399974368816
+PageRank Centralization: 0.052628241548292834
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0565986394557823
+PageRank Centralization: 0.03190343526738635
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03225425330812855
+PageRank Centralization: 0.0415614275385062
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.015427841634738187
+PageRank Centralization: 0.02567275270128301
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.034519597641345816
+PageRank Centralization: 0.02689067813930363
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010428283989652195
+PageRank Centralization: 0.011644027194237357
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.026111111111111123
+PageRank Centralization: 0.024194905308248485
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03764172335600907
+PageRank Centralization: 0.020373565974813598
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0293377616747182
+PageRank Centralization: 0.03397375734386491
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01843782518210198
+PageRank Centralization: 0.01744648354204309
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025539261020830574
+PageRank Centralization: 0.024082378270185768
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.019334792740625665
+PageRank Centralization: 0.011658870969974904
+Average Clustering Coefficient: 0.046296296296296294
+Transitivity: 0.05172413793103448
+Betweenness Centralization: 0.07644628099173555
+PageRank Centralization: 0.03345788026270696
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0479809913883638
+PageRank Centralization: 0.036878716830810856
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.025055289605554153
+PageRank Centralization: 0.018320504491281635
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.11337868480725624
+PageRank Centralization: 0.0957062948472162
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.029440977492925548
+PageRank Centralization: 0.023953478308408292
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04060468631897205
+PageRank Centralization: 0.025532485981204788
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0213986358335836
+PageRank Centralization: 0.02614708760873002
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.019166666666666665
+PageRank Centralization: 0.023267499168693327
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016168343161059077
+PageRank Centralization: 0.02188712526406955
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 2.0
+PageRank Centralization: 0.2297287364866315
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023299408284023666
+PageRank Centralization: 0.028248401508157307
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03936568047337277
+PageRank Centralization: 0.023187852989281294
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.023310594673758046
+PageRank Centralization: 0.024209069452850052
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.11669421487603307
+PageRank Centralization: 0.07386755661209994
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.058753120618309895
+PageRank Centralization: 0.03927293100008881
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 1.0
+PageRank Centralization: 0.30630743198181754
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07580246913580246
+PageRank Centralization: 0.04407689232301574
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03269999999999999
+PageRank Centralization: 0.03104072316457425
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.012107736862981621
+PageRank Centralization: 0.00797502592232612
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.008497717659304372
+PageRank Centralization: 0.006217983568441624
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010611362795857986
+PageRank Centralization: 0.009731240473613484
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.042878106508875746
+PageRank Centralization: 0.014947001915301407
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045069252077562315
+PageRank Centralization: 0.019375781993520018
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.018879684969650368
+PageRank Centralization: 0.03085969164206357
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.037619047619047614
+PageRank Centralization: 0.052897503005722234
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04106035502958579
+PageRank Centralization: 0.022394471848103375
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045053560176433534
+PageRank Centralization: 0.017880451699404193
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.027686980609418276
+PageRank Centralization: 0.025260107806762706
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04503949933312813
+PageRank Centralization: 0.020030348119412907
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.036036225189664345
+PageRank Centralization: 0.01885239787211545
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0770138888888889
+PageRank Centralization: 0.04794954090781444
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05386210880067213
+PageRank Centralization: 0.02836911113745494
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.08264462809917354
+PageRank Centralization: 0.041787550012265445
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.042543004685202286
+PageRank Centralization: 0.020547266854355675
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.029999999999999995
+PageRank Centralization: 0.03103203232660389
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024640382317801666
+PageRank Centralization: 0.02354313079580624
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02751750561500859
+PageRank Centralization: 0.02204344125471374
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021108383194588968
+PageRank Centralization: 0.020086754315073833
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05567867036011081
+PageRank Centralization: 0.022278005313634674
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07403581267217631
+PageRank Centralization: 0.0536053009788089
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02827052342934795
+PageRank Centralization: 0.02175021397396271
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020367214060907756
+PageRank Centralization: 0.021713906500694533
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06541955017301039
+PageRank Centralization: 0.029451566025046467
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.029136527675795578
+PageRank Centralization: 0.034567801938162335
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.058753120618309895
+PageRank Centralization: 0.03927293100008881
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.017975907198096375
+PageRank Centralization: 0.013182953943077017
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0634798581742065
+PageRank Centralization: 0.0335979931994595
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.042440409014739576
+PageRank Centralization: 0.040209120684291035
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.008990206325585788
+PageRank Centralization: 0.008405307241027324
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07966023875114783
+PageRank Centralization: 0.04639923266720166
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016880797773654917
+PageRank Centralization: 0.011991719630661769
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07971729125575278
+PageRank Centralization: 0.06486058721283149
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.016149843912591045
+PageRank Centralization: 0.011352151795699227
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03232910286587882
+PageRank Centralization: 0.01687189274630921
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04203333333333333
+PageRank Centralization: 0.017207384515143725
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03972033257747544
+PageRank Centralization: 0.019615805935487427
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02790030105720086
+PageRank Centralization: 0.02943816437567104
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0464564910931693
+PageRank Centralization: 0.02075613836618221
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02523819588969824
+PageRank Centralization: 0.02981313469481543
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06037918125830214
+PageRank Centralization: 0.04491636769734242
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01596254149757974
+PageRank Centralization: 0.010131463283930298
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05539119000657461
+PageRank Centralization: 0.04837891367323161
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.019701501739551684
+PageRank Centralization: 0.026641174563201
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 2.0
+PageRank Centralization: 0.2297287364866315
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045454545454545456
+PageRank Centralization: 0.033453527226046276
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.014673130802985487
+PageRank Centralization: 0.0157779236741662
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.022116447710718017
+PageRank Centralization: 0.019564431785760058
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.014924859725338874
+PageRank Centralization: 0.016381178923421308
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.030000000000000002
+PageRank Centralization: 0.03431466686140556
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03595616024187453
+PageRank Centralization: 0.02454008785486817
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03364444444444445
+PageRank Centralization: 0.019656452368448162
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.015136210652965667
+PageRank Centralization: 0.023138648123698174
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.01544292778252156
+PageRank Centralization: 0.01833841350535755
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.050899092315143196
+PageRank Centralization: 0.03044582746714641
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.020966666666666668
+PageRank Centralization: 0.02530006890966419
+Average Clustering Coefficient: 0.08974358974358973
+Transitivity: 0.05660377358490566
+Betweenness Centralization: 0.04563148788927335
+PageRank Centralization: 0.0337992998608785
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045374149659863944
+PageRank Centralization: 0.017132387876507473
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028871518900008927
+PageRank Centralization: 0.035814524556884324
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02810035842293907
+PageRank Centralization: 0.0210601148837478
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.024411410654796895
+PageRank Centralization: 0.02367058462953265
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04743055555555556
+PageRank Centralization: 0.035790332269457915
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.009556243316063745
+PageRank Centralization: 0.01822787552582575
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0617283950617284
+PageRank Centralization: 0.01799780061595288
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021670445956160248
+PageRank Centralization: 0.024463995322708355
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.10725308641975308
+PageRank Centralization: 0.06629698103272019
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.034366863905325444
+PageRank Centralization: 0.02073660976879347
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.07415059687786961
+PageRank Centralization: 0.051185310111449306
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.028240190249702736
+PageRank Centralization: 0.034688398817400976
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05159722222222222
+PageRank Centralization: 0.032395143754332015
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06870479947403024
+PageRank Centralization: 0.04235203587324048
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.010774744792381222
+PageRank Centralization: 0.011906093225805294
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.015371653947583374
+PageRank Centralization: 0.01334655368342633
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02137931034482759
+PageRank Centralization: 0.019650704874849555
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06382160707420223
+PageRank Centralization: 0.04153307127902069
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.11882716049382713
+PageRank Centralization: 0.07011218401539794
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03746348169788624
+PageRank Centralization: 0.01536907390399396
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0908641975308642
+PageRank Centralization: 0.05343652942087183
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.031919502205419024
+PageRank Centralization: 0.04530794724947437
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02849861495844876
+PageRank Centralization: 0.027878698258705082
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.045454545454545456
+PageRank Centralization: 0.03345352722604626
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.021233886521712885
+PageRank Centralization: 0.023323123087385718
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.13333333333333336
+PageRank Centralization: 0.07680776485320023
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02067536215482118
+PageRank Centralization: 0.02240705470383368
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03227450314251741
+PageRank Centralization: 0.018249172423024866
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.008982350378059719
+PageRank Centralization: 0.010300947111358231
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 2.0
+PageRank Centralization: 0.2297287364866315
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.00918855464238277
+PageRank Centralization: 0.006061152516729658
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.06376041540876706
+PageRank Centralization: 0.032879255858487465
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.09679012345679011
+PageRank Centralization: 0.05848325000770667
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.017387135656366424
+PageRank Centralization: 0.024471083674092443
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.035463762908341
+PageRank Centralization: 0.042608135205682206
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02383991285119666
+PageRank Centralization: 0.034553351060715456
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.05034013605442179
+PageRank Centralization: 0.03928820247038263
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.0948148148148148
+PageRank Centralization: 0.08763307582954313
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.043914733649451074
+PageRank Centralization: 0.035344074917091156
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.03665109593963347
+PageRank Centralization: 0.01631733888445744
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.04927083333333334
+PageRank Centralization: 0.025631469242570384
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+Betweenness Centralization: 0.02718148148148149
+PageRank Centralization: 0.020127544029257902
+Average Clustering Coefficient: 0.0
+Transitivity: 0
+[41.0, 44.0, 0.05365853658536585, 6.5634146341463415, 44.0, 0.0, 0.0, 41.0, -0.30209617755857116, 0.07039204432050221]
+(41, 44, 0.05365853658536585, 6.5634146341463415, 16, 8, 0.0, 0, -0.30209617755857116, 44, 0.0, 0.0, 41, 2.1463414634146343, 0.14265165728580365, (2.5806421881326904+0j), (-2.3310302168558708+0j), 88.00000000000001, 0.0, 0.016155489809335965, 0.015761490669482018, 0.0, 0.05617642453947757)
+1406
+torch.Size([1406, 17408])
+torch.Size([74, 17408])
+Epoch [1000/2000000], Property: num_nodes, Loss: 1.3993
+Epoch [2000/2000000], Property: num_nodes, Loss: 0.5486
+Epoch [3000/2000000], Property: num_nodes, Loss: 0.2721
+Epoch [4000/2000000], Property: num_nodes, Loss: 0.1486
+Epoch [5000/2000000], Property: num_nodes, Loss: 0.0837
+Epoch [6000/2000000], Property: num_nodes, Loss: 0.0479
+Epoch [7000/2000000], Property: num_nodes, Loss: 0.0276
+Epoch [8000/2000000], Property: num_nodes, Loss: 0.0159
+Epoch [9000/2000000], Property: num_nodes, Loss: 0.0094
+Epoch [10000/2000000], Property: num_nodes, Loss: 0.0065
+Epoch [11000/2000000], Property: num_nodes, Loss: 0.0049
+Epoch [12000/2000000], Property: num_nodes, Loss: 0.0039
+Epoch [13000/2000000], Property: num_nodes, Loss: 0.0032
+Epoch [14000/2000000], Property: num_nodes, Loss: 0.0026
+Epoch [15000/2000000], Property: num_nodes, Loss: 0.0044
+Epoch [16000/2000000], Property: num_nodes, Loss: 0.0019
+Epoch [17000/2000000], Property: num_nodes, Loss: 0.0017
+Epoch [18000/2000000], Property: num_nodes, Loss: 0.0015
+Epoch [19000/2000000], Property: num_nodes, Loss: 0.0013
+Epoch [20000/2000000], Property: num_nodes, Loss: 0.0012
+Epoch [21000/2000000], Property: num_nodes, Loss: 0.0051
+Epoch [22000/2000000], Property: num_nodes, Loss: 0.0010
+Epoch [23000/2000000], Property: num_nodes, Loss: 0.0009
+Epoch [24000/2000000], Property: num_nodes, Loss: 0.0008
+Epoch [25000/2000000], Property: num_nodes, Loss: 0.0007
+Epoch [26000/2000000], Property: num_nodes, Loss: 0.0007
+Epoch [27000/2000000], Property: num_nodes, Loss: 0.0006
+Epoch [28000/2000000], Property: num_nodes, Loss: 0.0006
+Epoch [29000/2000000], Property: num_nodes, Loss: 0.0005
+Epoch [30000/2000000], Property: num_nodes, Loss: 0.0005
+Epoch [31000/2000000], Property: num_nodes, Loss: 0.0005
+Epoch [32000/2000000], Property: num_nodes, Loss: 0.0004
+Epoch [33000/2000000], Property: num_nodes, Loss: 0.0004
+Epoch [34000/2000000], Property: num_nodes, Loss: 0.0004
+Epoch [35000/2000000], Property: num_nodes, Loss: 0.0003
+Epoch [36000/2000000], Property: num_nodes, Loss: 0.0003
+Epoch [37000/2000000], Property: num_nodes, Loss: 0.0003
+Epoch [38000/2000000], Property: num_nodes, Loss: 0.0059
+Epoch [39000/2000000], Property: num_nodes, Loss: 0.0003
+Epoch [40000/2000000], Property: num_nodes, Loss: 0.0003
+Epoch [41000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [42000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [43000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [44000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [45000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [46000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [47000/2000000], Property: num_nodes, Loss: 0.0005
+Epoch [48000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [49000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [50000/2000000], Property: num_nodes, Loss: 0.0108
+Epoch [51000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [52000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [53000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [54000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [55000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [56000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [57000/2000000], Property: num_nodes, Loss: 0.0003
+Epoch [58000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [59000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [60000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [61000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [62000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [63000/2000000], Property: num_nodes, Loss: 0.0368
+Epoch [64000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [65000/2000000], Property: num_nodes, Loss: 0.0058
+Epoch [66000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [67000/2000000], Property: num_nodes, Loss: 0.0008
+Epoch [68000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [69000/2000000], Property: num_nodes, Loss: 0.0012
+Epoch [70000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [71000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [72000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [73000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [74000/2000000], Property: num_nodes, Loss: 0.0022
+Epoch [75000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [76000/2000000], Property: num_nodes, Loss: 0.0029
+Epoch [77000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [78000/2000000], Property: num_nodes, Loss: 0.0049
+Epoch [79000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [80000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [81000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [82000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [83000/2000000], Property: num_nodes, Loss: 0.0004
+Epoch [84000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [85000/2000000], Property: num_nodes, Loss: 0.0002
+Epoch [86000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [87000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [88000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [89000/2000000], Property: num_nodes, Loss: 0.0016
+Epoch [90000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [91000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [92000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [93000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [94000/2000000], Property: num_nodes, Loss: 0.0008
+Epoch [95000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [96000/2000000], Property: num_nodes, Loss: 0.0064
+Epoch [97000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [98000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [99000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [100000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [101000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [102000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [103000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [104000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [105000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [106000/2000000], Property: num_nodes, Loss: 0.0001
+Epoch [107000/2000000], Property: num_nodes, Loss: 0.0164
+Epoch [108000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [109000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [110000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [111000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [112000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [113000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [114000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [115000/2000000], Property: num_nodes, Loss: 0.0503
+Epoch [116000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [117000/2000000], Property: num_nodes, Loss: 0.0000
+Epoch [118000/2000000], Property: num_nodes, Loss: 0.0094
+Epoch [119000/2000000], Property: num_nodes, Loss: 0.0000
+Early stopping at epoch 119943
+Embedding: torch.Size([1406, 136, 128])
+Property: num_nodes
+  Train MSE: 0.0048, Test MSE: 1.3060
+  Train R²: 1.0000, Test R²: 0.9953
+Epoch [1000/2000000], Property: num_edges, Loss: 1.7408
+Epoch [2000/2000000], Property: num_edges, Loss: 0.6957
+Epoch [3000/2000000], Property: num_edges, Loss: 0.3473
+Epoch [4000/2000000], Property: num_edges, Loss: 0.1942
+Epoch [5000/2000000], Property: num_edges, Loss: 0.1132
+Epoch [6000/2000000], Property: num_edges, Loss: 0.0675
+Epoch [7000/2000000], Property: num_edges, Loss: 0.0405
+Epoch [8000/2000000], Property: num_edges, Loss: 0.0241
+Epoch [9000/2000000], Property: num_edges, Loss: 0.0142
+Epoch [10000/2000000], Property: num_edges, Loss: 0.0096
+Epoch [11000/2000000], Property: num_edges, Loss: 0.0071
+Epoch [12000/2000000], Property: num_edges, Loss: 0.0056
+Epoch [13000/2000000], Property: num_edges, Loss: 0.0044
+Epoch [14000/2000000], Property: num_edges, Loss: 0.0036
+Epoch [15000/2000000], Property: num_edges, Loss: 0.0031
+Epoch [16000/2000000], Property: num_edges, Loss: 0.0026
+Epoch [17000/2000000], Property: num_edges, Loss: 0.0023
+Epoch [18000/2000000], Property: num_edges, Loss: 0.0036
+Epoch [19000/2000000], Property: num_edges, Loss: 0.0018
+Epoch [20000/2000000], Property: num_edges, Loss: 0.0033
+Epoch [21000/2000000], Property: num_edges, Loss: 0.0014
+Epoch [22000/2000000], Property: num_edges, Loss: 0.0013
+Epoch [23000/2000000], Property: num_edges, Loss: 0.0014
+Epoch [24000/2000000], Property: num_edges, Loss: 0.0010
+Epoch [25000/2000000], Property: num_edges, Loss: 0.0009
+Epoch [26000/2000000], Property: num_edges, Loss: 0.0009
+Epoch [27000/2000000], Property: num_edges, Loss: 0.0008
+Epoch [28000/2000000], Property: num_edges, Loss: 0.0007
+Epoch [29000/2000000], Property: num_edges, Loss: 0.0007
+Epoch [30000/2000000], Property: num_edges, Loss: 0.0006
+Epoch [31000/2000000], Property: num_edges, Loss: 0.0006
+Epoch [32000/2000000], Property: num_edges, Loss: 0.0026
+Epoch [33000/2000000], Property: num_edges, Loss: 0.0005
+Epoch [34000/2000000], Property: num_edges, Loss: 0.0005
+Epoch [35000/2000000], Property: num_edges, Loss: 0.0318
+Epoch [36000/2000000], Property: num_edges, Loss: 0.0004
+Epoch [37000/2000000], Property: num_edges, Loss: 0.0004
+Epoch [38000/2000000], Property: num_edges, Loss: 0.0004
+Epoch [39000/2000000], Property: num_edges, Loss: 0.0138
+Epoch [40000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [41000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [42000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [43000/2000000], Property: num_edges, Loss: 0.0196
+Epoch [44000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [45000/2000000], Property: num_edges, Loss: 0.0034
+Epoch [46000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [47000/2000000], Property: num_edges, Loss: 0.0006
+Epoch [48000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [49000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [50000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [51000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [52000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [53000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [54000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [55000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [56000/2000000], Property: num_edges, Loss: 0.0051
+Epoch [57000/2000000], Property: num_edges, Loss: 0.0007
+Epoch [58000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [59000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [60000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [61000/2000000], Property: num_edges, Loss: 0.0104
+Epoch [62000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [63000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [64000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [65000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [66000/2000000], Property: num_edges, Loss: 0.0022
+Epoch [67000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [68000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [69000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [70000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [71000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [72000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [73000/2000000], Property: num_edges, Loss: 0.0055
+Epoch [74000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [75000/2000000], Property: num_edges, Loss: 0.0438
+Epoch [76000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [77000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [78000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [79000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [80000/2000000], Property: num_edges, Loss: 0.0123
+Epoch [81000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [82000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [83000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [84000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [85000/2000000], Property: num_edges, Loss: 0.0004
+Epoch [86000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [87000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [88000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [89000/2000000], Property: num_edges, Loss: 0.0003
+Epoch [90000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [91000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [92000/2000000], Property: num_edges, Loss: 0.0007
+Epoch [93000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [94000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [95000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [96000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [97000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [98000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [99000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [100000/2000000], Property: num_edges, Loss: 0.0006
+Epoch [101000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [102000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [103000/2000000], Property: num_edges, Loss: 0.0001
+Epoch [104000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [105000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [106000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [107000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [108000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [109000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [110000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [111000/2000000], Property: num_edges, Loss: 0.0005
+Epoch [112000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [113000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [114000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [115000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [116000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [117000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [118000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [119000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [120000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [121000/2000000], Property: num_edges, Loss: 0.0005
+Epoch [122000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [123000/2000000], Property: num_edges, Loss: 0.0002
+Epoch [124000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [125000/2000000], Property: num_edges, Loss: 0.0000
+Epoch [126000/2000000], Property: num_edges, Loss: 0.0162
+Early stopping at epoch 126601
+Embedding: torch.Size([1406, 136, 128])
+Property: num_edges
+  Train MSE: 0.0001, Test MSE: 1.6338
+  Train R²: 1.0000, Test R²: 0.9952
+Epoch [1000/2000000], Property: density, Loss: 0.0004
+Epoch [2000/2000000], Property: density, Loss: 0.0003
+Epoch [3000/2000000], Property: density, Loss: 0.0005
+Epoch [4000/2000000], Property: density, Loss: 0.0001
+Epoch [5000/2000000], Property: density, Loss: 0.0001
+Epoch [6000/2000000], Property: density, Loss: 0.0000
+Epoch [7000/2000000], Property: density, Loss: 0.0000
+Epoch [8000/2000000], Property: density, Loss: 0.0000
+Epoch [9000/2000000], Property: density, Loss: 0.0000
+Epoch [10000/2000000], Property: density, Loss: 0.0000
+Epoch [11000/2000000], Property: density, Loss: 0.0000
+Epoch [12000/2000000], Property: density, Loss: 0.0000
+Epoch [13000/2000000], Property: density, Loss: 0.0000
+Epoch [14000/2000000], Property: density, Loss: 0.0000
+Epoch [15000/2000000], Property: density, Loss: 0.0000
+Epoch [16000/2000000], Property: density, Loss: 0.0006
+Epoch [17000/2000000], Property: density, Loss: 0.0000
+Epoch [18000/2000000], Property: density, Loss: 0.0001
+Epoch [19000/2000000], Property: density, Loss: 0.0002
+Epoch [20000/2000000], Property: density, Loss: 0.0000
+Epoch [21000/2000000], Property: density, Loss: 0.0000
+Epoch [22000/2000000], Property: density, Loss: 0.0000
+Epoch [23000/2000000], Property: density, Loss: 0.0000
+Epoch [24000/2000000], Property: density, Loss: 0.0000
+Epoch [25000/2000000], Property: density, Loss: 0.0000
+Epoch [26000/2000000], Property: density, Loss: 0.0000
+Epoch [27000/2000000], Property: density, Loss: 0.0000
+Epoch [28000/2000000], Property: density, Loss: 0.0000
+Epoch [29000/2000000], Property: density, Loss: 0.0000
+Early stopping at epoch 29672
+Embedding: torch.Size([1406, 136, 128])
+Property: density
+  Train MSE: 0.0007, Test MSE: 0.0052
+  Train R²: 0.9172, Test R²: 0.5338
+Epoch [1000/2000000], Property: avg_path_len, Loss: 0.0606
+Epoch [2000/2000000], Property: avg_path_len, Loss: 0.0268
+Epoch [3000/2000000], Property: avg_path_len, Loss: 0.0143
+Epoch [4000/2000000], Property: avg_path_len, Loss: 0.0081
+Epoch [5000/2000000], Property: avg_path_len, Loss: 0.0051
+Epoch [6000/2000000], Property: avg_path_len, Loss: 0.0037
+Epoch [7000/2000000], Property: avg_path_len, Loss: 0.0029
+Epoch [8000/2000000], Property: avg_path_len, Loss: 0.0081
+Epoch [9000/2000000], Property: avg_path_len, Loss: 0.0021
+Epoch [10000/2000000], Property: avg_path_len, Loss: 0.0016
+Epoch [11000/2000000], Property: avg_path_len, Loss: 0.0014
+Epoch [12000/2000000], Property: avg_path_len, Loss: 0.0012
+Epoch [13000/2000000], Property: avg_path_len, Loss: 0.0011
+Epoch [14000/2000000], Property: avg_path_len, Loss: 0.0202
+Epoch [15000/2000000], Property: avg_path_len, Loss: 0.0008
+Epoch [16000/2000000], Property: avg_path_len, Loss: 0.0007
+Epoch [17000/2000000], Property: avg_path_len, Loss: 0.0007
+Epoch [18000/2000000], Property: avg_path_len, Loss: 0.0006
+Epoch [19000/2000000], Property: avg_path_len, Loss: 0.0005
+Epoch [20000/2000000], Property: avg_path_len, Loss: 0.0005
+Epoch [21000/2000000], Property: avg_path_len, Loss: 0.0656
+Epoch [22000/2000000], Property: avg_path_len, Loss: 0.0005
+Epoch [23000/2000000], Property: avg_path_len, Loss: 0.0004
+Epoch [24000/2000000], Property: avg_path_len, Loss: 0.0004
+Epoch [25000/2000000], Property: avg_path_len, Loss: 0.0003
+Epoch [26000/2000000], Property: avg_path_len, Loss: 0.0003
+Epoch [27000/2000000], Property: avg_path_len, Loss: 0.0003
+Epoch [28000/2000000], Property: avg_path_len, Loss: 0.0003
+Epoch [29000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [30000/2000000], Property: avg_path_len, Loss: 0.0139
+Epoch [31000/2000000], Property: avg_path_len, Loss: 0.0008
+Epoch [32000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [33000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [34000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [35000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [36000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [37000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [38000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [39000/2000000], Property: avg_path_len, Loss: 0.0640
+Epoch [40000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [41000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [42000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [43000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [44000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [45000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [46000/2000000], Property: avg_path_len, Loss: 0.0629
+Epoch [47000/2000000], Property: avg_path_len, Loss: 0.0002
+Epoch [48000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [49000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [50000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [51000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [52000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [53000/2000000], Property: avg_path_len, Loss: 0.0018
+Epoch [54000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [55000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [56000/2000000], Property: avg_path_len, Loss: 0.0183
+Epoch [57000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [58000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [59000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [60000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [61000/2000000], Property: avg_path_len, Loss: 0.0006
+Epoch [62000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [63000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [64000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [65000/2000000], Property: avg_path_len, Loss: 0.0123
+Epoch [66000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [67000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [68000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [69000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [70000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [71000/2000000], Property: avg_path_len, Loss: 0.0001
+Epoch [72000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [73000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [74000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [75000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [76000/2000000], Property: avg_path_len, Loss: 0.0151
+Epoch [77000/2000000], Property: avg_path_len, Loss: 0.0003
+Epoch [78000/2000000], Property: avg_path_len, Loss: 0.0023
+Epoch [79000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [80000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [81000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [82000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [83000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [84000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [85000/2000000], Property: avg_path_len, Loss: 0.0137
+Epoch [86000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [87000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [88000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [89000/2000000], Property: avg_path_len, Loss: 0.0017
+Epoch [90000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [91000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [92000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [93000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [94000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [95000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [96000/2000000], Property: avg_path_len, Loss: 0.0021
+Epoch [97000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [98000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [99000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [100000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [101000/2000000], Property: avg_path_len, Loss: 0.0000
+Epoch [102000/2000000], Property: avg_path_len, Loss: 0.0013
+Early stopping at epoch 102858
+Embedding: torch.Size([1406, 136, 128])
+Property: avg_path_len
+  Train MSE: 0.0007, Test MSE: 1.0162
+  Train R²: 0.9998, Test R²: 0.7631
+Epoch [1000/2000000], Property: diameter, Loss: 1.8250
+Epoch [2000/2000000], Property: diameter, Loss: 0.7774
+Epoch [3000/2000000], Property: diameter, Loss: 0.4102
+Epoch [4000/2000000], Property: diameter, Loss: 0.2391
+Epoch [5000/2000000], Property: diameter, Loss: 0.1450
+Epoch [6000/2000000], Property: diameter, Loss: 0.0899
+Epoch [7000/2000000], Property: diameter, Loss: 0.0559
+Epoch [8000/2000000], Property: diameter, Loss: 0.0347
+Epoch [9000/2000000], Property: diameter, Loss: 0.0218
+Epoch [10000/2000000], Property: diameter, Loss: 0.0155
+Epoch [11000/2000000], Property: diameter, Loss: 0.0118
+Epoch [12000/2000000], Property: diameter, Loss: 0.0095
+Epoch [13000/2000000], Property: diameter, Loss: 0.0079
+Epoch [14000/2000000], Property: diameter, Loss: 0.0066
+Epoch [15000/2000000], Property: diameter, Loss: 0.0057
+Epoch [16000/2000000], Property: diameter, Loss: 0.0049
+Epoch [17000/2000000], Property: diameter, Loss: 0.0043
+Epoch [18000/2000000], Property: diameter, Loss: 0.0038
+Epoch [19000/2000000], Property: diameter, Loss: 0.0034
+Epoch [20000/2000000], Property: diameter, Loss: 0.0031
+Epoch [21000/2000000], Property: diameter, Loss: 0.0028
+Epoch [22000/2000000], Property: diameter, Loss: 0.0161
+Epoch [23000/2000000], Property: diameter, Loss: 0.0023
+Epoch [24000/2000000], Property: diameter, Loss: 0.0021
+Epoch [25000/2000000], Property: diameter, Loss: 0.0019
+Epoch [26000/2000000], Property: diameter, Loss: 0.0017
+Epoch [27000/2000000], Property: diameter, Loss: 0.0016
+Epoch [28000/2000000], Property: diameter, Loss: 0.0029
+Epoch [29000/2000000], Property: diameter, Loss: 0.0014
+Epoch [30000/2000000], Property: diameter, Loss: 0.0013
+Epoch [31000/2000000], Property: diameter, Loss: 0.0012
+Epoch [32000/2000000], Property: diameter, Loss: 0.0011
+Epoch [33000/2000000], Property: diameter, Loss: 0.0013
+Epoch [34000/2000000], Property: diameter, Loss: 0.0010
+Epoch [35000/2000000], Property: diameter, Loss: 0.0009
+Epoch [36000/2000000], Property: diameter, Loss: 0.0009
+Epoch [37000/2000000], Property: diameter, Loss: 0.0008
+Epoch [38000/2000000], Property: diameter, Loss: 0.0017
+Epoch [39000/2000000], Property: diameter, Loss: 0.0007
+Epoch [40000/2000000], Property: diameter, Loss: 0.0007
+Epoch [41000/2000000], Property: diameter, Loss: 0.0006
+Epoch [42000/2000000], Property: diameter, Loss: 0.0006
+Epoch [43000/2000000], Property: diameter, Loss: 0.0005
+Epoch [44000/2000000], Property: diameter, Loss: 0.0005
+Epoch [45000/2000000], Property: diameter, Loss: 0.0005
+Epoch [46000/2000000], Property: diameter, Loss: 0.0005
+Epoch [47000/2000000], Property: diameter, Loss: 0.0004
+Epoch [48000/2000000], Property: diameter, Loss: 0.0058
+Epoch [49000/2000000], Property: diameter, Loss: 0.0004
+Epoch [50000/2000000], Property: diameter, Loss: 0.0004
+Epoch [51000/2000000], Property: diameter, Loss: 0.0004
+Epoch [52000/2000000], Property: diameter, Loss: 0.0004
+Epoch [53000/2000000], Property: diameter, Loss: 0.0003
+Epoch [54000/2000000], Property: diameter, Loss: 0.0004
+Epoch [55000/2000000], Property: diameter, Loss: 0.0003
+Epoch [56000/2000000], Property: diameter, Loss: 0.0005
+Epoch [57000/2000000], Property: diameter, Loss: 0.0003
+Epoch [58000/2000000], Property: diameter, Loss: 0.0003
+Epoch [59000/2000000], Property: diameter, Loss: 0.0003
+Epoch [60000/2000000], Property: diameter, Loss: 0.0002
+Epoch [61000/2000000], Property: diameter, Loss: 0.0005
+Epoch [62000/2000000], Property: diameter, Loss: 0.0002
+Epoch [63000/2000000], Property: diameter, Loss: 0.0002
+Epoch [64000/2000000], Property: diameter, Loss: 0.0006
+Epoch [65000/2000000], Property: diameter, Loss: 0.0002
+Epoch [66000/2000000], Property: diameter, Loss: 0.0002
+Epoch [67000/2000000], Property: diameter, Loss: 0.0002
+Epoch [68000/2000000], Property: diameter, Loss: 0.0002
+Epoch [69000/2000000], Property: diameter, Loss: 0.0052
+Epoch [70000/2000000], Property: diameter, Loss: 0.0002
+Epoch [71000/2000000], Property: diameter, Loss: 0.0002
+Epoch [72000/2000000], Property: diameter, Loss: 0.0001
+Epoch [73000/2000000], Property: diameter, Loss: 0.0003
+Epoch [74000/2000000], Property: diameter, Loss: 0.0001
+Epoch [75000/2000000], Property: diameter, Loss: 0.0001
+Epoch [76000/2000000], Property: diameter, Loss: 0.0025
+Epoch [77000/2000000], Property: diameter, Loss: 0.0001
+Epoch [78000/2000000], Property: diameter, Loss: 0.0592
+Epoch [79000/2000000], Property: diameter, Loss: 0.0001
+Epoch [80000/2000000], Property: diameter, Loss: 0.0001
+Epoch [81000/2000000], Property: diameter, Loss: 0.0002
+Epoch [82000/2000000], Property: diameter, Loss: 0.0001
+Epoch [83000/2000000], Property: diameter, Loss: 0.0017
+Epoch [84000/2000000], Property: diameter, Loss: 0.0001
+Epoch [85000/2000000], Property: diameter, Loss: 0.0001
+Epoch [86000/2000000], Property: diameter, Loss: 0.0001
+Epoch [87000/2000000], Property: diameter, Loss: 0.0001
+Epoch [88000/2000000], Property: diameter, Loss: 0.0001
+Epoch [89000/2000000], Property: diameter, Loss: 0.0011
+Epoch [90000/2000000], Property: diameter, Loss: 0.0001
+Epoch [91000/2000000], Property: diameter, Loss: 0.0001
+Epoch [92000/2000000], Property: diameter, Loss: 0.0001
+Epoch [93000/2000000], Property: diameter, Loss: 0.0001
+Epoch [94000/2000000], Property: diameter, Loss: 0.0001
+Epoch [95000/2000000], Property: diameter, Loss: 0.0001
+Epoch [96000/2000000], Property: diameter, Loss: 0.0001
+Epoch [97000/2000000], Property: diameter, Loss: 0.0001
+Epoch [98000/2000000], Property: diameter, Loss: 0.0001
+Epoch [99000/2000000], Property: diameter, Loss: 0.0001
+Epoch [100000/2000000], Property: diameter, Loss: 0.0001
+Epoch [101000/2000000], Property: diameter, Loss: 0.0001
+Epoch [102000/2000000], Property: diameter, Loss: 0.0001
+Epoch [103000/2000000], Property: diameter, Loss: 0.0001
+Epoch [104000/2000000], Property: diameter, Loss: 0.0001
+Epoch [105000/2000000], Property: diameter, Loss: 0.0001
+Epoch [106000/2000000], Property: diameter, Loss: 0.0001
+Epoch [107000/2000000], Property: diameter, Loss: 0.0000
+Epoch [108000/2000000], Property: diameter, Loss: 0.0000
+Epoch [109000/2000000], Property: diameter, Loss: 0.0316
+Epoch [110000/2000000], Property: diameter, Loss: 0.0000
+Epoch [111000/2000000], Property: diameter, Loss: 0.0004
+Epoch [112000/2000000], Property: diameter, Loss: 0.0000
+Epoch [113000/2000000], Property: diameter, Loss: 0.0001
+Epoch [114000/2000000], Property: diameter, Loss: 0.0026
+Epoch [115000/2000000], Property: diameter, Loss: 0.0000
+Epoch [116000/2000000], Property: diameter, Loss: 0.0001
+Epoch [117000/2000000], Property: diameter, Loss: 0.0000
+Epoch [118000/2000000], Property: diameter, Loss: 0.0000
+Epoch [119000/2000000], Property: diameter, Loss: 0.0017
+Epoch [120000/2000000], Property: diameter, Loss: 0.0020
+Epoch [121000/2000000], Property: diameter, Loss: 0.0000
+Epoch [122000/2000000], Property: diameter, Loss: 0.0001
+Epoch [123000/2000000], Property: diameter, Loss: 0.0000
+Epoch [124000/2000000], Property: diameter, Loss: 0.0000
+Epoch [125000/2000000], Property: diameter, Loss: 0.0030
+Epoch [126000/2000000], Property: diameter, Loss: 0.0000
+Epoch [127000/2000000], Property: diameter, Loss: 0.0000
+Epoch [128000/2000000], Property: diameter, Loss: 0.0000
+Epoch [129000/2000000], Property: diameter, Loss: 0.0000
+Epoch [130000/2000000], Property: diameter, Loss: 0.0000
+Epoch [131000/2000000], Property: diameter, Loss: 0.0001
+Epoch [132000/2000000], Property: diameter, Loss: 0.0000
+Epoch [133000/2000000], Property: diameter, Loss: 0.0000
+Epoch [134000/2000000], Property: diameter, Loss: 0.0007
+Epoch [135000/2000000], Property: diameter, Loss: 0.0000
+Epoch [136000/2000000], Property: diameter, Loss: 0.0006
+Epoch [137000/2000000], Property: diameter, Loss: 0.0000
+Epoch [138000/2000000], Property: diameter, Loss: 0.0102
+Epoch [139000/2000000], Property: diameter, Loss: 0.0000
+Epoch [140000/2000000], Property: diameter, Loss: 0.0081
+Epoch [141000/2000000], Property: diameter, Loss: 0.0000
+Epoch [142000/2000000], Property: diameter, Loss: 0.0609
+Epoch [143000/2000000], Property: diameter, Loss: 0.0000
+Epoch [144000/2000000], Property: diameter, Loss: 0.0017
+Epoch [145000/2000000], Property: diameter, Loss: 0.0000
+Epoch [146000/2000000], Property: diameter, Loss: 0.0000
+Epoch [147000/2000000], Property: diameter, Loss: 0.0000
+Epoch [148000/2000000], Property: diameter, Loss: 0.0000
+Epoch [149000/2000000], Property: diameter, Loss: 0.0004
+Epoch [150000/2000000], Property: diameter, Loss: 0.0001
+Epoch [151000/2000000], Property: diameter, Loss: 0.0000
+Epoch [152000/2000000], Property: diameter, Loss: 0.0026
+Epoch [153000/2000000], Property: diameter, Loss: 0.0000
+Epoch [154000/2000000], Property: diameter, Loss: 0.0000
+Epoch [155000/2000000], Property: diameter, Loss: 0.0000
+Early stopping at epoch 155965
+Embedding: torch.Size([1406, 136, 128])
+Property: diameter
+  Train MSE: 384.2242, Test MSE: 507.5550
+  Train R²: -9.5936, Test R²: -15.1260
+Epoch [1000/2000000], Property: radius, Loss: 0.0089
+Epoch [2000/2000000], Property: radius, Loss: 0.0043
+Epoch [3000/2000000], Property: radius, Loss: 0.0028
+Epoch [4000/2000000], Property: radius, Loss: 0.0021
+Epoch [5000/2000000], Property: radius, Loss: 0.0016
+Epoch [6000/2000000], Property: radius, Loss: 0.0013
+Epoch [7000/2000000], Property: radius, Loss: 0.0011
+Epoch [8000/2000000], Property: radius, Loss: 0.0009
+Epoch [9000/2000000], Property: radius, Loss: 0.0008
+Epoch [10000/2000000], Property: radius, Loss: 0.0007
+Epoch [11000/2000000], Property: radius, Loss: 0.0006
+Epoch [12000/2000000], Property: radius, Loss: 0.0006
+Epoch [13000/2000000], Property: radius, Loss: 0.0005
+Epoch [14000/2000000], Property: radius, Loss: 0.0004
+Epoch [15000/2000000], Property: radius, Loss: 0.0099
+Epoch [16000/2000000], Property: radius, Loss: 0.0004
+Epoch [17000/2000000], Property: radius, Loss: 0.0003
+Epoch [18000/2000000], Property: radius, Loss: 0.0003
+Epoch [19000/2000000], Property: radius, Loss: 0.0003
+Epoch [20000/2000000], Property: radius, Loss: 0.0003
+Epoch [21000/2000000], Property: radius, Loss: 0.0002
+Epoch [22000/2000000], Property: radius, Loss: 0.0002
+Epoch [23000/2000000], Property: radius, Loss: 0.0002
+Epoch [24000/2000000], Property: radius, Loss: 0.0002
+Epoch [25000/2000000], Property: radius, Loss: 0.0004
+Epoch [26000/2000000], Property: radius, Loss: 0.0002
+Epoch [27000/2000000], Property: radius, Loss: 0.0002
+Epoch [28000/2000000], Property: radius, Loss: 0.0001
+Epoch [29000/2000000], Property: radius, Loss: 0.0001
+Epoch [30000/2000000], Property: radius, Loss: 0.0001
+Epoch [31000/2000000], Property: radius, Loss: 0.0001
+Epoch [32000/2000000], Property: radius, Loss: 0.0002
+Epoch [33000/2000000], Property: radius, Loss: 0.0001
+Epoch [34000/2000000], Property: radius, Loss: 0.0001
+Epoch [35000/2000000], Property: radius, Loss: 0.0001
+Epoch [36000/2000000], Property: radius, Loss: 0.0001
+Epoch [37000/2000000], Property: radius, Loss: 0.0001
+Epoch [38000/2000000], Property: radius, Loss: 0.0001
+Epoch [39000/2000000], Property: radius, Loss: 0.0001
+Epoch [40000/2000000], Property: radius, Loss: 0.0001
+Epoch [41000/2000000], Property: radius, Loss: 0.0001
+Epoch [42000/2000000], Property: radius, Loss: 0.0001
+Epoch [43000/2000000], Property: radius, Loss: 0.0001
+Epoch [44000/2000000], Property: radius, Loss: 0.0001
+Epoch [45000/2000000], Property: radius, Loss: 0.0001
+Epoch [46000/2000000], Property: radius, Loss: 0.0001
+Epoch [47000/2000000], Property: radius, Loss: 0.0000
+Epoch [48000/2000000], Property: radius, Loss: 0.0000
+Epoch [49000/2000000], Property: radius, Loss: 0.0000
+Epoch [50000/2000000], Property: radius, Loss: 0.0000
+Epoch [51000/2000000], Property: radius, Loss: 0.0000
+Epoch [52000/2000000], Property: radius, Loss: 0.0000
+Epoch [53000/2000000], Property: radius, Loss: 0.0000
+Epoch [54000/2000000], Property: radius, Loss: 0.0000
+Epoch [55000/2000000], Property: radius, Loss: 0.0000
+Epoch [56000/2000000], Property: radius, Loss: 0.0000
+Epoch [57000/2000000], Property: radius, Loss: 0.0000
+Epoch [58000/2000000], Property: radius, Loss: 0.0000
+Epoch [59000/2000000], Property: radius, Loss: 0.0000
+Epoch [60000/2000000], Property: radius, Loss: 0.0000
+Epoch [61000/2000000], Property: radius, Loss: 0.0000
+Epoch [62000/2000000], Property: radius, Loss: 0.0059
+Epoch [63000/2000000], Property: radius, Loss: 0.0003
+Epoch [64000/2000000], Property: radius, Loss: 0.0000
+Epoch [65000/2000000], Property: radius, Loss: 0.0000
+Epoch [66000/2000000], Property: radius, Loss: 0.0000
+Epoch [67000/2000000], Property: radius, Loss: 0.0000
+Epoch [68000/2000000], Property: radius, Loss: 0.0000
+Epoch [69000/2000000], Property: radius, Loss: 0.0000
+Epoch [70000/2000000], Property: radius, Loss: 0.0000
+Epoch [71000/2000000], Property: radius, Loss: 0.0000
+Epoch [72000/2000000], Property: radius, Loss: 0.0000
+Epoch [73000/2000000], Property: radius, Loss: 0.0000
+Epoch [74000/2000000], Property: radius, Loss: 0.0000
+Epoch [75000/2000000], Property: radius, Loss: 0.0000
+Epoch [76000/2000000], Property: radius, Loss: 0.0000
+Epoch [77000/2000000], Property: radius, Loss: 0.0000
+Epoch [78000/2000000], Property: radius, Loss: 0.0000
+Epoch [79000/2000000], Property: radius, Loss: 0.0000
+Epoch [80000/2000000], Property: radius, Loss: 0.0000
+Epoch [81000/2000000], Property: radius, Loss: 0.0000
+Epoch [82000/2000000], Property: radius, Loss: 0.0000
+Epoch [83000/2000000], Property: radius, Loss: 0.0238
+Epoch [84000/2000000], Property: radius, Loss: 0.0000
+Epoch [85000/2000000], Property: radius, Loss: 0.0000
+Epoch [86000/2000000], Property: radius, Loss: 0.0001
+Epoch [87000/2000000], Property: radius, Loss: 0.0000
+Epoch [88000/2000000], Property: radius, Loss: 0.0032
+Epoch [89000/2000000], Property: radius, Loss: 0.0133
+Epoch [90000/2000000], Property: radius, Loss: 0.0000
+Epoch [91000/2000000], Property: radius, Loss: 0.0000
+Early stopping at epoch 91793
+Embedding: torch.Size([1406, 136, 128])
+Property: radius
+  Train MSE: 51.4914, Test MSE: 51.9209
+  Train R²: -4.4635, Test R²: -4.2741
+Epoch [1000/2000000], Property: clustering_coeff, Loss: 0.0005
+Epoch [2000/2000000], Property: clustering_coeff, Loss: 0.0002
+Epoch [3000/2000000], Property: clustering_coeff, Loss: 0.0002
+Epoch [4000/2000000], Property: clustering_coeff, Loss: 0.0001
+Epoch [5000/2000000], Property: clustering_coeff, Loss: 0.0001
+Epoch [6000/2000000], Property: clustering_coeff, Loss: 0.0237
+Epoch [7000/2000000], Property: clustering_coeff, Loss: 0.0001
+Epoch [8000/2000000], Property: clustering_coeff, Loss: 0.0001
+Epoch [9000/2000000], Property: clustering_coeff, Loss: 0.0001
+Epoch [10000/2000000], Property: clustering_coeff, Loss: 0.0001
+Epoch [11000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [12000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [13000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [14000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [15000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [16000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [17000/2000000], Property: clustering_coeff, Loss: 0.0531
+Epoch [18000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [19000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [20000/2000000], Property: clustering_coeff, Loss: 0.0008
+Epoch [21000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [22000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [23000/2000000], Property: clustering_coeff, Loss: 0.0002
+Epoch [24000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [25000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [26000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [27000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [28000/2000000], Property: clustering_coeff, Loss: 0.0497
+Epoch [29000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [30000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [31000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [32000/2000000], Property: clustering_coeff, Loss: 0.0017
+Epoch [33000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [34000/2000000], Property: clustering_coeff, Loss: 0.0000
+Epoch [35000/2000000], Property: clustering_coeff, Loss: 0.0000
+Early stopping at epoch 35286
+Embedding: torch.Size([1406, 136, 128])
+Property: clustering_coeff
+  Train MSE: 0.0036, Test MSE: 0.0045
+  Train R²: -4.4603, Test R²: -41.0017
+Epoch [1000/2000000], Property: transitivity, Loss: 1.5252
+Epoch [2000/2000000], Property: transitivity, Loss: 0.6406
+Epoch [3000/2000000], Property: transitivity, Loss: 0.3397
+Epoch [4000/2000000], Property: transitivity, Loss: 0.1998
+Epoch [5000/2000000], Property: transitivity, Loss: 0.1214
+Epoch [6000/2000000], Property: transitivity, Loss: 0.0736
+Epoch [7000/2000000], Property: transitivity, Loss: 0.0438
+Epoch [8000/2000000], Property: transitivity, Loss: 0.0255
+Epoch [9000/2000000], Property: transitivity, Loss: 0.0150
+Epoch [10000/2000000], Property: transitivity, Loss: 0.0101
+Epoch [11000/2000000], Property: transitivity, Loss: 0.0136
+Epoch [12000/2000000], Property: transitivity, Loss: 0.0057
+Epoch [13000/2000000], Property: transitivity, Loss: 0.0093
+Epoch [14000/2000000], Property: transitivity, Loss: 0.0037
+Epoch [15000/2000000], Property: transitivity, Loss: 0.0033
+Epoch [16000/2000000], Property: transitivity, Loss: 0.0027
+Epoch [17000/2000000], Property: transitivity, Loss: 0.0023
+Epoch [18000/2000000], Property: transitivity, Loss: 0.0020
+Epoch [19000/2000000], Property: transitivity, Loss: 0.0085
+Epoch [20000/2000000], Property: transitivity, Loss: 0.0016
+Epoch [21000/2000000], Property: transitivity, Loss: 0.0014
+Epoch [22000/2000000], Property: transitivity, Loss: 0.0014
+Epoch [23000/2000000], Property: transitivity, Loss: 0.0011
+Epoch [24000/2000000], Property: transitivity, Loss: 0.0010
+Epoch [25000/2000000], Property: transitivity, Loss: 0.0010
+Epoch [26000/2000000], Property: transitivity, Loss: 0.0009
+Epoch [27000/2000000], Property: transitivity, Loss: 0.0008
+Epoch [28000/2000000], Property: transitivity, Loss: 0.0007
+Epoch [29000/2000000], Property: transitivity, Loss: 0.0007
+Epoch [30000/2000000], Property: transitivity, Loss: 0.0051
+Epoch [31000/2000000], Property: transitivity, Loss: 0.0006
+Epoch [32000/2000000], Property: transitivity, Loss: 0.0006
+Epoch [33000/2000000], Property: transitivity, Loss: 0.0005
+Epoch [34000/2000000], Property: transitivity, Loss: 0.0005
+Epoch [35000/2000000], Property: transitivity, Loss: 0.0004
+Epoch [36000/2000000], Property: transitivity, Loss: 0.0005
+Epoch [37000/2000000], Property: transitivity, Loss: 0.0004
+Epoch [38000/2000000], Property: transitivity, Loss: 0.0007
+Epoch [39000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [40000/2000000], Property: transitivity, Loss: 0.0004
+Epoch [41000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [42000/2000000], Property: transitivity, Loss: 0.0039
+Epoch [43000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [44000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [45000/2000000], Property: transitivity, Loss: 0.0503
+Epoch [46000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [47000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [48000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [49000/2000000], Property: transitivity, Loss: 0.0568
+Epoch [50000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [51000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [52000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [53000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [54000/2000000], Property: transitivity, Loss: 0.0002
+Epoch [55000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [56000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [57000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [58000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [59000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [60000/2000000], Property: transitivity, Loss: 0.0440
+Epoch [61000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [62000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [63000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [64000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [65000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [66000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [67000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [68000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [69000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [70000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [71000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [72000/2000000], Property: transitivity, Loss: 0.0589
+Epoch [73000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [74000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [75000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [76000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [77000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [78000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [79000/2000000], Property: transitivity, Loss: 0.0007
+Epoch [80000/2000000], Property: transitivity, Loss: 0.0001
+Epoch [81000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [82000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [83000/2000000], Property: transitivity, Loss: 0.0016
+Epoch [84000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [85000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [86000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [87000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [88000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [89000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [90000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [91000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [92000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [93000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [94000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [95000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [96000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [97000/2000000], Property: transitivity, Loss: 0.0010
+Epoch [98000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [99000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [100000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [101000/2000000], Property: transitivity, Loss: 0.0009
+Epoch [102000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [103000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [104000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [105000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [106000/2000000], Property: transitivity, Loss: 0.0003
+Epoch [107000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [108000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [109000/2000000], Property: transitivity, Loss: 0.0057
+Epoch [110000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [111000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [112000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [113000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [114000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [115000/2000000], Property: transitivity, Loss: 0.0473
+Epoch [116000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [117000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [118000/2000000], Property: transitivity, Loss: 0.0104
+Epoch [119000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [120000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [121000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [122000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [123000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [124000/2000000], Property: transitivity, Loss: 0.0000
+Epoch [125000/2000000], Property: transitivity, Loss: 0.0102
+Epoch [126000/2000000], Property: transitivity, Loss: 0.0000
+Early stopping at epoch 126825
+Embedding: torch.Size([1406, 136, 128])
+Property: transitivity
+  Train MSE: 931.0557, Test MSE: 1035.5104
+  Train R²: -1797576.8750, Test R²: -24244000.0000
+Epoch [1000/2000000], Property: assortativity, Loss: 0.0038
+Epoch [2000/2000000], Property: assortativity, Loss: 0.0022
+Epoch [3000/2000000], Property: assortativity, Loss: 0.0013
+Epoch [4000/2000000], Property: assortativity, Loss: 0.0010
+Epoch [5000/2000000], Property: assortativity, Loss: 0.0008
+Epoch [6000/2000000], Property: assortativity, Loss: 0.0007
+Epoch [7000/2000000], Property: assortativity, Loss: 0.0006
+Epoch [8000/2000000], Property: assortativity, Loss: 0.0005
+Epoch [9000/2000000], Property: assortativity, Loss: 0.0005
+Epoch [10000/2000000], Property: assortativity, Loss: 0.0004
+Epoch [11000/2000000], Property: assortativity, Loss: 0.0004
+Epoch [12000/2000000], Property: assortativity, Loss: 0.0003
+Epoch [13000/2000000], Property: assortativity, Loss: 0.0003
+Epoch [14000/2000000], Property: assortativity, Loss: 0.0034
+Epoch [15000/2000000], Property: assortativity, Loss: 0.0003
+Epoch [16000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [17000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [18000/2000000], Property: assortativity, Loss: 0.0014
+Epoch [19000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [20000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [21000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [22000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [23000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [24000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [25000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [26000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [27000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [28000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [29000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [30000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [31000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [32000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [33000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [34000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [35000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [36000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [37000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [38000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [39000/2000000], Property: assortativity, Loss: 0.0079
+Epoch [40000/2000000], Property: assortativity, Loss: 0.0008
+Epoch [41000/2000000], Property: assortativity, Loss: 0.0062
+Epoch [42000/2000000], Property: assortativity, Loss: 0.0008
+Epoch [43000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [44000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [45000/2000000], Property: assortativity, Loss: 0.0058
+Epoch [46000/2000000], Property: assortativity, Loss: 0.0062
+Epoch [47000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [48000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [49000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [50000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [51000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [52000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [53000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [54000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [55000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [56000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [57000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [58000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [59000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [60000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [61000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [62000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [63000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [64000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [65000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [66000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [67000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [68000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [69000/2000000], Property: assortativity, Loss: 0.0035
+Epoch [70000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [71000/2000000], Property: assortativity, Loss: 0.0511
+Epoch [72000/2000000], Property: assortativity, Loss: 0.0169
+Epoch [73000/2000000], Property: assortativity, Loss: 0.0026
+Epoch [74000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [75000/2000000], Property: assortativity, Loss: 0.0002
+Epoch [76000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [77000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [78000/2000000], Property: assortativity, Loss: 0.0001
+Epoch [79000/2000000], Property: assortativity, Loss: 0.0131
+Epoch [80000/2000000], Property: assortativity, Loss: 0.0004
+Epoch [81000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [82000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [83000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [84000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [85000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [86000/2000000], Property: assortativity, Loss: 0.0000
+Epoch [87000/2000000], Property: assortativity, Loss: 0.0000
+Early stopping at epoch 87979
 Traceback (most recent call last):
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 787, in <module>
-    train_properties_long = compute_graph_properties(selected_dataset)
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 674, in compute_graph_properties
-    avg_path_len = calculate_avg_path_length(G)
-  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 590, in calculate_avg_path_length
-    if nx.is_connected(G):
-  File "<class 'networkx.utils.decorators.argmap'> compilation 17", line 4, in argmap_is_connected_13
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/utils/backends.py", line 633, in __call__
-    return self.orig_func(*args, **kwargs)
-  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/components/connected.py", line 151, in is_connected
-    raise nx.NetworkXPointlessConcept(
-networkx.exception.NetworkXPointlessConcept: Connectivity is undefined for the null graph.
+  File "/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GIN.py", line 888, in <module>
+    train_mse = mean_squared_error(train_target, train_pred)
+  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 506, in mean_squared_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 112, in _check_reg_targets
+    y_true = check_array(y_true, ensure_2d=False, dtype=dtype)
+  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1064, in check_array
+    _assert_all_finite(
+  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 123, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/home/tpelletreaudur/.local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 172, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input contains NaN.
 
 JOB STATISTICS
 ==============
-Job ID: 7681477
+Job ID: 7682230
 Cluster: snellius
 User/Group: tpelletreaudur/tpelletreaudur
 State: RUNNING
 Nodes: 1
 Cores per node: 18
 CPU Utilized: 00:00:01
-CPU Efficiency: 0.12% of 00:14:24 core-walltime
-Job Wall-clock time: 00:00:48
-Memory Utilized: 3.58 MB
+CPU Efficiency: 0.00% of 21:44:24 core-walltime
+Job Wall-clock time: 01:12:28
+Memory Utilized: 2.59 MB
 Memory Efficiency: 0.00% of 120.00 GB
 WARNING: Efficiency statistics may be misleading for RUNNING jobs.
