@@ -808,6 +808,15 @@ with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "rb") as f:
 with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
     test_properties_long = pkl.load(f)
 
+# Assuming train_properties is a list of lists or a similar structure
+train_properties = np.array(train_properties, dtype=np.float64)
+
+# Replace NaN values with -1
+train_properties[np.isnan(train_properties)] = -1
+
+# If you need to convert it back to a list of lists
+train_properties = train_properties.tolist()
+
 # %%
 #print the names of the properties
 # print(train_properties_long[0].keys())
