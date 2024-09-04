@@ -19,3 +19,18 @@ Python 3.10.4
   test_y = torch.tensor(test_properties, dtype=torch.float32)
 /gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GAT_MDD.py:1082: ComplexWarning: Casting complex values to real discards the imaginary part
   train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+slurmstepd: error: *** JOB 7702857 ON gcn56 CANCELLED AT 2024-09-03T03:38:09 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7702857
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:02
+CPU Efficiency: 0.00% of 7-12:04:30 core-walltime
+Job Wall-clock time: 10:00:15
+Memory Utilized: 7.46 GB
+Memory Efficiency: 6.22% of 120.00 GB
