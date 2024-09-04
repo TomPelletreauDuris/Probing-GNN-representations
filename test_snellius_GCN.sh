@@ -8,6 +8,7 @@
 
 module purge
 module load 2022
+module load OpenSSL/1.1
 # module load Anaconda3/2023.07-2
 # module load CUDA/12.1.1
 # module load cuDNN/8.9.2.26-CUDA-12.1.1
