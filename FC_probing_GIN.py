@@ -183,13 +183,6 @@ def train_probe_for_layer(features, property_values, test_features, test_propert
 
     return mse, r2
 
-# %%
-#check the number of nodes in all the graphs, all the layers, train and test
-for i in range(len(train_features)):
-    print(f"Graph {i+1}: Train nodes: {train_features[i].shape[0]}, Test nodes: {test_features[i].shape[0]}")
-
-
-
 # %% [markdown]
 # 
 # ### Option 2: Train a Single Classifier Across All Graphs
