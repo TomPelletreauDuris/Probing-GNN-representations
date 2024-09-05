@@ -1049,3 +1049,327 @@ Memory Efficiency: 0.05% of 120.00 GB
 [W 11:02:24.951 NotebookApp] zmq message arrived on closed channel
 [W 11:04:51.433 NotebookApp] zmq message arrived on closed channel
 [W 11:07:16.832 NotebookApp] zmq message arrived on closed channel
+[W 11:09:40.002 NotebookApp] zmq message arrived on closed channel
+[W 11:12:05.836 NotebookApp] zmq message arrived on closed channel
+[W 11:14:35.876 NotebookApp] zmq message arrived on closed channel
+[I 11:15:03.518 NotebookApp] Restoring connection for 11b2bad0-e73d-4210-ba5e-9a4a83cf0472:abe442a2061d4df0832d53d50c128b96
+[I 11:15:03.518 NotebookApp] Replaying 27 buffered messages
+[W 11:15:20.254 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[I 11:15:22.298 NotebookApp] Discarding 55 buffered messages for fbec23a1-4606-4210-818c-e4851c481194:18774a52ce3c484789ea229e39bb1fc1
+[W 11:15:22.475 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240904194651 (::1) 2.960000ms referer=http://localhost:5463/notebooks/FC_probing_GIN_MDD.ipynb
+[I 11:15:40.538 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:15:40.539 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 11:15:53.204 NotebookApp] Restoring connection for 55fd93f4-ae4b-4596-8d1f-6f1254691724:b91392082e214afc8651856ab38c0815
+[I 11:15:53.204 NotebookApp] Replaying 5 buffered messages
+[W 11:17:02.807 NotebookApp] zmq message arrived on closed channel
+[I 11:17:22.498 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[W 11:17:22.499 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[I 11:19:00.490 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:19:00.491 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:19:28.765 NotebookApp] zmq message arrived on closed channel
+[I 11:19:51.370 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 11:19:51.371 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 11:19:57.644 NotebookApp] zmq message arrived on closed channel
+[I 11:22:20.513 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:22:20.514 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:22:21.089 NotebookApp] zmq message arrived on closed channel
+[W 11:24:45.095 NotebookApp] zmq message arrived on closed channel
+[I 11:25:40.748 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:25:40.749 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 11:26:20.916 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 11:26:20.920 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 11:27:10.154 NotebookApp] zmq message arrived on closed channel
+[I 11:29:00.534 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:29:00.535 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:29:32.554 NotebookApp] zmq message arrived on closed channel
+[W 11:31:53.191 NotebookApp] zmq message arrived on closed channel
+[I 11:32:20.496 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:32:20.497 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:34:16.560 NotebookApp] zmq message arrived on closed channel
+[I 11:35:40.525 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:35:40.526 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:36:35.218 NotebookApp] zmq message arrived on closed channel
+[W 11:38:58.086 NotebookApp] zmq message arrived on closed channel
+[I 11:39:00.509 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:39:00.510 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 11:39:21.847 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 11:39:21.848 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 11:41:22.148 NotebookApp] zmq message arrived on closed channel
+[I 11:42:20.528 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:42:20.530 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:43:47.768 NotebookApp] zmq message arrived on closed channel
+[W 11:44:24.107 NotebookApp] zmq message arrived on closed channel
+[I 11:45:40.541 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:45:40.542 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:46:53.026 NotebookApp] zmq message arrived on closed channel
+[I 11:49:00.502 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:49:00.503 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:49:15.704 NotebookApp] zmq message arrived on closed channel
+[W 11:51:41.647 NotebookApp] zmq message arrived on closed channel
+[I 11:52:21.765 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:52:21.766 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 11:52:22.006 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 11:52:22.007 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 11:54:04.785 NotebookApp] zmq message arrived on closed channel
+[W 11:54:05.418 NotebookApp] zmq message arrived on closed channel
+[I 11:55:40.515 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 11:55:40.516 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:56:34.777 NotebookApp] zmq message arrived on closed channel
+[I 11:57:09.127 NotebookApp] Starting buffering for 11b2bad0-e73d-4210-ba5e-9a4a83cf0472:abe442a2061d4df0832d53d50c128b96
+[I 11:57:13.981 NotebookApp] Starting buffering for fbec23a1-4606-4210-818c-e4851c481194:c87324082e2b4ab7817ed90d3ebcf01e
+[W 11:59:00.538 NotebookApp] zmq message arrived on closed channel
+[W 12:01:23.525 NotebookApp] zmq message arrived on closed channel
+[W 12:03:44.406 NotebookApp] zmq message arrived on closed channel
+[W 12:04:15.288 NotebookApp] zmq message arrived on closed channel
+[I 12:05:21.870 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 12:05:21.872 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 12:06:36.598 NotebookApp] zmq message arrived on closed channel
+[W 12:09:01.549 NotebookApp] zmq message arrived on closed channel
+[W 12:11:28.539 NotebookApp] zmq message arrived on closed channel
+[W 12:13:47.302 NotebookApp] zmq message arrived on closed channel
+[W 12:14:51.956 NotebookApp] zmq message arrived on closed channel
+[W 12:17:12.987 NotebookApp] zmq message arrived on closed channel
+[I 12:19:03.961 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 12:19:03.963 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 12:19:38.344 NotebookApp] zmq message arrived on closed channel
+[W 12:22:00.055 NotebookApp] zmq message arrived on closed channel
+[W 12:24:23.151 NotebookApp] zmq message arrived on closed channel
+[W 12:26:05.070 NotebookApp] zmq message arrived on closed channel
+[W 12:28:25.223 NotebookApp] zmq message arrived on closed channel
+[W 12:30:49.735 NotebookApp] zmq message arrived on closed channel
+[I 12:31:21.132 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 12:31:21.133 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 12:33:10.767 NotebookApp] zmq message arrived on closed channel
+[W 12:35:32.542 NotebookApp] zmq message arrived on closed channel
+[W 12:37:56.217 NotebookApp] zmq message arrived on closed channel
+[W 12:40:18.392 NotebookApp] zmq message arrived on closed channel
+[W 12:42:39.625 NotebookApp] zmq message arrived on closed channel
+[I 12:44:21.522 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 12:44:21.524 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 12:45:00.103 NotebookApp] zmq message arrived on closed channel
+[W 12:47:17.915 NotebookApp] zmq message arrived on closed channel
+[W 12:49:35.545 NotebookApp] zmq message arrived on closed channel
+[W 12:51:53.101 NotebookApp] zmq message arrived on closed channel
+[W 12:54:16.369 NotebookApp] zmq message arrived on closed channel
+[W 12:56:27.997 NotebookApp] zmq message arrived on closed channel
+[I 12:57:21.917 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 12:57:21.919 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 12:58:50.048 NotebookApp] zmq message arrived on closed channel
+[W 13:01:09.612 NotebookApp] zmq message arrived on closed channel
+[W 13:03:30.337 NotebookApp] zmq message arrived on closed channel
+[W 13:05:50.426 NotebookApp] zmq message arrived on closed channel
+[W 13:08:14.419 NotebookApp] zmq message arrived on closed channel
+[I 13:10:21.737 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 13:10:21.739 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 13:10:33.080 NotebookApp] zmq message arrived on closed channel
+[W 13:12:51.210 NotebookApp] zmq message arrived on closed channel
+[W 13:15:10.557 NotebookApp] zmq message arrived on closed channel
+[W 13:17:32.398 NotebookApp] zmq message arrived on closed channel
+[W 13:19:52.656 NotebookApp] zmq message arrived on closed channel
+[W 13:22:16.266 NotebookApp] zmq message arrived on closed channel
+[I 13:23:21.357 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 13:23:21.358 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 13:24:35.789 NotebookApp] zmq message arrived on closed channel
+[W 13:26:57.779 NotebookApp] zmq message arrived on closed channel
+[W 13:29:25.293 NotebookApp] zmq message arrived on closed channel
+[W 13:31:48.138 NotebookApp] zmq message arrived on closed channel
+[W 13:34:09.361 NotebookApp] zmq message arrived on closed channel
+[I 13:36:25.312 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 13:36:25.313 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 13:36:36.059 NotebookApp] zmq message arrived on closed channel
+[W 13:38:57.674 NotebookApp] zmq message arrived on closed channel
+[W 13:41:21.649 NotebookApp] zmq message arrived on closed channel
+[W 13:43:48.520 NotebookApp] zmq message arrived on closed channel
+[W 13:46:11.337 NotebookApp] zmq message arrived on closed channel
+[W 13:48:36.368 NotebookApp] zmq message arrived on closed channel
+[I 13:49:21.436 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 13:49:21.437 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 13:51:00.708 NotebookApp] zmq message arrived on closed channel
+[W 13:53:30.499 NotebookApp] zmq message arrived on closed channel
+[W 13:55:54.577 NotebookApp] zmq message arrived on closed channel
+[W 13:58:17.065 NotebookApp] zmq message arrived on closed channel
+[W 14:00:43.446 NotebookApp] zmq message arrived on closed channel
+[I 14:02:22.823 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 14:02:22.824 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 14:03:08.586 NotebookApp] zmq message arrived on closed channel
+[W 14:03:34.906 NotebookApp] zmq message arrived on closed channel
+[W 14:05:57.554 NotebookApp] zmq message arrived on closed channel
+[W 14:08:17.903 NotebookApp] zmq message arrived on closed channel
+[W 14:10:37.589 NotebookApp] zmq message arrived on closed channel
+[W 14:12:58.225 NotebookApp] zmq message arrived on closed channel
+[W 14:12:58.575 NotebookApp] zmq message arrived on closed channel
+[I 14:15:21.698 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 14:15:21.699 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 14:15:24.438 NotebookApp] zmq message arrived on closed channel
+[W 14:17:48.755 NotebookApp] zmq message arrived on closed channel
+[W 14:20:11.708 NotebookApp] zmq message arrived on closed channel
+[W 14:22:33.669 NotebookApp] zmq message arrived on closed channel
+[W 14:24:40.092 NotebookApp] zmq message arrived on closed channel
+[W 14:27:01.733 NotebookApp] zmq message arrived on closed channel
+[I 14:28:22.006 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 14:28:22.007 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 14:29:26.845 NotebookApp] zmq message arrived on closed channel
+[W 14:31:49.255 NotebookApp] zmq message arrived on closed channel
+[W 14:34:13.423 NotebookApp] zmq message arrived on closed channel
+[W 14:36:28.761 NotebookApp] zmq message arrived on closed channel
+[W 14:38:49.408 NotebookApp] zmq message arrived on closed channel
+[W 14:40:38.043 NotebookApp] zmq message arrived on closed channel
+[I 14:41:21.709 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 14:41:21.722 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 14:42:53.263 NotebookApp] zmq message arrived on closed channel
+[W 14:45:09.436 NotebookApp] zmq message arrived on closed channel
+[W 14:47:28.950 NotebookApp] zmq message arrived on closed channel
+[W 14:49:54.343 NotebookApp] zmq message arrived on closed channel
+[W 14:52:14.964 NotebookApp] zmq message arrived on closed channel
+[I 14:54:21.493 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 14:54:21.530 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[W 14:54:35.116 NotebookApp] zmq message arrived on closed channel
+[W 14:55:05.929 NotebookApp] zmq message arrived on closed channel
+[W 14:57:30.856 NotebookApp] zmq message arrived on closed channel
+[W 14:59:56.580 NotebookApp] zmq message arrived on closed channel
+[W 15:02:16.265 NotebookApp] zmq message arrived on closed channel
+[W 15:04:43.031 NotebookApp] zmq message arrived on closed channel
+[W 15:04:43.289 NotebookApp] zmq message arrived on closed channel
+[W 15:05:53.204 NotebookApp] WebSocket ping timeout after 119997 ms.
+[I 15:05:58.206 NotebookApp] Starting buffering for 55fd93f4-ae4b-4596-8d1f-6f1254691724:b91392082e214afc8651856ab38c0815
+[W 15:07:07.852 NotebookApp] zmq message arrived on closed channel
+[W 15:09:35.165 NotebookApp] zmq message arrived on closed channel
+[W 15:11:54.736 NotebookApp] zmq message arrived on closed channel
+[W 15:14:14.084 NotebookApp] zmq message arrived on closed channel
+[W 15:16:30.842 NotebookApp] zmq message arrived on closed channel
+[W 15:16:52.109 NotebookApp] zmq message arrived on closed channel
+[W 15:19:15.287 NotebookApp] zmq message arrived on closed channel
+[W 15:21:39.786 NotebookApp] zmq message arrived on closed channel
+[W 15:24:02.898 NotebookApp] zmq message arrived on closed channel
+[W 15:26:26.726 NotebookApp] zmq message arrived on closed channel
+[W 15:27:26.440 NotebookApp] zmq message arrived on closed channel
+[W 15:29:49.962 NotebookApp] zmq message arrived on closed channel
+[W 15:32:09.740 NotebookApp] zmq message arrived on closed channel
+[W 15:34:33.921 NotebookApp] zmq message arrived on closed channel
+[W 15:36:57.470 NotebookApp] zmq message arrived on closed channel
+[W 15:39:19.219 NotebookApp] zmq message arrived on closed channel
+[W 15:41:21.180 NotebookApp] zmq message arrived on closed channel
+[W 15:42:31.376 NotebookApp] zmq message arrived on closed channel
+[W 15:43:40.927 NotebookApp] zmq message arrived on closed channel
+[W 15:44:53.692 NotebookApp] zmq message arrived on closed channel
+[W 15:46:02.103 NotebookApp] zmq message arrived on closed channel
+[W 15:47:10.649 NotebookApp] zmq message arrived on closed channel
+[W 15:48:21.270 NotebookApp] zmq message arrived on closed channel
+[W 15:49:30.947 NotebookApp] zmq message arrived on closed channel
+[W 15:50:41.045 NotebookApp] zmq message arrived on closed channel
+[I 15:51:16.586 NotebookApp] Restoring connection for 55fd93f4-ae4b-4596-8d1f-6f1254691724:b91392082e214afc8651856ab38c0815
+[I 15:51:16.592 NotebookApp] Replaying 11 buffered messages
+[W 15:51:22.940 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 15:51:24.720 NotebookApp] Discarding 110 buffered messages for 11b2bad0-e73d-4210-ba5e-9a4a83cf0472:abe442a2061d4df0832d53d50c128b96
+[W 15:51:24.820 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240904194651 (::1) 5.800000ms referer=http://localhost:5463/notebooks/FC_probing_GAT_MDD.ipynb
+[W 15:51:34.452 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[I 15:51:35.759 NotebookApp] Discarding 220 buffered messages for fbec23a1-4606-4210-818c-e4851c481194:c87324082e2b4ab7817ed90d3ebcf01e
+[W 15:51:35.786 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240904194651 (::1) 2.120000ms referer=http://localhost:5463/notebooks/FC_probing_GIN_MDD.ipynb
+[W 15:51:49.814 NotebookApp] zmq message arrived on closed channel
+[I 15:52:01.670 NotebookApp] Saving file at /FC_probing_GCN.ipynb
+[W 15:52:01.671 NotebookApp] Notebook FC_probing_GCN.ipynb is not trusted
+[I 15:52:05.775 NotebookApp] Starting buffering for 55fd93f4-ae4b-4596-8d1f-6f1254691724:b91392082e214afc8651856ab38c0815
+[W 15:52:44.428 NotebookApp] zmq message arrived on closed channel
+[I 15:53:24.820 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 15:53:24.821 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 15:53:36.777 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[W 15:53:36.778 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[W 15:53:53.838 NotebookApp] zmq message arrived on closed channel
+[W 15:55:03.155 NotebookApp] zmq message arrived on closed channel
+[W 15:56:12.156 NotebookApp] zmq message arrived on closed channel
+[W 15:57:23.588 NotebookApp] zmq message arrived on closed channel
+[W 15:58:32.231 NotebookApp] zmq message arrived on closed channel
+[W 15:59:41.930 NotebookApp] zmq message arrived on closed channel
+[W 16:00:50.607 NotebookApp] zmq message arrived on closed channel
+[W 16:02:01.829 NotebookApp] zmq message arrived on closed channel
+[W 16:03:10.500 NotebookApp] zmq message arrived on closed channel
+[W 16:04:19.503 NotebookApp] zmq message arrived on closed channel
+[W 16:05:29.991 NotebookApp] zmq message arrived on closed channel
+[W 16:06:38.390 NotebookApp] zmq message arrived on closed channel
+[W 16:07:47.846 NotebookApp] zmq message arrived on closed channel
+[W 16:08:57.731 NotebookApp] zmq message arrived on closed channel
+[W 16:10:07.294 NotebookApp] zmq message arrived on closed channel
+[W 16:11:17.993 NotebookApp] zmq message arrived on closed channel
+[W 16:12:27.012 NotebookApp] zmq message arrived on closed channel
+[W 16:13:37.416 NotebookApp] zmq message arrived on closed channel
+[I 16:13:41.827 NotebookApp] Starting buffering for 11b2bad0-e73d-4210-ba5e-9a4a83cf0472:f3bbcff4e7bf48528517c8b993e9782d
+[W 16:14:47.381 NotebookApp] zmq message arrived on closed channel
+[W 16:15:58.725 NotebookApp] zmq message arrived on closed channel
+[W 16:17:08.100 NotebookApp] zmq message arrived on closed channel
+[W 16:18:16.442 NotebookApp] zmq message arrived on closed channel
+[W 16:19:27.051 NotebookApp] zmq message arrived on closed channel
+[W 16:20:36.450 NotebookApp] zmq message arrived on closed channel
+[W 16:21:46.751 NotebookApp] zmq message arrived on closed channel
+[W 16:22:56.794 NotebookApp] zmq message arrived on closed channel
+[W 16:24:07.658 NotebookApp] zmq message arrived on closed channel
+[W 16:25:17.375 NotebookApp] zmq message arrived on closed channel
+[W 16:26:25.581 NotebookApp] zmq message arrived on closed channel
+[W 16:27:35.143 NotebookApp] zmq message arrived on closed channel
+[W 16:28:45.177 NotebookApp] zmq message arrived on closed channel
+[W 16:29:53.852 NotebookApp] zmq message arrived on closed channel
+[W 16:31:02.122 NotebookApp] zmq message arrived on closed channel
+[W 16:32:11.957 NotebookApp] zmq message arrived on closed channel
+[W 16:33:20.571 NotebookApp] zmq message arrived on closed channel
+[W 16:34:30.955 NotebookApp] zmq message arrived on closed channel
+[W 16:35:41.227 NotebookApp] zmq message arrived on closed channel
+[W 16:36:50.943 NotebookApp] zmq message arrived on closed channel
+[W 16:38:00.272 NotebookApp] zmq message arrived on closed channel
+[W 16:39:11.102 NotebookApp] zmq message arrived on closed channel
+[W 16:40:20.575 NotebookApp] zmq message arrived on closed channel
+[W 16:41:28.826 NotebookApp] zmq message arrived on closed channel
+[W 16:42:39.152 NotebookApp] zmq message arrived on closed channel
+[W 16:43:47.930 NotebookApp] zmq message arrived on closed channel
+[W 16:44:56.297 NotebookApp] zmq message arrived on closed channel
+[W 16:46:05.341 NotebookApp] zmq message arrived on closed channel
+[W 16:47:14.219 NotebookApp] zmq message arrived on closed channel
+[W 16:47:31.483 NotebookApp] zmq message arrived on closed channel
+[W 16:48:40.282 NotebookApp] zmq message arrived on closed channel
+[W 16:49:48.332 NotebookApp] zmq message arrived on closed channel
+[W 16:50:59.704 NotebookApp] zmq message arrived on closed channel
+[W 16:52:07.052 NotebookApp] zmq message arrived on closed channel
+[W 16:53:15.969 NotebookApp] zmq message arrived on closed channel
+[W 16:54:23.947 NotebookApp] zmq message arrived on closed channel
+[W 16:55:34.068 NotebookApp] zmq message arrived on closed channel
+[W 16:56:43.486 NotebookApp] zmq message arrived on closed channel
+[W 16:57:51.053 NotebookApp] zmq message arrived on closed channel
+[W 16:58:59.637 NotebookApp] zmq message arrived on closed channel
+[W 17:00:07.881 NotebookApp] zmq message arrived on closed channel
+[W 17:01:16.675 NotebookApp] zmq message arrived on closed channel
+[W 17:01:36.991 NotebookApp] zmq message arrived on closed channel
+[W 17:02:46.165 NotebookApp] zmq message arrived on closed channel
+[W 17:03:53.643 NotebookApp] zmq message arrived on closed channel
+[W 17:05:02.256 NotebookApp] zmq message arrived on closed channel
+[W 17:06:12.145 NotebookApp] zmq message arrived on closed channel
+[W 17:07:21.242 NotebookApp] zmq message arrived on closed channel
+[W 17:08:29.511 NotebookApp] zmq message arrived on closed channel
+[W 17:08:37.416 NotebookApp] zmq message arrived on closed channel
+[W 17:09:47.797 NotebookApp] zmq message arrived on closed channel
+[W 17:10:55.690 NotebookApp] zmq message arrived on closed channel
+[W 17:12:04.615 NotebookApp] zmq message arrived on closed channel
+[W 17:13:14.699 NotebookApp] zmq message arrived on closed channel
+[W 17:13:39.663 NotebookApp] zmq message arrived on closed channel
+[W 17:14:48.107 NotebookApp] zmq message arrived on closed channel
+[W 17:15:58.504 NotebookApp] zmq message arrived on closed channel
+[W 17:17:08.180 NotebookApp] zmq message arrived on closed channel
+[W 17:18:14.162 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 17:18:16.522 NotebookApp] Discarding 58 buffered messages for 11b2bad0-e73d-4210-ba5e-9a4a83cf0472:f3bbcff4e7bf48528517c8b993e9782d
+[W 17:18:16.806 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240904194651 (::1) 2.090000ms referer=http://localhost:5463/notebooks/FC_probing_GAT_MDD.ipynb
+[W 17:18:19.355 NotebookApp] zmq message arrived on closed channel
+[I 17:18:34.749 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 17:18:34.750 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 17:18:41.287 NotebookApp] Saving file at /FC_probing_GIN_MDD.ipynb
+[W 17:18:41.288 NotebookApp] Notebook FC_probing_GIN_MDD.ipynb is not trusted
+[W 17:19:28.379 NotebookApp] zmq message arrived on closed channel
+[W 17:20:37.343 NotebookApp] zmq message arrived on closed channel
+[W 17:21:42.225 NotebookApp] zmq message arrived on closed channel
+[W 17:22:51.830 NotebookApp] zmq message arrived on closed channel
+[W 17:24:01.530 NotebookApp] zmq message arrived on closed channel
+[W 17:25:10.068 NotebookApp] zmq message arrived on closed channel
+[W 17:26:20.079 NotebookApp] zmq message arrived on closed channel
+[W 17:27:08.738 NotebookApp] zmq message arrived on closed channel
+[W 17:28:17.344 NotebookApp] zmq message arrived on closed channel
+[W 17:29:26.407 NotebookApp] zmq message arrived on closed channel
+[W 17:30:35.152 NotebookApp] zmq message arrived on closed channel
+[W 17:31:46.214 NotebookApp] zmq message arrived on closed channel
+[W 17:32:55.953 NotebookApp] zmq message arrived on closed channel
+[W 17:34:04.419 NotebookApp] zmq message arrived on closed channel
