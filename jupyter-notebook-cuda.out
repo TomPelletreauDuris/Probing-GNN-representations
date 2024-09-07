@@ -127,3 +127,13 @@ RuntimeError: Cannot enter into task <Task pending name='Task-56' coro=<HTTP1Ser
 [W 11:21:58.640 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240906153140 (::1) 3.100000ms referer=http://localhost:5325/notebooks/FC_probing_GAT_MDD.ipynb
 [I 11:23:59.846 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
 [W 11:23:59.847 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[W 11:33:58.477 NotebookApp] WebSocket ping timeout after 119747 ms.
+[W 11:33:58.772 NotebookApp] zmq message arrived on closed channel
+[W 11:33:59.423 NotebookApp] zmq message arrived on closed channel
+[W 11:34:00.074 NotebookApp] zmq message arrived on closed channel
+[W 11:34:00.724 NotebookApp] zmq message arrived on closed channel
+[W 11:34:01.373 NotebookApp] zmq message arrived on closed channel
+[W 11:34:02.022 NotebookApp] zmq message arrived on closed channel
+[W 11:34:02.672 NotebookApp] zmq message arrived on closed channel
+[W 11:34:03.324 NotebookApp] zmq message arrived on closed channel
+[I 11:34:03.479 NotebookApp] Starting buffering for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
