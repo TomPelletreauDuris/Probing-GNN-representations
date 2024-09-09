@@ -73,17 +73,16 @@ print(dataset[0].values())
 #how much data do we have?
 print(len(dataset))
 
-#check for empty graphs in selected_dataset
+# Check for empty graphs and other potential issues in selected_dataset
 for i in range(len(dataset)):
-    if len(dataset[i].x) == 0:
-        print(i)
+    if len(dataset[i].x) == 0 or len(dataset[i].edge_index) == 0:
+        print(f"Graph {i} is empty or has no edges")
 
-        
-#remove empty graphs
-dataset = [dataset[i] for i in range(len(dataset)) if len(dataset[i].x) != 0]
+# Remove empty graphs and graphs with no edges
+dataset = [dataset[i] for i in range(len(dataset)) if len(dataset[i].x) != 0 and len(dataset[i].edge_index) != 0]
 
-#how much data do we have now?
-len(dataset)
+# How much data do we have now?
+print(len(dataset))
 
 
 # %%
@@ -419,11 +418,11 @@ property_names = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'num_cliq
 embeddings = [(train_x, test_x), (train_x2, test_x2), (train_x3, test_x3), (train_x4, test_x4), (train_x5, test_x5), (train_x_global, test_x_global), (train_x6, test_x6), (train_x7, test_x7), (train_x8, test_x8)]
 embeddings_names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x_global', 'x6', 'x7', 'x8']
 
-# # %%
-# import torch
-# import torch.nn as nn
-# import torch.optim as optim
-# from sklearn.metrics import mean_squared_error, r2_score
+# %%
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from sklearn.metrics import mean_squared_error, r2_score
 
 
 # #create a dictionary where we will store the results for each embeddings, each property
@@ -784,21 +783,20 @@ def compute_graph_properties(data):
     return properties
 
 
-
 # %%
-train_idx_list = gnn.train_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in train_idx_list]
-train_properties_long = compute_graph_properties(selected_dataset)
-test_idx_list = gnn.test_idx.tolist()
-selected_dataset = [gnn.dataset[i] for i in test_idx_list]
-test_properties_long = compute_graph_properties(selected_dataset)
+# train_idx_list = gnn.train_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in train_idx_list]
+# train_properties_long = compute_graph_properties(selected_dataset)
+# test_idx_list = gnn.test_idx.tolist()
+# selected_dataset = [gnn.dataset[i] for i in test_idx_list]
+# test_properties_long = compute_graph_properties(selected_dataset)
 
-#save the properties in a file
-with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
-    pkl.dump(train_properties_long, f)
+# #save the properties in a file
+# with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "wb") as f:
+#     pkl.dump(train_properties_long, f)
 
-with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
-    pkl.dump(test_properties_long, f)
+# with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "wb") as f:
+#     pkl.dump(test_properties_long, f)
 
 # %%
 #load the properties
@@ -808,26 +806,22 @@ with open("results/"+DATASET+"_"+MODEL+"_train_properties_long.pkl", "rb") as f:
 with open("results/"+DATASET+"_"+MODEL+"_test_properties_long.pkl", "rb") as f:
     test_properties_long = pkl.load(f)
 
-# Assuming train_properties is a list of lists or a similar structure
-train_properties = np.array(train_properties, dtype=np.float64)
+# %%
+#check for nan values in train properties
+for i in range(len(train_properties_long)):
+    if any([True for x in train_properties_long[i] if x != x]):
+        print(i)
 
 # Replace NaN values with -1
-train_properties[np.isnan(train_properties)] = -1
+train_properties_long = np.array(train_properties_long, dtype=np.float64)
+train_properties_long[np.isnan(train_properties_long)] = -1
+train_properties_long = train_properties_long.tolist()
 
-# If you need to convert it back to a list of lists
-train_properties = train_properties.tolist()
+#check for nan values in train properties
+for i in range(len(train_properties_long)):
+    if any([True for x in train_properties_long[i] if x != x]):
+        print(i)
 
-# %%
-#print the names of the properties
-# print(train_properties_long[0].keys())
-
-#print the first element of the properties
-# print(train_properties_long[0])
-
-#copare train_properties and train_properties_long
-print(train_properties[0])
-print(train_properties_long[0])
-print(len(train_properties_long))
 
 # %%
 property_names_long = ['num_nodes', 'num_edges', 'density', 'avg_path_len', 'diameter', 'radius', 'clustering_coeff', 'transitivity', 'assortativity', 'num_cliques', 'num_triangles', 'num_squares', 'largest_component_size', 'avg_degree', 'avg_betweenness_centrality', 'spectral_radius', 'algebraic_connectivity', 'graph_energy', 'small_world_coefficient', 'betweenness_cent', 'pagerank_cent', 'avg_clustering', 'small_world_index']
