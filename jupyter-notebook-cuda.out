@@ -137,3 +137,49 @@ RuntimeError: Cannot enter into task <Task pending name='Task-56' coro=<HTTP1Ser
 [W 11:34:02.672 NotebookApp] zmq message arrived on closed channel
 [W 11:34:03.324 NotebookApp] zmq message arrived on closed channel
 [I 11:34:03.479 NotebookApp] Starting buffering for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
+[I 14:49:11.877 NotebookApp] Restoring connection for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
+[I 14:49:11.879 NotebookApp] Replaying 18261 buffered messages
+[W 14:49:12.783 NotebookApp] IOPub message rate exceeded.
+    The notebook server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--NotebookApp.iopub_msg_rate_limit`.
+    
+    Current values:
+    NotebookApp.iopub_msg_rate_limit=1000.0 (msgs/sec)
+    NotebookApp.rate_limit_window=3.0 (secs)
+    
+[W 14:49:15.053 NotebookApp] iopub messages resumed
+[W 14:49:15.918 NotebookApp] IOPub message rate exceeded.
+    The notebook server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--NotebookApp.iopub_msg_rate_limit`.
+    
+    Current values:
+    NotebookApp.iopub_msg_rate_limit=1000.0 (msgs/sec)
+    NotebookApp.rate_limit_window=3.0 (secs)
+    
+[W 14:49:18.632 NotebookApp] iopub messages resumed
+[I 15:53:59.314 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 15:53:59.315 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 17:31:58.904 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 17:31:58.906 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 17:33:59.442 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
+[W 17:33:59.443 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
+[I 17:34:07.883 NotebookApp] Starting buffering for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
+slurmstepd: error: *** JOB 7745356 ON gcn32 CANCELLED AT 2024-09-08T07:31:31 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7745356
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:14
+CPU Efficiency: 0.00% of 30-00:01:48 core-walltime
+Job Wall-clock time: 1-16:00:06
+Memory Utilized: 7.25 GB
+Memory Efficiency: 6.04% of 120.00 GB
