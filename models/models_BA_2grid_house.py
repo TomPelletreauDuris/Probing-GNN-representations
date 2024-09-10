@@ -27,7 +27,7 @@ class GCN_framework:
                 self.conv3 = GCNConv(60, 60)
                 self.conv4 = GCNConv(60, 60)
                 self.lin1 = Linear(60,60)
-                self.lin2 = Linear(60,10)return_node_embeddings
+                self.lin2 = Linear(60,10)
                 self.lin3 = Linear(10,num_classes)
 
             def forward(self,x,edge_index,batch,edge_mask=None, return_intermediate=False, return_node_embeddings=False):
