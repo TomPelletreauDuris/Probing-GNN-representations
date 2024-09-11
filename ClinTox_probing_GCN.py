@@ -846,7 +846,7 @@ for train_embedding, test_embedding in embeddings:
             optimizer.zero_grad()
 
             outputs = model(train_embedding_flat).squeeze()
-            target = train_y[:, i].squeeze()
+            target = train_y_long[:, i].squeeze()
 
             loss = criterion(outputs, target)
             loss.backward()
