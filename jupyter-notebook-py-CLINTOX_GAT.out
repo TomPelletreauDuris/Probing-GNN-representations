@@ -1,55 +1,5 @@
-Lmod Warning:
--------------------------------------------------------------------------------
-The following dependent module(s) are not currently loaded: OpenSSL/1.1
-(required by: libevent/2.1.12-GCCcore-11.3.0)
--------------------------------------------------------------------------------
-
-
-
 GPU available? True
 555.42.06
 Python 3.10.4
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
-  return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
-/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:822: ComplexWarning: Casting complex values to real discards the imaginary part
-  train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
-/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:823: ComplexWarning: Casting complex values to real discards the imaginary part
-  test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
-slurmstepd: error: *** JOB 7701308 ON gcn57 CANCELLED AT 2024-09-03T13:03:24 DUE TO TIME LIMIT ***
-
-JOB STATISTICS
-==============
-Job ID: 7701308
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:03
-CPU Efficiency: 0.00% of 15-00:05:06 core-walltime
-Job Wall-clock time: 20:00:17
-Memory Utilized: 5.51 GB
-Memory Efficiency: 4.59% of 120.00 GB
-/home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
-  return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
-/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:820: ComplexWarning: Casting complex values to real discards the imaginary part
-  train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
-/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:821: ComplexWarning: Casting complex values to real discards the imaginary part
-  test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
-slurmstepd: error: *** JOB 7703112 ON gcn39 CANCELLED AT 2024-09-03T14:05:38 DUE TO TIME LIMIT ***
-
-JOB STATISTICS
-==============
-Job ID: 7703112
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:03
-CPU Efficiency: 0.00% of 15-00:00:54 core-walltime
-Job Wall-clock time: 20:00:03
-Memory Utilized: 5.54 GB
-Memory Efficiency: 4.62% of 120.00 GB

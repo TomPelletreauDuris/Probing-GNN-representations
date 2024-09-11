@@ -1,185 +1,178 @@
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int5-pub.snellius.surf.nl tpelletreaudur@gcn32.local.snellius.surf.nl -L 5325:localhost:5325
+ssh -N -J tpelletreaudur@int6-pub.snellius.surf.nl tpelletreaudur@gcn11.local.snellius.surf.nl -L 5892:localhost:5892
 
 After connection is established in your local browser go to the address:
-http://localhost:5325
-[I 15:31:41.504 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 15:31:41.504 NotebookApp] Jupyter Notebook 6.4.0 is running at:
-[I 15:31:41.504 NotebookApp] http://localhost:5325/?token=643a0684d7d9409ad2144b93d6a1bbfdf78ee3c1aa2bbb80
-[I 15:31:41.504 NotebookApp]  or http://127.0.0.1:5325/?token=643a0684d7d9409ad2144b93d6a1bbfdf78ee3c1aa2bbb80
-[I 15:31:41.504 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 15:31:41.510 NotebookApp] 
+http://localhost:5892
+[I 17:59:00.279 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 17:59:00.279 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 17:59:00.279 NotebookApp] http://localhost:5892/?token=aa5002dacbf72a879f4a931482413d7a336421190aa43562
+[I 17:59:00.280 NotebookApp]  or http://127.0.0.1:5892/?token=aa5002dacbf72a879f4a931482413d7a336421190aa43562
+[I 17:59:00.280 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 17:59:00.284 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2023279-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-1011326-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5325/?token=643a0684d7d9409ad2144b93d6a1bbfdf78ee3c1aa2bbb80
-     or http://127.0.0.1:5325/?token=643a0684d7d9409ad2144b93d6a1bbfdf78ee3c1aa2bbb80
-[I 16:35:00.629 NotebookApp] 302 GET /?token=643a0684d7d9409ad2144b93d6a1bbfdf78ee3c1aa2bbb80 (::1) 0.420000ms
+        http://localhost:5892/?token=aa5002dacbf72a879f4a931482413d7a336421190aa43562
+     or http://127.0.0.1:5892/?token=aa5002dacbf72a879f4a931482413d7a336421190aa43562
+[I 18:08:10.412 NotebookApp] 302 GET /?token=aa5002dacbf72a879f4a931482413d7a336421190aa43562 (::1) 0.470000ms
 /sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
   return _iterencode(o, 0)
-[W 16:35:08.297 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-Exception in callback Task.task_wakeup(<Future finis...b24"\r\n\r\n'>)
-handle: <Handle Task.task_wakeup(<Future finis...b24"\r\n\r\n'>)>
+[W 18:08:19.805 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+Exception in callback <TaskStepMethWrapper object at 0x14f437819780>()
+handle: <Handle <TaskStepMethWrapper object at 0x14f437819780>()>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-44' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...cb24"\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
-Exception in callback Task.task_wakeup(<Future finis...b24"\r\n\r\n'>)
-handle: <Handle Task.task_wakeup(<Future finis...b24"\r\n\r\n'>)>
+RuntimeError: Cannot enter into task <Task pending name='Task-57' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:817> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-56' coro=<MappingKernelManager.start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x14f437819810>()
+handle: <Handle <TaskStepMethWrapper object at 0x14f437819810>()>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-56' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...cb24"\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1' coro=<MultiKernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/multikernelmanager.py:212>> is being executed.
-[I 16:35:10.240 NotebookApp] Kernel started: e308161c-beee-4bc1-ac0a-ec04500d1b2e, name: python3
-[W 16:35:10.526 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240906153140 (::1) 8.360000ms referer=http://localhost:5325/notebooks/FC_probing_GAT_MDD.ipynb
+RuntimeError: Cannot enter into task <Task pending name='Task-58' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:817> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-56' coro=<MappingKernelManager.start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> is being executed.
+[I 18:08:32.816 NotebookApp] Kernel started: e56d388c-b601-447b-a9f6-1c8368acc372, name: python3
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: ed02c15d-ef1f-4a0e-8a5c-2a08d2c52b6b
-[I 16:37:10.675 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:37:10.676 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:39:10.680 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:39:10.681 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:41:11.112 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:41:11.113 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:43:10.706 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:43:10.707 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:45:10.700 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:45:10.701 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:47:10.791 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:47:10.792 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:49:10.677 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:49:10.720 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:51:10.658 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:51:10.659 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:53:10.681 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:53:10.682 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:55:10.680 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:55:10.681 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:57:10.664 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:57:10.665 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 16:59:10.923 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 16:59:10.924 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:01:10.684 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:01:10.685 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:03:10.677 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:03:10.678 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:05:10.714 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:05:10.715 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:07:10.690 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:07:10.691 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:09:10.733 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:09:10.734 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:11:10.724 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:11:10.725 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:13:10.711 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:13:10.712 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:15:10.674 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:15:10.676 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:17:10.708 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:17:10.709 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:19:10.682 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:19:10.683 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:21:10.707 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:21:10.708 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:23:10.692 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:23:10.693 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:25:10.690 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:25:10.691 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:27:10.698 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:27:10.699 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:29:10.699 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:29:10.700 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:31:10.700 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:31:10.701 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:33:10.805 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:33:10.806 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:35:10.722 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:35:10.723 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:37:10.706 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:37:10.707 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:39:10.701 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:39:10.702 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:41:10.755 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:41:10.756 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:43:10.735 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:43:10.736 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:45:10.866 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:45:10.867 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:47:10.779 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:47:10.780 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:49:10.740 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:49:10.741 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:51:10.758 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:51:10.759 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:53:10.776 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:53:10.777 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:55:10.749 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:55:10.750 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:57:10.748 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:57:10.749 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:59:10.748 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:59:10.749 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 18:01:10.506 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 18:01:10.507 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 18:02:54.951 NotebookApp] Starting buffering for e308161c-beee-4bc1-ac0a-ec04500d1b2e:48c47026e68c42ac9259f33165624e9c
-[W 11:21:54.372 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 11:21:58.477 NotebookApp] Discarding 18842 buffered messages for e308161c-beee-4bc1-ac0a-ec04500d1b2e:48c47026e68c42ac9259f33165624e9c
-[W 11:21:58.640 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240906153140 (::1) 3.100000ms referer=http://localhost:5325/notebooks/FC_probing_GAT_MDD.ipynb
-[I 11:23:59.846 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 11:23:59.847 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[W 11:33:58.477 NotebookApp] WebSocket ping timeout after 119747 ms.
-[W 11:33:58.772 NotebookApp] zmq message arrived on closed channel
-[W 11:33:59.423 NotebookApp] zmq message arrived on closed channel
-[W 11:34:00.074 NotebookApp] zmq message arrived on closed channel
-[W 11:34:00.724 NotebookApp] zmq message arrived on closed channel
-[W 11:34:01.373 NotebookApp] zmq message arrived on closed channel
-[W 11:34:02.022 NotebookApp] zmq message arrived on closed channel
-[W 11:34:02.672 NotebookApp] zmq message arrived on closed channel
-[W 11:34:03.324 NotebookApp] zmq message arrived on closed channel
-[I 11:34:03.479 NotebookApp] Starting buffering for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
-[I 14:49:11.877 NotebookApp] Restoring connection for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
-[I 14:49:11.879 NotebookApp] Replaying 18261 buffered messages
-[W 14:49:12.783 NotebookApp] IOPub message rate exceeded.
-    The notebook server will temporarily stop sending output
-    to the client in order to avoid crashing it.
-    To change this limit, set the config variable
-    `--NotebookApp.iopub_msg_rate_limit`.
-    
-    Current values:
-    NotebookApp.iopub_msg_rate_limit=1000.0 (msgs/sec)
-    NotebookApp.rate_limit_window=3.0 (secs)
-    
-[W 14:49:15.053 NotebookApp] iopub messages resumed
-[W 14:49:15.918 NotebookApp] IOPub message rate exceeded.
-    The notebook server will temporarily stop sending output
-    to the client in order to avoid crashing it.
-    To change this limit, set the config variable
-    `--NotebookApp.iopub_msg_rate_limit`.
-    
-    Current values:
-    NotebookApp.iopub_msg_rate_limit=1000.0 (msgs/sec)
-    NotebookApp.rate_limit_window=3.0 (secs)
-    
-[W 14:49:18.632 NotebookApp] iopub messages resumed
-[I 15:53:59.314 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 15:53:59.315 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:31:58.904 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:31:58.906 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:33:59.442 NotebookApp] Saving file at /FC_probing_GAT_MDD.ipynb
-[W 17:33:59.443 NotebookApp] Notebook FC_probing_GAT_MDD.ipynb is not trusted
-[I 17:34:07.883 NotebookApp] Starting buffering for e308161c-beee-4bc1-ac0a-ec04500d1b2e:047d1e85b76642a58921d9ee6e9706a5
-slurmstepd: error: *** JOB 7745356 ON gcn32 CANCELLED AT 2024-09-08T07:31:31 DUE TO TIME LIMIT ***
-
-JOB STATISTICS
-==============
-Job ID: 7745356
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: TIMEOUT (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:14
-CPU Efficiency: 0.00% of 30-00:01:48 core-walltime
-Job Wall-clock time: 1-16:00:06
-Memory Utilized: 7.25 GB
-Memory Efficiency: 6.04% of 120.00 GB
+[IPKernelApp] WARNING | No such comm: 8de41ba2-8e34-43ce-b7f7-8013f2656ebf
+[W 18:08:35.267 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 9.780000ms referer=http://localhost:5892/notebooks/ClinTox_probing_GCN.ipynb
+[I 18:09:14.060 NotebookApp] Kernel interrupted: e56d388c-b601-447b-a9f6-1c8368acc372
+[I 18:11:47.104 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 18:11:47.105 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[I 18:14:19.682 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 18:14:19.683 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[I 18:16:41.352 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 18:16:41.353 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[I 18:18:58.934 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 18:18:58.935 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[W 18:32:05.236 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:32:28.459 NotebookApp] Kernel started: 2e573ca3-2422-41e3-a42d-d1dd3593c7df, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 3113fedb-f5c3-4fbe-a181-863aface5560
+[W 18:32:30.858 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 1.240000ms referer=http://localhost:5892/notebooks/ClinTox_probing_GIN.ipynb
+[I 18:34:40.596 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:34:40.598 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:35:58.347 NotebookApp] Starting buffering for e56d388c-b601-447b-a9f6-1c8368acc372:d552978fd97345668139f60b77ac47e9
+[I 18:37:17.156 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:37:17.157 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:41:59.908 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:41:59.909 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:46:08.109 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:46:08.110 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[W 18:50:30.802 NotebookApp] WebSocket ping timeout after 119985 ms.
+[W 18:50:31.525 NotebookApp] zmq message arrived on closed channel
+[I 18:50:35.804 NotebookApp] Starting buffering for 2e573ca3-2422-41e3-a42d-d1dd3593c7df:50280b4a5d014e06a47895d85f698449
+[I 11:48:46.107 NotebookApp] Restoring connection for 2e573ca3-2422-41e3-a42d-d1dd3593c7df:50280b4a5d014e06a47895d85f698449
+[I 11:48:46.111 NotebookApp] Replaying 1809 buffered messages
+[I 11:48:47.715 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 11:48:47.716 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 11:52:45.867 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 11:52:45.868 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[W 11:52:46.559 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[W 11:52:51.888 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[W 11:53:11.309 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 1.750000ms referer=http://localhost:5892/notebooks/ClinTox_probing_GCN.ipynb
+[I 11:53:14.361 NotebookApp] Kernel started: 3ef30602-4e47-409d-8713-5b477594791d, name: python3
+[W 11:53:19.350 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 1.660000ms referer=http://localhost:5892/notebooks/ClinTox_probing_GAT.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: fb74188e-493f-4bfa-a4dd-ead9a2e8ba73
+[I 11:53:19.582 NotebookApp] Starting buffering for e56d388c-b601-447b-a9f6-1c8368acc372:df3e0ff583aa48208de84f7993bf3590
+[W 11:53:20.829 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[W 11:53:41.428 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 1.660000ms referer=http://localhost:5892/notebooks/ClinTox_probing_GCN.ipynb
+[I 11:55:49.639 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 11:55:49.640 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[I 11:56:38.479 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 11:56:38.480 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 11:57:23.118 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[W 11:57:23.119 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[I 11:57:47.015 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 11:57:47.016 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 11:57:48.314 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[W 11:57:48.314 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[I 12:04:04.158 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 12:04:04.159 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 12:09:58.480 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 12:09:58.481 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 12:15:57.960 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 12:15:57.961 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 12:21:58.292 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 12:21:58.293 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 12:28:08.413 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 12:28:08.414 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[W 12:29:49.356 NotebookApp] WebSocket ping timeout after 119989 ms.
+[I 12:29:54.358 NotebookApp] Starting buffering for 3ef30602-4e47-409d-8713-5b477594791d:bcccd6e5f8de4aa78ce49b08fcb84ffa
+[W 12:30:11.370 NotebookApp] WebSocket ping timeout after 119976 ms.
+[W 12:30:16.108 NotebookApp] WebSocket ping timeout after 119983 ms.
+[I 12:30:16.372 NotebookApp] Starting buffering for e56d388c-b601-447b-a9f6-1c8368acc372:01ce638eb8b145128bbd9bd235c74d56
+[W 12:30:20.831 NotebookApp] zmq message arrived on closed channel
+[I 12:30:21.109 NotebookApp] Starting buffering for 2e573ca3-2422-41e3-a42d-d1dd3593c7df:50280b4a5d014e06a47895d85f698449
+[I 14:18:37.006 NotebookApp] Restoring connection for 2e573ca3-2422-41e3-a42d-d1dd3593c7df:50280b4a5d014e06a47895d85f698449
+[I 14:18:37.006 NotebookApp] Replaying 1345 buffered messages
+[I 14:21:57.887 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 14:21:57.888 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:09:49.808 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:09:49.824 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:13:18.089 NotebookApp] Restoring connection for 3ef30602-4e47-409d-8713-5b477594791d:bcccd6e5f8de4aa78ce49b08fcb84ffa
+[I 15:13:25.425 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[W 15:13:25.428 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[I 15:13:29.292 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[W 15:13:29.293 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[I 15:13:31.398 NotebookApp] Saving file at /ClinTox_probing_GAT.ipynb
+[W 15:13:31.399 NotebookApp] Notebook ClinTox_probing_GAT.ipynb is not trusted
+[I 15:13:32.279 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 15:13:32.280 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[I 15:13:36.118 NotebookApp] Restoring connection for e56d388c-b601-447b-a9f6-1c8368acc372:01ce638eb8b145128bbd9bd235c74d56
+[I 15:13:41.953 NotebookApp] Saving file at /ClinTox_probing_GCN.ipynb
+[W 15:13:41.955 NotebookApp] Notebook ClinTox_probing_GCN.ipynb is not trusted
+[I 15:13:47.926 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:13:47.927 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:15:57.898 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:15:57.899 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:21:57.627 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:21:57.635 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:27:58.413 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:27:58.414 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:33:58.048 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:33:58.049 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:39:57.478 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:39:57.479 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:46:22.394 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:46:22.395 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:51:57.870 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:51:57.871 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 15:57:58.270 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 15:57:58.271 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:03:57.946 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:03:57.947 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:09:57.769 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:09:57.770 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:15:57.732 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:15:57.733 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:21:57.429 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:21:57.431 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:27:49.614 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:27:49.622 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:33:59.086 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:33:59.087 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:39:57.966 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:39:57.968 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:45:57.654 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:45:57.655 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:52:00.087 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:52:00.088 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 16:58:03.777 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 16:58:03.778 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 17:03:58.117 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 17:03:58.118 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 17:09:57.832 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 17:09:57.833 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 17:16:01.143 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 17:16:01.144 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 17:21:57.918 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 17:21:57.919 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 17:28:00.217 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 17:28:00.218 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[W 17:32:46.098 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 17:32:48.730 NotebookApp] Kernel started: d63b236a-7bc4-494d-af06-c5f1b755bf3c, name: python3
+[W 17:32:49.312 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 3.950000ms referer=http://localhost:5892/notebooks/Probing_GCN.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: db13a194-e76c-49c0-8fe7-60d1cc4ee97c
+[I 17:33:23.972 NotebookApp] Starting buffering for d63b236a-7bc4-494d-af06-c5f1b755bf3c:c76844c8358546f38f19c2fcdbb9d966
