@@ -4,6 +4,15 @@
 # %% [markdown]
 # Here we'll first be loading the dataset and explore its structure
 
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install("rdflib")
+
+
 # %%
 #dataset MUTAG
 import numpy as np
