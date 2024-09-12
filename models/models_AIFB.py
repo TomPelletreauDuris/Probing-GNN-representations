@@ -5,6 +5,11 @@ import torch.nn.functional as F
 from torch_geometric.datasets import Entities
 from torch_geometric.nn import GCNConv, BatchNorm
 from torch.optim.lr_scheduler import StepLR
+from torch_geometric.nn import global_mean_pool
+from torch_geometric.data import DataLoader
+from sklearn.model_selection import train_test_split
+import numpy as np
+from sklearn.model_selection import KFold
 
 logging.basicConfig(level=logging.INFO)
 # Define the GCN Model
@@ -1300,109 +1305,87 @@ from torch.optim.lr_scheduler import StepLR
 import logging
 
 class RGCN_framework:
-    def __init__(self, dataset, device=None, num_relations=2, num_classes=None):
+    def __init__(self, dataset, device=None, num_relations=None, num_classes=None):
         if device is None:
             self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         else:
             self.device = device
-
+        
         self.dataset = dataset
-        self.num_relations = num_relations
-        if num_classes is None:
-            num_classes = self._infer_num_classes()
-
-        num_features = dataset[0].x.shape[1]  # Assuming 'x' is present and correctly shaped
+        self.data = dataset[0].to(self.device)
+        self.num_relations = self._infer_num_relations()
+        self.num_features = self.data.x.size(1)
+        self.num_classes = torch.max(self.data.train_y).item() + 1  # Infer num classes from labels
+        print(f"Number of classes: {self.num_classes}")
 
         class Net(torch.nn.Module):
-            def __init__(self, in_channels, out_channels):
+            def __init__(self, in_channels, out_channels, num_relations):
                 super(Net, self).__init__()
-                self.conv1 = RGCNConv(in_channels, 64, num_relations)
-                self.drop1 = Dropout(0.2)
-                self.conv2 = RGCNConv(64, 64, num_relations)
-                self.drop2 = Dropout(0.2)
-                self.conv3 = RGCNConv(64, 64, num_relations)
-                self.drop3 = Dropout(0.2)
-                self.lin1 = Linear(64, 64)
-                self.lin2 = Linear(64, out_channels)
+                self.conv1 = RGCNConv(in_channels, 128, num_relations)
+                # self.drop1 = Dropout(0.2)
+                self.conv2 = RGCNConv(128, 128, num_relations)
+                # self.drop2 = Dropout(0.2)
+                self.conv3 = RGCNConv(128, 128, num_relations)
+                # self.drop3 = Dropout(0.2)
+                self.lin1 = Linear(128, 128)
+                self.lin2 = Linear(128, out_channels)
 
-            def forward(self, x, edge_index, edge_type, batch, return_intermediate=False):
+            def forward(self, x, edge_index, edge_type, return_intermediate=False):
                 x1 = F.relu(self.conv1(x, edge_index, edge_type))
-                x1 = self.drop1(x1)
+                # x1 = self.drop1(x1)
                 x2 = F.relu(self.conv2(x1, edge_index, edge_type))
-                x2 = self.drop2(x2)
-                x_global = global_max_pool(x2, batch)
-                x = F.relu(self.lin1(x_global))
+                # x2 = self.drop2(x2)
+                x3 = F.relu(self.conv3(x2, edge_index, edge_type))
+                # x_global = global_max_pool(x2, batch)
+                x = F.relu(self.lin1(x3))
                 out = self.lin2(x)
 
                 if return_intermediate:
-                    return F.log_softmax(out, dim=-1), (x1, x2, x_global, x, out)
+                    return F.log_softmax(out, dim=-1), (x1, x2, x3, x, out)
                 else:
                     return F.log_softmax(out, dim=-1)
 
-        self.model = Net(num_features, num_classes).to(self.device).float()
+        self.model = Net(self.num_features, self.num_classes, self.num_relations).to(self.device).float()
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001)
         self.scheduler = StepLR(self.optimizer, step_size=50, gamma=0.5)
 
-        idx = torch.arange(len(self.dataset))
-        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
-
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=256, shuffle=True)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=256, shuffle=False)
-
-        # Add edge_type to the data with edge_type always 1
-        # Add edge_type to the data with edge_type always 1
-        train_data_list = []
-        for data in self.train_loader.dataset:
-            data.edge_type = torch.ones(data.edge_index.shape[1], dtype=torch.long)
-            train_data_list.append(data)
-        self.train_loader = DataLoader(train_data_list, batch_size=self.train_loader.batch_size)
-
-        test_data_list = []
-        for data in self.test_loader.dataset:
-            data.edge_type = torch.ones(data.edge_index.shape[1], dtype=torch.long)
-            test_data_list.append(data)
-        self.test_loader = DataLoader(test_data_list, batch_size=self.test_loader.batch_size)
-
-
-
-    def _infer_num_classes(self):
-        max_label = max(data.y.max().item() for data in self.dataset)
-        return max_label + 1
+        
+    def _infer_num_relations(self):
+        edge_types = torch.cat([data.edge_type for data in self.dataset])
+        unique_edge_types = torch.unique(edge_types)
+        return len(unique_edge_types)
 
     def train(self):
-        self.model.train()
-        total_loss = 0
-        for data in self.train_loader:
-            data = data.to(self.device)
-            output = self.model(data.x, data.edge_index, data.edge_type, data.batch)
-            loss = F.nll_loss(output, data.y)
+            self.model.train()
             self.optimizer.zero_grad()
+            out = self.model(self.data.x, self.data.edge_index, self.data.edge_type)
+            loss = F.nll_loss(out[self.data.train_idx], self.data.train_y)  # Use train_idx and train_y
             loss.backward()
             self.optimizer.step()
             self.scheduler.step()
-            total_loss += float(loss) * data.num_graphs
-        return total_loss / len(self.train_loader.dataset)
+            return loss.item()
 
     @torch.no_grad()
-    def test(self, loader):
+    def test(self):
         self.model.eval()
-        total_correct = 0
-        total_loss = 0
-        for data in loader:
-            data = data.to(self.device)
-            out = self.model(data.x, data.edge_index, data.edge_type, data.batch)
-            total_correct += int((out.argmax(-1) == data.y).sum())
-            loss = F.nll_loss(out, data.y)
-            total_loss += float(loss) * data.num_graphs
-        return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
+        logits = self.model(self.data.x, self.data.edge_index, self.data.edge_type)
+        accs = []
+        for idx, y in [(self.data.train_idx, self.data.train_y), (self.data.test_idx, self.data.test_y)]:  # Use test_idx and test_y
+            pred = logits[idx].argmax(dim=1)
+            acc = (pred == y).sum().item() / idx.size(0)
+            accs.append(acc)
+        return accs
 
     def iterate(self):
-        for epoch in range(1, 501):
+        best_test_acc = 0
+        for epoch in range(1, 23):
             loss = self.train()
-            train_acc, train_loss = self.test(self.train_loader)
-            test_acc, test_loss = self.test(self.test_loader)
-            if epoch % 20 == 0:
-                logging.info(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Train Loss: {train_loss:.3f}, Train Acc: {train_acc:.3f}, Test Loss: {test_loss:.3f}, Test Acc: {test_acc:.3f}')
+            train_acc, test_acc = self.test()
+            if test_acc > best_test_acc:
+                best_test_acc = test_acc
+                self.save_model('best_model.pth')
+            if epoch % 1 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
 
     def save_model(self, path):
         torch.save(self.model.state_dict(), path)
@@ -1414,9 +1397,8 @@ class RGCN_framework:
         logging.info("Model loaded from: " + path)
 
     def evaluate(self):
-        train_acc, train_loss = self.test(self.train_loader)
-        test_acc, test_loss = self.test(self.test_loader)
-        logging.info(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+            train_acc, test_acc = self.test()
+            print(f'Final Evaluation - Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
 
     @torch.no_grad()
     def evaluate_with_features2(self):
@@ -1424,15 +1406,29 @@ class RGCN_framework:
         train_features = []
         test_features = []
 
-        for data in self.train_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.edge_type, data.batch, return_intermediate=True)
-            train_features.extend(features)
+        # Extract features for training data
+        out, features = self.model(self.data.x, self.data.edge_index, self.data.edge_type, return_intermediate=True)
+        print(f"Features generated from model, shape of output: {[f.shape for f in features]}")
 
-        for data in self.test_loader:
-            data = data.to(self.device)
-            out, features = self.model(data.x, data.edge_index, data.edge_type, data.batch, return_intermediate=True)
-            test_features.extend(features)
+        train_indices = self.data.train_idx
+        test_indices = self.data.test_idx
+
+        # Check if train_indices and features sizes match before indexing
+        for f in features:
+            print(f"Feature shape: {f.shape}, train_indices max: {train_indices.max().item()}")
+
+        # Ensure correct indexing
+        if train_indices.max().item() >= features[0].size(0):
+            raise IndexError("Train indices exceed the size of the feature tensors.")
+        if test_indices.max().item() >= features[0].size(0):
+            raise IndexError("Test indices exceed the size of the feature tensors.")
+
+        # Gather features for train and test indices
+        for feature_set in features:
+            # Extract and append the features for the training indices
+            train_features.append(feature_set[train_indices].cpu().numpy())
+            # Extract and append the features for the testing indices
+            test_features.append(feature_set[test_indices].cpu().numpy())
 
         return train_features, test_features
 
