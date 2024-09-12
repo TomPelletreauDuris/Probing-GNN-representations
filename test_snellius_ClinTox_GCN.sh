@@ -1,9 +1,10 @@
 #!/bin/bash
 
-#SBATCH -t 20:00:00
+#SBATCH -t 70:00:00
 #SBATCH -N 1
-#SBATCH -p gpu_a100
-#SBATCH --gpus-per-node=1
+#SBATCH -p genoa
+# # # #SBATCH -p gpu_a100
+# # # #SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-py-CLINTOX_GCN.out
 
 module purge
