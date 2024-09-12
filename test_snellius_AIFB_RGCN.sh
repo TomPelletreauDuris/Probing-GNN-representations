@@ -3,7 +3,6 @@
 #SBATCH -t 20:00:00
 #SBATCH -N 1
 #SBATCH -p genoa
-#SBATCH -o jupyter-notebook-py-CLINTOX_GCN.out
 #SBATCH -o jupyter-notebook-py-AIFB_RGCN.out
 
 module purge
