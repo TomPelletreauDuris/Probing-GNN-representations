@@ -176,3 +176,35 @@ RuntimeError: Cannot enter into task <Task pending name='Task-58' coro=<HTTP1Ser
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
 [IPKernelApp] WARNING | No such comm: db13a194-e76c-49c0-8fe7-60d1cc4ee97c
 [I 17:33:23.972 NotebookApp] Starting buffering for d63b236a-7bc4-494d-af06-c5f1b755bf3c:c76844c8358546f38f19c2fcdbb9d966
+[I 17:33:57.078 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 17:33:57.082 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 17:37:26.822 NotebookApp] Starting buffering for 3ef30602-4e47-409d-8713-5b477594791d:bcccd6e5f8de4aa78ce49b08fcb84ffa
+[W 17:37:34.509 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[I 17:37:35.644 NotebookApp] Kernel started: 794bb72a-cc36-4db4-8817-d62172cf8ffa, name: python3
+[W 17:37:36.127 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240910175859 (::1) 1.600000ms referer=http://localhost:5892/notebooks/Probing_GAT.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: fc406589-0db5-483b-b64a-c2367d14ba68
+[I 17:39:43.837 NotebookApp] Saving file at /Probing_GAT.ipynb
+[W 17:39:43.838 NotebookApp] Notebook Probing_GAT.ipynb is not trusted
+[W 17:41:36.119 NotebookApp] WebSocket ping timeout after 118596 ms.
+[W 17:41:36.723 NotebookApp] WebSocket ping timeout after 119201 ms.
+[W 17:41:37.007 NotebookApp] WebSocket ping timeout after 119485 ms.
+[W 17:41:37.156 NotebookApp] zmq message arrived on closed channel
+[I 17:41:41.120 NotebookApp] Starting buffering for e56d388c-b601-447b-a9f6-1c8368acc372:01ce638eb8b145128bbd9bd235c74d56
+[I 17:41:41.724 NotebookApp] Starting buffering for 794bb72a-cc36-4db4-8817-d62172cf8ffa:78ee55c859b846708d710a9655f9affc
+[I 17:41:42.009 NotebookApp] Starting buffering for 2e573ca3-2422-41e3-a42d-d1dd3593c7df:50280b4a5d014e06a47895d85f698449
+slurmstepd: error: *** JOB 7784188 ON gcn11 CANCELLED AT 2024-09-12T09:59:01 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 7784188
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:17
+CPU Efficiency: 0.00% of 30-00:04:48 core-walltime
+Job Wall-clock time: 1-16:00:16
+Memory Utilized: 5.16 GB
+Memory Efficiency: 4.30% of 120.00 GB
