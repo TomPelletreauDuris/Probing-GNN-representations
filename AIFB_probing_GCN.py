@@ -49,12 +49,12 @@ dataset[0]
 #     print(f"Node: {node}, Labels: {labels}")
 
 
-# %%
-from torch_geometric.datasets import TUDataset
-#utag
-mutag = TUDataset(root='/tmp/MUTAG', name='MUTAG')
-mutag
-mutag[0]
+# # %%
+# from torch_geometric.datasets import TUDataset
+# #utag
+# mutag = TUDataset(root='/tmp/MUTAG', name='MUTAG')
+# mutag
+# mutag[0]
 
 # %%
 data = dataset[0]  # AIFB is a single graph
