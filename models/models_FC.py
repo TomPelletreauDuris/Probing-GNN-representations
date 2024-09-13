@@ -812,10 +812,14 @@ class GIN_framework:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
+        best_test_acc = 0
         for epoch in range(1, 401):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
+            if test_acc > best_test_acc:
+                best_test_acc = test_acc
+                self.save_model('models/GIN_best_model.pth')
             if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
@@ -981,10 +985,14 @@ class GIN_framework_bis:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
+        best_test_acc = 0
         for epoch in range(1, 1301):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
+            if test_acc > best_test_acc:
+                best_test_acc = test_acc
+                self.save_model('models/GINbis_best_model.pth')
             if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
@@ -1122,10 +1130,14 @@ class GIN_framework_tri:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 206):
+        best_test_acc = 0
+        for epoch in range(1, 401):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
+            if test_acc > best_test_acc:
+                best_test_acc = test_acc
+                self.save_model('models/GINtri_best_model.pth')
             if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
@@ -1263,10 +1275,14 @@ class GIN_framework2:
         return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
 
     def iterate(self):
-        for epoch in range(1, 521):
+        best_test_acc = 0
+        for epoch in range(1, 601):
             loss = self.train()
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
+            if test_acc > best_test_acc:
+                best_test_acc = test_acc
+                self.save_model('models/GIN2_best_model.pth')
             if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
@@ -1439,15 +1455,18 @@ class GIN_framework3:
             m.reset_parameters()
 
     def iterate(self):
-        idx = torch.arange(len(self.dataset))
-
+        best_test_acc = 0
         for epoch in range(1, self.num_epochs + 1):
             train_loss = self.train(self.train_loader)
             train_acc, train_loss = self.test(self.train_loader)
             test_acc, test_loss = self.test(self.test_loader)
+            if test_acc > best_test_acc:
+                best_test_acc = test_acc
+                self.save_model('models/GIN_best_model.pth')
             if epoch % 5 == 0:
-                print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
-
+                print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                      f'Test Acc: {test_acc:.3f}')
+                
     def save_model(self, path):
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
