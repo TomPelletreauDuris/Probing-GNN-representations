@@ -399,7 +399,7 @@ class LinearModel(nn.Module):
     def forward(self, x):
         return self.linear(x)
 
-def train_probe_for_layer(features, property_values, test_features, test_property_values, num_epochs=1000000, learning_rate=0.01):
+def train_probe_for_layer(features, property_values, test_features, test_property_values, num_epochs=100000, learning_rate=0.001):
     # Convert features and property values to PyTorch tensors if they are NumPy arrays
     if isinstance(features, np.ndarray):
         features = torch.tensor(features, dtype=torch.float32)
