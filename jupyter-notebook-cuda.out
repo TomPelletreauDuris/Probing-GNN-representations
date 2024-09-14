@@ -305,3 +305,150 @@ RuntimeError: Cannot enter into task <Task pending name='Task-6' coro=<HTTP1Serv
 [W 18:19:37.560 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
 [I 18:21:49.614 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
 [W 18:21:49.615 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:27:30.048 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:27:30.051 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:33:31.158 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:33:31.161 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:39:31.189 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:39:31.191 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:44:30.987 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:44:30.988 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:50:31.012 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:50:31.014 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:56:31.154 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:56:31.159 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 18:58:35.685 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 18:58:35.687 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 19:01:31.139 NotebookApp] Saving file at /ClinTox_probing_GIN.ipynb
+[W 19:01:31.140 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 19:06:34.483 NotebookApp] Starting buffering for b357855e-46c4-4d44-9b17-5dcbf5ae39b8:0e3b5e00128a4ca487d901c5a03d7fb3
+[I 13:20:29.352 NotebookApp] 302 GET /?token=fa24f9696733db353bead462f1317514199b5aafd37873a7 (::1) 0.320000ms
+[W 13:20:50.365 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[W 13:20:54.965 NotebookApp] Notebook ClinTox_probing_GIN.ipynb is not trusted
+[I 13:20:58.206 NotebookApp] Kernel started: 78045145-e6d3-4a8b-b25a-e691055dae60, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 429176cd-ab6d-4cd3-b731-32e3d6252d69
+[I 13:21:06.159 NotebookApp] Discarding 5575 buffered messages for b357855e-46c4-4d44-9b17-5dcbf5ae39b8:0e3b5e00128a4ca487d901c5a03d7fb3
+[W 13:21:06.320 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240912123946 (::1) 2.960000ms referer=http://localhost:5634/notebooks/ClinTox_probing_GIN.ipynb
+[I 13:23:01.138 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 13:23:01.142 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 13:23:03.812 NotebookApp] Starting buffering for 78045145-e6d3-4a8b-b25a-e691055dae60:bb5c97b7e5df4452950e9ac3b225f599
+[W 13:23:20.215 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 13:25:29.599 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 13:25:29.604 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 13:27:29.430 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 13:27:29.434 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 13:29:29.894 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 13:29:29.898 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 13:33:29.270 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 13:33:29.274 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 13:35:29.735 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 13:35:29.739 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:21:28.953 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:21:28.957 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:25:29.056 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:25:29.060 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:26:49.227 NotebookApp] Kernel interrupted: 78045145-e6d3-4a8b-b25a-e691055dae60
+[I 14:26:57.168 NotebookApp] Starting buffering for 78045145-e6d3-4a8b-b25a-e691055dae60:83fc2464bbb94d848b62aa5acfa8e74d
+[I 14:26:58.062 NotebookApp] Kernel restarted: 78045145-e6d3-4a8b-b25a-e691055dae60
+[I 14:26:58.082 NotebookApp] Restoring connection for 78045145-e6d3-4a8b-b25a-e691055dae60:83fc2464bbb94d848b62aa5acfa8e74d
+[I 14:26:59.140 NotebookApp] Replaying 3 buffered messages
+[I 14:27:16.462 NotebookApp] Starting buffering for 78045145-e6d3-4a8b-b25a-e691055dae60:83fc2464bbb94d848b62aa5acfa8e74d
+[I 14:27:16.993 NotebookApp] Kernel restarted: 78045145-e6d3-4a8b-b25a-e691055dae60
+[I 14:27:17.008 NotebookApp] Restoring connection for 78045145-e6d3-4a8b-b25a-e691055dae60:83fc2464bbb94d848b62aa5acfa8e74d
+[I 14:27:17.869 NotebookApp] Replaying 3 buffered messages
+[I 14:27:29.216 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:27:29.220 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:29:29.289 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:29:29.292 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:31:29.603 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:31:29.607 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:33:29.848 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:33:29.852 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:35:30.288 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:35:30.292 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:37:29.403 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:37:29.407 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:37:33.877 NotebookApp] Kernel interrupted: 78045145-e6d3-4a8b-b25a-e691055dae60
+[I 14:39:29.881 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:39:29.885 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:41:16.584 NotebookApp] Kernel interrupted: 78045145-e6d3-4a8b-b25a-e691055dae60
+[I 14:41:29.578 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:41:29.582 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:44:13.646 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:44:13.650 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:49:29.918 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:49:29.922 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 14:52:07.955 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 14:52:07.959 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:07:29.682 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 15:07:29.686 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:07:52.299 NotebookApp] Kernel interrupted: 78045145-e6d3-4a8b-b25a-e691055dae60
+[I 15:10:13.934 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 15:10:13.939 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:13:29.797 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 15:13:29.800 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:39:04.714 NotebookApp] Starting buffering for 78045145-e6d3-4a8b-b25a-e691055dae60:83fc2464bbb94d848b62aa5acfa8e74d
+[W 15:39:08.710 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:39:23.763 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 15:39:23.767 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:39:48.170 NotebookApp] Saving file at /AIFB_probing_GCN.ipynb
+[W 15:39:48.174 NotebookApp] Notebook AIFB_probing_GCN.ipynb is not trusted
+[I 15:39:51.161 NotebookApp] Starting buffering for 78045145-e6d3-4a8b-b25a-e691055dae60:ad9dcdf9df674f8680cac99523b45535
+[W 15:39:58.976 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:40:01.029 NotebookApp] Kernel started: f4ca5a5b-1ea3-4050-8928-cbfec7d1dae9, name: python3
+[W 15:40:01.705 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240912123946 (::1) 2.190000ms referer=http://localhost:5634/notebooks/FC_probing_GIN.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 5f907b2f-130d-4167-a5b6-994c34fca5bd
+[I 15:42:01.631 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:42:01.632 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:44:01.712 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:44:01.713 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:46:01.692 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:46:01.694 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:48:01.566 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:48:01.567 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:50:01.672 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:50:01.673 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:52:03.947 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:52:03.948 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:54:11.615 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:54:11.616 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:56:11.577 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:56:11.578 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 15:58:11.641 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 15:58:11.643 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:00:01.966 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:00:01.967 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:02:11.697 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:02:11.698 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:04:11.645 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:04:11.646 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:06:11.699 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:06:11.700 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:08:11.725 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:08:11.727 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:10:11.755 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:10:11.756 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:12:11.649 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:12:11.651 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:14:11.643 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:14:11.645 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:16:11.717 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:16:11.718 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 16:18:05.662 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 16:18:05.664 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+
+JOB STATISTICS
+==============
+Job ID: 7807692
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:20
+CPU Efficiency: 0.00% of 30-00:08:06 core-walltime
+Job Wall-clock time: 1-16:00:27
+Memory Utilized: 13.26 GB
+Memory Efficiency: 11.05% of 120.00 GB

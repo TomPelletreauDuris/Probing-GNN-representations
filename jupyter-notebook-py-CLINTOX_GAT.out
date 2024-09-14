@@ -1,21 +1,10 @@
-GPU available? True
-555.42.06
+GPU available? False
+NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+
 Python 3.10.4
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
   warnings.warn(out)
-slurmstepd: error: *** JOB 7788903 ON gcn59 CANCELLED AT 2024-09-12T07:59:05 DUE TO TIME LIMIT ***
-
-JOB STATISTICS
-==============
-Job ID: 7788903
-Cluster: snellius
-User/Group: tpelletreaudur/tpelletreaudur
-State: RUNNING
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:01
-CPU Efficiency: 0.00% of 15-00:05:24 core-walltime
-Job Wall-clock time: 20:00:18
-Memory Utilized: 3.70 MB
-Memory Efficiency: 0.00% of 120.00 GB
-WARNING: Efficiency statistics may be misleading for RUNNING jobs.
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:820: ComplexWarning: Casting complex values to real discards the imaginary part
+  train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:821: ComplexWarning: Casting complex values to real discards the imaginary part
+  test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
