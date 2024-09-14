@@ -777,8 +777,13 @@ class GIN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
+<<<<<<< HEAD
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=32)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=32)
+=======
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
+>>>>>>> 39a3c7f8683d318777c726da86de1724b973038e
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1462,7 +1467,11 @@ class GIN_framework3:
             test_acc, test_loss = self.test(self.test_loader)
             if test_acc > best_test_acc:
                 best_test_acc = test_acc
+<<<<<<< HEAD
                 self.save_model('models/GIN3_best_model.pth')
+=======
+                self.save_model('models/GIN_best_model.pth')
+>>>>>>> 39a3c7f8683d318777c726da86de1724b973038e
             if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
