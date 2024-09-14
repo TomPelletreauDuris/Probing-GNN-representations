@@ -8,3 +8,18 @@ Python 3.10.4
   train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
 /gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GAT.py:821: ComplexWarning: Casting complex values to real discards the imaginary part
   test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
+
+JOB STATISTICS
+==============
+Job ID: 7817010
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: RUNNING
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 30-06:21:20 core-walltime
+Job Wall-clock time: 1-21:23:50
+Memory Utilized: 3.80 MB
+Memory Efficiency: 0.01% of 28.00 GB
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
