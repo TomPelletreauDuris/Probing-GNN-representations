@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+GPU available? False
+NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+
+Python 3.10.4
+/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
+  warnings.warn(out)
+=======
 GPU available? True
 555.42.06
 Python 3.10.4
@@ -5,10 +13,13 @@ Python 3.10.4
   warnings.warn(out)
 /home/tpelletreaudur/.local/lib/python3.10/site-packages/networkx/algorithms/assortativity/correlation.py:302: RuntimeWarning: invalid value encountered in double_scalars
   return float((xy * (M - ab)).sum() / np.sqrt(vara * varb))
+>>>>>>> 39a3c7f8683d318777c726da86de1724b973038e
 /gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GCN.py:816: ComplexWarning: Casting complex values to real discards the imaginary part
   train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
 /gpfs/home3/tpelletreaudur/Probing-GNN-representations/ClinTox_probing_GCN.py:817: ComplexWarning: Casting complex values to real discards the imaginary part
   test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
+<<<<<<< HEAD
+=======
 slurmstepd: error: *** JOB 7788895 ON gcn57 CANCELLED AT 2024-09-12T07:58:35 DUE TO TIME LIMIT ***
 
 JOB STATISTICS
@@ -24,3 +35,4 @@ CPU Efficiency: 0.00% of 15-00:05:24 core-walltime
 Job Wall-clock time: 20:00:18
 Memory Utilized: 2.47 GB
 Memory Efficiency: 2.06% of 120.00 GB
+>>>>>>> 39a3c7f8683d318777c726da86de1724b973038e
