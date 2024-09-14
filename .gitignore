@@ -5,5 +5,6 @@ Datasets/FC/FC_MDD_suffled_GCN_w_edge_weight.pkl
 Datasets/FC/FC_MDD_suffled_GIN3.pkl
 results/FC_suffled_GAT_X_train_layers.pkl
 results/FC_suffled_GIN3_X_train_layers.pkl
-models/AIFB_RGCN.pt
 Datasets/FC/CLINTOX_shuffled_GIN.pkl
+models/AIFB_RGCN.pt
+best_model.pth
