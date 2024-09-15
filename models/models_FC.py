@@ -777,13 +777,8 @@ class GIN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-<<<<<<< HEAD
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=32)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=32)
-=======
         self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1)
         self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
->>>>>>> 39a3c7f8683d318777c726da86de1724b973038e
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -955,8 +950,8 @@ class GIN_framework_bis:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=32)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=32)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1100,8 +1095,8 @@ class GIN_framework_tri:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.95, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=32)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=32)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1245,8 +1240,8 @@ class GIN_framework2:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=[data.y.numpy() for data in self.dataset], random_state=10)
 
-        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=32, shuffle=True)
-        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=32)
+        self.train_loader = DataLoader([self.dataset[i] for i in self.train_idx], batch_size=1, shuffle=True)
+        self.test_loader = DataLoader([self.dataset[i] for i in self.test_idx], batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1397,8 +1392,8 @@ class GIN_framework3:
         
         train_data = [self.dataset[i] for i in self.train_idx]
         test_data = [self.dataset[i] for i in self.test_idx]
-        self.train_loader = DataLoader(train_data, batch_size=32)
-        self.test_loader = DataLoader(test_data, batch_size=32)
+        self.train_loader = DataLoader(train_data, batch_size=1)
+        self.test_loader = DataLoader(test_data, batch_size=1)
 
     def _infer_num_classes(self):
         max_label = max(data.y.max().item() for data in self.dataset)
@@ -1436,8 +1431,8 @@ class GIN_framework3:
         for fold, (train_idx, test_idx) in enumerate(self.kf.split(self.dataset)):
             train_data = [self.dataset[i] for i in train_idx]
             test_data = [self.dataset[i] for i in test_idx]
-            self.train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
-            self.test_loader = DataLoader(test_data, batch_size=32)
+            self.train_loader = DataLoader(train_data, batch_size=1, shuffle=True)
+            self.test_loader = DataLoader(test_data, batch_size=1)
 
             self.model.apply(self._reset_parameters)  # Reset model parameters for each fold
 
@@ -1467,11 +1462,7 @@ class GIN_framework3:
             test_acc, test_loss = self.test(self.test_loader)
             if test_acc > best_test_acc:
                 best_test_acc = test_acc
-<<<<<<< HEAD
-                self.save_model('models/GIN3_best_model.pth')
-=======
                 self.save_model('models/GIN_best_model.pth')
->>>>>>> 39a3c7f8683d318777c726da86de1724b973038e
             if epoch % 5 == 0:
                 print(f'Epoch: {epoch:03d}, Loss: {train_loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
                       f'Test Acc: {test_acc:.3f}')
@@ -1551,7 +1542,7 @@ class GIN_framework3:
 # gnn3.evaluate()
 
 # Or evaluate with a specific loader
-# test_loader = DataLoader(test_dataset, batch_size=32)  # Define your test dataset loader
+# test_loader = DataLoader(test_dataset, batch_size=1)  # Define your test dataset loader
 # gnn3.evaluate(test_loader)
 
 
