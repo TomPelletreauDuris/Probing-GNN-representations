@@ -1,0 +1,105 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+To connect to the notebook type the following command into your local terminal:
+ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn36.local.snellius.surf.nl -L 5860:localhost:5860
+
+After connection is established in your local browser go to the address:
+http://localhost:5860
+[W 18:08:34.493 NotebookApp] Loading JupyterLab as a classic notebook (v6) extension.
+[W 2024-07-23 18:08:34.495 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-23 18:08:34.495 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-23 18:08:34.495 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2024-07-23 18:08:34.498 LabApp] JupyterLab extension loaded from /sw/arch/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/lib/python3.11/site-packages/jupyterlab
+[I 2024-07-23 18:08:34.498 LabApp] JupyterLab application directory is /gpfs/admin/_hpc/sw/arch/INTEL-AVX512/RHEL8/EB_production/2023/software/Anaconda3/2023.07-2/share/jupyter/lab
+[I 18:08:37.499 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 18:08:37.499 NotebookApp] Jupyter Notebook 6.5.4 is running at:
+[I 18:08:37.499 NotebookApp] http://localhost:5860/?token=681e02646592be9017cacdc290c287d24f1765f812eec197
+[I 18:08:37.499 NotebookApp]  or http://127.0.0.1:5860/?token=681e02646592be9017cacdc290c287d24f1765f812eec197
+[I 18:08:37.499 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 18:08:37.505 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2905174-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:5860/?token=681e02646592be9017cacdc290c287d24f1765f812eec197
+     or http://127.0.0.1:5860/?token=681e02646592be9017cacdc290c287d24f1765f812eec197
+[I 18:09:56.333 NotebookApp] 302 GET /?token=681e02646592be9017cacdc290c287d24f1765f812eec197 (::1) 0.440000ms
+0.01s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[W 18:10:09.770 NotebookApp] Notebook FC_probing_GAT.ipynb is not trusted
+[I 18:10:10.341 NotebookApp] Kernel started: a4c7a73d-d57b-4eaf-bedc-4328597c4e8f, name: python3
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[W 18:10:11.291 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:10:12.578 NotebookApp] Kernel started: 46c4cf2c-2317-431f-9649-aa6765b5d31d, name: python3
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[I 18:10:33.508 NotebookApp] Kernel interrupted: a4c7a73d-d57b-4eaf-bedc-4328597c4e8f
+[I 18:11:58.658 NotebookApp] Kernel started: b10dc18f-d2b9-4ed5-a6c4-354f78f5f8a9, name: python3
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[I 18:12:11.136 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:12:13.839 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 18:12:13.840 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:13:51.590 NotebookApp] Kernel interrupted: b10dc18f-d2b9-4ed5-a6c4-354f78f5f8a9
+[I 18:14:00.131 NotebookApp] Saving file at /FC_probing_GCN_MDD.ipynb
+[I 18:14:11.233 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:14:14.074 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 18:14:14.075 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:16:11.152 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:16:13.810 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 18:16:13.810 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:18:11.168 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:18:13.774 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 18:18:13.775 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:20:59.788 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 18:20:59.788 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:20:59.809 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:23:01.178 NotebookApp] Saving file at /FC_probing_GIN.ipynb
+[W 18:23:01.178 NotebookApp] Notebook FC_probing_GIN.ipynb is not trusted
+[I 18:23:01.198 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:24:36.677 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:26:59.270 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:28:59.317 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:30:59.725 NotebookApp] Saving file at /FC_probing_GAT.ipynb
+[I 18:31:58.338 NotebookApp] Starting buffering for a4c7a73d-d57b-4eaf-bedc-4328597c4e8f:9303d8b7badf41d68a0a5328f529c8c6
+[I 18:31:58.338 NotebookApp] Starting buffering for 46c4cf2c-2317-431f-9649-aa6765b5d31d:15cf7dab31ff428b9133ecba9256eb3a
+[I 18:31:58.339 NotebookApp] Starting buffering for b10dc18f-d2b9-4ed5-a6c4-354f78f5f8a9:9d807b79f294461eb9e8fe6450fce0d8
+slurmstepd: error: *** JOB 7110301 ON gcn36 CANCELLED AT 2024-07-23T18:32:17 ***
+slurmstepd: error: container_p_join: open failed for /slurm/7110301/.ns: No such file or directory
+slurmstepd: error: container_g_join(7110301): No such file or directory
+
+JOB STATISTICS
+==============
+Job ID: 7110301
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 07:11:24 core-walltime
+Job Wall-clock time: 00:23:58
+Memory Utilized: 5.86 GB
+Memory Efficiency: 4.89% of 120.00 GB
