@@ -4,7 +4,7 @@ Here is the updated `README.md` based on your additional details:
 
 # Probing-GNN-Representations
 
-This repository contains various Jupyter notebooks and data related to probing different Graph Neural Networks (GNNs) using a variety of datasets. The focus is on probing models like GCN, GIN, GAT, and R-GCN across multiple datasets, including a **Grid-House** dataset inspired from [this paper](https://arxiv.org/abs/2210.15304), the **AIFB** entities dataset from [torch geometric](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html), **ABIDE (ASD)** and **REST-meta-MDD** (MDD) for brain imaging data and **ClinTox** for molecular data 
+This repository contains various Jupyter notebooks and data related to probing different Graph Neural Networks (GNNs) using a variety of datasets. The focus is on probing models like GCN, GIN, GAT, and R-GCN across multiple datasets, including a **Grid-House** dataset inspired from [this paper](https://arxiv.org/abs/2210.15304), the **AIFB** entities dataset from [torch geometric](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html), **ABIDE (ASD)** and **REST-meta-MDD** (MDD) for brain imaging data coming from the [BrainIB paper](https://ieeexplore.ieee.org/document/10680255) and **ClinTox** for molecular data 
 
 ## Project Structure
 
@@ -75,7 +75,7 @@ The repository is organized as follows:
   Experiments using the ABIDE (ASD) dataset with a GCN model.
 
 - **FC_probing_GCN_MDD.ipynb**  
-  Experiments using the REST-meta-MDD dataset with a GCN model. The REST-meta-MDD dataset is cited from the [BrainIB paper](https://ieeexplore.ieee.org/document/10680255).
+  Experiments using the REST-meta-MDD dataset with a GCN model. 
 
 - **FC_probing_GIN.ipynb**  
   Experiments using the ABIDE (ASD) dataset with a GIN model.
