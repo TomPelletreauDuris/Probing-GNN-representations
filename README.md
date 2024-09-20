@@ -4,7 +4,7 @@ Here is the updated `README.md` based on your additional details:
 
 # Probing-GNN-Representations
 
-This repository contains various Jupyter notebooks and data related to probing different Graph Neural Networks (GNNs) using a variety of datasets. The focus is on probing models like GCN, GIN, GAT, and R-GCN across multiple datasets, including a Grid-House dataset inspired from [this paper](https://arxiv.org/abs/2210.15304), the AIFB dataset, **ABIDE (ASD)** and **REST-meta-MDD** (MDD) for brain imaging data and **ClinTox** for molecular data 
+This repository contains various Jupyter notebooks and data related to probing different Graph Neural Networks (GNNs) using a variety of datasets. The focus is on probing models like GCN, GIN, GAT, and R-GCN across multiple datasets, including a **Grid-House** dataset inspired from [this paper](https://arxiv.org/abs/2210.15304), the **AIFB** entities dataset from [torch geometric](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html), **ABIDE (ASD)** and **REST-meta-MDD** (MDD) for brain imaging data and **ClinTox** for molecular data 
 
 ## Project Structure
 
