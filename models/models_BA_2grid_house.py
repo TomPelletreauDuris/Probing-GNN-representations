@@ -114,9 +114,11 @@ class GCN_framework:
         torch.save(self.model.state_dict(), path)
         print("model saved in: ",path)
         
-    def load_model(self,path):
-        
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
         
     def evaluate(self):
@@ -304,9 +306,11 @@ class GCN_framework_xavier:
         torch.save(self.model.state_dict(), path)
         print("model saved in: ",path)
         
-    def load_model(self,path):
-        
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
         
     def evaluate(self):
@@ -484,8 +488,11 @@ class GCN_framework_L2:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
             
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
             
     def evaluate(self):
@@ -668,8 +675,11 @@ class GCN_framework_Dropout:
         torch.save(self.model.state_dict(), path)
         print("Model saved in:", path)
             
-    def load_model(self, path):
-        self.model.load_state_dict(torch.load(path))
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
         self.model.eval()
             
     def evaluate(self):
