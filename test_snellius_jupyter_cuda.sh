@@ -2,8 +2,8 @@
 
 #SBATCH -t 24:00:00
 #SBATCH -N 1
-#SBATCH -p gpu_a100
-#SBATCH --gpus-per-node=1
+#SBATCH -p genoa
+## SBATCH --gpus-per-node=1
 #SBATCH -o jupyter-notebook-cuda.out
 
 
