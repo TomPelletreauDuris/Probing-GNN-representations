@@ -9,6 +9,8 @@ logging.basicConfig(level=logging.INFO)
 from torch.nn import Linear
 import networkx as nx
 from torch_geometric.utils import to_networkx
+#dropout
+from torch.nn import Dropout
 
 class GCN_framework:
     def __init__(self,dataset,device=None):   
@@ -184,6 +186,194 @@ class GCN_framework:
                 test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
+    
+class GCN_framework_xavier:
+    def __init__(self,dataset,device=None):   
+
+        if device == None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = "cpu"
+
+        self.dataset = dataset
+        class Net(torch.nn.Module):
+            def __init__(self,num_features,num_classes):
+                super().__init__()
+                self.conv1 = GCNConv(num_features, 60)
+                self.conv2 = GCNConv(60, 60)
+                self.conv3 = GCNConv(60, 60)
+                self.conv4 = GCNConv(60, 60)
+                self.lin1 = Linear(60,60)
+                self.lin2 = Linear(60,10)
+                self.lin3 = Linear(10,num_classes)
+
+                # Initialize weights
+                self.initialize_weights()   
+
+            def initialize_weights(self):
+                # Initialize convolutional layers
+                for m in self.modules():
+                    if isinstance(m, GCNConv):
+                        torch.nn.init.xavier_uniform_(m.lin.weight)
+                        if m.lin.bias is not None:
+                            torch.nn.init.zeros_(m.lin.bias)
+                    elif isinstance(m, Linear):
+                        torch.nn.init.xavier_uniform_(m.weight)
+                        if m.bias is not None:
+                            torch.nn.init.zeros_(m.bias)
+
+            def forward(self,x,edge_index,batch,edge_mask=None, return_intermediate=False, return_node_embeddings=False):
+
+                x1 = F.relu(self.conv1(x, edge_index,edge_mask))
+                x2 = F.relu(self.conv2(x1, edge_index,edge_mask))
+                x3 = F.relu(self.conv3(x2, edge_index,edge_mask))
+                x4 = F.relu(self.conv4(x3, edge_index,edge_mask))
+
+                if return_node_embeddings:
+                    print("x1 shape:", x1.shape)
+                    print("x2 shape:", x2.shape)
+                    print("x3 shape:", x3.shape)
+                    print("x4 shape:", x4.shape)
+                    return (x1, x2, x3, x4)
+
+                x_global = global_max_pool(x4,batch)                
+                x5 = F.relu(self.lin1(x_global))
+                x6 = F.relu(self.lin2(x5))
+                x7 = self.lin3(x6)
+
+                if return_intermediate:
+                    return F.log_softmax(x7, dim=-1), (x1, x2, x3, x4, x_global, x5, x6, x7)
+                else:
+                    return F.log_softmax(x7, dim=-1)
+
+
+        self.model = Net(10,self.dataset.num_classes).to(self.device).double()
+        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001) #0.0001
+
+        idx = torch.arange(len(self.dataset))
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
+
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=32)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=32)
+            
+    def train(self):   
+        self.model.train()
+        self.optimizer.zero_grad()
+        
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            self.optimizer.zero_grad()
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y.view(-1))
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self,loader):
+        self.model.eval()
+
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset),total_loss / len(self.train_loader.dataset)
+
+    def iterate(self):
+
+        for epoch in range(1, 1001):
+            loss = self.train()
+            train_acc,train_loss = self.test(self.train_loader)
+            test_acc,test_loss = self.test(self.test_loader)
+            if epoch % 1 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                f'Test Acc: {test_acc:.3f}')
+
+
+    def save_model(self,path):
+        torch.save(self.model.state_dict(), path)
+        print("model saved in: ",path)
+        
+    def load_model(self,path):
+        
+        self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+        
+    def evaluate(self):
+
+        train_acc,train_loss = self.test(self.train_loader)
+        test_acc,test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    @torch.no_grad()
+    def test_with_features(self, loader):
+        self.model.eval()
+        features_collected = []
+
+        total_correct = 0
+        total_loss = 0
+        print("len(loader.dataset): ",len(loader.dataset))
+
+        for data in loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            print("features: ",features)
+            features_collected.append(features)
+
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset), features_collected
+    
+    @torch.no_grad()
+    def evaluate_with_features2(self, return_node_embeddings=False):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                print("features[0].shape: ",features[0].shape)
+                print("features[1].shape: ",features[1].shape)
+                print("features[2].shape: ",features[2].shape)
+                print("features[3].shape: ",features[3].shape)
+
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+            # Extract features for training data
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+
+            # Extract features for test data
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+
+        return train_features, test_features
 
 
 class GCN_framework_L2:
@@ -205,6 +395,21 @@ class GCN_framework_L2:
                 self.lin1 = Linear(60, 60)
                 self.lin2 = Linear(60, 10)
                 self.lin3 = Linear(10, num_classes)
+
+                    # Initialize weights
+                self.initialize_weights()   
+
+            def initialize_weights(self):
+                # Initialize convolutional layers
+                for m in self.modules():
+                    if isinstance(m, GCNConv):
+                        torch.nn.init.xavier_uniform_(m.lin.weight)
+                        if m.lin.bias is not None:
+                            torch.nn.init.zeros_(m.lin.bias)
+                    elif isinstance(m, Linear):
+                        torch.nn.init.xavier_uniform_(m.weight)
+                        if m.bias is not None:
+                            torch.nn.init.zeros_(m.bias)
 
             def forward(self, x, edge_index, batch, edge_mask=None, return_intermediate=False, return_node_embeddings=False):
                 x1 = F.relu(self.conv1(x, edge_index, edge_mask))
@@ -233,8 +438,8 @@ class GCN_framework_L2:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=32)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=32)
                 
     def train(self):   
         self.model.train()
@@ -367,7 +572,22 @@ class GCN_framework_Dropout:
                 self.lin2 = Linear(60, 10)
                 self.lin3 = Linear(10, num_classes)
                 # **Added dropout layers**
-                self.dropout = Dropout(p=0.5)  # Dropout probability of 0.5
+                self.dropout = Dropout(p=0.25)  # Dropout probability of 0.25
+
+                    # Initialize weights
+                self.initialize_weights()   
+
+            def initialize_weights(self):
+                # Initialize convolutional layers
+                for m in self.modules():
+                    if isinstance(m, GCNConv):
+                        torch.nn.init.xavier_uniform_(m.lin.weight)
+                        if m.lin.bias is not None:
+                            torch.nn.init.zeros_(m.lin.bias)
+                    elif isinstance(m, Linear):
+                        torch.nn.init.xavier_uniform_(m.weight)
+                        if m.bias is not None:
+                            torch.nn.init.zeros_(m.bias)
 
             def forward(self, x, edge_index, batch, edge_mask=None, return_intermediate=False, return_node_embeddings=False):
                 x1 = F.relu(self.conv1(x, edge_index, edge_mask))
@@ -400,8 +620,8 @@ class GCN_framework_Dropout:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=32)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=32)
                 
     def train(self):   
         self.model.train()
