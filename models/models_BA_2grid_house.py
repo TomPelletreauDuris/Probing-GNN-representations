@@ -1809,6 +1809,536 @@ class GIN_framework3:
                 test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
 
         return train_features, test_features
+    
+class GIN_framework4:
+    def __init__(self,dataset,device=None):   
+
+        if device == None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = "cpu"
+
+        self.dataset = dataset
+
+        class Net(torch.nn.Module):
+            def __init__(self, in_channels, out_channels):
+                super(Net, self).__init__()
+                self.mlp1 = torch.nn.Linear(in_channels, 30)
+                self.conv1 = GINConv(self.mlp1)
+                self.mlp2 = torch.nn.Linear(30, 30)
+                self.conv2 = GINConv(self.mlp2)
+                self.conv3 = GINConv(30, 30)
+                self.lin1 = Linear(30, 30)
+                self.lin2 = Linear(30, out_channels)
+
+            def forward(self, x, edge_index, batch, return_intermediate=False, return_node_embeddings=False):
+                x1 = self.conv1(x, edge_index).relu()
+                x2 = self.conv2(x1, edge_index).relu()
+                x3 = self.conv3(x2, edge_index).relu()
+
+                if return_node_embeddings:
+                    return (x1, x2, x3)
+                
+                x_global = global_mean_pool(x3, batch)
+                x_lin1 = F.relu(self.lin1(x_global))
+                out = self.lin2(x_lin1)
+
+                if return_intermediate:
+                    return F.log_softmax(out, dim=-1), (x1, x2, x3, x_global, x_lin1, out)
+                else:
+                    return F.log_softmax(out, dim=-1)
+            
+
+        self.model = Net(10,self.dataset.num_classes).to(self.device).double()
+        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001) #0.0001
+
+        idx = torch.arange(len(self.dataset))
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
+
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+            
+    def train(self):   
+        self.model.train()
+        self.optimizer.zero_grad()
+        
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            self.optimizer.zero_grad()
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y)
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self,loader):
+        self.model.eval()
+
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset),total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test_with_features(self, loader):
+        self.model.eval()
+        features_collected = []
+
+        total_correct = 0
+        total_loss = 0
+        print("len(loader.dataset): ",len(loader.dataset))
+
+        for data in loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            print("features: ",features)
+            features_collected.append(features)  # Store the features for later analysis
+
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset), features_collected
+
+    def iterate(self):
+
+        for epoch in range(1, 201):
+            loss = self.train()
+            train_acc,train_loss = self.test(self.train_loader)
+            test_acc,test_loss = self.test(self.test_loader)
+            if epoch % 20 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                f'Test Acc: {test_acc:.3f}')
+
+
+    def save_model(self,path):
+        torch.save(self.model.state_dict(), path)
+        print("model saved in: ",path)
+        
+    def load_model(self,path):
+        
+        self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+        
+    def evaluate(self):
+
+        train_acc,train_loss = self.test(self.train_loader)
+        test_acc,test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    def evaluate_with_features(self):
+
+        train_acc,train_loss,train_features = self.test_with_features(self.train_loader)
+        test_acc,test_loss,test_features = self.test_with_features(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+        print(f'Number of features collected: {len(train_features)}')
+
+        return train_features, test_features
+    
+    @torch.no_grad()
+    def evaluate_with_features2(self, return_node_embeddings=False):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                print("features[0].shape: ",features[0].shape)
+                print("features[1].shape: ",features[1].shape)
+
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+            # Extract features for training data
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+
+            # Extract features for test data
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+
+        return train_features, test_features
+    
+class GIN_framework4_L2:
+    def __init__(self,dataset,device=None):   
+
+        if device == None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = "cpu"
+
+        self.dataset = dataset
+
+        class Net(torch.nn.Module):
+            def __init__(self, in_channels, out_channels):
+                super(Net, self).__init__()
+                self.mlp1 = torch.nn.Linear(in_channels, 30)
+                self.conv1 = GINConv(self.mlp1)
+                self.mlp2 = torch.nn.Linear(30, 30)
+                self.conv2 = GINConv(self.mlp2)
+                self.conv3 = GINConv(30, 30)
+                self.lin1 = Linear(30, 30)
+                self.lin2 = Linear(30, out_channels)
+
+            def forward(self, x, edge_index, batch, return_intermediate=False, return_node_embeddings=False):
+                x1 = self.conv1(x, edge_index).relu()
+                x2 = self.conv2(x1, edge_index).relu()
+                x3 = self.conv3(x2, edge_index).relu()
+
+                if return_node_embeddings:
+                    return (x1, x2, x3)
+                
+                x_global = global_mean_pool(x3, batch)
+                x_lin1 = F.relu(self.lin1(x_global))
+                out = self.lin2(x_lin1)
+
+                if return_intermediate:
+                    return F.log_softmax(out, dim=-1), (x1, x2, x3, x_global, x_lin1, out)
+                else:
+                    return F.log_softmax(out, dim=-1)
+            
+
+        self.model = Net(10,self.dataset.num_classes).to(self.device).double()
+        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001, weight_decay=1e-4)
+
+        idx = torch.arange(len(self.dataset))
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
+
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+            
+    def train(self):   
+        self.model.train()
+        self.optimizer.zero_grad()
+        
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            self.optimizer.zero_grad()
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y)
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self,loader):
+        self.model.eval()
+
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset),total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test_with_features(self, loader):
+        self.model.eval()
+        features_collected = []
+
+        total_correct = 0
+        total_loss = 0
+        print("len(loader.dataset): ",len(loader.dataset))
+
+        for data in loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            print("features: ",features)
+            features_collected.append(features)  # Store the features for later analysis
+
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset), features_collected
+
+    def iterate(self):
+
+        for epoch in range(1, 201):
+            loss = self.train()
+            train_acc,train_loss = self.test(self.train_loader)
+            test_acc,test_loss = self.test(self.test_loader)
+            if epoch % 20 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                f'Test Acc: {test_acc:.3f}')
+
+
+    def save_model(self,path):
+        torch.save(self.model.state_dict(), path)
+        print("model saved in: ",path)
+        
+    def load_model(self,path):
+        
+        self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+        
+    def evaluate(self):
+
+        train_acc,train_loss = self.test(self.train_loader)
+        test_acc,test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    def evaluate_with_features(self):
+
+        train_acc,train_loss,train_features = self.test_with_features(self.train_loader)
+        test_acc,test_loss,test_features = self.test_with_features(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+        print(f'Number of features collected: {len(train_features)}')
+
+        return train_features, test_features
+    
+    @torch.no_grad()
+    def evaluate_with_features2(self, return_node_embeddings=False):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                print("features[0].shape: ",features[0].shape)
+                print("features[1].shape: ",features[1].shape)
+
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+            # Extract features for training data
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+
+            # Extract features for test data
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+
+        return train_features, test_features    
+
+
+class GIN_framework4_dropout:
+    def __init__(self,dataset,device=None):   
+
+        if device == None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = "cpu"
+
+        self.dataset = dataset
+
+        class Net(torch.nn.Module):
+            def __init__(self, in_channels, out_channels):
+                super(Net, self).__init__()
+                self.mlp1 = torch.nn.Linear(in_channels, 30)
+                self.conv1 = GINConv(self.mlp1)
+                self.mlp2 = torch.nn.Linear(30, 30)
+                self.conv2 = GINConv(self.mlp2)
+                self.conv3 = GINConv(30, 30)
+                self.lin1 = Linear(30, 30)
+                self.lin2 = Linear(30, out_channels)
+
+                self.dropout = torch.nn.Dropout(p=0.2)
+
+
+            def forward(self, x, edge_index, batch, return_intermediate=False, return_node_embeddings=False):
+                x1 = self.conv1(x, edge_index).relu()
+                x1 = self.dropout(x1)
+                x2 = self.conv2(x1, edge_index).relu()
+                x2 = self.dropout(x2)
+                x3 = self.conv3(x2, edge_index).relu()
+                x3 = self.dropout(x3)
+
+                if return_node_embeddings:
+                    return (x1, x2, x3)
+                
+                x_global = global_mean_pool(x3, batch)
+                x_lin1 = F.relu(self.lin1(x_global))
+                x_lin1 = self.dropout(x_lin1)
+                out = self.lin2(x_lin1)
+
+                if return_intermediate:
+                    return F.log_softmax(out, dim=-1), (x1, x2, x3, x_global, x_lin1, out)
+                else:
+                    return F.log_softmax(out, dim=-1)
+            
+
+        self.model = Net(10,self.dataset.num_classes).to(self.device).double()
+        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001)
+
+        idx = torch.arange(len(self.dataset))
+        self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
+
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+            
+    def train(self):   
+        self.model.train()
+        self.optimizer.zero_grad()
+        
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            self.optimizer.zero_grad()
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y)
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self,loader):
+        self.model.eval()
+
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset),total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test_with_features(self, loader):
+        self.model.eval()
+        features_collected = []
+
+        total_correct = 0
+        total_loss = 0
+        print("len(loader.dataset): ",len(loader.dataset))
+
+        for data in loader:
+            data = data.to(self.device)
+            out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+            print("features: ",features)
+            features_collected.append(features)  # Store the features for later analysis
+
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+            
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset), features_collected
+
+    def iterate(self):
+
+        for epoch in range(1, 201):
+            loss = self.train()
+            train_acc,train_loss = self.test(self.train_loader)
+            test_acc,test_loss = self.test(self.test_loader)
+            if epoch % 20 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} '
+                f'Test Acc: {test_acc:.3f}')
+
+
+    def save_model(self,path):
+        torch.save(self.model.state_dict(), path)
+        print("model saved in: ",path)
+        
+    def load_model(self,path):
+        
+        self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+        
+    def evaluate(self):
+
+        train_acc,train_loss = self.test(self.train_loader)
+        test_acc,test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    def evaluate_with_features(self):
+
+        train_acc,train_loss,train_features = self.test_with_features(self.train_loader)
+        test_acc,test_loss,test_features = self.test_with_features(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+        print(f'Number of features collected: {len(train_features)}')
+
+        return train_features, test_features
+    
+    @torch.no_grad()
+    def evaluate_with_features2(self, return_node_embeddings=False):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                print("len of features: ",len(features))
+                print("features[0].shape: ",features[0].shape)
+                print("features[1].shape: ",features[1].shape)
+
+                train_features.append([f.cpu().numpy() for f in features])
+                #check shape of feature 0 in train_features
+                # print("train_features[0].shape: ",train_features[0].shape)
+                print("train_features[0][0].shape: ",train_features[0][0].shape)
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        else:
+            # Extract features for training data
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+
+            # Extract features for test data
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+
+        return train_features, test_features    
 
         
 class GINFramework2:
