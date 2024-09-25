@@ -1,538 +1,164 @@
+Lmod Warning:
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded: OpenSSL/1.1
+(required by: nodejs/16.15.1-GCCcore-11.3.0)
+-------------------------------------------------------------------------------
+
+
+
 To connect to the notebook type the following command into your local terminal:
-ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@gcn42.local.snellius.surf.nl -L 5989:localhost:5989
+ssh -N -J tpelletreaudur@int4-pub.snellius.surf.nl tpelletreaudur@tcn635.local.snellius.surf.nl -L 5391:localhost:5391
 
 After connection is established in your local browser go to the address:
-http://localhost:5989
-[I 16:21:21.021 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
-[I 16:21:21.021 NotebookApp] Jupyter Notebook 6.4.0 is running at:
-[I 16:21:21.021 NotebookApp] http://localhost:5989/?token=626aff7266b22804e0644213c6ab62b86f11a01ff340d1da
-[I 16:21:21.021 NotebookApp]  or http://127.0.0.1:5989/?token=626aff7266b22804e0644213c6ab62b86f11a01ff340d1da
-[I 16:21:21.021 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 16:21:21.028 NotebookApp] 
+http://localhost:5391
+[I 21:52:35.941 NotebookApp] Serving notebooks from local directory: /gpfs/home3/tpelletreaudur/Probing-GNN-representations
+[I 21:52:35.941 NotebookApp] Jupyter Notebook 6.4.0 is running at:
+[I 21:52:35.941 NotebookApp] http://localhost:5391/?token=da6050f8ef0c33ce8e067795ec8a8fa7356f796ad46f9b8b
+[I 21:52:35.941 NotebookApp]  or http://127.0.0.1:5391/?token=da6050f8ef0c33ce8e067795ec8a8fa7356f796ad46f9b8b
+[I 21:52:35.941 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 21:52:35.963 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-74249-open.html
+        file:///gpfs/home3/tpelletreaudur/.local/share/jupyter/runtime/nbserver-2400326-open.html
     Or copy and paste one of these URLs:
-        http://localhost:5989/?token=626aff7266b22804e0644213c6ab62b86f11a01ff340d1da
-     or http://127.0.0.1:5989/?token=626aff7266b22804e0644213c6ab62b86f11a01ff340d1da
-[I 16:24:57.183 NotebookApp] 302 GET /?token=626aff7266b22804e0644213c6ab62b86f11a01ff340d1da (::1) 0.450000ms
+        http://localhost:5391/?token=da6050f8ef0c33ce8e067795ec8a8fa7356f796ad46f9b8b
+     or http://127.0.0.1:5391/?token=da6050f8ef0c33ce8e067795ec8a8fa7356f796ad46f9b8b
+[I 21:53:09.956 NotebookApp] 302 GET /?token=da6050f8ef0c33ce8e067795ec8a8fa7356f796ad46f9b8b (::1) 0.550000ms
 /sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
   return _iterencode(o, 0)
-[W 16:25:04.848 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[W 21:53:22.559 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[W 21:53:23.812 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+Exception in callback Task.task_wakeup(<Future finished result=None>)
+handle: <Handle Task.task_wakeup(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-6' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-76' coro=<MappingKernelManager.start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x1479c59a3130>()
+handle: <Handle <TaskStepMethWrapper object at 0x1479c59a3130>()>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-9' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:842> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-76' coro=<MappingKernelManager.start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x1479c500fac0>()
+handle: <Handle <TaskStepMethWrapper object at 0x1479c500fac0>()>
+Traceback (most recent call last):
+  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-7' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:842> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-76' coro=<MappingKernelManager.start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> is being executed.
+[I 21:53:26.383 NotebookApp] Kernel started: bfcda0dd-c635-4f56-b07a-f0b936f5394b, name: python3
+[W 21:53:27.531 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924215234 (::1) 9.940000ms referer=http://localhost:5391/notebooks/Probing_GCN.ipynb
+[W 21:53:27.582 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 21:53:28.606 NotebookApp] Kernel started: 463aaab2-689c-434f-a47c-6d6dcdcc5ac5, name: python3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 02f7ca14-2321-4624-8260-54c5f2949e35
 Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
 handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
 Traceback (most recent call last):
   File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-38' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
-Exception in callback Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)
-handle: <Handle Task.task_wakeup(<Future finis...c: 1\r\n\r\n'>)>
-Traceback (most recent call last):
-  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-37' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/manager.py:75>> is being executed.
-Exception in callback Task.task_wakeup(<Future finis... GMT\r\n\r\n'>)
-handle: <Handle Task.task_wakeup(<Future finis... GMT\r\n\r\n'>)>
-Traceback (most recent call last):
-  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-36' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...9 GMT\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1' coro=<MultiKernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/multikernelmanager.py:212>> is being executed.
-Exception in callback Task.task_wakeup(<Future finis... GMT\r\n\r\n'>)
-handle: <Handle Task.task_wakeup(<Future finis... GMT\r\n\r\n'>)>
-Traceback (most recent call last):
-  File "/sw/arch/RHEL8/EB_production/2022/software/Python/3.10.4-GCCcore-11.3.0/lib/python3.10/asyncio/events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-RuntimeError: Cannot enter into task <Task pending name='Task-39' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /custom...9 GMT\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1' coro=<MultiKernelManager._async_start_kernel() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/jupyter_client/multikernelmanager.py:212>> is being executed.
-[I 16:25:07.728 NotebookApp] Kernel started: dfe653d7-4758-44b6-8061-96e2734eaf00, name: python3
-[W 16:25:08.802 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924162120 (::1) 10.110000ms referer=http://localhost:5989/notebooks/Probing_GCN_L2.ipynb
+RuntimeError: Cannot enter into task <Task pending name='Task-5' coro=<HTTP1ServerConnection._server_request_loop() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...pc: 1\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-53' coro=<PeriodicCallback._run() running at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /sw/arch/RHEL8/EB_production/2022/software/IPython/8.5.0-GCCcore-11.3.0/lib/python3.10/site-packages/tornado/ioloop.py:694]> is being executed.
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: 61137bda-7d94-4e6a-bd44-2d1e2eced258
-[I 16:27:08.120 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:27:08.121 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:29:08.194 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:29:08.196 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:31:08.113 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:31:08.114 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:33:18.214 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:33:18.215 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:35:28.332 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:35:28.333 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:37:28.236 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:37:28.237 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:39:28.247 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:39:28.248 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:41:28.456 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:41:28.457 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:43:28.277 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:43:28.278 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:45:32.484 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:45:32.485 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:47:28.833 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:47:28.835 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:49:28.266 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:49:28.267 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:51:28.710 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:51:28.711 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:53:28.333 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:53:28.335 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:55:28.259 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:55:28.260 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:57:28.351 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:57:28.352 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 16:59:28.256 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 16:59:28.258 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:01:28.252 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:01:28.253 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:03:28.298 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:03:28.299 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:05:08.385 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:05:08.386 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:07:28.318 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:07:28.319 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:09:28.361 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:09:28.362 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:11:28.339 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:11:28.340 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:13:28.721 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:13:28.722 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:15:28.328 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:15:28.330 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:19:31.371 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:19:31.372 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:21:16.612 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:21:16.614 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:23:44.064 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:23:44.065 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:25:08.195 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:25:08.197 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:30:28.739 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:30:28.740 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:31:28.354 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:31:28.355 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:34:04.955 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:e173f6946c4e401da055a21f2611c976
-[W 17:34:05.698 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[W 17:34:09.187 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924162120 (::1) 1.630000ms referer=http://localhost:5989/notebooks/Probing_GCN_L2.ipynb
-[W 17:34:23.624 NotebookApp] Notebook Probing_GCN_dropout copy.ipynb is not trusted
-[I 17:34:26.275 NotebookApp] Kernel started: 87ae21f8-698c-4c47-bb9c-fe83b76d1224, name: python3
-[W 17:34:27.388 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924162120 (::1) 1.420000ms referer=http://localhost:5989/notebooks/Probing_GCN_dropout%20copy.ipynb
+[IPKernelApp] WARNING | No such comm: 7689b281-69c1-4573-8f26-b2d59b7d2348
+[I 21:53:31.335 NotebookApp] Kernel started: 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0, name: python3
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: b043fa6e-8316-4103-9a26-83ce8a1425f0
-[I 17:36:01.044 NotebookApp] Kernel interrupted: dfe653d7-4758-44b6-8061-96e2734eaf00
-[I 17:36:08.475 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:36:08.476 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:36:26.628 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:36:26.629 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:38:09.314 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:38:09.315 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:38:27.545 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:38:27.546 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:40:09.311 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:40:09.312 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:40:27.283 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:40:27.284 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:42:09.366 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:42:09.367 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:42:27.322 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:42:27.323 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:44:28.377 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:44:28.378 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:44:28.716 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:44:28.717 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:46:28.495 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:46:28.496 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:46:28.752 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:46:28.753 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:48:28.696 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:48:28.697 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:48:28.772 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:48:28.774 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:50:09.364 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:50:09.365 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:50:26.678 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:50:26.679 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:52:08.454 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:52:08.455 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[W 17:52:19.322 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 17:52:21.737 NotebookApp] Kernel started: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e, name: python3
-[W 17:52:22.992 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924162120 (::1) 1.430000ms referer=http://localhost:5989/notebooks/Probing_GCN_dropout.ipynb
+[IPKernelApp] WARNING | No such comm: c82a5a03-2ac9-4fe3-8887-a484f1d9cf03
+[W 21:53:52.273 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924215234 (::1) 1.800000ms referer=http://localhost:5391/notebooks/Probing_GCN_dropout.ipynb
+[I 21:55:28.812 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 21:55:28.814 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 21:56:36.550 NotebookApp] Starting buffering for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 21:56:37.705 NotebookApp] Kernel restarted: bfcda0dd-c635-4f56-b07a-f0b936f5394b
+[I 21:56:37.758 NotebookApp] Restoring connection for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 21:56:39.266 NotebookApp] Replaying 3 buffered messages
+[I 21:57:28.523 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 21:57:28.524 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 21:57:42.368 NotebookApp] Kernel interrupted: bfcda0dd-c635-4f56-b07a-f0b936f5394b
+[I 21:58:13.558 NotebookApp] Starting buffering for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 21:58:13.795 NotebookApp] Kernel restarted: 463aaab2-689c-434f-a47c-6d6dcdcc5ac5
+[I 21:58:13.844 NotebookApp] Restoring connection for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 21:58:15.353 NotebookApp] Replaying 3 buffered messages
+[I 21:59:28.341 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 21:59:28.342 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 21:59:31.361 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 21:59:31.362 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 21:59:33.308 NotebookApp] Starting buffering for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 21:59:33.546 NotebookApp] Kernel restarted: 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0
+[I 21:59:33.593 NotebookApp] Restoring connection for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 21:59:34.659 NotebookApp] Replaying 3 buffered messages
+[I 22:00:22.533 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 22:00:22.534 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 22:00:26.302 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 22:00:26.303 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 22:00:28.672 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 22:00:28.673 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[W 22:00:33.845 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 22:00:36.907 NotebookApp] Kernel started: 6dc9f2d0-d735-4a1f-9073-78af215ad99b, name: python3
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: b4b046a0-da96-4c51-b24b-4c7f629addfb
-[I 17:52:27.324 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 17:52:27.326 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 17:54:22.349 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 17:54:22.350 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 17:54:28.385 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:54:28.386 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:56:12.775 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:56:12.776 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:56:22.333 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 17:56:22.334 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 17:58:08.491 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 17:58:08.492 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 17:58:22.323 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 17:58:22.325 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:00:09.408 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:00:09.409 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:00:22.340 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:00:22.341 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:02:28.446 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:02:28.447 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:02:28.793 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:02:28.794 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:04:28.703 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:04:28.704 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:04:28.962 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:04:28.963 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:06:10.516 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:06:10.517 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:06:22.208 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:06:22.209 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:08:28.577 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:08:28.579 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:08:28.960 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:08:28.961 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:10:28.568 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:10:28.569 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:10:29.026 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:10:29.027 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:12:28.443 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:12:28.444 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:14:28.492 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:14:28.493 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[W 18:15:10.594 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:15:14.749 NotebookApp] Kernel started: 17521e18-5b43-423a-9648-68749af1528b, name: python3
-[W 18:15:16.380 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924162120 (::1) 1.440000ms referer=http://localhost:5989/notebooks/Probing_GCN.ipynb
-[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
-[IPKernelApp] WARNING | No such comm: e04a41bc-2a72-4c75-a57a-bf028c45eaee
-[I 18:15:59.468 NotebookApp] Kernel interrupted: 17521e18-5b43-423a-9648-68749af1528b
-[I 18:16:09.397 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:16:09.398 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:16:28.451 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:16:28.452 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:17:01.651 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 18:17:07.018 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 18:17:07.857 NotebookApp] Kernel restarted: 17521e18-5b43-423a-9648-68749af1528b
-[I 18:17:07.871 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 18:17:08.799 NotebookApp] Replaying 3 buffered messages
-[I 18:17:15.471 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:17:15.472 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:18:09.410 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:18:09.411 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:19:50.402 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:19:50.403 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:20:59.407 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:20:59.408 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:21:15.355 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:21:15.356 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:22:26.399 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:22:26.400 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:23:05.858 NotebookApp] Kernel interrupted: 17521e18-5b43-423a-9648-68749af1528b
-[I 18:23:15.391 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:23:15.392 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:23:16.904 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 18:23:46.920 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 18:23:50.913 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 18:23:51.944 NotebookApp] Kernel restarted: 17521e18-5b43-423a-9648-68749af1528b
-[I 18:23:51.999 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 18:23:53.004 NotebookApp] Replaying 3 buffered messages
-[I 18:24:28.579 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:24:28.581 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:25:15.525 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:25:15.526 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:26:09.466 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:26:09.467 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:27:28.540 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:27:28.542 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:28:18.427 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:28:18.428 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:29:15.134 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 18:29:15.136 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 18:30:24.282 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:30:24.283 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:32:08.560 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:32:08.561 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:34:28.417 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:34:28.418 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:34:57.644 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:34:58.377 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 18:34:58.393 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:34:59.432 NotebookApp] Replaying 3 buffered messages
-[I 18:36:22.351 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:36:22.352 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:36:28.387 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:36:28.388 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:37:17.618 NotebookApp] Kernel interrupted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 18:38:09.722 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:38:09.723 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:38:28.564 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:38:28.565 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:40:08.636 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:40:08.637 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:42:08.593 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:42:08.594 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:44:08.619 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:44:08.620 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:46:08.612 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:46:08.613 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:48:08.607 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:48:08.608 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:50:15.264 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:50:15.265 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:52:28.653 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:52:28.654 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:53:08.023 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:53:09.058 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 18:53:09.075 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:53:10.082 NotebookApp] Replaying 3 buffered messages
-[I 18:54:22.389 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:54:22.390 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:54:28.606 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:54:28.607 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:56:28.702 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:56:28.703 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:56:28.780 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:56:28.781 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:57:00.556 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 18:57:07.137 NotebookApp] Kernel interrupted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 18:57:08.781 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:57:09.813 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 18:57:09.864 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:57:10.795 NotebookApp] Replaying 9 buffered messages
-[I 18:58:04.202 NotebookApp] Kernel interrupted: dfe653d7-4758-44b6-8061-96e2734eaf00
-[I 18:58:08.629 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 18:58:08.630 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 18:58:23.643 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 18:58:23.644 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 18:58:27.435 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 18:58:27.436 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 18:59:13.606 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 18:59:18.478 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:59:21.308 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 18:59:21.430 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 18:59:22.222 NotebookApp] Replaying 5 buffered messages
-[I 18:59:30.227 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 18:59:31.465 NotebookApp] Kernel restarted: dfe653d7-4758-44b6-8061-96e2734eaf00
-[I 18:59:31.478 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 18:59:32.450 NotebookApp] Replaying 3 buffered messages
-[I 19:00:09.407 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 19:00:09.408 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 19:00:17.901 NotebookApp] Kernel interrupted: 87ae21f8-698c-4c47-bb9c-fe83b76d1224
-[I 19:00:22.383 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 19:00:22.384 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 19:00:26.767 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 19:00:26.768 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 19:02:28.610 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 19:02:28.611 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 19:02:29.012 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 19:02:29.013 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 19:04:28.659 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 19:04:28.661 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 19:04:28.935 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 19:04:28.936 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[W 19:06:21.430 NotebookApp] WebSocket ping timeout after 119897 ms.
-[W 19:06:21.783 NotebookApp] zmq message arrived on closed channel
-[W 19:06:21.999 NotebookApp] WebSocket ping timeout after 119954 ms.
-[W 19:06:22.190 NotebookApp] zmq message arrived on closed channel
-[W 19:06:22.596 NotebookApp] zmq message arrived on closed channel
-[W 19:06:23.002 NotebookApp] zmq message arrived on closed channel
-[W 19:06:23.409 NotebookApp] zmq message arrived on closed channel
-[W 19:06:23.816 NotebookApp] zmq message arrived on closed channel
-[W 19:06:24.223 NotebookApp] zmq message arrived on closed channel
-[W 19:06:24.630 NotebookApp] zmq message arrived on closed channel
-[W 19:06:25.039 NotebookApp] zmq message arrived on closed channel
-[W 19:06:25.446 NotebookApp] zmq message arrived on closed channel
-[W 19:06:25.853 NotebookApp] zmq message arrived on closed channel
-[W 19:06:26.261 NotebookApp] zmq message arrived on closed channel
-[I 19:06:26.431 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 19:06:27.001 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[W 19:06:27.237 NotebookApp] WebSocket ping timeout after 119969 ms.
-[W 19:06:31.478 NotebookApp] WebSocket ping timeout after 119963 ms.
-[I 19:06:32.238 NotebookApp] Starting buffering for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 19:06:36.479 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 19:58:30.460 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 19:58:30.461 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 19:58:57.682 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 19:58:59.796 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 19:58:59.800 NotebookApp] Replaying 70 buffered messages
-[I 19:59:48.045 NotebookApp] Restoring connection for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 19:59:57.649 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:00:10.675 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:00:10.676 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:00:24.423 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:00:24.424 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:01:17.212 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:01:17.213 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:01:43.532 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:01:46.603 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 20:01:47.414 NotebookApp] Kernel restarted: 17521e18-5b43-423a-9648-68749af1528b
-[I 20:01:47.451 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 20:01:48.457 NotebookApp] Replaying 3 buffered messages
-[I 20:01:55.033 NotebookApp] Kernel interrupted: 87ae21f8-698c-4c47-bb9c-fe83b76d1224
-[I 20:02:11.500 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:02:11.501 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:02:20.817 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:02:28.873 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:02:28.874 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:02:44.797 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:02:51.553 NotebookApp] Starting buffering for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:02:52.514 NotebookApp] Kernel restarted: 87ae21f8-698c-4c47-bb9c-fe83b76d1224
-[I 20:02:52.556 NotebookApp] Restoring connection for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:02:53.396 NotebookApp] Replaying 3 buffered messages
-[I 20:03:17.185 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:03:17.186 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:04:24.207 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:04:24.208 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:04:29.414 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:04:29.415 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:04:39.301 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:04:39.302 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:04:41.771 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:04:41.773 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:05:08.792 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:05:09.525 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 20:05:09.712 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:05:10.457 NotebookApp] Replaying 3 buffered messages
-[I 20:05:31.787 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:05:31.788 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:05:35.030 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:05:40.582 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:05:44.243 NotebookApp] Kernel interrupted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 20:05:46.017 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:05:47.104 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 20:05:47.959 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:05:48.462 NotebookApp] Replaying 9 buffered messages
-[I 20:06:11.499 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:06:11.501 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:06:24.992 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:06:24.993 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:06:31.296 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:06:31.297 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:07:02.454 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:07:07.698 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:07:08.433 NotebookApp] Kernel restarted: dfe653d7-4758-44b6-8061-96e2734eaf00
-[I 20:07:08.578 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:07:09.295 NotebookApp] Replaying 3 buffered messages
-[I 20:07:18.248 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:07:18.249 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:08:11.458 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:08:11.459 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:08:25.958 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:08:25.959 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:08:31.124 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:08:31.125 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:09:38.645 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:09:38.646 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:10:39.432 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:10:39.433 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:10:44.625 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:10:44.626 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:11:40.620 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:11:40.622 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:12:32.834 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:12:32.835 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[W 20:15:08.579 NotebookApp] WebSocket ping timeout after 119953 ms.
-[W 20:15:08.806 NotebookApp] zmq message arrived on closed channel
-[W 20:15:09.199 NotebookApp] zmq message arrived on closed channel
-[W 20:15:09.592 NotebookApp] zmq message arrived on closed channel
-[W 20:15:09.985 NotebookApp] zmq message arrived on closed channel
-[W 20:15:10.378 NotebookApp] zmq message arrived on closed channel
-[W 20:15:10.771 NotebookApp] zmq message arrived on closed channel
-[W 20:15:11.164 NotebookApp] zmq message arrived on closed channel
-[W 20:15:11.557 NotebookApp] zmq message arrived on closed channel
-[W 20:15:11.950 NotebookApp] zmq message arrived on closed channel
-[W 20:15:12.343 NotebookApp] zmq message arrived on closed channel
-[W 20:15:12.736 NotebookApp] zmq message arrived on closed channel
-[W 20:15:13.130 NotebookApp] zmq message arrived on closed channel
-[W 20:15:13.523 NotebookApp] zmq message arrived on closed channel
-[I 20:15:13.580 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[W 20:15:17.452 NotebookApp] WebSocket ping timeout after 119834 ms.
-[W 20:15:17.552 NotebookApp] zmq message arrived on closed channel
-[W 20:15:17.552 NotebookApp] zmq message arrived on closed channel
-[W 20:15:17.562 NotebookApp] zmq message arrived on closed channel
-[W 20:15:17.564 NotebookApp] zmq message arrived on closed channel
-[W 20:15:17.564 NotebookApp] zmq message arrived on closed channel
-[W 20:15:17.959 NotebookApp] WebSocket ping timeout after 119754 ms.
-[I 20:15:22.453 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[W 20:15:22.557 NotebookApp] WebSocket ping timeout after 114122 ms.
-[I 20:15:22.960 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:15:27.558 NotebookApp] Starting buffering for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:16:31.129 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:16:31.134 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:16:31.286 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:16:31.383 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:16:31.564 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:16:32.453 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:16:32.453 NotebookApp] Replaying 200 buffered messages
-[I 20:16:42.071 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:16:44.760 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 20:16:47.640 NotebookApp] Restoring connection for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:16:52.322 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:16:52.323 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 20:16:54.812 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:16:54.813 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:16:58.065 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:16:58.360 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:16:58.361 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:17:00.258 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:17:00.259 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:17:00.574 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 20:17:00.575 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 20:17:00.889 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 20:17:00.890 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 20:17:05.047 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 20:17:05.048 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 20:17:07.902 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 20:17:07.903 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[W 20:22:32.453 NotebookApp] WebSocket ping timeout after 98814 ms.
-[I 20:22:37.457 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[W 20:22:42.072 NotebookApp] WebSocket ping timeout after 108433 ms.
-[W 20:22:44.761 NotebookApp] WebSocket ping timeout after 111121 ms.
-[I 20:22:47.074 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[W 20:22:47.641 NotebookApp] WebSocket ping timeout after 114002 ms.
-[I 20:22:49.761 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 20:22:52.642 NotebookApp] Starting buffering for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:24:56.339 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:24:57.146 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:24:57.248 NotebookApp] Restoring connection for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:24:57.470 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[W 20:41:26.340 NotebookApp] WebSocket ping timeout after 119923 ms.
-[W 20:41:27.147 NotebookApp] WebSocket ping timeout after 119932 ms.
-[W 20:41:27.249 NotebookApp] WebSocket ping timeout after 119887 ms.
-[W 20:41:27.471 NotebookApp] WebSocket ping timeout after 119893 ms.
-[I 20:41:31.343 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:41:32.148 NotebookApp] Starting buffering for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:41:32.250 NotebookApp] Starting buffering for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:41:32.472 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 20:56:59.320 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:57:18.072 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 20:57:22.949 NotebookApp] Starting buffering for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:57:23.682 NotebookApp] Kernel restarted: dfe653d7-4758-44b6-8061-96e2734eaf00
-[I 20:57:23.752 NotebookApp] Restoring connection for dfe653d7-4758-44b6-8061-96e2734eaf00:b5f7034f016947e784934b7abbe82e47
-[I 20:57:24.505 NotebookApp] Replaying 3 buffered messages
-[I 20:57:53.175 NotebookApp] Kernel restarted: 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e
-[I 20:57:53.312 NotebookApp] Restoring connection for 2e3712fd-bbdb-4079-9e0f-d08f055a2e4e:105d7ec0ab05472281031cd5672134e2
-[I 20:57:54.316 NotebookApp] Replaying 3 buffered messages
-[I 20:58:05.408 NotebookApp] Restoring connection for 87ae21f8-698c-4c47-bb9c-fe83b76d1224:f1b4cff82f524079894255b423f30348
-[I 20:58:12.873 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 21:03:34.150 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 21:03:34.152 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 21:19:03.180 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 21:19:03.182 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
-[I 21:19:15.530 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 21:19:15.531 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 21:19:20.617 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 21:19:20.619 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 21:27:05.431 NotebookApp] Kernel interrupted: 17521e18-5b43-423a-9648-68749af1528b
-[I 21:27:10.251 NotebookApp] Starting buffering for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 21:27:11.081 NotebookApp] Kernel restarted: 17521e18-5b43-423a-9648-68749af1528b
-[I 21:27:11.137 NotebookApp] Restoring connection for 17521e18-5b43-423a-9648-68749af1528b:885bd051a1484910afe36f6cac9d5756
-[I 21:27:12.061 NotebookApp] Replaying 3 buffered messages
-[I 21:28:13.075 NotebookApp] Saving file at /models/models_BA_2grid_house.py
-[I 21:28:17.328 NotebookApp] Saving file at /Probing_GCN.ipynb
-[W 21:28:17.329 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
-[I 21:28:22.584 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
-[W 21:28:22.585 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
-[I 21:28:27.587 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
-[W 21:28:27.588 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
-[I 21:28:32.096 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
-[W 21:28:32.098 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[IPKernelApp] WARNING | No such comm: ef9a6be2-dcf1-4fc9-8db5-4027dccafe05
+[W 22:00:57.963 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20240924215234 (::1) 1.550000ms referer=http://localhost:5391/notebooks/Probing_GCN_L2.ipynb
+[I 22:02:40.573 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 22:02:40.574 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 22:52:36.388 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 22:52:36.390 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 22:53:50.070 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 22:53:50.071 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 22:54:40.095 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 22:54:40.096 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[W 03:39:13.845 NotebookApp] WebSocket ping timeout after 119984 ms.
+[I 03:39:18.847 NotebookApp] Starting buffering for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[W 03:39:33.594 NotebookApp] WebSocket ping timeout after 119986 ms.
+[W 03:39:37.759 NotebookApp] WebSocket ping timeout after 119984 ms.
+[W 03:39:38.047 NotebookApp] WebSocket ping timeout after 119977 ms.
+[I 03:39:38.596 NotebookApp] Starting buffering for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 03:39:42.760 NotebookApp] Starting buffering for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 03:39:43.049 NotebookApp] Starting buffering for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
+[I 11:50:17.932 NotebookApp] Restoring connection for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
+[I 11:50:17.937 NotebookApp] Replaying 34 buffered messages
+[I 11:50:29.983 NotebookApp] Restoring connection for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 11:50:29.987 NotebookApp] Replaying 34 buffered messages
+[I 11:50:35.804 NotebookApp] Restoring connection for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 11:50:35.807 NotebookApp] Replaying 34 buffered messages
+[I 11:50:38.998 NotebookApp] Restoring connection for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 11:50:39.001 NotebookApp] Replaying 49 buffered messages
+[I 11:51:17.401 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 11:51:17.402 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 11:51:31.114 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 11:51:31.115 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 11:51:33.296 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 11:51:33.297 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 11:53:31.528 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 11:53:31.529 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 11:53:34.610 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 11:53:34.611 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 11:55:35.864 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 11:55:35.865 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 11:55:40.788 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 11:55:40.789 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 11:57:32.284 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 11:57:32.285 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 11:59:31.384 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 11:59:31.385 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:03:31.823 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:03:31.824 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:05:32.428 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:05:32.429 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:09:29.777 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:09:29.783 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:09:32.778 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 12:09:32.780 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 12:09:35.521 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 12:09:35.523 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 12:09:54.107 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 12:09:54.111 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 12:10:36.839 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 12:10:36.844 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 12:10:40.987 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 12:10:40.989 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 12:10:45.227 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 12:10:45.228 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 12:10:49.064 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 12:10:49.187 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 12:10:52.839 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 12:10:52.840 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 12:10:56.896 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:10:56.898 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
