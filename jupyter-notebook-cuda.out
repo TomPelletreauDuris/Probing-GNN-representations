@@ -162,3 +162,83 @@ RuntimeError: Cannot enter into task <Task pending name='Task-5' coro=<HTTP1Serv
 [W 12:10:52.840 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
 [I 12:10:56.896 NotebookApp] Saving file at /Probing_GCN.ipynb
 [W 12:10:56.898 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:12:33.894 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 12:12:33.925 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 12:13:33.965 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:13:34.004 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:13:35.815 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 12:13:35.816 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 12:14:35.502 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 12:14:35.530 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 12:14:39.686 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 12:14:39.783 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 12:15:32.017 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:15:32.019 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[W 12:17:17.934 NotebookApp] WebSocket ping timeout after 119986 ms.
+[I 12:17:22.935 NotebookApp] Starting buffering for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
+[W 12:17:29.985 NotebookApp] WebSocket ping timeout after 118222 ms.
+[I 12:17:34.994 NotebookApp] Starting buffering for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[W 12:17:35.806 NotebookApp] WebSocket ping timeout after 119219 ms.
+[W 12:17:39.000 NotebookApp] WebSocket ping timeout after 119843 ms.
+[I 12:17:40.807 NotebookApp] Starting buffering for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 12:17:44.001 NotebookApp] Starting buffering for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 12:26:19.568 NotebookApp] Restoring connection for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 12:26:19.570 NotebookApp] Replaying 4 buffered messages
+[I 12:26:35.023 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 12:26:35.100 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 12:26:37.174 NotebookApp] Restoring connection for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 12:26:37.174 NotebookApp] Replaying 4 buffered messages
+[I 12:26:43.556 NotebookApp] Restoring connection for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 12:26:43.556 NotebookApp] Replaying 5 buffered messages
+[I 12:26:47.774 NotebookApp] Restoring connection for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
+[I 12:26:47.774 NotebookApp] Replaying 5 buffered messages
+[I 12:27:16.456 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 12:27:16.457 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 12:27:30.800 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 12:27:30.823 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 12:27:36.114 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 12:27:36.116 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 12:27:54.822 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 12:27:54.829 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[W 12:30:47.775 NotebookApp] WebSocket ping timeout after 119984 ms.
+[W 12:30:49.570 NotebookApp] WebSocket ping timeout after 119980 ms.
+[I 12:30:52.777 NotebookApp] Starting buffering for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
+[I 12:30:54.572 NotebookApp] Starting buffering for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[W 12:31:07.174 NotebookApp] WebSocket ping timeout after 119973 ms.
+[I 12:31:12.178 NotebookApp] Starting buffering for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[W 12:31:13.558 NotebookApp] WebSocket ping timeout after 119984 ms.
+[I 12:31:18.560 NotebookApp] Starting buffering for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 15:49:25.213 NotebookApp] Restoring connection for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
+[I 15:49:25.217 NotebookApp] Replaying 89 buffered messages
+[I 15:49:30.711 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 15:49:30.711 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 15:49:30.960 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 15:49:30.961 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 15:49:32.144 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 15:49:32.145 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 15:49:42.956 NotebookApp] Restoring connection for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 15:49:42.961 NotebookApp] Replaying 86 buffered messages
+[I 15:49:48.475 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 15:49:48.476 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 15:49:50.266 NotebookApp] Restoring connection for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 15:49:50.270 NotebookApp] Replaying 85 buffered messages
+[I 15:49:54.863 NotebookApp] Restoring connection for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 15:49:54.866 NotebookApp] Replaying 701 buffered messages
+[I 15:51:28.178 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 15:51:28.179 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 15:51:30.112 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 15:51:30.113 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 15:51:30.686 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 15:51:30.687 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 15:51:40.431 NotebookApp] Saving file at /Probing_GCN.ipynb
+[W 15:51:40.432 NotebookApp] Notebook Probing_GCN.ipynb is not trusted
+[I 15:51:42.374 NotebookApp] Starting buffering for bfcda0dd-c635-4f56-b07a-f0b936f5394b:d6d5d2d631ca47479e77e002c258db6a
+[I 15:51:46.028 NotebookApp] Saving file at /Probing_GCN_xavier.ipynb
+[W 15:51:46.028 NotebookApp] Notebook Probing_GCN_xavier.ipynb is not trusted
+[I 15:51:48.463 NotebookApp] Starting buffering for 463aaab2-689c-434f-a47c-6d6dcdcc5ac5:1996eca50b6d40858f622b755bae2cf3
+[I 15:51:50.846 NotebookApp] Saving file at /Probing_GCN_dropout.ipynb
+[W 15:51:50.847 NotebookApp] Notebook Probing_GCN_dropout.ipynb is not trusted
+[I 15:51:52.228 NotebookApp] Starting buffering for 552f6b0d-c8e8-43fe-b9d2-9320d9ed1ac0:0e7b8e1fbb3044e388605f75ee7867fd
+[I 15:51:53.606 NotebookApp] Saving file at /Probing_GCN_L2.ipynb
+[W 15:51:53.607 NotebookApp] Notebook Probing_GCN_L2.ipynb is not trusted
+[I 15:51:55.426 NotebookApp] Starting buffering for 6dc9f2d0-d735-4a1f-9073-78af215ad99b:70c2e38b0a41457f9bea3159c10267f0
