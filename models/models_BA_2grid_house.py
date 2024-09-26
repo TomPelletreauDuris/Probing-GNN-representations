@@ -65,8 +65,8 @@ class GCN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
@@ -179,15 +179,15 @@ class GCN_framework:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                train_features.append([f.cpu().numpy() for f in features])
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                # train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                test_features.append([f.cpu().numpy() for f in features])
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                # test_features.append([f.cpu().numpy() for f in features])
 
         return train_features, test_features
     
@@ -257,8 +257,8 @@ class GCN_framework_xavier:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
@@ -446,8 +446,8 @@ class GCN_framework_L2:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
                 
     def train(self):   
         self.model.train()
@@ -552,15 +552,15 @@ class GCN_framework_L2:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                train_features.append([f.cpu().numpy() for f in features])
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                # train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                test_features.append([f.cpu().numpy() for f in features])
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                # test_features.append([f.cpu().numpy() for f in features])
                 
         return train_features, test_features
     
@@ -633,8 +633,8 @@ class GCN_framework_Dropout:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
                 
     def train(self):   
         self.model.train()
@@ -739,15 +739,15 @@ class GCN_framework_Dropout:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                train_features.append([f.cpu().numpy() for f in features])
+                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                # train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                test_features.append([f.cpu().numpy() for f in features])
+                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                # test_features.append([f.cpu().numpy() for f in features])
                 
         return train_features, test_features
 
