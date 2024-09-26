@@ -1856,8 +1856,8 @@ class GIN_framework4:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
@@ -2028,13 +2028,13 @@ class GIN_framework4_L2:
             
 
         self.model = Net(10,self.dataset.num_classes).to(self.device).double()
-        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001, weight_decay=1e-1)
+        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001, weight_decay=1e-2)
 
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
@@ -2218,8 +2218,8 @@ class GIN_framework4_dropout:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
             
     def train(self):   
         self.model.train()
