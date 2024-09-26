@@ -65,8 +65,8 @@ class GCN_framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
             
     def train(self):   
         self.model.train()
@@ -257,8 +257,8 @@ class GCN_framework_xavier:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
             
     def train(self):   
         self.model.train()
@@ -441,13 +441,13 @@ class GCN_framework_L2:
         self.model = Net(10, self.dataset.num_classes).to(self.device).double()
 
         # **Added weight_decay parameter here**
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=1e-4)  # Adjust weight_decay as needed
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001, weight_decay=1e-5)  # Adjust weight_decay as needed
 
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=64)
                 
     def train(self):   
         self.model.train()
@@ -633,8 +633,8 @@ class GCN_framework_Dropout:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=64)
                 
     def train(self):   
         self.model.train()
@@ -1345,8 +1345,8 @@ class GAT_Framework_5:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=64)
 
     def train(self):
         self.model.train()
@@ -1476,8 +1476,8 @@ class GATV2Framework:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=128, shuffle=True)
-        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=128, shuffle=False)
+        self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=6428, shuffle=True)
+        self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=6428, shuffle=False)
         
     def train(self):   
         self.model.train()
@@ -1681,8 +1681,8 @@ class GIN_framework3:
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
 
-        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=1)
-        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=1)
+        self.train_loader = DataLoader(self.dataset[self.train_idx],batch_size=64)
+        self.test_loader = DataLoader(self.dataset[self.test_idx],batch_size=64)
             
     def train(self):   
         self.model.train()
@@ -1827,7 +1827,8 @@ class GIN_framework4:
                 self.conv1 = GINConv(self.mlp1)
                 self.mlp2 = torch.nn.Linear(30, 30)
                 self.conv2 = GINConv(self.mlp2)
-                self.conv3 = GINConv(30, 30)
+                self.mlp3 = torch.nn.Linear(30, 30)
+                self.conv3 = GINConv(self.mlp3)
                 self.lin1 = Linear(30, 30)
                 self.lin2 = Linear(30, out_channels)
 
@@ -1974,13 +1975,15 @@ class GIN_framework4:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                test_features.append([f.cpu().numpy() for f in features])
 
         return train_features, test_features
     
@@ -2001,7 +2004,8 @@ class GIN_framework4_L2:
                 self.conv1 = GINConv(self.mlp1)
                 self.mlp2 = torch.nn.Linear(30, 30)
                 self.conv2 = GINConv(self.mlp2)
-                self.conv3 = GINConv(30, 30)
+                self.mlp3 = torch.nn.Linear(30, 30)
+                self.conv3 = GINConv(self.mlp3)
                 self.lin1 = Linear(30, 30)
                 self.lin2 = Linear(30, out_channels)
 
@@ -2024,7 +2028,7 @@ class GIN_framework4_L2:
             
 
         self.model = Net(10,self.dataset.num_classes).to(self.device).double()
-        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001, weight_decay=1e-4)
+        self.optimizer = torch.optim.Adam(self.model.parameters(),lr=0.001, weight_decay=1e-1)
 
         idx = torch.arange(len(self.dataset))
         self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y,random_state=10)
@@ -2148,15 +2152,17 @@ class GIN_framework4_L2:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                test_features.append([f.cpu().numpy() for f in features])
 
-        return train_features, test_features    
+        return train_features, test_features
 
 
 class GIN_framework4_dropout:
@@ -2176,7 +2182,8 @@ class GIN_framework4_dropout:
                 self.conv1 = GINConv(self.mlp1)
                 self.mlp2 = torch.nn.Linear(30, 30)
                 self.conv2 = GINConv(self.mlp2)
-                self.conv3 = GINConv(30, 30)
+                self.mlp3 = torch.nn.Linear(30, 30)
+                self.conv3 = GINConv(self.mlp3)
                 self.lin1 = Linear(30, 30)
                 self.lin2 = Linear(30, out_channels)
 
@@ -2330,15 +2337,17 @@ class GIN_framework4_dropout:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy()) for f in zip(*features)])
+                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                test_features.append([f.cpu().numpy() for f in features])
 
-        return train_features, test_features    
+        return train_features, test_features   
 
         
 class GINFramework2:

@@ -164,6 +164,51 @@ class BA_2grid_house(InMemoryDataset):
 
         self.data, self.slices = self.collate(data_list)
 
+class BA_2grid_house_no_isomorphic(InMemoryDataset):
+
+    def __init__(self, diffpool=False, max_node=None, transform: Optional[Callable] = None, pre_filter: Optional[Callable] = None):
+        super().__init__('.', transform, pre_filter)
+        random.seed(10)
+
+        with open('Datasets/BA-2grid-house.pkl', 'rb') as fin:
+            (adjs, feas, labels) = pkl.load(fin)
+
+        data_list = []
+        seen_graphs = []
+
+        for i in range(len(adjs)):
+            if diffpool:
+                num_nodes = max_node
+            else:
+                num_nodes = len(adjs[i][0])
+            adj = adjs[i]
+            g = nx.from_numpy_array(adj)
+
+            # Check if the graph is isomorphic to any seen graph
+            is_isomorphic = any(nx.is_isomorphic(g, seen_g) for seen_g in seen_graphs)
+            if is_isomorphic:
+                continue  # Skip this graph if it's isomorphic to one we've already seen
+
+            seen_graphs.append(g)  # Add this graph to the seen list
+
+            tmp_data = from_networkx(g)
+
+            fea = feas[i]
+            label = labels[i]
+            
+            if random.random() <= 0.5:
+                expl_mask = torch.zeros(num_nodes, dtype=torch.bool)
+            else:
+                expl_mask = torch.ones(num_nodes, dtype=torch.bool)
+
+            edge_index = tmp_data.edge_index
+            edge_weights = torch.zeros(edge_index.shape[-1], dtype=torch.float)
+
+            data = Data(x=torch.tensor(fea), edge_index=edge_index, y=label, expl_mask=expl_mask, edge_attr=edge_weights)
+            data_list.append(data)
+
+        self.data, self.slices = self.collate(data_list)
+
 
 class BA_2grid_house_with_node_degree_as_features(InMemoryDataset):
     
