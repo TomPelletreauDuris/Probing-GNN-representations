@@ -437,7 +437,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 #save in svg
 plt.savefig("results/"+DATASET+"_"+MODEL+"_R2.svg", format='svg', bbox_inches='tight')
 
-plt.show()
+# plt.show()
 
 # %%
 #print the resulst in a table (layers as rows, properties as columns)
@@ -736,7 +736,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'_test_R2_plot.png', dpi=300, bbox_inches='tight')
@@ -990,7 +990,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # %% [markdown]
 # ##### Probing for the top 1 nodes with diagnostic classifier trained on the train set and test on the test set
@@ -1104,7 +1104,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # %%
 #plot only test results
@@ -1350,7 +1350,7 @@ def plot_results_across_graphs(results):
     plt.ylabel('R² Score')
     plt.legend()
     plt.grid(True)  # Add grid for better visibility of points and lines
-    plt.show()
+    # plt.show()
 
 # %%
 # Plot the results across all graphs

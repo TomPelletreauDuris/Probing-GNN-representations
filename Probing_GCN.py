@@ -129,16 +129,16 @@ gnn.evaluate()
 # %%
 #pritn the distribution of the number of nodes per graph in the dataset
 
-# number of nodes per graph
-nodes = [len(graph.x) for graph in dataset]
-plt.hist(nodes, bins=range(0, max(nodes)+1, 1), alpha=0.75, rwidth=0.85, color='b', edgecolor='black')
-plt.xlabel('Number of nodes')
-plt.ylabel('Frequency')
-plt.title('Number of nodes per graph')
-plt.show()
+# # number of nodes per graph
+# nodes = [len(graph.x) for graph in dataset]
+# plt.hist(nodes, bins=range(0, max(nodes)+1, 1), alpha=0.75, rwidth=0.85, color='b', edgecolor='black')
+# plt.xlabel('Number of nodes')
+# plt.ylabel('Frequency')
+# plt.title('Number of nodes per graph')
+# # plt.show()
 
 #print the min and max number of nodes in the dataset
-min(nodes), max(nodes)
+# min(nodes), max(nodes)
 
 # %%
 def compute_graph_properties(data):
@@ -517,7 +517,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 
 # %%
@@ -556,7 +556,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 #save in svg
 plt.savefig("results/"+DATASET+"_"+MODEL+"_R2.svg", format='svg', bbox_inches='tight')
 
-plt.show()
+# plt.show()
 
 # %%
 #print the resulst in a table (layers as rows, properties as columns)
@@ -862,7 +862,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'_test_R2_plot.png', dpi=300, bbox_inches='tight')
@@ -928,7 +928,7 @@ nx.draw(G, with_labels=False, node_size=[v * 1000 for v in betweenness_centralit
 
 #save in svg
 plt.savefig('results/'+DATASET+'_'+MODEL+'_node_properties_betweeness_centrality.svg')
-plt.show()
+# plt.show()
 
 # %%
 #same for eigenvector centrality
@@ -941,7 +941,7 @@ nx.draw(G, with_labels=False, node_size=[v * 1000 for v in eigenvector_centralit
 #save in svg
 plt.savefig('results/'+DATASET+'_'+MODEL+'_node_properties_eigenvector_centrality.svg')
 
-plt.show()
+# plt.show()
 
 # %%
 #same for local clustering coefficients
@@ -952,7 +952,7 @@ nx.draw(G, with_labels=False, node_size=[v * 1000 for v in Local_clustering_coef
 
 #save in svg
 plt.savefig('results/'+DATASET+'_'+MODEL+'_node_properties_local_clustering_coefficients.svg')
-plt.show()
+# plt.show()
 
 # %% [markdown]
 # Hypothesis : it would make a lot of sense for the GNN to use both the node propeties of local clustering coefficient and eigenvector centrality. The interesting thing is that these two features individually are not enough to render the problem linearly separable. It would thus make sense to use both of these properties and combine them. At the end, the problem makes more sense to be solved in a global property fashion with the number of squares. 
@@ -1186,7 +1186,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # %% [markdown]
 # ##### Probing for the top 1 nodes with diagnostic classifier trained on the train set and test on the test set
@@ -1300,7 +1300,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # %%
 #plot only test results
@@ -1547,7 +1547,7 @@ def plot_results_across_graphs(results):
     plt.ylabel('R² Score')
     plt.legend()
     plt.grid(True)  # Add grid for better visibility of points and lines
-    plt.show()
+    # plt.show()
 
 # %%
 # Plot the results across all graphs

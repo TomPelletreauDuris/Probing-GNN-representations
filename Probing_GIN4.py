@@ -468,7 +468,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 #save in svg
 plt.savefig("results/"+DATASET+"_"+MODEL+"_R2.svg", format='svg', bbox_inches='tight')
 
-plt.show()
+# plt.show()
 
 # %%
 #print the resulst in a table (layers as rows, properties as columns)
@@ -773,7 +773,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'_test_R2_plot.png', dpi=300, bbox_inches='tight')
@@ -836,7 +836,7 @@ node_degrees = test_node_properties[0][0]
 
 plt.figure(figsize=(10, 10))
 nx.draw(G, with_labels=False, node_size=[v * 1000 for v in betweenness_centrality], node_color=node_degrees, cmap='viridis')
-plt.show()
+# plt.show()
 
 
 # %%
@@ -845,7 +845,7 @@ eigenvector_centralities = test_node_properties[0][3]
 
 plt.figure(figsize=(10, 10))
 nx.draw(G, with_labels=False, node_size=[v * 1000 for v in eigenvector_centralities], node_color=node_degrees, cmap='viridis')
-plt.show()
+# plt.show()
 
 # %%
 #same for local clustering coefficients
@@ -853,7 +853,7 @@ Local_clustering_coefficients = test_node_properties[0][4]
 
 plt.figure(figsize=(10, 10))
 nx.draw(G, with_labels=False, node_size=[v * 1000 for v in Local_clustering_coefficients], node_color=node_degrees, cmap='viridis')
-plt.show()
+# plt.show()
 
 # %% [markdown]
 # Hypothesis : it would make a lot of sense for the GNN to use both the node propeties of local clustering coefficient and eigenvector centrality. The interesting thing is that these two features individually are not enough to render the problem linearly separable. It would thus make sense to use both of these properties and combine them. At the end, the problem makes more sense to be solved in a global property fashion with the number of squares. 
@@ -1087,7 +1087,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # %% [markdown]
 # ##### Probing for the top 1 nodes with diagnostic classifier trained on the train set and test on the test set
@@ -1201,7 +1201,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # %%
 #plot only test results
@@ -1448,7 +1448,7 @@ def plot_results_across_graphs(results):
     plt.ylabel('R² Score')
     plt.legend()
     plt.grid(True)  # Add grid for better visibility of points and lines
-    plt.show()
+    # plt.show()
 
 # %%
 # Plot the results across all graphs

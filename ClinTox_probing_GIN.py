@@ -569,7 +569,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv.png', dpi=300, bbox_inches='tight')
@@ -601,7 +601,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+"_"+MODEL+'_train_R2_plot_limited_cv.png', dpi=300, bbox_inches='tight')
@@ -1007,7 +1007,7 @@ plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv_long_full_emb
 #save in svg
 plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv_long_full_embedding.svg', dpi=300, bbox_inches='tight', format='svg')
 
-plt.show()
+# plt.show()
 
 # %%
 #print the R2 values in order (bigger to smaller) for x_global
@@ -1125,7 +1125,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+"_"+MODEL+'_train_R2_plot_limited_cv_long.png', dpi=300, bbox_inches='tight')
@@ -1548,7 +1548,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long_random.png')
@@ -1860,7 +1860,7 @@ def plot_results_across_graphs(results):
     #save in svg
     plt.savefig('results/'+DATASET+"_"+MODEL+'_node_R2_plot_across_graphs.svg', dpi=300, bbox_inches='tight', format='svg')
     
-    plt.show()
+    # plt.show()
 
 # %%
 # Plot the results across all graphs

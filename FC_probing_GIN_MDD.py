@@ -474,7 +474,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig("results/"+DATASET+"_"+MODEL+"test_R2_plot_full_embedding.png")
@@ -510,7 +510,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig("results/"+DATASET+"_"+MODEL+"train_R2_plot_full_embedding.png")
@@ -880,7 +880,7 @@ plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv_long_full_emb
 #save in svg
 plt.savefig('results/'+DATASET+"_"+MODEL+'_test_R2_plot_limited_cv_long_full_embedding.svg', dpi=300, bbox_inches='tight', format='svg')
 
-plt.show()
+# plt.show()
 
 # %%
 #print all the R2 values for all the layers 
@@ -1038,7 +1038,7 @@ plt.title('FC matrice - GIN - R² for different embeddings and properties')
 #save in svg
 plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long_full_embedding.svg')
 
-plt.show()
+# plt.show()
 
 
 # %%
@@ -1066,7 +1066,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'train_R2_plot_long_full_embedding.png')
@@ -1395,7 +1395,7 @@ plt.xlabel('Embedding')
 plt.ylabel('R²')
 plt.legend()
 plt.title('FC matrice - GCN - R² for different embeddings and properties')
-plt.show()
+# plt.show()
 
 #save the plot
 plt.savefig('results/'+DATASET+'_'+MODEL+'test_R2_plot_long_random_full_embedding.png')
@@ -1767,7 +1767,7 @@ def plot_results_across_graphs(results):
     plt.ylabel('R² Score')
     plt.legend()
     plt.grid(True)  # Add grid for better visibility of points and lines
-    plt.show()
+    # plt.show()
 
     # Save the plot
     with open("results/"+DATASET+"_"+MODEL+"_node_results_across_graphs.pkl", "wb") as f:
@@ -1845,7 +1845,7 @@ def plot_results_across_graphs(results):
     plt.ylabel('R² Score')
     plt.legend()
     plt.grid(True)  # Add grid for better visibility of points and lines
-    plt.show()
+    # plt.show()
 
     # Save the plot
     with open("results/"+DATASET+"_"+MODEL+"_node_results_across_graphs.pkl", "wb") as f:
