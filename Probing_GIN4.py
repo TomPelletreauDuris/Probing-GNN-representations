@@ -249,25 +249,23 @@ class LinearModel(nn.Module):
 # train_features, test_features = gnn.evaluate_with_features2()
 
 # Extract x embeddings
-train_x = np.array([feat[0] for feat in train_features])
-test_x = np.array([feat[0] for feat in test_features])
+train_x = np.array([np.array(feat[0], dtype=float) for feat in train_features])
+test_x = np.array([np.array(feat[0], dtype=float) for feat in test_features])
 
-# Extract 2, 3, 4, global, 5, 6, 7 embeddings
-train_x2 = np.array([feat[1] for feat in train_features])
-test_x2 = np.array([feat[1] for feat in test_features])
+train_x2 = np.array([np.array(feat[1], dtype=float) for feat in train_features])
+test_x2 = np.array([np.array(feat[1], dtype=float) for feat in test_features])
 
-train_x3 = np.array([feat[2] for feat in train_features])
-test_x3 = np.array([feat[2] for feat in test_features])
+train_x3 = np.array([np.array(feat[2], dtype=float) for feat in train_features])
+test_x3 = np.array([np.array(feat[2], dtype=float) for feat in test_features])
 
-train_x_global = np.array([feat[3] for feat in train_features])
-test_x_global = np.array([feat[3] for feat in test_features])
+train_x_global = np.array([np.array(feat[4], dtype=float) for feat in train_features])
+test_x_global = np.array([np.array(feat[4], dtype=float) for feat in test_features])
 
-train_x5 = np.array([feat[4] for feat in train_features])
-test_x5 = np.array([feat[4] for feat in test_features])
+train_x5 = np.array([np.array(feat[5], dtype=float) for feat in train_features])
+test_x5 = np.array([np.array(feat[5], dtype=float) for feat in test_features])
 
-train_x6 = np.array([feat[5] for feat in train_features])
-test_x6 = np.array([feat[5] for feat in test_features])
-
+train_x6 = np.array([np.array(feat[6], dtype=float) for feat in train_features])
+test_x6 = np.array([np.array(feat[6], dtype=float) for feat in test_features])
 
 # Compute graph properties
 # train_properties = compute_graph_properties(gnn.dataset[gnn.train_idx])
