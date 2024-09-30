@@ -1,0 +1,16 @@
+python3: can't open file '/gpfs/home3/tpelletreaudur/Probing-GNN-representations/Probing_GIN_dropout.py': [Errno 2] No such file or directory
+
+JOB STATISTICS
+==============
+Job ID: 8012962
+Cluster: snellius
+User/Group: tpelletreaudur/tpelletreaudur
+State: RUNNING
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:05:52 core-walltime
+Job Wall-clock time: 00:00:22
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 28.00 GB (1.75 GB/core)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

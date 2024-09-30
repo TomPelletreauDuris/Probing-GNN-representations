@@ -1,0 +1,6 @@
+/home/tpelletreaudur/.local/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader' instead
+  warnings.warn(out)
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN.py:757: ComplexWarning: Casting complex values to real discards the imaginary part
+  train_y_long = torch.tensor(train_properties_long, dtype=torch.float32)
+/gpfs/home3/tpelletreaudur/Probing-GNN-representations/FC_probing_GIN.py:758: ComplexWarning: Casting complex values to real discards the imaginary part
+  test_y_long = torch.tensor(test_properties_long, dtype=torch.float32)
