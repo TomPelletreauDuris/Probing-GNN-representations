@@ -179,15 +179,15 @@ class GCN_framework:
             for data in self.train_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                # train_features.append([f.cpu().numpy() for f in features])
+                # train_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                train_features.append([f.cpu().numpy() for f in features])
 
             # Extract features for test data
             for data in self.test_loader:
                 data = data.to(self.device)
                 out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
-                test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
-                # test_features.append([f.cpu().numpy() for f in features])
+                # test_features.extend([(f[0].cpu().numpy(), f[1].cpu().numpy(), f[2].cpu().numpy(), f[3].cpu().numpy(), f[4].cpu().numpy(), f[5].cpu().numpy(), f[6].cpu().numpy(), f[7].cpu().numpy()) for f in zip(*features)])
+                test_features.append([f.cpu().numpy() for f in features])
 
         return train_features, test_features
     
