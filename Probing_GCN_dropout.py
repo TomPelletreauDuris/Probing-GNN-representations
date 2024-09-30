@@ -383,6 +383,7 @@ for train_embedding, test_embedding in embeddings:
 with open("results/"+DATASET+"_"+MODEL+"_results.pkl", "wb") as f:
     pkl.dump(results, f)
 
+print("Results with invariance saved")
 # %% [markdown]
 # #### Post pooling probing
 
