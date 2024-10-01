@@ -20,4 +20,4 @@ module load PyTorch/1.12.0-foss-2022a-CUDA-11.7.0
 
 # source activate GNN_gpu
 
-python3 Probing_GIN_dropout.py
+python3 Probing_GIN4_dropout.py
