@@ -259,9 +259,6 @@ test_x6 = np.array([np.array(feat[6], dtype=float) for feat in test_features])
 train_x7 = np.array([np.array(feat[7], dtype=float) for feat in train_features])
 test_x7 = np.array([np.array(feat[7], dtype=float) for feat in test_features])
 
-train_x8 = np.array([np.array(feat[8], dtype=float) for feat in train_features])
-test_x8 = np.array([np.array(feat[8], dtype=float) for feat in test_features])
-
 
 # Compute graph properties
 # train_properties = compute_graph_properties(gnn.dataset[gnn.train_idx])
