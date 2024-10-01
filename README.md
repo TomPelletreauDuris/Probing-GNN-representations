@@ -47,11 +47,6 @@ The repository is organized as follows:
 
 ### Jupyter Notebooks:
 
-- **[GC] Load trained model.ipynb**  
-  Notebook for loading a pre-trained GCN model.
-
-- **[NC] Load trained model.ipynb**  
-  Another notebook for loading a different type of trained model.
 
 - **AIFB_probing_GCN.ipynb**  
   Experiments using the AIFB dataset with a GCN model.
