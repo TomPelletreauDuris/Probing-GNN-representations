@@ -750,6 +750,147 @@ class GCN_framework_Dropout:
                 test_features.append([f.cpu().numpy() for f in features])
                 
         return train_features, test_features
+    
+
+#do a similar class for a 3-WL equivalent model
+class GCN_framework_3WL:
+    class GCN_framework_3WL:
+        def __init__(self, dataset, device=None):
+            if device is None:
+                self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+            else:
+                self.device = device
+
+            self.dataset = dataset
+
+            class Net(torch.nn.Module):
+                def __init__(self, num_features, num_classes):
+                    super().__init__()
+                    self.conv1 = WLConv(num_features, 60)
+                    self.conv2 = WLConv(60, 60)
+                    self.conv3 = WLConv(60, 60)
+                    self.conv4 = WLConv(60, 60)
+                    self.lin1 = Linear(60, 60)
+                    self.lin2 = Linear(60, 10)
+                    self.lin3 = Linear(10, num_classes)
+
+                def forward(self, x, edge_index, batch, edge_mask=None, return_intermediate=False, return_node_embeddings=False):
+                    x1 = F.relu(self.conv1(x, edge_index, edge_mask))
+                    x2 = F.relu(self.conv2(x1, edge_index, edge_mask))
+                    x3 = F.relu(self.conv3(x2, edge_index, edge_mask))
+                    x4 = F.relu(self.conv4(x3, edge_index, edge_mask))
+
+                    if return_node_embeddings:
+                        return (x1, x2, x3, x4)
+
+                    x_global = global_max_pool(x4, batch)
+                    x5 = F.relu(self.lin1(x_global))
+                    x6 = F.relu(self.lin2(x5))
+                    x7 = self.lin3(x6)
+
+                    if return_intermediate:
+                        return F.log_softmax(x7, dim=-1), (x1, x2, x3, x4, x_global, x5, x6, x7)
+                    else:
+                        return F.log_softmax(x7, dim=-1)
+
+            self.model = Net(10, self.dataset.num_classes).to(self.device).double()
+            self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001)
+
+            idx = torch.arange(len(self.dataset))
+            self.train_idx, self.test_idx = train_test_split(idx, train_size=0.8, stratify=self.dataset.data.y, random_state=10)
+
+            self.train_loader = DataLoader(self.dataset[self.train_idx], batch_size=1)
+            self.test_loader = DataLoader(self.dataset[self.test_idx], batch_size=1)
+
+        def train(self):
+            self.model.train()
+            total_loss = 0
+            for data in self.train_loader:
+                data = data.to(self.device)
+                self.optimizer.zero_grad()
+                output = self.model(data.x, data.edge_index, data.batch)
+                loss = F.nll_loss(output, data.y.view(-1))
+                loss.backward()
+                self.optimizer.step()
+                total_loss += float(loss) * data.num_graphs
+            return total_loss / len(self.train_loader.dataset)
+
+        @torch.no_grad()
+        def test(self, loader):
+            self.model.eval()
+            total_correct = 0
+            total_loss = 0
+            for data in loader:
+                data = data.to(self.device)
+                out = self.model(data.x, data.edge_index, data.batch)
+                total_correct += int((out.argmax(-1) == data.y).sum())
+                loss = F.nll_loss(out, data.y)
+                total_loss += float(loss) * data.num_graphs
+            return total_correct / len(loader.dataset), total_loss / len(self.train_loader.dataset)
+
+        def iterate(self):
+            for epoch in range(1, 1001):
+                loss = self.train()
+                train_acc, train_loss = self.test(self.train_loader)
+                test_acc, test_loss = self.test(self.test_loader)
+                if epoch % 1 == 0:
+                    print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
+
+        def save_model(self, path):
+            torch.save(self.model.state_dict(), path)
+            print("Model saved in:", path)
+
+        def load_model(self, path, map_location=None):
+            if map_location == 'cpu':
+                self.model.load_state_dict(torch.load(path, map_location='cpu'))
+            else:
+                self.model.load_state_dict(torch.load(path))
+            self.model.eval()
+
+        def evaluate(self):
+            train_acc, train_loss = self.test(self.train_loader)
+            test_acc, test_loss = self.test(self.test_loader)
+            print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f}, Test Acc: {test_acc:.3f}')
+
+        @torch.no_grad()
+        def test_with_features(self, loader):
+            self.model.eval()
+            features_collected = []
+            total_correct = 0
+            total_loss = 0
+            for data in loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                features_collected.append(features)
+                total_correct += int((out.argmax(-1) == data.y).sum())
+                loss = F.nll_loss(out, data.y)
+                total_loss += float(loss) * data.num_graphs
+            return total_correct / len(loader.dataset), total_loss / len(loader.dataset), features_collected
+
+        @torch.no_grad()
+        def evaluate_with_features2(self, return_node_embeddings=False):
+            self.model.eval()
+            train_features = []
+            test_features = []
+            if return_node_embeddings:
+                for data in self.train_loader:
+                    data = data.to(self.device)
+                    features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                    train_features.append([f.cpu().numpy() for f in features])
+                for data in self.test_loader:
+                    data = data.to(self.device)
+                    features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                    test_features.append([f.cpu().numpy() for f in features])
+            else:
+                for data in self.train_loader:
+                    data = data.to(self.device)
+                    out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                    train_features.append([f.cpu().numpy() for f in features])
+                for data in self.test_loader:
+                    data = data.to(self.device)
+                    out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                    test_features.append([f.cpu().numpy() for f in features])
+            return train_features, test_features
 
 
 from torch_geometric.nn import SAGEConv
@@ -3087,7 +3228,215 @@ class Diffpool_framework:
         print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
             
 
-            
+import torch
+import torch.nn.functional as F
+from torch.nn import Linear
+from torch_geometric.nn import global_max_pool, MessagePassing
+from torch_geometric.loader import DataLoader
+from sklearn.model_selection import train_test_split
+from itertools import combinations
+
+import torch
+import torch.nn.functional as F
+from torch.nn import Linear
+from torch_geometric.nn import global_max_pool, MessagePassing
+from torch_geometric.data import DataLoader
+from sklearn.model_selection import train_test_split
+from itertools import combinations
+
+class ThreeWL_framework:
+    def __init__(self, dataset, device=None):
+        if device is None:
+            self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        else:
+            self.device = "cpu"
+        
+        self.dataset = dataset
+
+        class ThreeWLNet(torch.nn.Module):
+            def __init__(self, num_features, num_classes):
+                super().__init__()
+                tuple_features = num_features * 3
+                
+                # 3-WL convolution layers
+                self.conv1 = ThreeGNNConv(tuple_features, 60)
+                self.conv2 = ThreeGNNConv(60, 60)
+                self.conv3 = ThreeGNNConv(60, 60)
+                self.conv4 = ThreeGNNConv(60, 60)
+                
+                # MLPs for classification
+                self.lin1 = Linear(60, 60)
+                self.lin2 = Linear(60, 10)
+                self.lin3 = Linear(10, num_classes)
+
+            def forward(self, x, edge_index, batch, return_intermediate=False, return_node_embeddings=False):
+                # Build 3-tuples and their connections
+                tuples, tuple_edges = self.build_tuples(x, edge_index)
+                tuple_batch = self.get_tuple_batch(batch, tuples)
+
+                # 3-WL message passing
+                x1 = F.relu(self.conv1(tuples, tuple_edges))
+                x2 = F.relu(self.conv2(x1, tuple_edges))
+                x3 = F.relu(self.conv3(x2, tuple_edges))
+                x4 = F.relu(self.conv4(x3, tuple_edges))
+
+                if return_node_embeddings:
+                    return (x1, x2, x3, x4)
+
+                # Global pooling and classification
+                x_global = global_max_pool(x4, tuple_batch)
+                x5 = F.relu(self.lin1(x_global))
+                x6 = F.relu(self.lin2(x5))
+                x7 = self.lin3(x6)
+
+                if return_intermediate:
+                    return F.log_softmax(x7, dim=-1), (x1, x2, x3, x4, x_global, x5, x6, x7)
+                return F.log_softmax(x7, dim=-1)
+
+            def get_tuple_batch(self, batch, tuples):
+                # Assign tuples to same batch as their constituent nodes
+                if batch is None:
+                    return torch.zeros(len(tuples), dtype=torch.long, device=tuples.device)
+                # Convert indices to long tensor
+                tuple_indices = tuples[:, 0].long()
+                return batch[tuple_indices]
+
+            def build_tuples(self, x, edge_index):
+                num_nodes = x.size(0)
+                # Generate all 3-tuples of nodes with correct dtype
+                tuples = torch.tensor(list(combinations(range(num_nodes), 3)), 
+                                    dtype=torch.long,
+                                    device=x.device)
+                # Create tuple features
+                tuple_features = x[tuples].view(len(tuples), -1)
+                # Create edges between tuples
+                tuple_edges = self.build_tuple_edges(tuples)
+                return tuple_features, tuple_edges
+
+            def build_tuple_edges(self, tuples):
+                tuple_edges = []
+                for i, t1 in enumerate(tuples):
+                    for j, t2 in enumerate(tuples[i+1:], i+1):
+                        if len(set(t1.tolist()) & set(t2.tolist())) == 2:
+                            tuple_edges.append([i, j])
+                            tuple_edges.append([j, i])  # Add both directions
+                return torch.tensor(tuple_edges, dtype=torch.long, device=tuples.device).t()
+
+        class ThreeGNNConv(MessagePassing):
+            def __init__(self, in_channels, out_channels):
+                super().__init__(aggr='add')
+                # MLPs for different message types
+                self.mlp_nodes = torch.nn.Sequential(
+                    Linear(in_channels, out_channels),
+                    torch.nn.ReLU(),
+                    Linear(out_channels, out_channels)
+                )
+                self.mlp_update = torch.nn.Sequential(
+                    Linear(in_channels + out_channels, out_channels),
+                    torch.nn.ReLU(),
+                    Linear(out_channels, out_channels)
+                )
+
+            def forward(self, x, edge_index, edge_attr=None):
+                # Compute messages
+                out = self.propagate(edge_index, x=x)
+                return out
+
+            def message(self, x_j):
+                return self.mlp_nodes(x_j)
+
+            def update(self, aggr_out, x):
+                return self.mlp_update(torch.cat([x, aggr_out], dim=-1))
+
+        self.model = ThreeWLNet(dataset.num_features, dataset.num_classes).to(self.device).double()
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001)
+
+        idx = torch.arange(len(dataset))
+        self.train_idx, self.test_idx = train_test_split(
+            idx, train_size=0.8, stratify=dataset.data.y, random_state=10)
+
+        self.train_loader = DataLoader(dataset[self.train_idx], batch_size=1)
+        self.test_loader = DataLoader(dataset[self.test_idx], batch_size=1)
+
+    def train(self):
+        self.model.train()
+        total_loss = 0
+        for data in self.train_loader:
+            data = data.to(self.device)
+            self.optimizer.zero_grad()
+            output = self.model(data.x, data.edge_index, data.batch)
+            loss = F.nll_loss(output, data.y.view(-1))
+            loss.backward()
+            self.optimizer.step()
+            total_loss += float(loss) * data.num_graphs
+        return total_loss / len(self.train_loader.dataset)
+
+    @torch.no_grad()
+    def test(self, loader):
+        self.model.eval()
+        total_correct = 0
+        total_loss = 0
+        for data in loader:
+            data = data.to(self.device)
+            out = self.model(data.x, data.edge_index, data.batch)
+            total_correct += int((out.argmax(-1) == data.y).sum())
+            loss = F.nll_loss(out, data.y)
+            total_loss += float(loss) * data.num_graphs
+        return total_correct / len(loader.dataset), total_loss / len(loader.dataset)
+
+    def iterate(self):
+        for epoch in range(1, 1001):
+            loss = self.train()
+            train_acc, train_loss = self.test(self.train_loader)
+            test_acc, test_loss = self.test(self.test_loader)
+            if epoch % 1 == 0:
+                print(f'Epoch: {epoch:03d}, Loss: {loss:.3f}, Test Loss: {test_loss:.3f}, '
+                      f'Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    def save_model(self, path):
+        torch.save(self.model.state_dict(), path)
+        print("Model saved in: ", path)
+
+    def load_model(self, path, map_location=None):
+        if map_location == 'cpu':
+            self.model.load_state_dict(torch.load(path, map_location='cpu'))
+        else:
+            self.model.load_state_dict(torch.load(path))
+        self.model.eval()
+
+    def evaluate(self):
+        train_acc, train_loss = self.test(self.train_loader)
+        test_acc, test_loss = self.test(self.test_loader)
+        print(f'Test Loss: {test_loss:.3f}, Train Acc: {train_acc:.3f} Test Acc: {test_acc:.3f}')
+
+    @torch.no_grad()
+    def evaluate_with_features2(self, return_node_embeddings=False):
+        self.model.eval()
+        train_features = []
+        test_features = []
+
+        if return_node_embeddings:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                train_features.append([f.cpu().numpy() for f in features])
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                features = self.model(data.x, data.edge_index, data.batch, return_node_embeddings=True)
+                test_features.append([f.cpu().numpy() for f in features])
+        else:
+            for data in self.train_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                train_features.append([f.cpu().numpy() for f in features])
+
+            for data in self.test_loader:
+                data = data.to(self.device)
+                out, features = self.model(data.x, data.edge_index, data.batch, return_intermediate=True)
+                test_features.append([f.cpu().numpy() for f in features])
+
+        return train_features, test_features         
             
 # pooling
 from torch_geometric.nn import DenseGCNConv, GCNConv, dense_mincut_pool
