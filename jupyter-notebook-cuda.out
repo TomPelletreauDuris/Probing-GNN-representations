@@ -70,3 +70,14 @@ RuntimeError: Cannot enter into task <Task pending name='Task-38' coro=<HTTP1Ser
 [W 18:05:16.230 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
 [I 18:09:16.998 NotebookApp] Saving file at /Probing_GIN_SA.ipynb
 [W 18:09:17.001 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
+[I 18:24:59.169 NotebookApp] Starting buffering for 4aa8af21-9dff-46c4-8cad-3b57a40d058f:852c29c8df924d62868d53866f664802
+[W 18:24:59.830 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
+[W 18:25:02.589 NotebookApp] 404 GET /static/components/codemirror/mode/plaintext/plaintext.js?v=20250825122644 (::1) 1.790000ms referer=http://localhost:5999/notebooks/Probing_GIN_SA.ipynb
+[I 18:29:02.400 NotebookApp] Saving file at /Probing_GIN_SA.ipynb
+[W 18:29:02.401 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
+[I 18:31:02.442 NotebookApp] Saving file at /Probing_GIN_SA.ipynb
+[W 18:31:02.442 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
+[I 18:33:02.470 NotebookApp] Saving file at /Probing_GIN_SA.ipynb
+[W 18:33:02.471 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
+[I 18:34:12.516 NotebookApp] Saving file at /Probing_GIN_SA.ipynb
+[W 18:34:12.517 NotebookApp] Notebook Probing_GIN_SA.ipynb is not trusted
