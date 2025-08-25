@@ -52,7 +52,7 @@ class GCN_framework:
                 x7 = self.lin3(x6)
 
                 if return_intermediate:
-                    return F.log_softmax(x7, dim=-1), (x1, x2, x3, x4, x_global, x5, x6, x7)
+                    return F.log_softmax(x7, dim=-1), (x1, x2, x3, x4, x_global, x5, x6, x7)#(global_mean_pool(x1, batch), global_mean_pool(x2, batch), global_mean_pool(x3, batch), global_mean_pool(x4,batch), x_global, x5, x6, x7)
                 else:
                     return F.log_softmax(x7, dim=-1)
 
@@ -1475,7 +1475,7 @@ class GAT_Framework_5:
                 x_3 = self.lin2(x_2)
                             
                 if return_intermediate:
-                    return F.log_softmax(x_3, dim=-1), (x, x1, x2, x3, x_max_pool, x_2, x_3)
+                    return F.log_softmax(x_3, dim=-1), (global_mean_pool(x, batch),global_mean_pool(x1, batch),global_mean_pool(x2, batch), global_mean_pool(x3, batch), x_max_pool, x_2, x_3)#(x, x1, x2, x3, x_max_pool, x_2, x_3)
                 else: 
                     return F.log_softmax(x_3, dim=-1)
 
@@ -1988,7 +1988,7 @@ class GIN_framework4:
                 out = self.lin2(x_lin1)
 
                 if return_intermediate:
-                    return F.log_softmax(out, dim=-1), (x1, x2, x3, x_global, x_lin1, out)
+                    return F.log_softmax(out, dim=-1), (x1, x2, x3, x_global, x_lin1, out) #(global_mean_pool(x1, batch), global_mean_pool(x2, batch), global_mean_pool(x3, batch), x_global, x_lin1, out)
                 else:
                     return F.log_softmax(out, dim=-1)
             
